@@ -1,0 +1,547 @@
+/* ===================================================
+   DESIGN SYSTEM.
+=================================================== */
+
+:root{
+
+    /* CORES */
+
+    --primary:#FF4D00;
+    --primary-dark:#E05A00;
+    --primary-light:#FFA25A;
+
+    --black:#000000;
+    --gray:#332E29;
+
+    --background:#FFFFFF;
+    --surface:#F6F6F6;
+
+    --text:#000000;
+    --text-light:#555555;
+    --white:#FFFFFF;
+
+    /* TIPOGRAFIA */
+
+    --font-family:"Inter",sans-serif;
+
+    /* GRID */
+
+    --container:1440px;
+    --columns:12;
+    --grid-gap:24px;
+    --margin:96px;
+
+    /* ESPAÇAMENTOS */
+
+    --space-1:8px;
+    --space-2:16px;
+    --space-3:24px;
+    --space-4:32px;
+    --space-5:48px;
+    --space-6:64px;
+    --space-7:96px;
+    --space-8:120px;
+    --space-9:320px;
+
+    /* BORDER RADIUS */
+
+    --radius-sm:8px;
+    --radius-md:16px;
+    --radius-lg:20px;
+    --radius-xl:24px;
+
+    /* SOMBRAS */
+
+    --shadow-sm:
+        0 2px 8px rgba(0,0,0,.08);
+
+    --shadow-md:
+        0 8px 24px rgba(0,0,0,.12);
+
+    --shadow-lg:
+        0 16px 40px rgba(0,0,0,.16);
+
+}
+
+/* ===================================================
+   RESET
+=================================================== */
+
+*,
+*::before,
+*::after{
+
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:var(--font-family);
+
+    background:var(--background);
+
+    color:var(--text);
+
+    line-height:1.6;
+
+    font-size:16px;
+
+    -webkit-font-smoothing:antialiased;
+
+}
+
+img{
+
+    display:block;
+    width:100%;
+    max-width:100%;
+
+    border-radius:16px;
+
+}
+
+a{
+
+    color:inherit;
+    text-decoration:none;
+
+}
+
+button,
+input,
+textarea,
+select{
+
+    font:inherit;
+
+}
+
+/* ===================================================
+   CONTAINER
+=================================================== */
+
+.container{
+
+    width:100%;
+
+    max-width:var(--container);
+
+    margin:auto;
+
+    padding-inline:96px;
+
+}
+
+/* ===================================================
+   GRID
+=================================================== */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(12,1fr);
+
+    gap:24px;
+
+}
+
+.col-1{grid-column:span 1;}
+.col-2{grid-column:span 2;}
+.col-3{grid-column:span 3;}
+.col-4{grid-column:span 4;}
+.col-5{grid-column:span 5;}
+.col-6{grid-column:span 6;}
+.col-7{grid-column:span 7;}
+.col-8{grid-column:span 8;}
+.col-9{grid-column:span 9;}
+.col-10{grid-column:span 10;}
+.col-11{grid-column:span 11;}
+.col-12{grid-column:span 12;}
+
+/* ===================================================
+   TIPOGRAFIA
+=================================================== */
+
+h1{
+
+    font-size:48px;
+    font-weight:700;
+    line-height:56px;
+
+    margin-bottom:24px;
+
+}
+
+h2{
+
+    font-size:32px;
+    font-weight:700;
+    line-height:40px;
+
+    margin-bottom:20px;
+
+}
+
+h3{
+
+    font-size:24px;
+    font-weight:700;
+    line-height:32px;
+
+    margin-bottom:16px;
+
+}
+
+h4{
+
+    font-size:20px;
+    font-weight:600;
+    line-height:28px;
+
+    margin-bottom:16px;
+
+}
+
+h5{
+
+    font-size:18px;
+    font-weight:600;
+
+}
+
+p{
+
+    font-size:16px;
+    line-height:28px;
+
+    margin-bottom:16px;
+
+    color:var(--text-light);
+
+}
+
+small{
+
+    font-size:14px;
+
+    line-height:20px;
+
+}
+
+/* ===================================================
+   SEÇÕES
+=================================================== */
+
+section{
+
+    padding:96px 0;
+
+}
+
+.section-lg{
+
+    padding:120px 0;
+
+}
+
+.section-xl{
+
+    padding:320px 0;
+
+}
+
+/* ===================================================
+   BOTÕES
+=================================================== */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:16px;
+
+    padding:20px 24px;
+
+    border:none;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    font-weight:600;
+
+}
+
+.btn-primary{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.btn-primary:hover{
+
+    background:var(--primary-dark);
+
+}
+
+.btn-outline{
+
+    border:2px solid var(--primary);
+
+    color:var(--primary);
+
+    background:white;
+
+}
+
+.btn-outline:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+/* ===================================================
+   CARDS
+=================================================== */
+
+.card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:24px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:.25s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+/* ===================================================
+   FORMULÁRIOS
+=================================================== */
+
+input,
+textarea,
+select{
+
+    width:100%;
+
+    padding:20px 24px;
+
+    border:1px solid var(--gray-light);
+
+    border-radius:20px;
+
+    outline:none;
+
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+
+    border-color:var(--primary);
+
+}
+
+/* ===================================================
+   HERO
+=================================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:120px 0;
+
+}
+
+.hero-content{
+
+    max-width:800px;
+
+}
+
+/* ===================================================
+   IMAGENS
+=================================================== */
+
+.image{
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+}
+
+.image-caption{
+
+    margin-top:8px;
+
+    font-size:14px;
+
+}
+
+/* ===================================================
+   ÍCONES
+=================================================== */
+
+.icon-sm{
+
+    width:16px;
+    height:16px;
+
+}
+
+.icon{
+
+    width:24px;
+    height:24px;
+
+}
+
+.icon-lg{
+
+    width:32px;
+    height:32px;
+
+}
+
+/* ===================================================
+   UTILITÁRIOS
+=================================================== */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.mt-1{margin-top:8px;}
+.mt-2{margin-top:16px;}
+.mt-3{margin-top:24px;}
+.mt-4{margin-top:32px;}
+.mt-5{margin-top:48px;}
+.mt-6{margin-top:64px;}
+.mt-7{margin-top:96px;}
+
+.mb-1{margin-bottom:8px;}
+.mb-2{margin-bottom:16px;}
+.mb-3{margin-bottom:24px;}
+.mb-4{margin-bottom:32px;}
+.mb-5{margin-bottom:48px;}
+.mb-6{margin-bottom:64px;}
+.mb-7{margin-bottom:96px;}
+
+/* ===================================================
+   RESPONSIVO
+=================================================== */
+
+@media(max-width:1024px){
+
+    .container{
+
+        padding-inline:32px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    [class*="col-"]{
+
+        grid-column:span 1;
+
+    }
+
+    section{
+
+        padding:64px 0;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .container{
+
+        padding-inline:24px;
+
+    }
+
+    h1{
+
+        font-size:36px;
+        line-height:44px;
+
+    }
+
+    h2{
+
+        font-size:28px;
+        line-height:36px;
+
+    }
+
+    h3{
+
+        font-size:22px;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+    }
+
+}
