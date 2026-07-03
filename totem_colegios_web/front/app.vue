@@ -11,6 +11,7 @@
             <NuxtLink to="/" class="nav-link">Home</NuxtLink>
             <NuxtLink to="/blog" class="nav-link">Blog</NuxtLink>
             <NuxtLink to="/quem-somos" class="nav-link">Quem Somos</NuxtLink>
+            <NuxtLink to="/unidade-cachoeira" class="nav-link">Cachoeira do Sul</NuxtLink>
             <button class="btn btn-primary">Contato</button>
           </div>
         </div>
@@ -36,6 +37,7 @@
               <li><NuxtLink to="/">Home</NuxtLink></li>
               <li><NuxtLink to="/blog">Blog</NuxtLink></li>
               <li><NuxtLink to="/quem-somos">Quem Somos</NuxtLink></li>
+              <li><NuxtLink to="/unidade-cachoeira">Unidade Cachoeira do Sul</NuxtLink></li>
             </ul>
           </div>
           <div class="col-3">
