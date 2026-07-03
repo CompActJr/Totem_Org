@@ -291,9 +291,9 @@ section{
 
 .btn-primary{
 
-    background:var(--primary);
-
-    color:white;
+    background:var(--primary-light);
+    
+    color:var(--gray);
 
 }
 

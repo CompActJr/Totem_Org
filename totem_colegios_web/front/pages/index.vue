@@ -6,7 +6,7 @@
     <header class="header">
       <div class="container header-inner">
         <a href="/" class="logo">
-          <img src="./assets/images/logo-totem.jpg" alt="Colégio Totem" class="logo-img" />
+          <img src="/assets/imagens/logo-totem-colegios.png" alt="Colégio Totem" class="logo-img" />
         </a>
 
         <nav class="nav" :class="{ 'nav-open': menuOpen }">
@@ -224,7 +224,7 @@
     <footer class="footer">
       <div class="container">
         <div class="footer-top">
-          <img src="./assets/images/logo-totem-branco.jpg" alt="Colégio Totem" class="footer-logo" />
+          <img src="/assets/imagens/logo-totemf.png" alt="Colégio Totem" class="footer-logo" />
           <p class="footer-tagline">É MAIS QUE COLÉGIO:<br />É TOTEM!</p>
         </div>
 
@@ -1116,17 +1116,21 @@ select:focus{
   align-items: flex-end;
 
   padding-bottom: var(--space-8);
+
+  text-align: left;
 }
 
 .hero-content h1 {
   color: var(--white);
   margin-bottom: var(--space-1);
+  text-align: left;
 }
 
 .hero-subtitle {
   color: var(--white);
   font-size: 20px;
   margin-bottom: var(--space-4);
+  text-align: left;
 }
 
 .hero-dots {
@@ -1237,6 +1241,10 @@ select:focus{
 }
 
 .unit-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;             
+
   overflow: hidden;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
@@ -1255,9 +1263,12 @@ select:focus{
 }
 
 .unit-card-body {
+  flex: 1;                      
+  display: flex;
+  flex-direction: column;
+
   background: var(--primary);
   color: var(--white);
-
   padding: var(--space-3);
 }
 
@@ -1266,8 +1277,7 @@ select:focus{
 }
 
 .unit-levels {
-  list-style: none;
-  margin-bottom: var(--space-3);
+  flex: 1; 
 }
 
 .unit-levels li {
