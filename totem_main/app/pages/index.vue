@@ -6,7 +6,7 @@
 </script>
 
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+    <h1 class="text-5xl font-bold text-blue-400">
+      Home
+    </h1>
 </template>
