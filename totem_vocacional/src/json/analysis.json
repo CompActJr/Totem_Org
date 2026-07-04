@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "type": "INVESTIGATIVO",
+    "descricao": "Você é uma pessoa analítica, curiosa e que adora desvendar como as coisas funcionam. Busca conhecimento e se sente à vontade com teoria, pesquisa e resolução de problemas complexos.",
+    "sugesteds": [
+      "Medicina",
+      "Ciências da Computação",
+      "Engenharias",
+      "Física",
+      "Química",
+      "Biomedicina",
+      "Farmácia",
+      "Ciências Biológicas",
+      "Economia",
+      "Antropologia",
+      "Arqueologia"
+    ]
+  },
+  {
+    "id": 2,
+    "type": "ARTÍSTICO",
+    "descricao": "Sua força está na criatividade, na expressão e na originalidade. Você gosta de trabalhar de formas não convencionais e valoriza a estética, a beleza e a inovação.",
+    "sugesteds": [
+      "Arquitetura e Urbanismo",
+      "Design Gráfico",
+      "Design de Moda",
+      "Artes Visuais",
+      "Cinema e Audiovisual",
+      "Publicidade e Propaganda",
+      "Jornalismo",
+      "Letras",
+      "Produção Musical"
+    ]
+  },
+  {
+    "id": 3,
+    "type": "SOCIAL",
+    "descricao": "Você se realiza ao ajudar, ensinar, cuidar e interagir com outras pessoas. Tem empatia, é cooperativo(a) e se preocupa com o bem-estar da comunidade.",
+    "sugesteds": [
+      "Psicologia",
+      "Pedagogia",
+      "Serviço Social",
+      "Enfermagem",
+      "Fisioterapia",
+      "Nutrição",
+      "Direito",
+      "Sociologia",
+      "História"
+    ]
+  },
+  {
+    "id": 4,
+    "type": "REALISTA",
+    "descricao": "Você é uma pessoa prática, que gosta de colocar a mão na massa e ver resultados concretos. Sente-se à vontade em ambientes onde pode usar ferramentas, operar máquinas ou interagir com a natureza. Seu talento está em resolver problemas de forma tangível e direta.",
+    "sugesteds": [
+      "Engenharias (Mecânica, Civil, Elétrica, de Produção)",
+      "Arquitetura e Urbanismo",
+      "Agronomia",
+      "Medicina Veterinária",
+      "Ciência da Computação (com foco em hardware ou infraestrutura)",
+      "Educação Física",
+      "Gastronomia",
+      "Geologia"
+    ]
+  },
+  {
+    "id": 5,
+    "type": "EMPREENDEDOR",
+    "descricao": "Sua principal característica é a capacidade de liderar, influenciar e motivar pessoas. Você é uma pessoa energética, ambiciosa e que não tem medo de assumir riscos para atingir seus objetivos. Gosta de iniciar projetos, negociar e trabalhar em ambientes competitivos e dinâmicos.",
+    "sugesteds": [
+      "Administração",
+      "Marketing",
+      "Publicidade e Propaganda",
+      "Direito",
+      "Relações Internacionais",
+      "Relações Públicas",
+      "Economia",
+      "Ciências Políticas",
+      "Gestão Pública"
+    ]
+  },
+  {
+    "id": 6,
+    "type": "CONVENCIONAL",
+    "descricao": "Você valoriza a organização, a precisão e a clareza. É uma pessoa metódica, eficiente e detalhista, que se destaca em tarefas que exigem planejamento, rotina e o cumprimento de regras. Trabalhar com dados, informações e processos bem definidos é o seu ponto forte.",
+    "sugesteds": [
+      "Ciências Contábeis",
+      "Logística",
+      "Administração (com foco em finanças)",
+      "Sistemas de Informação",
+      "Biblioteconomia",
+      "Arquivologia",
+      "Direito (com foco em áreas processuais)",
+      "Secretariado Executivo"
+    ]
+  }
+]

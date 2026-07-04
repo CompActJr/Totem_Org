@@ -1,6 +1,12 @@
+<script lang="ts" setup>
+  useSeoMeta({
+    title: 'Página principal',
+    description: 'esta é a página principal',
+  })
+</script>
+
 <template>
-  <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-  </div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
