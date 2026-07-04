@@ -1,5 +1,5 @@
 <template>
-    <footer class="bg-orange-600 text-yellow-200 p-4 text-center">
+    <footer class="bg-gray-900 text-yellow-200 p-4 max-h-80 min-h-60 text-center">
         © 2026 Colégio Totem
     </footer>
 </template>
