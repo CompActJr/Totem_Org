@@ -62,21 +62,6 @@ front/
 └── tsconfig.json
 ```
 
-## 🔌 Integração com Backend
-
-O frontend está pronto para consumir APIs do backend. Configure as URLs do backend em `nuxt.config.ts`:
-
-```typescript
-export default defineNuxtConfig({
-  // ... outras configurações
-  runtimeConfig: {
-    public: {
-      apiBase: process.env.API_BASE_URL || 'http://localhost:3001'
-    }
-  }
-})
-```
-
 ## 📱 Responsividade
 
 O CSS já inclui breakpoints para:
