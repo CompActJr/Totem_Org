@@ -1,3 +1,8 @@
+## Deploy
+
+[Link para documentação do deploy](/deploy.md)
+
+
 ## adicionar tailwild v4 com vite no projeto
 
 ```bash
