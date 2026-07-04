@@ -5,6 +5,19 @@ useSeoMeta({
     description: 'esta é a página principal do Site',
 })
 
+const { setMenu } = useAnchorMenu()
+
+setMenu([
+    {
+        label: 'Portais',
+        href: '#portais'
+    },
+    {
+        label: 'Contato',
+        href: '#contato'
+    }
+])
+
 </script>
 
 <template>
@@ -16,7 +29,6 @@ useSeoMeta({
     </div>
 
     <Timeline id="portais"/>
-
 
 
 </template>
