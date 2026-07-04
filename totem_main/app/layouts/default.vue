@@ -3,7 +3,7 @@
 
     <Menu/>
 
-    <main class="min-h-screen flex items-start justify-center bg-gray-100 flex-1">
+    <main class="bg-gray-100 flex-1">
       <slot />
     </main>
 

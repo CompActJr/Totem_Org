@@ -1,16 +1,22 @@
 <script lang="ts" setup>
-import HeroSlider from '~/components/HeroSlider.vue';
-
 
 useSeoMeta({
     title: 'Página principal',
-    description: 'esta é a página principal',
+    description: 'esta é a página principal do Site',
 })
 
 </script>
 
 <template>
-  
-<HeroSlider/>
-    
+
+    <HeroSlider />
+
+    <div class="px-4 py-6" id="inicio">
+        <h1 class="text-2xl text-center p-8 font-bold">Bem vindo Ao Totem</h1>
+    </div>
+
+    <Timeline id="portais"/>
+
+
+
 </template>
