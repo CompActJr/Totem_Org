@@ -3,10 +3,9 @@ export interface AnchorItem {
   href: string
 }
 
-const anchors = useState<AnchorItem[]>('anchors', () => [])
-
 export function useAnchorMenu() {
-
+  const anchors = useState<AnchorItem[]>('anchors', () => [])
+  
   function setMenu(items: AnchorItem[]) {
     anchors.value = items
   }
