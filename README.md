@@ -5,7 +5,6 @@ npm install tailwindcss @tailwindcss/vite
 ```
 
 
-
 > criar a pasta assets/stles em app e o arquvo main.css
 
 ```bash
@@ -59,4 +58,6 @@ export default defineNuxtConfig({
 
 ## [Documentação para o Nitro](/Nitro.docs.md)
 
+
+## [Prisma](https://www.prisma.io/docs/guides/frameworks)
 
