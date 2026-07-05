@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import useAnchorsMenu from '~/composables/useAnchorsMenu';
+    import { useAnchorsMenu } from '~/composables/useAnchorsMenu';
+    import { useNavigation } from '~/composables/useNavigation';
 
-
-const menuOpen = ref(false)
-const { anchors } = useAnchorsMenu();
-const { navLinks } = useNavigation();
-
+    const menuOpen = ref(false)
+    const { anchors } = useAnchorsMenu();
+    const { navLinks } = useNavigation();
+    
 </script>
 
 <template>
