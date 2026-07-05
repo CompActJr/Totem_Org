@@ -39,11 +39,17 @@ export default defineNuxtConfig({
 ## outras dependencias importantes
 
 - [ ] Swipper para o carrossel
+
+
 - [ ] Nuxt Images otimização de imagens antes de carregar as páginas
 
 [https://image.nuxt.com/usage/nuxt-img](https://image.nuxt.com/usage/nuxt-img)
 
 ### uso básico do NuxtImage
+
+```bash
+npx nuxt module add image
+```
 
 ```ts
 <NuxtImg

@@ -3,7 +3,7 @@ export interface AnchorItem {
   href: string
 }
 
-export default function useAnchorsMenu() {
+export function useAnchorsMenu() {
   const anchors = useState<AnchorItem[]>(() => [])
   
   function setMenu(items: AnchorItem[]) {

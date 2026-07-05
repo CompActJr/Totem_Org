@@ -3,7 +3,7 @@ export interface NavLink {
   href: string
 }
 
-export function useNavigation() {
+export default function useNavigation() {
   const navLinks: NavLink[] = [
     {
       label: "Início",
