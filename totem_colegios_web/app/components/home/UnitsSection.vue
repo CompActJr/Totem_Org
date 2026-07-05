@@ -31,7 +31,7 @@ defineProps({
 
 <style scoped>
 .units-grid {
-  margin-top: var(--space-5);
+  margin-top: var(--space-2);
   align-items: center;
   gap: var(--space-5);
 }
@@ -75,7 +75,7 @@ defineProps({
 
 .unit-levels {
   flex: 1;
-  margin-bottom: ;
+  margin-bottom: var(--space-3);
 }
 
 .unit-levels li {

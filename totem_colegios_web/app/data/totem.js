@@ -56,23 +56,30 @@ export const educationLevels = [
 
 export const testimonials = [
   {
-    name: 'Alberto Martins',
-    role: 'Pai Totem em Cachoeira do Sul',
-    photo: new URL('../assets/imagens/depoimento-alberto.jpg', import.meta.url).href,
-    text: 'Escolhi o Totem porque quero que meu filho cresça em um ambiente onde ele seja visto, ouvido e respeitado como indivíduo. No Totem, ele não é apenas mais um aluno, ele é parte ativa de uma comunidade que valoriza o afeto, o pensamento crítico e o aprendizado real, para a vida. Desde que começou lá, vejo diariamente o brilho nos olhos dele, a curiosidade florescendo e a autonomia se fortalecendo.',
+    name: 'Carine',
+    role: 'mãe da Sofia Comassetto - Totem Cachoeira do Sul',
+    photo: new URL('../assets/imagens/Carine.jpg', import.meta.url).href,
+    text: 'O Totem transmite confiança, segurança e estimula os alunos ao aprendizado. A equipe diretiva está constantemente envolvida e próxima dos alunos.',
   },
   {
-    name: 'Carla Souza',
-    role: 'Mãe Totem em Cruz Alta',
-    photo: new URL('../assets/imagens/depoimento-carla.jpg', import.meta.url).href,
-    text: 'A troca de escola foi uma decisão difícil, mas o acolhimento do Totem fez toda diferença. Minha filha se sente segura para errar, perguntar e criar, e isso mudou a relação dela com aprender.',
+    name: 'Vanessa Giroldi',
+    role: 'mãe do Otávio e do Inácio Adolfo Giroldi - Totem Cachoeira do Sul',
+    photo: new URL('../assets/imagens/Vanessa.jpg', import.meta.url).href,
+    text: 'Escolhi o Totem porque quero que meus filhos cresçam em um ambiente onde se sintam acolhidos, valorizados e felizes. Aqui encontrei não só qualidade no ensino, mas também cuidado, carinho e valores que fazem diferença na formação deles como pessoas. Confio na proposta pedagógica e acredito que aqui meus filhos terão um bom desenvolvimento acadêmico e pessoal. Sem dúvida foi uma das melhores escolhas que fiz para o futuro deles.',
   },
   {
-    name: 'Rodrigo Lima',
-    role: 'Pai Totem em Santa Maria',
-    photo: new URL('../assets/imagens/depoimento-rodrigo.jpg', import.meta.url).href,
-    text: 'O que mais me chama atenção é o cuidado com cada aluno individualmente. Os professores conhecem meus filhos pelo nome e pelo jeito de ser, não é só mais um número.',
+    name: 'Luisa Felix Muller',
+    role: 'mãe - Totem Cachoeira do Sul',
+    photo: new URL('../assets/imagens/Luisa.jpg', import.meta.url).href,
+    text: 'Vejo meu filho se desenvolvendo com alegria, autonomia e valores sólidos. Vejo diariamente o brilho nos olhos dele, a curiosidade florescendo e a autonomia se fortalecendo. É uma escola que prepara o mundo, sem abrir mão da infância. E isso, para mim, é transformador. A escola supera minhas expectativas ao educar com afeto e propósito. ',
   },
+  {
+    name: 'Vanice Moraes',
+    role: 'vó do Eduardo e do Guilherme - Totem Cachoeira do Sul',
+    photo: new URL('../assets/imagens/Vanice.jpg', import.meta.url).href,
+    text: 'Quem escolheu o Totem foram eles. O Eduardo e o Guilherme escolheram pela qualidade do ensino, pelos professores (ótimos) que transmitem segurança aos alunos e pelo acolhimento de todos.',
+  },
+
 ]
 
 export function buildWhatsappLink(whatsapp, message) {

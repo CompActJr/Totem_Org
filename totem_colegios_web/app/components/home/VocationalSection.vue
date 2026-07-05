@@ -35,9 +35,17 @@
 
 .vocational-text {
   align-self: center;
+  padding-left: var(--space-7);
+  padding-right: var(--space-7);
 }
 
-.btn-sm {
+.vocational-text p {
+  margin-bottom: var(--space-3);
+}
+
+.vocational-text .btn-sm {
+  display: inline-block;
+  margin-top: var(--space-2);
   padding: var(--space-1) var(--space-2);
   font-size: 13px;
 }

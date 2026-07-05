@@ -16,9 +16,10 @@
         />
         <div class="testimonial-body">
           <p class="testimonial-text">{{ current.text }}</p>
-          <p class="testimonial-author">
-            <strong>{{ current.name }}</strong> — {{ current.role }}
-          </p>
+          <div class="testimonial-author">
+            <h4 class="testimonial-name"><strong>{{ current.name }}</strong></h4>
+            <p class="testimonial-role">— {{ current.role }}</p>
+          </div>
         </div>
       </div>
 
@@ -65,7 +66,7 @@ const current = computed(() => props.testimonials[active.value])
   top: 0;
   right: var(--space-4);
 
-  font-size: 160px;
+  font-size: 240px;
   line-height: 1;
   font-weight: 700;
 
@@ -78,15 +79,19 @@ const current = computed(() => props.testimonials[active.value])
   display: flex;
   gap: var(--space-4);
   align-items: flex-start;
+  min-height: 220px;
+  padding-left: var(--space-7);
+  padding-right: var(--space-10);
+  width: 100%;
 
   position: relative;
   z-index: 1;
 }
 
 .testimonial-photo {
-  width: 96px;
-  height: 96px;
-  min-width: 96px;
+  width: 156px;
+  height: 156px;
+  min-width: 156px;
 
   object-fit: cover;
   border-radius: var(--radius-md);
@@ -95,11 +100,27 @@ const current = computed(() => props.testimonials[active.value])
 .testimonial-text {
   color: var(--text);
   margin-bottom: var(--space-2);
+  line-height: 2.0;
 }
 
 .testimonial-author {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.testimonial-name {
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--text-light);
+  margin: 0;
+}
+
+.testimonial-role {
   font-size: 14px;
   color: var(--text-light);
+  margin: 0;
 }
 
 .testimonial-dots {

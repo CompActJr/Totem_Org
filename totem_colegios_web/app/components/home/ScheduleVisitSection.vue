@@ -4,8 +4,8 @@
     <div class="cta-overlay"></div>
 
     <div class="container cta-inner">
-      <h2>Agende sua Visita</h2>
-      <p class="cta-subtitle">Colégio Totem</p>
+      <h1>Agende sua Visita</h1>
+      <h2 class="cta-subtitle">Colégio Totem</h2>
 
       <form class="cta-form" @submit.prevent="submitForm">
         <input type="text" v-model="form.name" placeholder="Nome" class="full-width" required />
@@ -85,13 +85,17 @@ function submitForm() {
   max-width: 640px;
 }
 
-.cta-inner h2 {
+.cta-inner h1 {
   color: var(--white);
+  text-align: center;
 }
 
 .cta-subtitle {
   color: var(--white);
   margin-bottom: var(--space-5);
+  font-weight: 400;
+  margin-top: -24px;
+  text-align: center;
 }
 
 .cta-form {
