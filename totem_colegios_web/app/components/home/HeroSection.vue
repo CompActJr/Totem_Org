@@ -34,7 +34,7 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import WhatsappButton from '../layout/WhatsappButton.vue'
+import WhatsappButton from '@/components/layout/WhatsappButton.vue'
 import { unidades } from '@/data/totem.js'
 
 const props = defineProps({

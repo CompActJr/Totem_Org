@@ -34,7 +34,7 @@
 
     /* TIPOGRAFIA */
 
-    --font-family:"Inter",sans-serif;
+    --font-family:"DIN Next LT Pro",sans-serif;
 
     /* GRID */
 
@@ -53,7 +53,9 @@
     --space-6:64px;
     --space-7:96px;
     --space-8:120px;
-    --space-9:320px;
+    --space-9:200px;
+    --space-10:240px;
+    --space-11:320px;
 
     /* BORDER RADIUS */
 
@@ -287,11 +289,11 @@ section{
 
     gap:16px;
 
-    padding:20px 24px;
+    padding:16px 24px;
 
     border:none;
 
-    border-radius:20px;
+    border-radius:50px;
 
     cursor:pointer;
 

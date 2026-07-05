@@ -44,6 +44,8 @@ const menuOpen = ref(false)
   z-index: 100;
 
   background: var(--primary);
+  max-height: 80px;
+  overflow: hidden;
 }
 
 .header-inner {
@@ -51,6 +53,7 @@ const menuOpen = ref(false)
   align-items: center;
   gap: var(--space-4);
 
+  min-height: 80px;
   padding-block: var(--space-2);
 }
 
@@ -89,10 +92,9 @@ const menuOpen = ref(false)
 .btn-interest {
   background: var(--primary-light);
   color: var(--black);
-  padding: var(--space-2) var(--space-3);
-  border-radius: var(--radius-lg);
   font-size: 13px;
   white-space: nowrap;
+    padding:12px 24px;
 }
 
 .nav-toggle {

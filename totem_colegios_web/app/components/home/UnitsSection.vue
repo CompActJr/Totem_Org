@@ -32,12 +32,15 @@ defineProps({
 <style scoped>
 .units-grid {
   margin-top: var(--space-5);
+  align-items: center;
+  gap: var(--space-5);
 }
 
 .unit-card {
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%; 
 
   overflow: hidden;
   border-radius: var(--radius-lg);
@@ -45,7 +48,7 @@ defineProps({
 }
 
 .unit-card-image {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 6 / 5;
   overflow: hidden;
 }
 
@@ -72,11 +75,12 @@ defineProps({
 
 .unit-levels {
   flex: 1;
+  margin-bottom: ;
 }
 
 .unit-levels li {
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.3;
 }
 
 .btn-sm {

@@ -49,7 +49,7 @@ const link = computed(() => buildWhatsappLink(props.whatsapp, props.message))
 .whatsapp-label {
   font-size: 13px;
   font-weight: 600;
-  max-width: 70px;
+  max-width: 120px;
   line-height: 1.2;
 }
 

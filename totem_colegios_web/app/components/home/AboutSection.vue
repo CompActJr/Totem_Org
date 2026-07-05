@@ -3,7 +3,7 @@
     <div class="container grid">
       <div class="col-6 about-text">
         <p class="eyebrow">POR QUE O TOTEM</p>
-        <h2>É MAIS QUE<br />COLÉGIO...</h2>
+        <h1>É MAIS QUE<br />COLÉGIO...</h1>
 
         <p>Bem-vindo(a) ao SEU FUTURO! Prepare-se para construir o amanhã.</p>
         <p>
@@ -26,14 +26,39 @@
 <style scoped>
 .section-about {
   background: var(--surface);
+  min-height: 800px;
+  padding: 0;
+}
+
+.grid {
+  min-height: 800px;
 }
 
 .about-text {
   align-self: center;
+  padding-top: var(--space-9);
+  padding-bottom: var(--space-8);
+}
+
+.about-image {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  padding-left: var(--space-8);
 }
 
 .about-image img {
-  height: 100%;
+  display: block;
+  width: 100%;
+  max-height: 800px;
+  height: 90%;
   object-fit: cover;
+  object-position: bottom;
+
+
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 </style>
