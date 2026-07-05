@@ -1,5 +1,7 @@
 /* ===================================================
-   DESIGN SYSTEM.
+   DESIGN SYSTEM — base global do site.
+   Importar UMA vez no ponto de entrada da aplicação
+   (main.js / App.vue), nunca dentro de cada página.
 =================================================== */
 
 :root{
@@ -19,6 +21,16 @@
     --text:#000000;
     --text-light:#555555;
     --white:#FFFFFF;
+
+    /* CORES DE APOIO (usadas em seções específicas,
+       mas registradas aqui para poderem ser reaproveitadas
+       em qualquer página/componente) */
+
+    --yellow-soft:#FFF6C9;
+    --whatsapp-green:#25D366;
+    --overlay-light:rgba(0,0,0,.15);
+    --overlay-dark:rgba(0,0,0,.55);
+    --overlay-cta:rgba(0,0,0,.6);
 
     /* TIPOGRAFIA */
 
@@ -292,7 +304,7 @@ section{
 .btn-primary{
 
     background:var(--primary-light);
-    
+
     color:var(--gray);
 
 }
@@ -382,7 +394,7 @@ select:focus{
 }
 
 /* ===================================================
-   HERO
+   HERO (genérico)
 =================================================== */
 
 .hero{
@@ -453,6 +465,73 @@ select:focus{
 }
 
 /* ===================================================
+   PADRÕES REUTILIZÁVEIS ENTRE SEÇÕES
+   (eram duplicados/alterados dentro do index.vue —
+   centralizados aqui para valer em qualquer página)
+=================================================== */
+
+.eyebrow{
+
+    display:inline-flex;
+    align-items:center;
+    gap:var(--space-2);
+
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--primary);
+
+    margin-bottom:var(--space-3);
+
+}
+
+.eyebrow::after{
+
+    content:'';
+    width:48px;
+    height:2px;
+    background:var(--primary);
+
+}
+
+.dot{
+
+    width:8px;
+    height:8px;
+    border-radius:50%;
+
+    background:rgba(0,0,0,.2);
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.dot.active{
+
+    background:var(--primary);
+    width:20px;
+    border-radius:var(--radius-sm);
+
+}
+
+/* variante clara do dot, para usar sobre fundos escuros/fotos
+   (ex.: carrossel do hero) */
+.dot-on-dark{
+
+    background:rgba(255,255,255,.5);
+
+}
+
+.dot-on-dark.active{
+
+    background:var(--white);
+
+}
+
+/* ===================================================
    UTILITÁRIOS
 =================================================== */
 
@@ -479,7 +558,7 @@ select:focus{
 .mb-7{margin-bottom:96px;}
 
 /* ===================================================
-   RESPONSIVO
+   RESPONSIVO (base do design system)
 =================================================== */
 
 @media(max-width:1024px){
@@ -541,6 +620,30 @@ select:focus{
     .btn{
 
         width:100%;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .container{
+
+        padding-inline:16px;
+
+    }
+
+    h1{
+
+        font-size:30px;
+        line-height:36px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+        line-height:32px;
 
     }
 
