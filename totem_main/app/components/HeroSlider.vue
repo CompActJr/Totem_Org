@@ -22,7 +22,7 @@ const banners = [
 
         <SwiperSlide v-for="banner in banners" :key="banner" class="relative">
             <NuxtImg :src="banner" class="w-full" loading="lazy" format="webp" />
-            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="absolute inset-0 bg-black/20"></div>
         </SwiperSlide>
 
     </Swiper>

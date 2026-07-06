@@ -1,4 +1,10 @@
 <script lang="ts" setup>
+
+/**
+ * Blog Interativo
+ * @author Jonas
+ */
+
 import Post from '~/components/blog/Post.vue';
 import Postgrid from '~/components/blog/Postgrid.vue';
 import Search from '~/components/blog/Search.vue';
@@ -10,6 +16,18 @@ useSeoMeta({
   ogTitle: 'Blog do Totem | Notícias, eventos e novidades',
   ogDescription: 'Acompanhe notícias, eventos e novidades das unidades do Totem em um só lugar. Descubra conteúdos relevantes para pais, alunos e comunidade.'
 })
+
+const filters = reactive({
+  tags: [],
+  start: null,
+  end: null
+})
+
+/*
+const { data: posts } = await useFetch('/api/posts', {
+  query: filters
+})
+*/
 
 </script>
 
@@ -25,13 +43,10 @@ useSeoMeta({
     </p>
   </div>
 
-  <ClientOnly>
-    
-    <Search />
+  <Search />
 
-    <Postgrid :posts="posts" v-slot="{ post }">
-      <Post :post="post" />
-    </Postgrid>
+  <Postgrid :posts="posts" v-slot="{ post }">
+    <Post :post="post" />
+  </Postgrid>
 
-  </ClientOnly>
 </template>

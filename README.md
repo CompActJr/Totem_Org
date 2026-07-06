@@ -108,7 +108,6 @@ export default defineNuxtConfig({
 })
 ```
 
-
 ## Outras dependencias importantes
 
 1. Swipper para o carrossel
