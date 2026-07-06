@@ -17,7 +17,7 @@ layouts, composables e muito mais.
     image: "https://picsum.photos/800/500?random=1",
     author: "Jonas Silva",
     createdAt: "2026-07-04",
-    category: "Nuxt",
+    tags: ["Nuxt"],
     unidade: "Ijuí"
   },
 
@@ -34,7 +34,7 @@ de código.
     image: "https://picsum.photos/800/500?random=2",
     author: "Jonas Silva",
     createdAt: "2026-07-03",
-    category: "Backend",
+    tags: ["Backend"],
     unidade: "Cachoeira"
   },
 
@@ -51,7 +51,7 @@ mais rápida.
     image: "https://picsum.photos/800/500?random=3",
     author: "Jonas Silva",
     createdAt: "2026-07-02",
-    category: "CSS",
+    tags: ["CSS"],
     unidade: "Santa Maria"
   }
 ];

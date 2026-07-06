@@ -5,30 +5,22 @@ useSeoMeta({
     description: 'esta é a página principal do Site',
 })
 
-const { setMenu } = useAnchorMenu()
-
-setMenu([
-    {
-        label: 'Portais',
-        href: '#portais'
-    },
-    {
-        label: 'Contato',
-        href: '#contato'
-    }
-])
-
 </script>
 
 <template>
 
     <HeroSlider />
 
-    <div class="px-4 py-6" id="inicio">
-        <h1 class="text-2xl text-center p-8 font-bold">Bem vindo Ao Totem</h1>
+    <div class="px-4 py-32">
+        <h1 class="px-4 py-3 text-gray-600 text-6xl text-center font-bold">
+            Totem
+        </h1>
+        <p class="px-4 py-3 text-gray-600 text-center text-xl">
+            Conheça a organização e seus principais portais institucionais
+        </p>
     </div>
 
-    <Timeline id="portais"/>
+    <Timeline id="portais" />
 
 
 </template>

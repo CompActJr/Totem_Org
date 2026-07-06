@@ -1,5 +1,5 @@
 <template>
-  <nav class="navHeader" :class="{ hidden: !menuAberto }">
+  <nav class="navHeader">
     <div class="logo">
       <img :src="logomarca" alt="" />
       <span>TOTEM VOCACIONAL</span>
@@ -23,15 +23,13 @@
 
     </div>
 
-    <button class="toggleMenu" @click="toggleMenu()" :class="{ hidden: !menuAberto }">
-      {{ menuAberto ? '^' : 'V' }}
-    </button>
+    
   </nav>
 </template>
 
 <script setup lang="ts">
 import { useTestStore } from '@/stores/Teste';
-import { onMounted, ref, watch } from 'vue';
+import { ref } from 'vue';
 
 import logomarca from '@/images/logo.png';
 import i_exit from '@/images/i_exit.png';
@@ -39,24 +37,14 @@ import i_close from '@/images/i_close.png';
 
 const testeStore = useTestStore();
 
-const menuAberto = ref(false);
-const opcoesAberta = ref(false);
-
-const toggleMenu = () => {
-  menuAberto.value = !menuAberto.value;
-  opcoesAberta.value = false;
-}
+const menuAberto = ref(true);
 
 const resetar = () => {
   testeStore.resetar();
   testeStore.removerUsuario;
 }
 
-onMounted(() => {
-  setTimeout(() => {
-    menuAberto.value = true;
-  }, 300)
-})
+// menuAberto is always true now; toggle functionality removed
 </script>
 
 <style lang="scss">
@@ -139,28 +127,5 @@ $iconMenu: '/images/icon_menu.png';
     }
 }
 
-.toggleMenu {
-  position: absolute;
-  z-index: 200;
-  bottom: -24px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-
-  background-color: $primary_2;
-  color: $primary_3;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: $primary_4 0 4px 10px;
-
-  transition: background-color 0.2s ease, color 0.2s ease;
-
-  &.hidden {
-    background-color: $primary_1;
-    color: $primary_2;
-  }
-}
+ 
 </style>

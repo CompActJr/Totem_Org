@@ -6,6 +6,6 @@ export interface Post {
   image: string
   author: string
   createdAt: string
-  category: string
+  tags: string[]
   unidade: string
 }

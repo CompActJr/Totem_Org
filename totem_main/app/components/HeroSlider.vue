@@ -20,8 +20,9 @@ const banners = [
     <Swiper :modules="[Autoplay, Pagination]" :autoplay="{ delay: 3000 }" :slides-per-view="1"
         :pagination="{ clickable: true }">
 
-        <SwiperSlide v-for="banner in banners" :key="banner">
+        <SwiperSlide v-for="banner in banners" :key="banner" class="relative">
             <NuxtImg :src="banner" class="w-full" loading="lazy" format="webp" />
+            <div class="absolute inset-0 bg-black/20"></div>
         </SwiperSlide>
 
     </Swiper>

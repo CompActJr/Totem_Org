@@ -1,9 +1,25 @@
 <template>
-  <div class="min-h-screen flex flex-col">
+   <div class="relative min-h-screen">
+
+    <!-- Fundo -->
+    <div
+      class="
+        fixed
+        inset-0
+        -z-20
+        bg-cover
+        bg-center
+        bg-fixed
+      "
+      style="background-image: url('/images/bkg-grafismo-lobo.jpg')"
+    />
+
+    <!-- Overlay -->
+    <div class="fixed inset-0 -z-10 bg-white/70"/>
 
     <Menu/>
 
-    <main class="bg-gray-100 flex-1">
+    <main class="flex-1">
       <slot />
     </main>
 

@@ -1,15 +1,19 @@
 <script setup lang="ts">
-import { useNavigation } from '~/composables/useNavigation';
+import useAnchorsMenu from '~/composables/useAnchorsMenu';
+
+
 const menuOpen = ref(false)
-const { anchors } = useAnchorMenu();
+const { anchors } = useAnchorsMenu();
 const { navLinks } = useNavigation();
+
 </script>
 
 <template>
   <header class="flex items-center justify-between px-6 bg-orange-600 text-yellow-200 shadow-lg min-h-24">
 
-      <NuxtLink to="/">
-        <img src="/images/logo-totem-colegios.png" alt="Colégio Totem" width="128px" />
+      <NuxtLink to="/" class="flex items-center gap-8">
+        <img src="/images/logo.png" alt="Colégio Totem" width="64px" />
+        <span class="font-bold text-white text-xl">TOTEM</span>
       </NuxtLink>
 
       <button class="flex flex-col gap-1 md:hidden" @click="menuOpen = !menuOpen">
