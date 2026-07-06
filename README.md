@@ -131,3 +131,20 @@ export default defineNuxtConfig({
 
 ### [Prisma Docs](https://www.prisma.io/docs/guides/frameworks)
 
+```scss
+$primary_1: #D9D9D9;
+
+$primary_2: #ffffff;
+
+$primary_3: #FAA62F;
+
+$primary_4: #000000;
+
+$primary_5: #EF6B01;
+
+$primary_6: #ED6B01;
+
+$primary_7: #605851;
+
+$primary_8: #000000bb;
+```
