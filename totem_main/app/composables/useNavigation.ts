@@ -6,12 +6,16 @@ export interface NavLink {
 export default function useNavigation() {
   const navLinks: NavLink[] = [
     {
-      label: "Início",
+      label: "INÍCIO",
       href: "/"
     },
     {
-      label: "Blog",
+      label: "BLOG",
       href: "/blog"
+    },
+    {
+      label: "VOCACIONAL",
+      href: "/vocacional/"
     }
   ]
 
