@@ -12,6 +12,10 @@ export default function useNavigation() {
     {
       label: "Blog",
       href: "/blog"
+    },
+    {
+      label: "Vocacional",
+      href: "/vocacional"
     }
   ]
 
