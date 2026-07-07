@@ -1,0 +1,114 @@
+datasource db {
+  provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client"
+  output   = "../server/generated/prisma"
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model depoimentos {
+  id         BigInt   @id @default(autoincrement())
+  conteudo   String
+  autor      String
+  image_url  String?
+  categoria  String?
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+  updated_at DateTime @default(now()) @db.Timestamptz(6)
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model evento_unidade {
+  evento_id  BigInt
+  unidade_id BigInt
+  eventos    eventos  @relation(fields: [evento_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  unidades   unidades @relation(fields: [unidade_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([evento_id, unidade_id])
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model eventos {
+  id             BigInt           @id @default(autoincrement())
+  titulo         String
+  descricao      String?
+  data_inicio    DateTime?        @db.Date
+  data_fim       DateTime?        @db.Date
+  hora_inicio    DateTime?        @db.Time(6)
+  hora_fim       DateTime?        @db.Time(6)
+  local          String?
+  imagem_url     String?
+  categoria      String?
+  ativo          Boolean          @default(true)
+  destaque       Boolean          @default(false)
+  created_at     DateTime         @default(now()) @db.Timestamptz(6)
+  updated_at     DateTime         @default(now()) @db.Timestamptz(6)
+  evento_unidade evento_unidade[]
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model post_unidade {
+  post_id    BigInt
+  unidade_id BigInt
+  posts      posts    @relation(fields: [post_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  unidades   unidades @relation(fields: [unidade_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([post_id, unidade_id])
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model posts {
+  id           BigInt         @id @default(autoincrement())
+  titulo       String
+  resumo       String?
+  conteudo     String?
+  imagem_url   String?
+  autor        String?
+  categoria    String?
+  ativo        Boolean        @default(true)
+  destaque     Boolean        @default(false)
+  created_at   DateTime       @default(now()) @db.Timestamptz(6)
+  updated_at   DateTime       @default(now()) @db.Timestamptz(6)
+  post_unidade post_unidade[]
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model professores {
+  id         BigInt   @id @default(autoincrement())
+  nome       String
+  foto_url   String?
+  disciplina String?
+  email      String?
+  telefone   String?
+  descricao  String?
+  instagram  String?
+  linkedin   String?
+  ativo      Boolean  @default(true)
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+  updated_at DateTime @default(now()) @db.Timestamptz(6)
+  unidade_id BigInt
+  unidades   unidades @relation(fields: [unidade_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model unidades {
+  id             BigInt           @id @default(autoincrement())
+  nome           nome_unidade
+  cep            String?
+  cidade         String?
+  estado         String?
+  endereco       String?
+  evento_unidade evento_unidade[]
+  post_unidade   post_unidade[]
+  professores    professores[]
+}
+
+enum nome_unidade {
+  Col_gio___Santa_Maria         @map("Colégio - Santa Maria")
+  Col_gio___Cruz_Alta           @map("Colégio - Cruz Alta")
+  Col_gio___Cachoeira_do_Sul    @map("Colégio - Cachoeira do Sul")
+  Vestibular___Santa_Maria      @map("Vestibular - Santa Maria")
+  Vestibular___Cruz_Alta        @map("Vestibular - Cruz Alta")
+  Vestibular___Cachoeira_do_Sul @map("Vestibular - Cachoeira do Sul")
+}
