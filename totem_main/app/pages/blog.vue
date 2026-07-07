@@ -8,7 +8,7 @@
 import Post from '~/components/blog/Post.vue';
 import Postgrid from '~/components/blog/Postgrid.vue';
 import Search from '~/components/blog/Search.vue';
-import { posts } from '~/data/posts.mock';
+import data from '~/data/posts.json';
 
 useSeoMeta({
   title: 'Blog do Totem | Notícias, eventos e novidades',
@@ -45,7 +45,7 @@ const { data: posts } = await useFetch('/api/posts', {
 
   <Search />
 
-  <Postgrid :posts="posts" v-slot="{ post }">
+  <Postgrid :posts="data" v-slot="{ post }">
     <Post :post="post" />
   </Postgrid>
 

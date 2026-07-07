@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "titulo": "Se você tivesse uma tarde livre para um projeto, você escolheria:",
+    "opcoes": [
+      { "id": 1, "analysisEnum": "INVESTIGATIVO", "text": "Analisar dados ou resolver um quebra-cabeça complexo." },
+      { "id": 2, "analysisEnum": "ARTÍSTICO", "text": "Escrever um conto, desenhar ou compor uma música." },
+      { "id": 3, "analysisEnum": "SOCIAL", "text": "Organizar um evento beneficente ou ensinar algo para um grupo." },
+      { "id": 4, "analysisEnum": "REALISTA", "text": "Montar um móvel, consertar um aparelho ou trabalhar no jardim." },
+      { "id": 5, "analysisEnum": "EMPREENDEDOR", "text": "Criar um plano para um novo negócio ou liderar uma equipe em um jogo." },
+      { "id": 6, "analysisEnum": "CONVENCIONAL", "text": "Organizar seus arquivos, planejar sua semana ou criar uma planilha." }
+    ]
+  },
+  {
+    "id": 2,
+    "titulo": "Qual tipo de filme ou série mais te atrai?",
+    "opcoes": [
+      { "id": 1, "analysisEnum": "INVESTIGATIVO", "text": "Documentários científicos ou de natureza." },
+      { "id": 2, "analysisEnum": "SOCIAL", "text": "Dramas sobre relacionamentos humanos e superação." },
+      { "id": 3, "analysisEnum": "ARTÍSTICO", "text": "Ficção científica com mundos fantásticos ou biografias de artistas." },
+      { "id": 4, "analysisEnum": "EMPREENDEDOR", "text": "Histórias sobre grandes empreendedores, política ou mercado financeiro." },
+      { "id": 5, "analysisEnum": "REALISTA", "text": "Filmes de ação com muita construção e mecanismos." },
+      { "id": 6, "analysisEnum": "CONVENCIONAL", "text": "Suspenses policiais onde a organização e os detalhes são a chave." }
+    ]
+  },
+  {
+    "id": 3,
+    "titulo": "Em um trabalho em grupo, qual papel você naturalmente assume?",
+    "opcoes": [
+      { "id": 1, "analysisEnum": "INVESTIGATIVO", "text": "O pesquisador que busca informações e valida os fatos." },
+      { "id": 2, "analysisEnum": "SOCIAL", "text": "O pacificador que garante que todos se sintam incluídos e ouvidos." },
+      { "id": 3, "analysisEnum": "EMPREENDEDOR", "text": "O líder que define metas, motiva a equipe e apresenta o resultado." },
+      { "id": 4, "analysisEnum": "REALISTA", "text": "O \"mão na massa\" que constrói o protótipo ou a parte prática." },
+      { "id": 5, "analysisEnum": "CONVENCIONAL", "text": "O organizador que monta o cronograma e cuida dos detalhes da entrega." },
+      { "id": 6, "analysisEnum": "ARTÍSTICO", "text": "O criativo que pensa na identidade visual e na forma de apresentar." }
+    ]
+  },
+  {
+    "id": 4,
+    "titulo": "Que tipo de conteúdo você mais consome na internet?",
+    "opcoes": [
+      { "id": 1, "analysisEnum": "REALISTA", "text": "Tutoriais de \"faça você mesmo\" (DIY) ou vídeos sobre mecânica/eletrônica." },
+      { "id": 2, "analysisEnum": "INVESTIGATIVO", "text": "Canais de ciência, tecnologia e curiosidades." },
+      { "id": 3, "analysisEnum": "ARTÍSTICO", "text": "Perfis de arte, design, moda ou fotografia." },
+      { "id": 4, "analysisEnum": "SOCIAL", "text": "Vídeos sobre psicologia, desenvolvimento pessoal e causas sociais." },
+      { "id": 5, "analysisEnum": "EMPREENDEDOR", "text": "Notícias sobre economia, startups e dicas de produtividade." },
+      { "id": 6, "analysisEnum": "CONVENCIONAL", "text": "Vídeos de organização, planejamento e rotinas de estudo." }
+    ]
+  },
+  {
+    "id": 5,
+    "titulo": "Qual ambiente de trabalho parece mais interessante para você?",
+    "opcoes": [
+      { "id": 1, "analysisEnum": "INVESTIGATIVO", "text": "Um laboratório de pesquisa ou uma empresa de tecnologia." },
+      { "id": 2, "analysisEnum": "REALISTA", "text": "Uma oficina, um canteiro de obras ou ao ar livre." },
+      { "id": 3, "analysisEnum": "SOCIAL", "text": "Um hospital, uma escola, uma clínica ou uma ONG." },
+      { "id": 4, "analysisEnum": "ARTÍSTICO", "text": "Uma agência de publicidade, um estúdio de design ou uma produtora de filmes."},
+      { "id": 5, "analysisEnum": "EMPREENDEDOR", "text": "Um escritório corporativo, gerenciando projetos e pessoas."},
+      { "id": 6, "analysisEnum": "CONVENCIONAL", "text": "Um escritório de advocacia, um banco ou uma repartição pública." }
+    ]
+  },
+  {
+    "id": 6,
+    "titulo": "As pessoas costumam dizer que eu sou bom(a) em:",
+    "opcoes": [
+      { "id": 1, "analysisEnum": "REALISTA", "text": "Consertar coisas ou entender como mecanismos funcionam." },
+      { "id": 2, "analysisEnum": "INVESTIGATIVO", "text": "Explicar assuntos complexos de forma clara e lógica." },
+      { "id": 3, "analysisEnum": "ARTÍSTICO", "text": "Ter ideias originais e pensar fora da caixa." },
+      { "id": 4, "analysisEnum": "SOCIAL", "text": "Ouvir os outros e dar bons conselhos." },
+      { "id": 5, "analysisEnum": "EMPREENDEDOR", "text": "Convencer as pessoas sobre uma ideia e tomar a iniciativa." },
+      { "id": 6, "analysisEnum": "CONVENCIONAL", "text": "Manter tudo em ordem e não esquecer de nenhum detalhe." }
+    ]
+  },
+  {
+    "id": 7,
+    "titulo": "Na escola, eu sempre tive mais facilidade em:",
+    "opcoes": [
+      { "id": 1, "analysisEnum": "REALISTA", "text": "Aulas práticas, como laboratórios, educação física ou artes." },
+      { "id": 2, "analysisEnum": "INVESTIGATIVO", "text": "Matérias que exigiam pesquisa e raciocínio, como Física e Química." },
+      { "id": 3, "analysisEnum": "ARTÍSTICO", "text": "Disciplinas que permitiam a autoexpressão, como Literatura e Filosofia." },
+      { "id": 4, "analysisEnum": "SOCIAL", "text": "Trabalhos em grupo e discussões em sala de aula." },
+      { "id": 5, "analysisEnum": "EMPREENDEDOR", "text": "Liderar a turma, organizar eventos ou participar de grêmios estudantis." },
+      { "id": 6, "analysisEnum": "CONVENCIONAL", "text": "Manter o caderno organizado, cumprir prazos e seguir as regras." }
+    ]
+  },
+  {
+    "id": 8,
+    "titulo": "Quando enfrento um problema difícil, minha primeira reação é:",
+    "opcoes": [
+      { "id": 1, "analysisEnum": "REALISTA", "text": "Tentar desmontar o problema em partes práticas para resolvê-lo." },
+      { "id": 2, "analysisEnum": "INVESTIGATIVO", "text": "Pesquisar todas as informações disponíveis antes de tomar uma decisão." },
+      { "id": 3, "analysisEnum": "ARTÍSTICO", "text": "Imaginar várias soluções criativas e diferentes." },
+      { "id": 4, "analysisEnum": "SOCIAL", "text": "Conversar com alguém de confiança para ter uma outra perspectiva." },
+      { "id": 5, "analysisEnum": "EMPREENDEDOR", "text": "Assumir o controle da situação e delegar tarefas para resolvê-la." },
+      { "id": 6, "analysisEnum": "CONVENCIONAL", "text": "Criar um passo a passo ou um plano de ação para organizar a solução." }
+    ]
+  },
+  {
+    "id": 9,
+    "titulo": "Eu me sinto mais à vontade para expressar minhas ideias...",
+    "opcoes": [
+      { "id": 1, "analysisEnum": "REALISTA", "text": "Construindo ou mostrando algo que eu fiz." },
+      { "id": 2, "analysisEnum": "INVESTIGATIVO", "text": "Através de um texto bem pesquisado ou de um argumento lógico." },
+      { "id": 3, "analysisEnum": "ARTÍSTICO", "text": "Por meio de desenhos, música, textos criativos ou imagens." },
+      { "id": 4, "analysisEnum": "SOCIAL", "text": "Em uma conversa, ouvindo e trocando com outras pessoas." },
+      { "id": 5, "analysisEnum": "EMPREENDEDOR", "text": "Fazendo uma apresentação ou um discurso para um grupo." },
+      { "id": 6, "analysisEnum": "CONVENCIONAL", "text": "Através de gráficos, planilhas ou relatórios bem estruturados." }
+    ]
+  },
+  {
+    "id": 10,
+    "titulo": "Se eu tivesse que criar um projeto do zero, minha maior contribuição seria:",
+    "opcoes": [
+      { "id": 1, "analysisEnum": "REALISTA", "text": "Na parte de execução, construindo o que foi planejado." },
+      { "id": 2, "analysisEnum": "INVESTIGATIVO", "text": "Na fase de pesquisa e análise de viabilidade do projeto." },
+      { "id": 3, "analysisEnum": "ARTÍSTICO", "text": "Na concepção da ideia original e na identidade visual." },
+      { "id": 4, "analysisEnum": "SOCIAL", "text": "Garantindo a boa comunicação e o bom relacionamento da equipe." },
+      { "id": 5, "analysisEnum": "EMPREENDEDOR", "text": "Na venda da ideia, buscando parceiros e gerenciando o projeto." },
+      { "id": 6, "analysisEnum": "CONVENCIONAL", "text": "No planejamento de etapas, custos e prazos de entrega." }
+    ]
+  },
+  {
+    "id": 11,
+    "titulo": "Para mim, a maior recompensa de um trabalho seria:",
+    "opcoes": [
+      { "id": 1, "analysisEnum": "REALISTA", "text": "Ver um resultado concreto e tangível do meu esforço." },
+      { "id": 2, "analysisEnum": "INVESTIGATIVO", "text": "Estar sempre aprendendo e me tornando um especialista em um assunto." },
+      { "id": 3, "analysisEnum": "ARTÍSTICO", "text": "Ter a liberdade de me expressar e criar coisas novas." },
+      { "id": 4, "analysisEnum": "SOCIAL", "text": "Saber que estou fazendo a diferença na vida das pessoas ou da sociedade." },
+      { "id": 5, "analysisEnum": "EMPREENDEDOR", "text": "Alcançar posições de liderança e ter grande sucesso financeiro." },
+      { "id": 6, "analysisEnum": "CONVENCIONAL", "text": "Ter um ambiente de trabalho estável, seguro e previsível." }
+    ]
+  },
+  {
+    "id": 12,
+    "titulo": "Eu me sentiria mais realizado(a) em um trabalho que me oferecesse:",
+    "opcoes": [
+      { "id": 1, "analysisEnum": "REALISTA", "text": "Atividades dinâmicas e a chance de trabalhar com as mãos ou ao ar livre." },
+      { "id": 2, "analysisEnum": "INVESTIGATIVO", "text": "Desafios intelectuais constantes e problemas complexos para resolver." },
+      { "id": 3, "analysisEnum": "ARTÍSTICO", "text": "Flexibilidade de horários e um ambiente que incentive a originalidade." },
+      { "id": 4, "analysisEnum": "SOCIAL", "text": "A oportunidade de colaborar em equipe e ajudar os outros a crescer." },
+      { "id": 5, "analysisEnum": "EMPREENDEDOR", "text": "A chance de liderar projetos, tomar decisões importantes e competir." },
+      { "id": 6, "analysisEnum": "CONVENCIONAL", "text": "Processos claros, um plano de carreira definido e organização." }
+    ]
+  },
+  {
+    "id": 13,
+    "titulo": "Daqui a 10 anos, eu gostaria de ser reconhecido(a) por...",
+    "opcoes": [
+      { "id": 1, "analysisEnum": "REALISTA", "text": "Minha habilidade técnica e por ser uma referência prática na minha área." },
+      { "id": 2, "analysisEnum": "INVESTIGATIVO", "text": "Minhas descobertas, pesquisas e profundo conhecimento." },
+      { "id": 3, "analysisEnum": "ARTÍSTICO", "text": "Minha criatividade e por ter um estilo único e inovador." },
+      { "id": 4, "analysisEnum": "SOCIAL", "text": "Meu impacto positivo na comunidade e minha capacidade de ajudar." },
+      { "id": 5, "analysisEnum": "EMPREENDEDOR", "text": "Meu sucesso como líder ou empreendedor(a) e minha capacidade de influência." },
+      { "id": 6, "analysisEnum": "CONVENCIONAL", "text": "Minha confiabilidade, eficiência e capacidade de organização." }
+    ]
+  },
+  {
+    "id": 14,
+    "titulo": "O tipo de impacto que eu quero causar no mundo é...",
+    "opcoes": [
+      { "id": 1, "analysisEnum": "REALISTA", "text": "Construindo coisas úteis e duradouras para a sociedade." },
+      { "id": 2, "analysisEnum": "INVESTIGATIVO", "text": "Expandindo o conhecimento humano e descobrindo novas verdades." },
+      { "id": 3, "analysisEnum": "ARTÍSTICO", "text": "Trazendo mais beleza, emoção e inspiração para o dia a dia das pessoas." },
+      { "id": 4, "analysisEnum": "SOCIAL", "text": "Promovendo mais justiça social, saúde e bem-estar para todos." },
+      { "id": 5, "analysisEnum": "EMPREENDEDOR", "text": "Gerando empregos, criando negócios inovadores e movimentando a economia." },
+      { "id": 6, "analysisEnum": "CONVENCIONAL", "text": "Criando sistemas mais eficientes e seguros que melhorem a vida em sociedade." }
+    ]
+  },
+  {
+    "id": 15,
+    "titulo": "O que mais me motivaria a levantar para trabalhar todos os dias é a possibilidade de:",
+    "opcoes": [
+      { "id": 1, "analysisEnum": "REALISTA", "text": "Usar ferramentas e equipamentos para criar ou consertar algo." },
+      { "id": 2, "analysisEnum": "INVESTIGATIVO", "text": "Ter um mistério para solucionar ou um problema para investigar." },
+      { "id": 3, "analysisEnum": "ARTÍSTICO", "text": "Ter uma \"tela em branco\" para eu preencher com minhas ideias." },
+      { "id": 4, "analysisEnum": "SOCIAL", "text": "Interagir com pessoas e sentir que meu trabalho tem um propósito humano." },
+      { "id": 5, "analysisEnum": "EMPREENDEDOR", "text": "Negociar, persuadir e trabalhar para atingir metas ambiciosas." },
+      { "id": 6, "analysisEnum": "CONVENCIONAL", "text": "Seguir um plano bem definido e garantir que tudo funcione perfeitamente." }
+    ]
+  }
+]

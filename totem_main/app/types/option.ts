@@ -1,4 +1,4 @@
-import type { AnalysisEnum } from "./Analysis";
+import type { AnalysisEnum } from "./analysis";
 
 export interface Option{
     id: number,
