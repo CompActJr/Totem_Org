@@ -1,4 +1,4 @@
-import type { Option } from "./Option"
+import type { Option } from "./option"
 
 export interface Questions {
   id: number,

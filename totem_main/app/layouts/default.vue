@@ -15,7 +15,7 @@
     />
 
     <!-- Overlay -->
-    <div class="fixed inset-0 -z-10 bg-white/70"/>
+    <div class="fixed inset-0 -z-10 bg-white/80"/>
 
     <Menu/>
 
