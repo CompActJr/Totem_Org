@@ -1,75 +1,71 @@
-# Nuxt Minimal Starter
+# Totem Admin — Esqueleto do Painel Administrativo
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Projeto **Nuxt 4** preparado para consumir a API do backend (`/api/admin`).
+Esta branch contém apenas a estrutura de integração — o frontend visual será
+desenvolvido posteriormente.
 
-## Setup
+---
 
-Make sure to install dependencies:
+## O que já está configurado
 
-```bash
-# npm
-npm install
+### Autenticação Supabase
 
-# pnpm
-pnpm install
+`app/composables/useSupabase.ts` — cliente Supabase com as chaves públicas.
 
-# yarn
-yarn install
+`app/composables/useAuth.ts` — funções `login()`, `logout()` e `useAuthSession()` (estado
+reativo da sessão via `useState` do Nuxt).
 
-# bun
-bun install
+### Consumo da API admin
+
+`app/composables/useApiAdmin.ts` — `$fetch.create()` que já injeta o token JWT
+automaticamente em toda requisição:
+
+```ts
+const api = useApiAdmin()
+const posts = await api('/posts')
+const post = await api('/posts/1')
+const novo = await api('/posts', { method: 'POST', body: { ... } })
 ```
 
-## Development Server
+### Runtime config (`nuxt.config.ts`)
 
-Start the development server on `http://localhost:3000`:
+| Variável | Uso |
+|---|---|
+| `SUPABASE_URL` | URL do projeto Supabase |
+| `SUPABASE_PUBLISHABLE_KEY` | Chave pública do Supabase Auth |
+| `API_BASE_URL` | URL da API backend (ex: `http://localhost:3000`) |
 
-```bash
-# npm
-npm run dev
+---
 
-# pnpm
-pnpm dev
+## Para começar a desenvolver o frontend
 
-# yarn
-yarn dev
+1. Criar páginas em `app/pages/`
+2. Usar `useApiAdmin()` para chamar as rotas `/api/admin/**`
+3. Usar `useAuthSession()` para verificar se o usuário está logado
+4. Chamar `login(email, senha)` e `logout()` para gerenciar sessão
 
-# bun
-bun run dev
+### Exemplo de página protegida
+
+```vue
+<script setup lang="ts">
+const session = useAuthSession()
+const api = useApiAdmin()
+
+if (!session.value) await navigateTo('/login')
+
+const { data: posts } = await api('/posts')
+</script>
+
+<template>
+  <div v-for="post in posts" :key="post.id">
+    {{ post.titulo }}
+  </div>
+</template>
 ```
 
-## Production
+---
 
-Build the application for production:
+## Mapa de rotas da API
 
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Consulte o `README.md` do projeto `backend/` para a documentação completa
+das rotas, validação de campos e tratamento de erros.
