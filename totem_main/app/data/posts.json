@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "title": "Introdução ao Nuxt 4",
+    "description": "Conheça os principais recursos do Nuxt 4 e descubra como ele simplifica o desenvolvimento de aplicações Vue.",
+    "content": "\nO Nuxt é um framework baseado em Vue que oferece renderização no servidor,\ngeração de sites estáticos, APIs integradas através do Nitro e uma experiência\nde desenvolvimento extremamente produtiva.\n\nNeste artigo veremos como criar projetos, entender a estrutura de pastas,\nlayouts, composables e muito mais.\n",
+    "image": "https://picsum.photos/800/500?random=1",
+    "author": "Jonas Silva",
+    "createdAt": "2026-07-04",
+    "tags": [
+      "Nuxt"
+    ],
+    "unidade": "Ijuí"
+  },
+  {
+    "id": 2,
+    "title": "Conhecendo o Nitro",
+    "description": "Entenda como funciona o servidor do Nuxt e por que ele substituiu o Express.",
+    "content": "\nO Nitro é responsável por executar o SSR, disponibilizar APIs e permitir\ndeploys em Node, Bun, Cloudflare Workers, Vercel e AWS Lambda sem alteração\nde código.\n",
+    "image": "https://picsum.photos/800/500?random=2",
+    "author": "Jonas Silva",
+    "createdAt": "2026-07-03",
+    "tags": [
+      "Backend"
+    ],
+    "unidade": "Cachoeira"
+  },
+  {
+    "id": 3,
+    "title": "Tailwind CSS 4",
+    "description": "Veja as novidades do Tailwind CSS 4 e sua integração com o Vite.",
+    "content": "\nA versão 4 do Tailwind eliminou a dependência direta do PostCSS e passou a\nutilizar um plugin próprio para o Vite, tornando a compilação significativamente\nmais rápida.\n",
+    "image": "https://picsum.photos/800/500?random=3",
+    "author": "Jonas Silva",
+    "createdAt": "2026-07-02",
+    "tags": [
+      "CSS"
+    ],
+    "unidade": "Santa Maria"
+  }
+]
