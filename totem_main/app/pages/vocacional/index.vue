@@ -2,79 +2,43 @@
 import Avaliacao from '~/components/vocacional/Avaliacao.vue';
 import Result from '~/components/vocacional/Result.vue';
 import StartForm from '~/components/vocacional/StartForm.vue';
+import VocacionalStepper from '~/components/vocacional/VocacionalStepper.vue';
 
-const items = [
-    {
-        title: 'Início',
-        index: 0,
-        description: 'Preencha seu formulário',
-        image: '/icons/lucide--clipboard-edit.svg'
-    },
-    {
-        title: 'Avaliação',
-        index: 1,
-        description: 'Responda às perguntas',
-        image: '/icons/lucide--form.svg'
-    },
-    {
-        title: 'Resultado',
-        index: 2,
-        description: 'Visualize seu resultado',
-        image: '/icons/lucide--chart-line.svg'
-    }
-]
-
-const { state, nextStep, previousStep } = useVocacional();
+const { state } = useVocacional();
 
 </script>
 
 <template>
-    <section class="flex flex-col gap-8 p-8 h-screen">
-        <UStepper disabled color="neutral" v-model="state.step" :items="items" class="mx-auto min-h-40">
-            
-            <template #indicator="{ item }" :class="active ? 'bg-white' : 'bg-white'">
-                <img :src="item.image" class="size-5" :alt="item.title">
-            </template>
+    <section class="relative p-4 lg:p-8 min-h-100 md:min-h-100v lg:min-h-250">
+        <VocacionalStepper :step="state.step" />
 
-            <template #content="{ item }">
-                <div class="
-                    bg-white
-                    w-4xl
-                    max-w-5xl
-                    h-[70vh]
-                    p-12
-                    shadow-xl
-                    mt-16
-                    overflow-y-auto
-                    overflow-hidden
-                    rounded-lg">
+        <div class="
+            bg-white
+            w-full
+            max-w-5xl
 
-                    <!-- STEP 1 -->
-                    <div v-if="item.index === 0">
-                        <StartForm/>
-                    </div>
+            h-150
+            lg:h-150
+            md:h-150
 
-                    <!-- STEP 2 -->
-                    <div v-else-if="item.index === 1">
-                        <Avaliacao/>
-                    </div>
+            mx-auto
+            mt-8
 
-                    <!-- STEP 3 -->
-                    <div v-else>
-                        <Result/>
-                    </div>
+            rounded-lg
+            shadow-xl
 
-                </div>
-            </template>
+            p-4
+            md:p-8
+            lg:p-12
 
-            <template #title="{ item }">
-                <span class="text-gray-600 text-bold">{{ item.title }}</span>
-            </template>
+            overflow-y-auto
+        ">
 
-            <template #description="{ item }">
-                <span class="text-gray-600 text-bold">{{ item.description }}</span>
-            </template>
+            <StartForm v-if="state.step === 0" />
 
-        </UStepper>
+            <Avaliacao v-else-if="state.step === 1" />
+
+            <Result v-else />
+        </div>
     </section>
 </template>

@@ -1,13 +1,17 @@
 <script setup lang="ts">
+/**
+ * @author Jonas
+ */
 import { ref, onMounted } from 'vue';
 import { Chart } from 'chart.js/auto';
 import { AnalysisEnum } from '~/types/analysis';
 
-const chartCanvas = ref(null);
-let chartInstance = null;
+const chartCanvas = ref<HTMLCanvasElement | null>(null);
+let chartInstance: Chart | null = null;
 
 const props = defineProps<{
-    result: Record<AnalysisEnum, number>
+    result: Record<AnalysisEnum, number>,
+    title: string
 }>();
 
 const getChartData = () => [
@@ -27,10 +31,21 @@ onMounted(() => {
     const ctx = (chartCanvas.value as HTMLCanvasElement).getContext('2d');
     if (!ctx) return;
 
+    const isMobile = window.innerWidth < 768;
+
     chartInstance = new Chart(ctx, {
         type: 'radar',
         data: {
-            labels: [AnalysisEnum.I, AnalysisEnum.C, AnalysisEnum.E, AnalysisEnum.A, AnalysisEnum.R, AnalysisEnum.S],
+            labels: isMobile
+            ? ['I', 'C', 'E', 'A', 'R', 'S']
+            : [
+                AnalysisEnum.I,
+                AnalysisEnum.C,
+                AnalysisEnum.E,
+                AnalysisEnum.A,
+                AnalysisEnum.R,
+                AnalysisEnum.S
+            ],
             datasets: [{
                 label: 'perfil',
                 data: getChartData(),
@@ -46,14 +61,13 @@ onMounted(() => {
             plugins: {
 
                 title: {
-                    display: true,
+                    display: !isMobile,
                     font: { size: 24, weight: 'bold' },
                     color: "#EF6B01",
-                    text: 'Resultado Do Seu Teste Vocacional'
+                    text: props.title
                 },
                 subtitle: {
-                    display: true,
-                    text:  'Os perfis possuem abaixo uma descrição de cada e as recomendações sugeridas de acordo com seu resultado',
+                    display: !isMobile,
                     font: {size: 18}
                 },
                 legend: {
@@ -79,8 +93,26 @@ onMounted(() => {
         }
     });
 });
+
+
+function getImage() {
+  return chartCanvas.value?.toDataURL("image/png")
+}
+
+defineExpose({
+    getImage
+})
+
 </script>
 
 <template>
-    <canvas ref="chartCanvas" aria-label="Gráfico de do seu resultado teste vocacional"></canvas>
+    <div class="chart-container h-150 w-full flex items-center justify-center">
+        <canvas ref="chartCanvas" aria-label="Gráfico de do seu resultado teste vocacional"></canvas>
+    </div>
 </template>
+
+<style scoped>
+    .chart-container:fullscreen {
+        background: white;
+    }
+</style>

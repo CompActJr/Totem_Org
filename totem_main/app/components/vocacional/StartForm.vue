@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+/**
+ * @author Jonas
+ */
 const { state, nextStep } = useVocacional();
 
 const inputClass = `rounded-xl border border-gray-300 bg-white

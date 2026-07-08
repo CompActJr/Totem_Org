@@ -1,4 +1,7 @@
 <script setup lang="ts">
+/**
+ * @author Jonas
+ */
 import data from "~/data/questions.json";
 
 const {
