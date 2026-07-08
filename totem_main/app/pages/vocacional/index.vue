@@ -37,7 +37,17 @@ const { state, nextStep, previousStep } = useVocacional();
             </template>
 
             <template #content="{ item }">
-                <div class="bg-white mx-auto w-full min-w-4xl min-h-96 p-12 shadow-xl mt-16 rounded-lg">
+                <div class="
+                    bg-white
+                    w-4xl
+                    max-w-5xl
+                    h-[70vh]
+                    p-12
+                    shadow-xl
+                    mt-16
+                    overflow-y-auto
+                    overflow-hidden
+                    rounded-lg">
 
                     <!-- STEP 1 -->
                     <div v-if="item.index === 0">

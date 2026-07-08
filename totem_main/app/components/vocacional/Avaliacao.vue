@@ -86,11 +86,10 @@ watch(options, (value) => {
 
             <button v-if="state.currentQuestion + 1 === data.length"
                 class="transition-all duration-300 hover:scale-110 bg-orange-400 
-                p-2 w-28 rounded-full text-white
+                p-2 w-16 rounded-full text-white
                 flex items-center justify-between font-bold text-4-lg"
                 :disabled="options.length !== 2"
                 @click="nextStep">
-                Concluir
                 <img src="/icons/icon-park-solid--next.svg" />
             </button>
 
