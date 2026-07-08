@@ -1,0 +1,135 @@
+<template>
+  <section class="hero">
+    <img :src="unidade.heroImage" :alt="`Unidade ${unidade.city} do Colégio Totem`" class="hero-bg" />
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content-wrap">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Colégio Totem</p>
+        <h1>{{ unidade.title || unidade.city }}</h1>
+        <h2 class="hero-subtitle">{{ unidade.subtitle || unidade.city }}</h2>
+        <a href="#agende" class="btn btn-primary">AGENDE SUA VISITA</a>
+      </div>
+    </div>
+
+    <div class="hero-dots">
+      <span
+        v-for="(dot, i) in slideCount"
+        :key="i"
+        class="dot dot-on-dark"
+        :class="{ active: i === activeSlide }"
+        @click="activeSlide = i"
+      ></span>
+    </div>
+
+    <WhatsappButton
+      :whatsapp="unidade.whatsapp"
+      :message="`Olá! Gostaria de saber mais sobre o Colégio Totem - ${unidade.city}.`"
+    />
+  </section>
+</template>
+
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+import WhatsappButton from '../layout/WhatsappButton.vue'
+
+const props = defineProps({
+  unidade: { type: Object, required: true },
+  slideCount: { type: Number, default: 3 },
+  autoplayMs: { type: Number, default: 6000 },
+})
+
+const activeSlide = ref(0)
+let heroInterval = null
+
+onMounted(() => {
+  heroInterval = setInterval(() => {
+    activeSlide.value = (activeSlide.value + 1) % props.slideCount
+  }, props.autoplayMs)
+})
+onBeforeUnmount(() => clearInterval(heroInterval))
+</script>
+
+<style scoped>
+.hero {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 0;
+
+  display: block;
+
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(180deg, var(--overlay-light) 0%, var(--overlay-dark) 100%);
+}
+
+.hero-content-wrap {
+  position: relative;
+
+  height: 100vh;
+
+  display: flex;
+  align-items: flex-end;
+
+  padding-bottom: var(--space-8);
+
+  text-align: left;
+}
+
+.hero-eyebrow {
+  color: var(--primary-light);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+
+  margin-bottom: var(--space-1);
+}
+
+.hero-content h1 {
+  color: var(--white);
+  margin-bottom: var(--space-1);
+  text-align: left;
+}
+
+.hero-subtitle {
+  color: var(--white);
+  font-size: 20px;
+  margin-bottom: var(--space-4);
+  text-align: left;
+}
+
+.hero-dots {
+  position: absolute;
+  bottom: var(--space-3);
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: var(--space-1);
+}
+
+@media (max-width: 480px) {
+  .hero-content-wrap {
+    padding-bottom: var(--space-6);
+  }
+}
+</style>
