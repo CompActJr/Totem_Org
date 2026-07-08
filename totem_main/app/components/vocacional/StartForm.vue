@@ -24,7 +24,7 @@ const inputClass = `rounded-xl border border-gray-300 bg-white
 
     <div class="flex items-center gap-4 mt-8">
         <input v-model="state.form.receiveEmail" type="checkbox"
-            class="w-6 h-6 rounded-md border-2 border-orange-500 text-orange-500 focus:ring-2 focus:ring-orange-300" />
+            class="w-6 h-6 rounded-md border-2 bg-white border-orange-500 text-orange-500 focus:ring-2 focus:ring-orange-300" />
 
         <label class="text-gray-600 cursor-pointer">
             Desejo receber meu resultado por e-mail

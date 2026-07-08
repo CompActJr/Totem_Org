@@ -29,27 +29,27 @@ export function useVocacional() {
     httpOnly: false
   })
 
-  function nextStep() {
+  function nextStep() : void {
     if (state.value.step < 2) {
       state.value.step++
     }
   }
 
-  function previousStep() {
+  function previousStep() : void {
     if (state.value.step > 0) {
       state.value.step--
     }
   }
 
-  function nextQuestion() {
+  function nextQuestion() : void {
       state.value.currentQuestion++
   }
 
-  function previousQuestion() {
+  function previousQuestion() : void {
       state.value.currentQuestion--
   }
 
-  function saveAnswer(answer: Response) {
+  function saveAnswer(answer: Response) : void {
 
     //se ja existe uma answer marcada, acha o indice e edita ela
     const index = state.value.answers.findIndex(
@@ -63,7 +63,7 @@ export function useVocacional() {
     }
   }
 
-  function getCurrentAnswer(){
+  function getCurrentAnswer() : Response | undefined{
     return state.value.answers.find(
         a => a.questionId === state.value.currentQuestion
     )
