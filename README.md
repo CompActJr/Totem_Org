@@ -1,9 +1,5 @@
-## Deploy
+# Totem.Org
 
-[Link para documentação do deploy](/deploy.md)
-
-
-## adicionar tailwild v4 com vite no projeto
 ## Authors
 
 <div style="display: flex; gap: 8px">
@@ -48,8 +44,6 @@ Totem Org
 
 ## Stack
 
-
----
 
 ## For Devs
 
