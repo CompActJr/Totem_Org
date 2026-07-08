@@ -24,7 +24,7 @@ const { navLinks } = useNavigation();
 
       <nav :class="[
         menuOpen ? 'flex' : 'hidden',
-        'absolute left-0 top-16 w-full flex-col bg-orange-600 md:static md:flex md:w-auto md:flex-row'
+        'absolute left-0 top-16 w-full flex-col bg-orange-600 md:static md:flex md:w-auto md:flex-row z-10'
       ]">
         <NuxtLink v-for="link in navLinks" :key="link.href" :to="link.href"
           class="px-5 py-4 font-semibold text-yellow-200 transition hover:bg-orange-700 hover:text-white"
