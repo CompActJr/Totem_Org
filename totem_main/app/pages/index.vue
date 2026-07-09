@@ -23,4 +23,5 @@ useSeoMeta({
     <Timeline id="portais" />
 
 
+    <div class="w-full bg-gray-600 mt-8 mb-8 h-2"></div>
 </template>
