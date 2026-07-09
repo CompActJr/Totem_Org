@@ -12,8 +12,8 @@ const { navLinks } = useNavigation();
   <header class="flex items-center justify-between px-6 bg-orange-600 text-yellow-200 shadow-lg min-h-24">
 
       <NuxtLink to="/" class="flex items-center gap-8">
-        <img src="/images/logo.png" alt="Colégio Totem" width="64px" />
-        <span class="font-bold text-white text-xl">TOTEM</span>
+        <img src="/images/logo-main.png" alt="Colégio Totem" width="200px" />
+        <!-- <span class="font-bold text-white text-xl">TOTEM</span> -->
       </NuxtLink>
 
       <button class="flex flex-col gap-1 md:hidden" @click="menuOpen = !menuOpen">
