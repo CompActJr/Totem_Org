@@ -10,7 +10,7 @@
 }
 
 .card {
-    @apply h-full flex flex-col rounded-2xl shadow-lg bg-white overflow-hidden transition-all duration-300 hover:scale-105 p-4;
+    @apply h-130 flex flex-col rounded-2xl shadow-lg bg-white overflow-hidden transition-all duration-300 hover:scale-105 p-4;
 }
 
 .button-primary {

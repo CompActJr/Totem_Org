@@ -54,5 +54,33 @@
     "updatedAt": "2025-12-04",
     "categoria": "Trabalhos",
     "unidades": ["Cachoeira do Sul"]
+  },
+  {
+    "id": 5,
+    "titulo":"Totem Games 2026",
+    "resumo": "",
+    "conteudo":"Se é pra viver o Totem, que seja em grande estilo! 😎🔥\nO Totem Games 2026 vai tomar conta do Pains Esportes no dia 30 de maio, a partir das 9h.\nUm dia inteiro de competição, risadas, torcida e muita diversão! 🙌✨\nTem modalidade pra todo mundo entrar no clima:\nfutebol 7, vôlei, basquete, atletismo, The Voice Totem, melhor torcida e melhor mascote. 🎯🏅\nMais do que competir, é sobre viver o momento.\nÉ sobre estar junto.\nÉ sobre se divertir de verdade. 💥\nEntão já sabe: chame os amigos, garanta tua participação e vem fazer história com a gente! 🚀💙\nPara mais informações, procure a secretaria da sua unidade Totem.",
+    "imagemUrl": "/posts/post5.jpg",
+    "ativo": true,
+    "destaque": true,
+    "autor": "Jonas Silva",
+    "createdAt": "2026-06-04",
+    "updatedAt": "2026-06-04",
+    "categoria": "Eventos",
+    "unidades": ["Santa Maria"]
+  },
+  {
+     "id": 6,
+    "titulo":"Rematricula abertas para o Colégios Santa Maria",
+    "resumo": "",
+    "conteudo": "Todo pai e toda mãe já pensou nisso em silêncio: e quando eu não estiver por perto para orientar, decidir, proteger?\nNo Colégio Totem, o aprendizado vai além do conteúdo. No dia a dia, os alunos são provocados a pensar, argumentar, questionar e construir suas próprias conclusões. Isso acontece em debates mediados, projetos interdisciplinares, produções de texto que estimulam reflexão e na convivência que valoriza autonomia com responsabilidade.\nFormar para o futuro é preparar seu filho para fazer boas escolhas, mesmo quando ninguém estiver olhando.\nA rematrícula é mais do que garantir uma vaga. É reafirmar a confiança em uma educação que desenvolve pensamento crítico, segurança e maturidade para a vida.\nRematrículas abertas. Estamos prontos para seguir juntos",
+    "imagemUrl": "/posts/post6.jpg",
+    "ativo": true,
+    "destaque": true,
+    "autor": "Jonas Silva",
+    "createdAt": "2026-06-04",
+    "updatedAt": "2026-06-04",
+    "categoria": "Eventos",
+    "unidades": ["Santa Maria"]
   }
 ]

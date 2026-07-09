@@ -5,6 +5,8 @@ useSeoMeta({
     description: 'esta é a página principal do Site',
 })
 
+import videos from "~/data/videos.json";
+
 </script>
 
 <template>
@@ -22,6 +24,12 @@ useSeoMeta({
 
     <Timeline id="portais" />
 
-
     <div class="w-full bg-gray-600 mt-8 mb-8 h-2"></div>
+
+    <div class="grid-container">
+        <div class="h-" v-for="video in videos" :key="video.id">
+            <Video :video="video" />
+        </div>
+    </div>
+
 </template>
