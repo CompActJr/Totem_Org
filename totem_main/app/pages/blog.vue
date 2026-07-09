@@ -6,8 +6,6 @@
  */
 
 import Post from '~/components/blog/Post.vue';
-import Postgrid from '~/components/blog/Postgrid.vue';
-import Search from '~/components/blog/Search.vue';
 import data from '~/data/posts.json';
 
 useSeoMeta({
@@ -33,7 +31,7 @@ const { data: posts } = await useFetch('/api/posts', {
 
 <template>
 
-  <div class="px-4 py-32">
+  <div class="px-4 py-16">
     <h1 class="px-4 py-3 text-gray-600 text-6xl text-center font-bold">
       Totem Blog
     </h1>
@@ -43,10 +41,32 @@ const { data: posts } = await useFetch('/api/posts', {
     </p>
   </div>
 
-  <Search />
+  <div class="mx-auto max-w-7xl p-4 flex items-center gap-16">
+    <div class="flex items-center gap-4">
+      <label for="tags" class="text-gray-600">Categoria: </label>
+      <input id="tags" class="input" />
+    </div>
 
-  <Postgrid :posts="data" v-slot="{ post }">
-    <Post :post="post" />
-  </Postgrid>
+    <div class="flex items-center gap-4">
+      <label for="tags" class="text-gray-600">Início: </label>
+      <input type="date" class="input" />
+    </div>
+
+    <div class="flex items-center gap-4">
+      <label for="tags" class="text-gray-600">Fim: </label>
+      <input type="date" class="input"/>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <input type="checkbox" class="h-6 w-6"/>
+      <label for="tags" class="text-gray-600">Destaques</label>
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <div class="h-full" v-for="post in data" :key="post.id">
+      <Post :post="post" />
+    </div>
+  </div>
 
 </template>

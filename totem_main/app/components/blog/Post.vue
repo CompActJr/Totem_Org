@@ -5,28 +5,18 @@ const props = defineProps<{
   post: Post
 }>()
 
-const open = ref(false)
-
-const image = computed(() =>
-  props.post.image || '/images/logo-totem-colegios.png'
-)
+const open = ref(false);
 
 const shortDescription = computed(() => {
-  return props.post.description
+  return props.post.conteudo
     .split(' ')
-    .slice(0, 50)
+    .slice(0, 20)
     .join(' ') + (
-      props.post.description.split(' ').length > 50
+      props.post.conteudo.split(' ').length > 50
         ? '...'
         : ''
     )
-})
-
-const formattedDate = computed(() =>
-  new Intl.DateTimeFormat('pt-BR', {
-    dateStyle: 'long'
-  }).format(new Date(props.post.createdAt))
-)
+});
 
 function openModal() {
   open.value = true
@@ -35,65 +25,39 @@ function openModal() {
 </script>
 
 <template>
-  <div
-    class="
-      h-full
-      flex
-      flex-col
-      rounded-2xl
-      bg-white
-      overflow-hidden
-      transition-all
-      duration-300
-      hover:scale-105
-    "
-  >
-    <img src="" class="h-52 w-full object-cover rounded-lg">
+  <div class="card">
+    <NuxtImg :src="post.imagemUrl" class="w-full h-52 object-cover rounded-lg" loading="lazy" format="webp" />
 
-    <div class="flex items-center gap-3 my-4">
-      <img :alt="post.author" :text="post.author.charAt(0)" />
-      <p class="font-semibold text-gray-600">
-        {{ post.author }}
-      </p>
+    <div class="w-full bg-gray-200 mt-2 h-1"></div>
 
-      <div class="flex items-center gap-1 text-sm text-gray-500">
-        <UIcon name="i-lucide-calendar" />
-        {{ formattedDate }}
+    <div class="flex items-center justify-between gap-3 my-4">
+      <div class="flex items-center gap-4">
+        <img src="/icons/tabler--user.svg" alt="author" />
+        <p class="font-semibold text-gray-600">
+          {{ post.autor }}
+        </p>
+      </div>
+
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <img src="/icons/boxicons--calendar-filled.svg" alt="calendar" />
+        {{ post.createdAt }}
       </div>
     </div>
 
-    <h2 class="mt-5 text-2xl font-bold text-gray-600">
-      {{ post.title }}
-    </h2>
+    <div class="flex flex-col items-start gap-4 justify-evelyn">
+      <h2 class="mt-5 text-2xl font-bold text-gray-600">
+        {{ post.titulo }}
+      </h2>
 
-    <p class="mt-3 text-gray-600 flex-1 text-gray-600">
-      {{ shortDescription }}
-    </p>
+      <p class="mt-3 flex-1 text-gray-600">
+        {{ shortDescription }}
+      </p>
 
-    <div class="mt-4 flex flex-wrap gap-2">
-      <span v-for="tag in post.tags" :key="tag" class="rounded-md p-1 min-w-15 text-center bg-orange-600" variant="soft">
-        {{ tag }}
-      </span>
+      <button class="button-primary" @click="openModal">
+        <img src="/icons/icon-park-solid--next.svg" />
+        Ler mais
+      </button>
     </div>
-
-    <button 
-      color="warning"
-      variant="solid"
-      class="
-        mt-6
-        self-start
-        font-semibold
-        px-5
-        transition-all
-        duration-300
-        hover:scale-105
-      "
-      icon="i-lucide-arrow-right"
-      trailing
-      @click="openModal"
-    >
-      Ler mais
-    </button>
   </div>
 
 </template>

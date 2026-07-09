@@ -1,11 +1,14 @@
 export interface Post {
   id: number
-  title: string
-  description: string
-  content: string
-  image: string
-  author: string
-  createdAt: string
-  tags: string[]
-  unidade: string
+  titulo: string,
+  resumo: string,
+  conteudo: string,
+  imagemUrl: string,
+  ativo: boolean,
+  destaque: boolean,
+  autor: string,
+  createdAt: string,
+  updatedAt: string,
+  categoria: string,
+  unidades: string[]
 }
