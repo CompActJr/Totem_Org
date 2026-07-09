@@ -21,26 +21,26 @@ const banners = [
 </script>
 
 <template>
-    <Swiper 
-        :modules="[Autoplay, Pagination]"
-        :autoplay="{ delay: 3000 }"
-        :slides-per-view="1"
-        :pagination="{ clickable: true }"
-        class="h-[250px] sm:h-[350px] md:h-[450px] lg:h-[550px] xl:h-[650px]"
-    >
+    <section class="w-full h-20 lg:h-200 ">
+        <Swiper 
+            :modules="[Autoplay, Pagination]" 
+            :autoplay="{ delay: 3000 }" 
+            :slides-per-view="1"
+            :pagination="{ clickable: true }"
+            class="h-full"
+        >
 
-        <SwiperSlide v-for="banner in banners" :key="banner" class="relative">
-            <NuxtImg 
-                :src="banner"
-                class="w-full h-full
-                object-cover"
-                :quality="100"
-                loading="lazy"
-                format="webp" 
-            />
-            <div class="absolute inset-0 bg-black/40"></div>
-        </SwiperSlide>
-          
-    </Swiper>
+            <SwiperSlide v-for="banner in banners" :key="banner" class="relative">
+                <NuxtImg 
+                    :src="banner"
+                    class="absolute inset-0 w-full h-full object-cover"
+                    :quality="100"
+                    loading="lazy"
+                    format="webp"
+                />
+                <div class="absolute inset-0 bg-black/40"></div>
+            </SwiperSlide>
 
+        </Swiper>
+    </section>
 </template>

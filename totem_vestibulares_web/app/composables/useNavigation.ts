@@ -14,10 +14,6 @@ export function useNavigation() {
       href: "/eventos"
     },
     {
-        label: "FAQS",
-        href: "/faqs"
-    },
-    {
         label: "UNIDADES",
         href: "/unidades"
     },
@@ -26,8 +22,8 @@ export function useNavigation() {
         href: "/contato"
     },
     {
-        label: "MATRÍCULAS",
-        href: "/matriculas"
+        label: "APOSTILHAS",
+        href: "/biblioteca"
     },
     {
         label: "CURSOS",

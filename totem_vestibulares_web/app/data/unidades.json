@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "city": "Cachoeira do Sul",
+        "slug": "cachoeira",
+        "image": "",
+        "cep": "",
+        "address": "Avenida Presidente Vargas, 1958",
+        "phone": "55 3722-2977",
+        "whatsapp": "55 9 9088-3334",
+        "email": "cachoeira@colegiototem.com.br",
+        "facebook": "#",
+        "instagram": "#"
+    },
+    {
+        "id": 2,
+        "city": "Cachoeira do Sul",
+        "slug": "cachoeira",
+        "image": "",
+        "cep": "",
+        "address": "Avenida Presidente Vargas, 1958",
+        "phone": "55 3722-2977",
+        "whatsapp": "55 9 9088-3334",
+        "email": "cachoeira@colegiototem.com.br",
+        "facebook": "#",
+        "instagram": "#"
+    },
+    {
+        "id": 3,
+        "city": "Cachoeira do Sul",
+        "slug": "cachoeira",
+        "image": "",
+        "cep": "",
+        "address": "Avenida Presidente Vargas, 1958",
+        "phone": "55 3722-2977",
+        "whatsapp": "55 9 9088-3334",
+        "email": "cachoeira@colegiototem.com.br",
+        "facebook": "#",
+        "instagram": "#"
+    }
+]
