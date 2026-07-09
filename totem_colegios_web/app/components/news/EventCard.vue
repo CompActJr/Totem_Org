@@ -1,58 +1,57 @@
 <template>
   <article class="event-card" :class="{ 'event-card-past': variant === 'past' }">
-    <div class="event-card-row" @click="$emit('toggle')">
-      <div class="event-media">
-        <div class="event-accent"></div>
-        <img :src="event.image" :alt="event.title" class="event-image" />
-      </div>
-
-      <div class="event-date">
-        <span class="event-day">{{ event.day }}</span>
-        <span class="event-month">{{ event.month }}</span>
-      </div>
-
-      <div class="event-divider"></div>
-
-      <div class="event-main">
-        <h4>{{ event.title }}</h4>
-        <p class="event-category">{{ event.category }}</p>
-      </div>
-
-      <button
-        class="event-toggle"
-        type="button"
-        :aria-expanded="event.expanded"
-        aria-label="Expandir detalhes do evento"
-      >
-        <img
-          :src="icons.chevron"
-          alt=""
-          class="chevron"
-          :class="{ 'chevron-open': event.expanded }"
-        />
-      </button>
+    <div class="event-media">
+      <div class="event-accent"></div>
+      <img :src="event.image" :alt="event.title" class="event-image" />
     </div>
 
-    <div v-if="event.expanded" class="event-details">
-      <p>{{ event.description }}</p>
-      <div class="event-meta">
-        <span class="event-meta-item">
-          <img :src="icons.clock" alt="" class="icon-sm" />
-          {{ event.time }}
-        </span>
-        <span class="event-meta-item">
-          <img :src="icons.pin" alt="" class="icon-sm" />
-          {{ event.location }}
-        </span>
+    <div class="event-content">
+      <div class="event-card-row" @click="$emit('toggle')">
+        <div class="event-date">
+          <span class="event-day">{{ event.day }}</span>
+          <span class="event-month">{{ event.month }}</span>
+        </div>
+
+        <div class="event-divider"></div>
+
+        <div class="event-main">
+          <h4>{{ event.title }}</h4>
+          <p class="event-category">{{ event.category }}</p>
+        </div>
+
+        <button
+          class="event-toggle"
+          type="button"
+          :aria-expanded="event.expanded"
+          aria-label="Expandir detalhes do evento"
+        >
+          <img
+            :src="icons.chevron"
+            alt=""
+            class="chevron"
+            :class="{ 'chevron-open': event.expanded }"
+          />
+        </button>
+      </div>
+
+      <div v-if="event.expanded" class="event-details">
+        <p>{{ event.description }}</p>
+        <div class="event-meta">
+          <span class="event-meta-item">
+            <img :src="icons.clock" alt="" class="icon-sm" />
+            {{ event.time }}
+          </span>
+          <span class="event-meta-item">
+            <img :src="icons.pin" alt="" class="icon-sm" />
+            {{ event.location }}
+          </span>
+        </div>
       </div>
     </div>
   </article>
 </template>
 
 <script setup>
-/* Arquivos reais em public/images/icons/ — tudo dentro de public/
-   é servido a partir da raiz do site, por isso o caminho aqui NÃO
-   leva "public" nem "~/". */
 const icons = {
   chevron: '/images/icons/chevron-right.svg',
   clock: '/images/icons/clock.svg',
@@ -69,6 +68,10 @@ defineEmits(['toggle'])
 
 <style scoped>
 .event-card {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: stretch;
+
   background: var(--white);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
@@ -76,26 +79,23 @@ defineEmits(['toggle'])
   overflow: hidden;
 }
 
-.event-card-row {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-
-  padding-right: var(--space-4);
-
-  cursor: pointer;
-}
-
 .event-media {
-  display: flex;
-  align-items: stretch;
+  position: relative;
 
-  height: 104px;
+  width: 100%;
+  height: 100%;
 }
 
 .event-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+
   width: 8px;
+
   background: var(--primary);
+  z-index: 1;
 }
 
 .event-card-past .event-accent {
@@ -103,11 +103,33 @@ defineEmits(['toggle'])
 }
 
 .event-image {
-  width: 150px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 8px;
+
+  width: calc(100% - 8px);
   height: 100%;
 
   object-fit: cover;
   border-radius: 0;
+}
+
+.event-content {
+  min-width: 0;
+}
+
+.event-card-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+
+  padding: 0 var(--space-4) 0 var(--space-3);
+
+  cursor: pointer;
+
+  min-height: 104px;
 }
 
 .event-date {
@@ -191,7 +213,7 @@ defineEmits(['toggle'])
 }
 
 .event-details {
-  padding: 0 var(--space-4) var(--space-4) calc(150px + 8px + var(--space-3));
+  padding: 0 var(--space-4) var(--space-4) var(--space-3);
 }
 
 .event-details p {
@@ -221,19 +243,15 @@ defineEmits(['toggle'])
   .event-card-row {
     flex-wrap: wrap;
   }
-
-  .event-details {
-    padding-left: var(--space-4);
-  }
 }
 
 @media (max-width: 768px) {
-  .event-media {
-    height: 88px;
+  .event-card {
+    grid-template-columns: 96px 1fr;
   }
 
-  .event-image {
-    width: 96px;
+  .event-card-row {
+    min-height: 88px;
   }
 
   .event-date {
@@ -246,8 +264,18 @@ defineEmits(['toggle'])
 }
 
 @media (max-width: 480px) {
+  .event-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .event-media {
+    width: 100%;
+    height: 140px;
+  }
+
   .event-card-row {
-    padding-right: var(--space-2);
+    padding: var(--space-2);
     gap: var(--space-2);
   }
 

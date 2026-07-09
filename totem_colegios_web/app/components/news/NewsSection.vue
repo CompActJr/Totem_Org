@@ -1,9 +1,5 @@
 <template>
   <section class="news">
-    <!-- ilustração decorativa de fundo — opcional, hoje comentada.
-         Se for usar, o arquivo real fica em public/images/panoramas/
-         (ou onde você salvar), e o caminho é sempre sem "public"
-         nem "~/", ex: :src="decoBgImage" com decoBgImage = '/images/deco-linhas.png' -->
     <!-- <img :src="decoBgImage" alt="" class="news-bg-deco" aria-hidden="true" /> -->
 
     <div class="container news-inner">
@@ -11,6 +7,7 @@
         title-main="Calendário"
         title-accent="de Eventos"
         subtitle="Fique por dentro de tudo que acontece no Colégio Totem."
+        align="left"
       />
 
       <EventList
@@ -43,8 +40,7 @@ import NewsHeader from '@/components/news/NewsHeader.vue'
 import EventList from '@/components/news/EventList.vue'
 import NewsBanner from '@/components/news/NewsBanner.vue'
 
-/* Imagens reais em public/images/ — sem "public" nem "~/" no
-   caminho, porque tudo dentro de public/ já é servido na raiz do site. */
+
 
 const upcomingEvents = ref([
   {
@@ -64,7 +60,7 @@ const upcomingEvents = ref([
     title: 'Feira de Profissões',
     category: 'Ensino Fundamental e Médio',
     image: '/images/img2.jpg',
-    expanded: true,
+    expanded: false,
     description:
       'Um dia para explorar possibilidades, conhecer histórias inspiradoras e construir o futuro com ainda mais propósito.',
     time: '14h às 18h',
@@ -93,7 +89,7 @@ const pastEvents = ref([
     title: 'Semana do Aluno',
     category: 'Ensino Fundamental e Médio',
     image: '/images/img4.jpg',
-    expanded: true,
+    expanded: false,
     description:
       'Atividades especiais, desafios e momentos inesquecíveis para celebrar quem faz a diferença todos os dias.',
     time: '8h às 12h',

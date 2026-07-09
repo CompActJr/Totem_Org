@@ -16,8 +16,6 @@
 </template>
 
 <script setup>
-/* Arquivo real em public/images/icons/calendar.svg — sem "public"
-   nem "~/" no caminho, porque public/ já é servido na raiz do site. */
 const calendarIcon = '/images/icons/calendar.svg'
 </script>
 
