@@ -1,41 +1,86 @@
 [
   {
     "id": 1,
-    "title": "Introdução ao Nuxt 4",
-    "description": "Conheça os principais recursos do Nuxt 4 e descubra como ele simplifica o desenvolvimento de aplicações Vue.",
-    "content": "\nO Nuxt é um framework baseado em Vue que oferece renderização no servidor,\ngeração de sites estáticos, APIs integradas através do Nitro e uma experiência\nde desenvolvimento extremamente produtiva.\n\nNeste artigo veremos como criar projetos, entender a estrutura de pastas,\nlayouts, composables e muito mais.\n",
-    "image": "https://picsum.photos/800/500?random=1",
-    "author": "Jonas Silva",
+    "titulo": "Festa júnina Cachoeira do sul",
+    "resumo": "Festa junina do cachoeira",
+    "conteudo": "O tbt de hoje é do nosso ARRAIÁ, que foi pra lá de sucesso!\nMuito obrigada aos que vieram nos prestigiar. ❤️🚀🚀🌽.",
+    "imagemUrl": "/posts/post1.jpg",
+    "ativo": true,
+    "destaque": true,
+    "autor": "Jonas Silva",
     "createdAt": "2026-07-04",
-    "tags": [
-      "Nuxt"
-    ],
-    "unidade": "Ijuí"
+    "updatedAt": "2026-07-04",
+    "categoria": "Eventos",
+    "unidades": ["Ijuí", "Cachoeira do Sul"]
   },
   {
     "id": 2,
-    "title": "Conhecendo o Nitro",
-    "description": "Entenda como funciona o servidor do Nuxt e por que ele substituiu o Express.",
-    "content": "\nO Nitro é responsável por executar o SSR, disponibilizar APIs e permitir\ndeploys em Node, Bun, Cloudflare Workers, Vercel e AWS Lambda sem alteração\nde código.\n",
-    "image": "https://picsum.photos/800/500?random=2",
-    "author": "Jonas Silva",
-    "createdAt": "2026-07-03",
-    "tags": [
-      "Backend"
-    ],
-    "unidade": "Cachoeira"
+    "titulo": "Evolução para Notas do Enem",
+    "resumo": "",
+    "conteudo": "Quando há método, dedicação e acompanhamento, os resultados aparecem.\n O crescimento das notas do ENEM no Colégio Totem reforça nosso compromisso com a excelência acadêmica e a preparação dos alunos para os grandes desafios do futuro.\nCrescimento comprovado.\nMais aprovações.\nResultados que geram confiança.",
+    "imagemUrl": "/posts/post2.jpg",
+    "ativo": true,
+    "destaque": false,
+    "autor": "Jonas Silva",
+    "createdAt": "2026-06-04",
+    "updatedAt": "2026-06-04",
+    "categoria": "Enem",
+    "unidades": ["Ijuí", "Cachoeira do Sul"]
   },
   {
     "id": 3,
-    "title": "Tailwind CSS 4",
-    "description": "Veja as novidades do Tailwind CSS 4 e sua integração com o Vite.",
-    "content": "\nA versão 4 do Tailwind eliminou a dependência direta do PostCSS e passou a\nutilizar um plugin próprio para o Vite, tornando a compilação significativamente\nmais rápida.\n",
-    "image": "https://picsum.photos/800/500?random=3",
-    "author": "Jonas Silva",
-    "createdAt": "2026-07-02",
-    "tags": [
-      "CSS"
-    ],
-    "unidade": "Santa Maria"
+    "titulo":"Festival do Enart 2026",
+    "resumo": "",
+    "conteudo": "Nossos alunos neste  final de semana  em Agudo, na Regional do Enart, da 13ª Região Tradicionalista, trouxeram grandiosas Premiações.\n🏆 Campeão em Criação Coreografica\n🏆2º Lugar Danças Tradicionais",
+    "imagemUrl": "/posts/post3.jpg",
+    "ativo": true,
+    "destaque": true,
+    "autor": "Jonas Silva",
+    "createdAt": "2026-06-04",
+    "updatedAt": "2026-06-04",
+    "categoria": "Eventos",
+    "unidades": ["Cachoeira do Sul"]
+  },
+  {
+    "id": 4,
+    "titulo":"trabalhos nas disciplinas de ARTE (Fotografia) e Ciências ( Plantas), no parque mágico do Witeck",
+    "resumo": "",
+    "conteudo": "Parte I:\nE hoje foi dia de concluir os  trabalhos nas disciplinas de ARTE (Fotografia) e Ciências ( Plantas), no parque mágico do Witeck.\nObrigada @parquewiteck pela explanação e excelente recepção com os nossos alunos das turmas 81 e 82.",
+    "imagemUrl": "/posts/post4.jpg",
+    "ativo": true,
+    "destaque": false,
+    "autor": "Jonas Silva",
+    "createdAt": "2025-12-04",
+    "updatedAt": "2025-12-04",
+    "categoria": "Trabalhos",
+    "unidades": ["Cachoeira do Sul"]
+  },
+  {
+    "id": 5,
+    "titulo":"Totem Games 2026",
+    "resumo": "",
+    "conteudo":"Se é pra viver o Totem, que seja em grande estilo! 😎🔥\nO Totem Games 2026 vai tomar conta do Pains Esportes no dia 30 de maio, a partir das 9h.\nUm dia inteiro de competição, risadas, torcida e muita diversão! 🙌✨\nTem modalidade pra todo mundo entrar no clima:\nfutebol 7, vôlei, basquete, atletismo, The Voice Totem, melhor torcida e melhor mascote. 🎯🏅\nMais do que competir, é sobre viver o momento.\nÉ sobre estar junto.\nÉ sobre se divertir de verdade. 💥\nEntão já sabe: chame os amigos, garanta tua participação e vem fazer história com a gente! 🚀💙\nPara mais informações, procure a secretaria da sua unidade Totem.",
+    "imagemUrl": "/posts/post5.jpg",
+    "ativo": true,
+    "destaque": true,
+    "autor": "Jonas Silva",
+    "createdAt": "2026-06-04",
+    "updatedAt": "2026-06-04",
+    "categoria": "Eventos",
+    "unidades": ["Santa Maria"]
+  },
+  {
+     "id": 6,
+    "titulo":"Rematricula abertas para o Colégios Santa Maria",
+    "resumo": "",
+    "conteudo": "Todo pai e toda mãe já pensou nisso em silêncio: e quando eu não estiver por perto para orientar, decidir, proteger?\nNo Colégio Totem, o aprendizado vai além do conteúdo. No dia a dia, os alunos são provocados a pensar, argumentar, questionar e construir suas próprias conclusões. Isso acontece em debates mediados, projetos interdisciplinares, produções de texto que estimulam reflexão e na convivência que valoriza autonomia com responsabilidade.\nFormar para o futuro é preparar seu filho para fazer boas escolhas, mesmo quando ninguém estiver olhando.\nA rematrícula é mais do que garantir uma vaga. É reafirmar a confiança em uma educação que desenvolve pensamento crítico, segurança e maturidade para a vida.\nRematrículas abertas. Estamos prontos para seguir juntos",
+    "imagemUrl": "/posts/post6.jpg",
+    "ativo": true,
+    "destaque": true,
+    "autor": "Jonas Silva",
+    "createdAt": "2026-06-04",
+    "updatedAt": "2026-06-04",
+    "categoria": "Eventos",
+    "unidades": ["Santa Maria"]
   }
 ]
