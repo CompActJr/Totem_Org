@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { PostType } from '~/types/post'
+import ModalPost from './ModalPost.vue';
 
 const props = defineProps<{
   post: PostType
@@ -16,6 +17,10 @@ const shortDescription = computed(() => {
 
 function openModal() {
   open.value = true
+}
+
+function closeModal() {
+  open.value = false
 }
 
 </script>
@@ -67,5 +72,11 @@ function openModal() {
       </div>
     </div>
   </div>
+
+  <ModalPost
+    :post="post"
+    :open="open"
+    @close="closeModal"
+  />
 
 </template>
