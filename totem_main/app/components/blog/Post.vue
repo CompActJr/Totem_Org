@@ -35,10 +35,7 @@ function openModal() {
 </script>
 
 <template>
-  <UCard
-    :ui="{
-      root: 'border-0 ring-0 shadow-none'
-    }"
+  <div
     class="
       h-full
       flex
@@ -51,10 +48,10 @@ function openModal() {
       hover:scale-105
     "
   >
-    <img :src="image" class="h-52 w-full object-cover rounded-lg">
+    <img src="" class="h-52 w-full object-cover rounded-lg">
 
     <div class="flex items-center gap-3 my-4">
-      <UAvatar :alt="post.author" :text="post.author.charAt(0)" />
+      <img :alt="post.author" :text="post.author.charAt(0)" />
       <p class="font-semibold text-gray-600">
         {{ post.author }}
       </p>
@@ -79,7 +76,7 @@ function openModal() {
       </span>
     </div>
 
-    <UButton 
+    <button 
       color="warning"
       variant="solid"
       class="
@@ -96,44 +93,7 @@ function openModal() {
       @click="openModal"
     >
       Ler mais
-    </UButton>
-  </UCard>
+    </button>
+  </div>
 
-  <UModal v-model:open="open">
-
-    <template #content>
-
-      <div class="p-8">
-
-        <img :src="image" class="rounded-xl mb-6">
-
-        <h1 class="text-3xl font-bold">
-          {{ post.title }}
-        </h1>
-
-        <div class="mt-2 flex items-center gap-4 text-sm text-gray-500">
-
-          <UChip class="flex items-center gap-1">
-            <UIcon name="i-lucide-user" />
-            {{ post.author }}
-          </UChip>
-
-          <UChip class="flex items-center gap-1">
-            <UIcon name="i-lucide-calendar" />
-            <ClientOnly>
-              {{ formattedDate }}
-            </ClientOnly>
-          </UChip>
-
-        </div>
-
-        <div class="mt-6 whitespace-pre-line leading-8">
-          {{ post.content }}
-        </div>
-
-      </div>
-
-    </template>
-
-  </UModal>
 </template>
