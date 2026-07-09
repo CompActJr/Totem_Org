@@ -1,14 +1,13 @@
 <template>
   <div class="pagina-teste">
-    <h1>Teste do Visualizador 360º</h1>
-    <NuxtLink to="/">← Voltar para a Home</NuxtLink>
-
+    <h1>Visualizador 360º</h1>
+    
     <div class="container-360">
       <ClientOnly>
-        <div ref="viewerContainer" class="meu-visualizador"></div>
+        <Viewer360 url="/images/panoramas/santa_maria/teste360.webp" />
         
         <template #fallback>
-          <div class="carregando">Carregando motor 360...</div>
+          <div class="carregando">Carregando</div>
         </template>
       </ClientOnly>
     </div>
@@ -16,57 +15,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-
-const viewerContainer = ref<HTMLElement | null>(null)
-let viewerInstance: any = null
-
-onMounted(async () => {
-  const { Viewer } = await import('@photo-sphere-viewer/core')
-  await import('@photo-sphere-viewer/core/index.css')
-
-  // 2. Inicializamos o visualizador
-  if (viewerContainer.value) {
-    viewerInstance = new Viewer({
-      container: viewerContainer.value,
-      panorama: '/images/panoramas/santa_maria/teste360.webp',
-      navbar: ['zoom', 'fullscreen'],
-    })
-  }
-})
-
-// 3. Limpamos a memória quando você sair dessa página
-onBeforeUnmount(() => {
-  if (viewerInstance) {
-    viewerInstance.destroy()
-  }
-})
 </script>
 
 <style scoped>
 .pagina-teste {
   padding: 2rem;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   font-family: sans-serif;
 }
 
 .container-360 {
-  margin-top: 2rem;
-  border: 2px solid #ddd;
+  margin-top: 1.5rem;
+  border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
 }
 
-.meu-visualizador {
-  width: 100%;
-  height: 600px;
-  background-color: #111;
-}
-
 .carregando {
   width: 100%;
-  height: 600px;
+  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
