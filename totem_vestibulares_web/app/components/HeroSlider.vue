@@ -37,7 +37,7 @@ const banners = [
           
             <div class="absolute inset-0 z-10">
                 <NuxtLink 
-                    to="/contato"
+                    to="/matriculas"
                     class="
                         mt-8 
                         rounded-full
