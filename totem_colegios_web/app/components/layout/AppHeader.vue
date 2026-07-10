@@ -2,20 +2,30 @@
   <header class="header">
     <div class="container header-inner">
       <a href="/" class="logo">
-        <img src="/assets/imagens/logo-totem-colegios.png" alt="Colégio Totem" class="logo-img" />
+        <img
+          src="/images/geral/logo-totem-colegios.png"
+          alt="Colégio Totem"
+          class="logo-img"
+        />
       </a>
 
       <nav class="nav" :class="{ 'nav-open': menuOpen }">
         <ul class="nav-list">
           <li v-for="link in navLinks" :key="link.label" class="nav-item">
-            <a :href="link.href" class="nav-link" @click="menuOpen = false">{{ link.label }}</a>
+            <a :href="link.href" class="nav-link" @click="menuOpen = false">{{
+              link.label
+            }}</a>
           </li>
         </ul>
       </nav>
 
       <a :href="ctaHref" class="btn btn-interest">{{ ctaLabel }}</a>
 
-      <button class="nav-toggle" @click="menuOpen = !menuOpen" aria-label="Abrir menu">
+      <button
+        class="nav-toggle"
+        @click="menuOpen = !menuOpen"
+        aria-label="Abrir menu"
+      >
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -23,16 +33,16 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { navLinks as defaultNavLinks } from '@/data/totem.js'
+import { ref } from "vue";
+import { navLinks as defaultNavLinks } from "@/data/totem.js";
 
 defineProps({
   navLinks: { type: Array, default: () => defaultNavLinks },
-  ctaHref: { type: String, default: '#agende' },
-  ctaLabel: { type: String, default: 'TENHO INTERESSE' },
-})
+  ctaHref: { type: String, default: "#agende" },
+  ctaLabel: { type: String, default: "TENHO INTERESSE" },
+});
 
-const menuOpen = ref(false)
+const menuOpen = ref(false);
 </script>
 
 <style scoped>
@@ -80,9 +90,9 @@ const menuOpen = ref(false)
   font-weight: 600;
   color: var(--white);
   text-transform: uppercase;
-  letter-spacing: .02em;
+  letter-spacing: 0.02em;
 
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .nav-link:hover {
@@ -94,7 +104,7 @@ const menuOpen = ref(false)
   color: var(--black);
   font-size: 13px;
   white-space: nowrap;
-    padding:12px 24px;
+  padding: 12px 24px;
 }
 
 .nav-toggle {
