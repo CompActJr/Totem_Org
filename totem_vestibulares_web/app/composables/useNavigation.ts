@@ -18,6 +18,10 @@ export function useNavigation() {
         href: "/unidades"
     },
     {
+      label: "FAQS",
+      href: "/faqs"
+    },
+    {
         label: "FALE COM A GENTE",
         href: "/contato"
     },

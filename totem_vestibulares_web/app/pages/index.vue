@@ -15,10 +15,10 @@ useSeoMeta({
 
     <HeroUnidades/>
 
-    <Faqs/>
+    <HeroDepoimentos/>
 
     <HeroVocacional/>
 
-    <HeroDepoimentos/>
+    <Faqs/>
 
 </template>
