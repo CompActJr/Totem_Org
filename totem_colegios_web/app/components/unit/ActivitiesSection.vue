@@ -4,32 +4,35 @@
       <p class="eyebrow">ATIVIDADES EXTRACLASSE</p>
 
       <p class="activities-intro-1">
-        Muitas Possibilidades
-      </p>
-      <p class="activities-intro-1">
-        Muitos Aprendizados
-      </p>
-      <p class="activities-intro-1">
-        Muita Diversão
+        Muitas Possibilidades, Muitos Aprendizados e Muita Diversão
       </p>
       <p class="activities-intro-2">
-        No Totem, aprender vai além da sala de aula. Nossas atividades extraclasse oferecem
-        diversas possibilidades para desenvolver novas habilidades, interesses e talentos ao
-        longo do dia. Mais que aprendizado, mais que diversão: explore o que mais combina com
-        quem você é e descubra novos horizontes.
+        No Totem, aprender vai além da sala de aula. Nossas atividades
+        extraclasse oferecem diversas possibilidades para desenvolver novas
+        habilidades, interesses e talentos ao longo do dia. Mais que
+        aprendizado, mais que diversão: explore o que mais combina com quem você
+        é e descubra novos horizontes.
       </p>
 
       <div class="activities-grid">
-        <div class="activity-card" v-for="activity in activities" :key="activity.name">
+        <div
+          class="activity-card"
+          v-for="activity in activities"
+          :key="activity.name"
+        >
           <div class="activity-card-image">
             <img :src="activity.image || activity.icon" :alt="activity.name" />
           </div>
-          <div class="activity-card-body" :ref="(el) => setBodyRef(el, activity.name)">
+          <div
+            class="activity-card-body"
+            :ref="(el) => setBodyRef(el, activity.name)"
+          >
             <h4>{{ activity.name }}</h4>
             <ul class="activity-details" v-if="activity.details">
-              <li v-for="detail in activity.details" :key="detail">{{ detail }}</li>
+              <li v-for="detail in activity.details" :key="detail">
+                {{ detail }}
+              </li>
             </ul>
-            <a :href="activity.link" class="btn btn-primary btn-sm">SAIBA MAIS &rarr;</a>
           </div>
         </div>
       </div>
@@ -38,19 +41,19 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount, nextTick, watch } from 'vue'
-import { activities as defaultActivities } from '@/data/totem.js'
+import { ref, onMounted, onBeforeUnmount, nextTick, watch } from "vue";
+import { activities as defaultActivities } from "@/data/totem.js";
 
 const props = defineProps({
   activities: { type: Array, default: () => defaultActivities },
-})
+});
 
-const sectionRef = ref(null)
-const bodyRefs = new Map()
+const sectionRef = ref(null);
+const bodyRefs = new Map();
 
 function setBodyRef(el, key) {
-  if (el) bodyRefs.set(key, el)
-  else bodyRefs.delete(key)
+  if (el) bodyRefs.set(key, el);
+  else bodyRefs.delete(key);
 }
 
 /**
@@ -61,43 +64,47 @@ function setBodyRef(el, key) {
  * precisa medir e aplicar via JS mesmo.
  */
 function equalizeHeights() {
-  const bodies = Array.from(bodyRefs.values())
-  if (!bodies.length) return
+  const bodies = Array.from(bodyRefs.values());
+  if (!bodies.length) return;
 
   // reseta antes de medir, senão a medida inclui o min-height antigo
-  bodies.forEach((el) => { el.style.minHeight = '0px' })
+  bodies.forEach((el) => {
+    el.style.minHeight = "0px";
+  });
 
-  const max = Math.max(...bodies.map((el) => el.offsetHeight))
+  const max = Math.max(...bodies.map((el) => el.offsetHeight));
 
-  bodies.forEach((el) => { el.style.minHeight = `${max}px` })
+  bodies.forEach((el) => {
+    el.style.minHeight = `${max}px`;
+  });
 }
 
-let resizeTimeout = null
+let resizeTimeout = null;
 function onWindowResize() {
-  clearTimeout(resizeTimeout)
-  resizeTimeout = setTimeout(equalizeHeights, 150)
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(equalizeHeights, 150);
 }
 
 onMounted(async () => {
-  await nextTick()
-  equalizeHeights()
-  window.addEventListener('resize', onWindowResize)
-})
+  await nextTick();
+  equalizeHeights();
+  window.addEventListener("resize", onWindowResize);
+});
 
 onBeforeUnmount(() => {
-  window.removeEventListener('resize', onWindowResize)
-  clearTimeout(resizeTimeout)
-})
+  window.removeEventListener("resize", onWindowResize);
+  clearTimeout(resizeTimeout);
+});
 
 // se a lista de atividades mudar dinamicamente, recalcula
 watch(
   () => props.activities,
   async () => {
-    bodyRefs.clear()
-    await nextTick()
-    equalizeHeights()
-  }
-)
+    bodyRefs.clear();
+    await nextTick();
+    equalizeHeights();
+  },
+);
 </script>
 
 <style scoped>
@@ -190,7 +197,7 @@ watch(
   list-style: none;
   font-size: 13px;
   line-height: 1.6;
-  color: rgba(255,255,255,.85);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .btn-sm {

@@ -10,7 +10,11 @@
           </div>
           <div class="level-card-body">
             <h4>{{ level.name }}</h4>
-            <a :href="level.link" class="btn btn-primary btn-sm">SAIBA MAIS &rarr;</a>
+            <a
+              :href="unidade.link + '/' + level.link"
+              class="btn btn-primary btn-sm"
+              >SAIBA MAIS &rarr;</a
+            >
           </div>
         </div>
       </div>
@@ -19,11 +23,13 @@
 </template>
 
 <script setup>
-import { educationLevelsInfo } from '@/data/totem.js'
+import { educationLevelsInfo } from "@/data/totem.js";
+import { unidades } from "@/data/totem.js";
 
 defineProps({
+  unidade: { type: Object, default: () => unidades },
   levels: { type: Array, default: () => educationLevelsInfo },
-})
+});
 </script>
 
 <style scoped>
