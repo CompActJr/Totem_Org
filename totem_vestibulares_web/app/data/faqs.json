@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "question": "As turmas Medicina PRIME e Medicina PLUS são apenas no turno da manhã?",
+    "answer": "Sim. As aulas são presenciais no turno da manhã, das 8h às 12h20.\n\nDurante a tarde, os estudantes participam dos atendimentos tira-dúvidas e, no caso da turma Medicina PLUS, também contam com estudo ativo e Totemapping."
+  },
+  {
+    "id": 2,
+    "question": "Por que o valor varia conforme o turno do Extensivo?",
+    "answer": "O Totem oferece os Extensivos Manhã, Tarde e Noite.\n\nO Extensivo Manhã inicia em março e possui três períodos diários.\n\nO Extensivo Tarde inicia em abril e também possui três períodos diários.\n\nJá o Extensivo Noite inicia em abril e conta com dois períodos diários.\n\nComo as cargas horárias são diferentes, os valores também variam entre os turnos."
+  },
+  {
+    "id": 3,
+    "question": "Estou no 3º ano do Ensino Médio e estudo pela manhã e à tarde. Qual turma presencial é mais indicada?",
+    "answer": "Se o seu foco é o ENEM e o Vestibular da UFSM, a turma mais indicada é o Extensivo Noite.\n\nAs aulas iniciam em abril, permitindo que você dedique o início do ano à escola e, ao mesmo tempo, revise todo o conteúdo do Ensino Médio no cursinho."
+  },
+  {
+    "id": 4,
+    "question": "O Totem Vestibulares Santa Maria possui sala de estudos?",
+    "answer": "Sim.\n\nDisponibilizamos uma sala de estudos aberta nos três turnos, de segunda a sexta-feira, acessível para todos os alunos, independentemente da turma em que estejam matriculados."
+  },
+  {
+    "id": 5,
+    "question": "É possível rescindir o contrato de prestação de serviços com o Totem Vestibulares Santa Maria?",
+    "answer": "Sim. Cada aluno possui dois contratos: um referente às aulas e outro ao material didático.\n\n• Material didático: após a retirada do material, é necessário retirar todas as remessas e realizar o pagamento integral do valor contratado.\n\n• Contrato de aulas (aprovação): não há cobrança de multa rescisória. É realizado um cálculo proporcional das aulas já assistidas em relação ao valor pago. Para solicitar esse tipo de rescisão, é necessário apresentar o comprovante de matrícula na instituição de ensino.\n\n• Contrato de aulas (desistência ou motivo pessoal): são cobradas as aulas já assistidas, além de uma taxa rescisória equivalente a 20% do valor das aulas que ainda seriam ministradas."
+  },
+  {
+    "id": 6,
+    "question": "O Totem Vestibulares possui aulas híbridas (presenciais e ao vivo simultaneamente)?",
+    "answer": "Não.\n\nAs aulas do Totem Vestibulares Santa Maria são 100% presenciais.\n\nAs turmas MED e PSS possuem chamadas obrigatórias. Já a turma MED PLUS conta com acesso à turma 100% online do Estúdio Totem ON.\n\nAs demais turmas podem contratar o Totem ON pelo valor de R$ 590,00, acrescido ao valor total da matrícula anual."
+  }
+]

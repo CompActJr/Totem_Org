@@ -36,12 +36,12 @@ import depoimentos from "~/data/depoimentos.json";
                 v-for="depoimento in depoimentos"
                 :key="depoimento.id"
             >
-                <div class="mx-auto flex max-w-5xl items-center gap-12">
+                <div class="mx-auto flex flex-col lg:flex-row max-w-5xl items-center gap-12">
 
                     <div
-                        class="flex h-40 w-40 shrink-0 items-center justify-center rounded-2xl bg-orange-100"
+                        class="flex h-12 w-12 lg:w-40 lg:h-40 shrink-0 items-center justify-center rounded-2xl bg-orange-100"
                     >
-                        <span class="text-6xl text-orange-500 font-bold">
+                        <span class="text-xl lg:text-4xl text-orange-500 font-bold">
                             {{ depoimento.nome.charAt(0) }}
                         </span>
                     </div>

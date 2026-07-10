@@ -2,7 +2,7 @@
     <section class="min-h-128 bg-white w-full responsive-padding">
 
         <div class="mt-4 lg:mt-8 flex items-center gap-32">
-           <div class="w-96 aspect-3/4 overflow-hidden rounded-xl">
+           <div class="w-96 aspect-3/4 overflow-hidden rounded-xl hidden lg:block md:block">
                 <NuxtImg
                     src="/images/vocacional.jpg"
                     alt="Estudante do Colégio Totem pensativa"
