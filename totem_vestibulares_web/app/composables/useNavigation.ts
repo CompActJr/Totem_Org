@@ -31,7 +31,7 @@ export function useNavigation() {
     },
     {
         label: "ESCOLHA SUA TURMA",
-        href: "/cursos"
+        href: "/matriculas"
     }
   ]
 
