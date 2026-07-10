@@ -21,26 +21,40 @@ const banners = [
 </script>
 
 <template>
-    <section class="w-full h-20 lg:h-200 ">
-        <Swiper 
-            :modules="[Autoplay, Pagination]" 
-            :autoplay="{ delay: 3000 }" 
-            :slides-per-view="1"
-            :pagination="{ clickable: true }"
-            class="h-full"
-        >
+    <section class="w-full h-100 lg:h-200 relative">
+        <Swiper :modules="[Autoplay, Pagination]" :autoplay="{ delay: 3000 }" :slides-per-view="1"
+            :pagination="{ clickable: true }" class="h-full">
 
-            <SwiperSlide v-for="banner in banners" :key="banner" class="relative">
-                <NuxtImg 
-                    :src="banner"
-                    class="absolute inset-0 w-full h-full object-cover"
-                    :quality="100"
-                    loading="lazy"
-                    format="webp"
-                />
-                <div class="absolute inset-0 bg-black/40"></div>
+            <SwiperSlide v-for="banner in banners" :key="banner">
+                <NuxtImg :src="banner" class="absolute inset-0 w-full h-full object-cover" :quality="100" loading="lazy"
+                    format="webp" />
+
             </SwiperSlide>
 
         </Swiper>
+
+        <div class="absolute inset-0 bg-black/40">
+          
+            <div class="absolute inset-0 z-10">
+                <NuxtLink 
+                    to="/contato"
+                    class="
+                        mt-8 
+                        rounded-full
+                        bg-orange-500 
+                        px-4 py-2 text-lg 
+                        font-semibold text-white 
+                        transition-all 
+                        duration-300 
+                        hover:scale-105
+                        hover:bg-orange-600 
+                        absolute bottom-16 left-16 
+                        hidden md:flex lg:flex"
+                >
+                    Escolha Sua Turma
+                </NuxtLink>
+            </div>
+        </div>
+
     </section>
 </template>

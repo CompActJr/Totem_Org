@@ -19,6 +19,6 @@ useSeoMeta({
 
     <HeroVocacional/>
 
-    <HeroVisita/>
+    <HeroDepoimentos/>
 
 </template>

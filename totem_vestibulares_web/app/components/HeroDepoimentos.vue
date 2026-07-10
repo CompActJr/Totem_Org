@@ -1,9 +1,5 @@
-<script lang="ts" setup>
-
-</script>
-
 <template>
-    <section class="h-128 w-full responsive-padding">
+    <section class="h-128  w-full responsive-padding">
         <div class="flex items-center">
             <h2 class="text-orange-600 font-bold" aria-label="depoimentos">
                RELATOS

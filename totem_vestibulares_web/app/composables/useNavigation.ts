@@ -10,7 +10,7 @@ export function useNavigation() {
       href: "/"
     },
     {
-      label: "EVENTOS",
+      label: "TOTEM EVENTOS",
       href: "/eventos"
     },
     {
@@ -26,7 +26,7 @@ export function useNavigation() {
         href: "/biblioteca"
     },
     {
-        label: "CURSOS",
+        label: "ESCOLHA SUA TURMA",
         href: "/cursos"
     }
   ]
