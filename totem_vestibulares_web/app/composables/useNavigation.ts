@@ -10,12 +10,16 @@ export function useNavigation() {
       href: "/"
     },
     {
-      label: "EVENTOS",
+      label: "TOTEM EVENTOS",
       href: "/eventos"
     },
     {
         label: "UNIDADES",
         href: "/unidades"
+    },
+    {
+      label: "FAQS",
+      href: "/faqs"
     },
     {
         label: "FALE COM A GENTE",
@@ -26,7 +30,7 @@ export function useNavigation() {
         href: "/biblioteca"
     },
     {
-        label: "CURSOS",
+        label: "ESCOLHA SUA TURMA",
         href: "/cursos"
     }
   ]

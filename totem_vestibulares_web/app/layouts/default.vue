@@ -12,7 +12,7 @@
 
     <Menu/>
 
-    <main class="flex-1">
+    <main class="flex-1 lg:pt-20 md:pt-20  pt-20">
       <slot />
     </main>
 

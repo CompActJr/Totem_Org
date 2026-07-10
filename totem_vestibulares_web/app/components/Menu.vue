@@ -9,7 +9,7 @@
 </script>
 
 <template>
-  <header class="fixed z-10 w-full flex items-center justify-between px-6 bg-white text-[#332E29] shadow-xl min-h-12">
+  <header class="fixed z-50 w-full flex items-center justify-between px-6 bg-white text-[#332E29] shadow-xl min-h-12">
 
       <NuxtLink to="/">
         <img src="/images/logo_vestibulares.png" alt="Colégio Totem" class="w-36"/>
@@ -31,7 +31,7 @@
           {{ link.label }}
         </NuxtLink>
         <a v-for="value in anchors" :key="value.href" :href="value.href" 
-          class="px-5 py-4 font-semibold text-gray-600 transition hover:orange-400">
+          class="px-5 py-4 font-semibold text-gray-600 transition hover:text-orange-400">
           {{ value.label }}
         </a>
       </nav>
