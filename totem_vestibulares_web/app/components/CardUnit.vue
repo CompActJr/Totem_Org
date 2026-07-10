@@ -36,7 +36,7 @@ defineProps<{
 
           <NuxtLink
             :to="`/unidades/${unidade.slug}`"
-            class="mt-6 inline-flex items-center rounded-lg bg-orange-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-orange-600 hover:shadow-lg"
+            class="mt-6 inline-flex items-center rounded-full bg-orange-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-orange-600 hover:shadow-lg"
           >
             Saiba mais →
           </NuxtLink>

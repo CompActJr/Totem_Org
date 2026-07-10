@@ -19,6 +19,6 @@ useSeoMeta({
 
     <HeroVocacional/>
 
-    <Faqs/>
+    <HeroFaqs/>
 
 </template>
