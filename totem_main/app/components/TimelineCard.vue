@@ -25,6 +25,7 @@ const props = defineProps<{
 
             <NuxtLink
                 :to="portal.link"
+                :external="portal.link.startsWith('http')"
                 class="
                     inline-flex
                     bg-gray-600
