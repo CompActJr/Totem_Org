@@ -2,7 +2,7 @@
   <section class="section-vocational">
     <div class="container grid">
       <div class="col-4 vocational-image">
-        <img src="/assets/imagens/TESTE-VOCACIONAL.jpg" alt="Estudante do Colégio Totem pensativa" />
+        <img src="/images/geral/TESTE-VOCACIONAL.jpg" alt="Estudante do Colégio Totem pensativa" />
       </div>
 
       <div class="col-8 vocational-text">
