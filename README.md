@@ -115,12 +115,18 @@ export default defineNuxtConfig({
 
 ### [NuxtUi Docs](https://ui.nuxt.com/docs/getting-started)
 
-### [Documentação para o Nitro](/Nitro.docs.md)
-
 ### [Prisma Docs](https://www.prisma.io/docs/guides/frameworks)
 
 
 ## Usando o Backend e API
+
+projeto criado com nitro SSR e prisma para ORM com postgres e supabase para testes
+
+```bash
+npx create-nitro-app
+```
+
+> primeiros passos
 
 ```bash
 cd backend
@@ -128,30 +134,71 @@ npm i
 cp .env.example .env
 ```
 
-substitua as variaveis de ambiente
+> substitua as variaveis de ambiente
+
+DATABASE_URL="postgresql://user:password@localhost:5432/mydb?schema=public"
+
+> rodando banco local com docker
+
+```bash
+docker compose up -d
+```
+
+O Nitro usa c12, então você não precisa instalar o dotenv.
+
+é só usar 
+
+```bash
+process.env.ADMIN_EMAIL
+```
+
+Nitro é construído em cima do H3.
+
+O H3 é um framework HTTP criado pela equipe do Nuxt/UnJS. O Nitro utiliza o H3 para todo o tratamento de requisições.
+
+### [H3 DOCS](https://v1.h3.dev/)
+
+### adicionando prisma ORM no projeto já criado com o nitro
+
+```bash
+npm install @prisma/client @prisma/adapter-pg pg
+npm install -D prisma dotenv
+npx prisma init
+```
+
+vai criar uma pasta /prisma com um schema.prisma onde você ira fazer a
+sua configuração dos seus models que virão a ser as tabelas e de migrations
+se tiver ja o .env com a variavel de ambiente configurada com a url de conexão
+do banco não será nescessário ajustes
+
+### executando as migrations para desenvolvimento
+
+```bash
+npx prisma migrate dev --name nome_da_migration
+```
+
+1. O Prisma compara o banco com o schema.
+2. Gera um SQL.
+3. Cria uma migration.
+4. Executa esse SQL.
+5. Atualiza o banco.
+6. Gera o Prisma Client.
+
+### apenas executar as migrations existentes (para ambiente de produção)
+
+```bash
+npx prisma migrate deploy
+```
+
+### cenário onde o banco já existe e quer atualizar seu schema
+
+```bash
+npx prisma db pull
+```
+
 
 ### arquitetura do back
 
 ```bash
-meu-projeto/
-│
-├── server/
-│   ├── api/
-│   │   ├── users/
-│   │   │     get.ts
-│   │   │     post.ts
-│   │   └── auth/
-│   │
-│   ├── db/
-│   │     prisma.ts
-│   │
-│   └── utils/
-│
-├── prisma/
-│   ├── schema.prisma
-│   └── migrations/
-│
-├── .env
-├── package.json
-└── docker-compose.yml
+
 ```
