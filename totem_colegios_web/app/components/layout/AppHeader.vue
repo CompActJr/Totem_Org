@@ -3,7 +3,7 @@
     <div class="container header-inner">
       <a href="/" class="logo">
         <img
-          src="/images/geral/logo-totem-colegios.png"
+          src="/geral/logo-totem-colegios.png"
           alt="Colégio Totem"
           class="logo-img"
         />

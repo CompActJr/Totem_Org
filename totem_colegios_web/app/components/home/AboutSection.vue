@@ -17,7 +17,7 @@
       </div>
 
       <div class="col-6 about-image">
-        <img src="/images/geral/POR-QUE-O-TOTEM.jpg" alt="Pátio do Colégio Totem visto de cima" />
+        <img src="/geral/POR-QUE-O-TOTEM.jpg" alt="Pátio do Colégio Totem visto de cima" />
       </div>
     </div>
   </section>

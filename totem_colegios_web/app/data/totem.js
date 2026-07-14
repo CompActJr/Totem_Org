@@ -118,25 +118,25 @@ export const testimonials = [
   {
     name: "Carine",
     role: "mãe da Sofia Comassetto - Totem Cachoeira do Sul",
-    photo: "/images/geral/Carine.jpg",
+    photo: "/geral/Carine.jpg",
     text: "O Totem transmite confiança, segurança e estimula os alunos ao aprendizado. A equipe diretiva está constantemente envolvida e próxima dos alunos.",
   },
   {
     name: "Vanessa Giroldi",
     role: "mãe do Otávio e do Inácio Adolfo Giroldi - Totem Cachoeira do Sul",
-    photo: "/images/geral/Vanessa.jpg",
+    photo: "/geral/Vanessa.jpg",
     text: "Escolhi o Totem porque quero que meus filhos cresçam em um ambiente onde se sintam acolhidos, valorizados e felizes. Aqui encontrei não só qualidade no ensino, mas também cuidado, carinho e valores que fazem diferença na formação deles como pessoas. Confio na proposta pedagógica e acredito que aqui meus filhos terão um bom desenvolvimento acadêmico e pessoal. Sem dúvida foi uma das melhores escolhas que fiz para o futuro deles.",
   },
   {
     name: "Luisa Felix Muller",
     role: "mãe - Totem Cachoeira do Sul",
-    photo: "/images/geral/Luisa.jpg",
+    photo: "/geral/Luisa.jpg",
     text: "Vejo meu filho se desenvolvendo com alegria, autonomia e valores sólidos. Vejo diariamente o brilho nos olhos dele, a curiosidade florescendo e a autonomia se fortalecendo. É uma escola que prepara o mundo, sem abrir mão da infância. E isso, para mim, é transformador. A escola supera minhas expectativas ao educar com afeto e propósito. ",
   },
   {
     name: "Vanice Moraes",
     role: "vó do Eduardo e do Guilherme - Totem Cachoeira do Sul",
-    photo: "/images/geral/Vanice.jpg",
+    photo: "/geral/Vanice.jpg",
     text: "Quem escolheu o Totem foram eles. O Eduardo e o Guilherme escolheram pela qualidade do ensino, pelos professores (ótimos) que transmitem segurança aos alunos e pelo acolhimento de todos.",
   },
 ];
