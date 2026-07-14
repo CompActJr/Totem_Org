@@ -39,7 +39,7 @@
 
         <div class="col-6 about-image">
           <img
-            src="/images/geral/NIVEL-BERÇARIO.jpg"
+            src="/geral/NIVEL-BERÇARIO.jpg"
             alt="Crianças brincando no berçário do Totem"
           />
         </div>
@@ -171,9 +171,9 @@
             </div>
 
             <div class="diferenciais-image">
-              <img src="/images/geral/BERÇÁRIO-1.jpg" alt="Berçário Totem" />
+              <img src="/geral/BERÇÁRIO-1.jpg" alt="Berçário Totem" />
               <img
-                src="/images/geral/BERÇÁRIO-6.jpg"
+                src="/geral/BERÇÁRIO-6.jpg"
                 alt="Ambiente do Berçário"
               />
             </div>
@@ -263,25 +263,25 @@
         <div class="infra-gallery">
           <div class="infra-gallery-item">
             <img
-              src="/images/geral/BERÇÁRIO-1.jpg"
+              src="/geral/BERÇÁRIO-1.jpg"
               alt="Infraestrutura do berçário Totem"
             />
           </div>
           <div class="infra-gallery-item">
             <img
-              src="/images/geral/BERÇÁRIO-2.jpg"
+              src="/geral/BERÇÁRIO-2.jpg"
               alt="Infraestrutura do berçário Totem"
             />
           </div>
           <div class="infra-gallery-item">
             <img
-              src="/images/geral/BERÇÁRIO-3.jpg"
+              src="/geral/BERÇÁRIO-3.jpg"
               alt="Infraestrutura do berçário Totem"
             />
           </div>
           <div class="infra-gallery-item">
             <img
-              src="/images/geral/BERÇÁRIO-5.jpg"
+              src="/geral/BERÇÁRIO-5.jpg"
               alt="Infraestrutura do berçário Totem"
             />
           </div>
@@ -314,7 +314,7 @@ const bercario = {
   title: "Berçário",
   subtitle: "Cachoeira do Sul",
   city: "Cachoeira do Sul",
-  heroImage: "/images/geral/BANNER-BERÇÁRIO-CS.jpg",
+  heroImage: "/geral/BANNER-BERÇÁRIO-CS.jpg",
   whatsapp: "55 9 9088-3334",
   address: "Avenida Presidente Vargas, 1958",
   phone: "55 3722-2977",

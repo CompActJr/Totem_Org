@@ -5,17 +5,11 @@
 ## Authors
 
 ![Jonas](https://img.shields.io/badge/Jonas-000000?style=for-the-badge&logo=github&logoColor=white)
-
 ![A.Asan](https://img.shields.io/badge/A.Asan-360276?style=for-the-badge&logo=github&logoColor=white)
-
 ![Jean](https://img.shields.io/badge/Jean-760202?style=for-the-badge&logo=github&logoColor=white)
-
 ![Mari](https://img.shields.io/badge/Mari-00d2ac?style=for-the-badge&logo=github&logoColor=white)
-
 ![A.Pão](https://img.shields.io/badge/A.Pão-016325?style=for-the-badge&logo=github&logoColor=white)
-
 ![Matheus](https://img.shields.io/badge/Matheus-c98300?style=for-the-badge&logo=github&logoColor=white)
-
 ![Fabricio](https://img.shields.io/badge/Fabricio-0072c4?style=for-the-badge&logo=github&logoColor=white)
 
 ---
@@ -36,20 +30,18 @@
 
 ## For Devs
 
-**O projeto possui 3 modulos principais para o frontend**
-- totem_colegios_web
-- totem_main
-- totem_vestibulares_web
+**O projeto possui 4 modulos principais**
+- **totem_colegios_web** -> frontend para o portal institucional dos colégios
+- **totem_main** -> blog interativo, totem tv totem vocacional e painel administrativo
+- **totem_vestibulares_web** -> frontend para o portal institucional dos pré vestibulares
 
-**O projeto possui estas outras pastas o backend e o painel admin**
-- totem_admin
-- backend
 
 **arquivos e pastas importantes**
-- nginx -> para o proxy em produção
-- env.example -> variaveis de ambiente globais e para o back
-- Dockerfile -> arquivo de configuração em cada modulo para o build da imagem daquele módulo
-- docker-compose.yml -> arquivo na raiz para orquestração de todos os containers
+- **nginx** -> para o proxy em produção
+- **env.example** -> variaveis de ambiente globais
+- **Dockerfile** -> arquivo de configuração em cada modulo para o build da imagem daquele módulo
+- **docker-compose.yml** -> arquivo na raiz para orquestração de todos os containers
+- **backend/docker-compose.yml** -> arquivo para rodar o postgres localmente
 
 <b>
 framework NuxtJs SSR melhora de SEO, usa vue 3+, e depencias listadas abaixo
@@ -77,7 +69,7 @@ na mesma rede pode acessar por seu IP
 Componentes de Cliente (Client-Side Components)Por padrão, o Nuxt utiliza renderização universal (SSR). Se você tem um componente que precisa rodar exclusivamente no navegador (por interagir com a janela do navegador, usar localStorage ou exigir uma biblioteca que dependa do objeto window), você pode usar a tag <ClientOnly> ou criar um componente com .client no nome.
 </b>
 
-## [Deploy.MD]()
+## [Deploy.MD](/deploy.md)
 
 
 ## Adicionar tailwild v4 com vite no projeto
@@ -112,19 +104,101 @@ export default defineNuxtConfig({
 })
 ```
 
-## Outras dependencias importantes
+## Bibliotecas importantes
 
 1. Swipper para o carrossel
 
 2. Nuxt Images otimização de imagens antes de carregar as páginas
 
 
-
-
 ### [NuxImages Docs](https://image.nuxt.com/usage/nuxt-img)
 
 ### [NuxtUi Docs](https://ui.nuxt.com/docs/getting-started)
 
-### [Documentação para o Nitro](/Nitro.docs.md)
-
 ### [Prisma Docs](https://www.prisma.io/docs/guides/frameworks)
+
+
+## Usando o Backend e API
+
+projeto criado com nitro SSR e prisma para ORM com postgres e supabase para testes
+
+```bash
+npx create-nitro-app
+```
+
+> primeiros passos
+
+```bash
+cd backend
+npm i
+cp .env.example .env
+```
+
+> substitua as variaveis de ambiente
+
+DATABASE_URL="postgresql://user:password@localhost:5432/mydb?schema=public"
+
+> rodando banco local com docker
+
+```bash
+docker compose up -d
+```
+
+O Nitro usa c12, então você não precisa instalar o dotenv.
+
+é só usar 
+
+```bash
+process.env.ADMIN_EMAIL
+```
+
+Nitro é construído em cima do H3.
+
+O H3 é um framework HTTP criado pela equipe do Nuxt/UnJS. O Nitro utiliza o H3 para todo o tratamento de requisições.
+
+### [H3 DOCS](https://v1.h3.dev/)
+
+### adicionando prisma ORM no projeto já criado com o nitro
+
+```bash
+npm install @prisma/client @prisma/adapter-pg pg
+npm install -D prisma dotenv
+npx prisma init
+```
+
+vai criar uma pasta /prisma com um schema.prisma onde você ira fazer a
+sua configuração dos seus models que virão a ser as tabelas e de migrations
+se tiver ja o .env com a variavel de ambiente configurada com a url de conexão
+do banco não será nescessário ajustes
+
+### executando as migrations para desenvolvimento
+
+```bash
+npx prisma migrate dev --name nome_da_migration
+```
+
+1. O Prisma compara o banco com o schema.
+2. Gera um SQL.
+3. Cria uma migration.
+4. Executa esse SQL.
+5. Atualiza o banco.
+6. Gera o Prisma Client.
+
+### apenas executar as migrations existentes (para ambiente de produção)
+
+```bash
+npx prisma migrate deploy
+```
+
+### cenário onde o banco já existe e quer atualizar seu schema
+
+```bash
+npx prisma db pull
+```
+
+
+### arquitetura do back
+
+```bash
+
+```

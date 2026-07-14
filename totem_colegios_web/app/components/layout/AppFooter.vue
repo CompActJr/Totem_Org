@@ -3,7 +3,7 @@
     <div class="container">
       <div class="footer-top">
         <img
-          src="/images/geral/logo-totemf.png"
+          src="/geral/logo-totemf.png"
           alt="Colégio Totem"
           class="footer-logo"
         />

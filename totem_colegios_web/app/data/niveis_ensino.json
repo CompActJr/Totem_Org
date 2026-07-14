@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Berçário",
+    "image": "/imagens/NIVEL-BERÇARIO.jpg",
+    "link": "bercario"
+  },
+  {
+    "id": 2,
+    "name": "Educação Infantil",
+    "image": "/imagens/NIVEL-INFANTIL.jpg",
+    "link": "infantil"
+  },
+  {
+    "id": 3,
+    "name": "Ensino Fundamental I",
+    "image": "/imagens/NIVEL-FUNDAMENTAL-1.jpg",
+    "link": "fundamental1"
+  },
+  {
+    "id": 4,
+    "name": "Ensino Fundamental II",
+    "image": "/imagens/NIVEL-FUNDAMENTAL-2.jpg",
+    "link": "fundamental2"
+  },
+  {
+    "id": 5,
+    "name": "Ensino Médio",
+    "image": "../assets/imagens/NIVEL-MEDIO.jpg",
+    "link": "ensino-medio"
+  }
+]

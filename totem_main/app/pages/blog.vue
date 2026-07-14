@@ -5,6 +5,10 @@
  * @author Jonas
  */
 
+definePageMeta({
+  layout: 'public'
+})
+
 import Post from '~/components/blog/Post.vue';
 import data from '~/data/posts.json';
 import type { PostType } from '~/types/post';
@@ -98,7 +102,7 @@ const { data: posts } = await useFetch('/api/posts', {
     </div>
 
     <div class="flex items-center gap-4">
-      <input type="checkbox" v-model="filters.destaque"  class="h-6 w-6" />
+      <input type="checkbox" v-model="filters.destaque" class="h-6 w-6" />
       <label for="tags" class="text-gray-600">Destaques</label>
     </div>
   </div>

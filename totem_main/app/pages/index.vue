@@ -1,5 +1,9 @@
 <script lang="ts" setup>
 
+definePageMeta({
+    layout: 'public'
+})
+
 useSeoMeta({
     title: 'Página principal',
     description: 'esta é a página principal do Site',

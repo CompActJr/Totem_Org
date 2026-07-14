@@ -1,7 +1,7 @@
 <template>
   <section class="hero">
     <img
-      src="/images/geral/BANNER.jpg"
+      src="/geral/BANNER.jpg"
       alt="Crianças do Colégio Totem brincando"
       class="hero-bg"
     />

@@ -1,7 +1,7 @@
 <template>
   <section id="agende" class="section-cta">
     <img
-      src="/images/geral/AGENDE-SUA-VISITA.jpg"
+      src="/geral/AGENDE-SUA-VISITA.jpg"
       alt="Quadra do Colégio Totem"
       class="cta-bg"
     />

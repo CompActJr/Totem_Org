@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "unidade": "Cachoeira do Sul",
+    "unidadeId": 1,
+    "name": "Escolinha de Voleibol",
+    "icon": "../assets/imagens/ESCOLINHA-DE-VOLEIBOL.jpg"
+  },
+  {
+    "id": 2,
+    "unidade": "Cachoeira do Sul",
+    "unidadeId": 1,
+    "name": "Voleibol",
+    "image": "../assets/imagens/VOLEIBOL.jpg"
+  },
+  {
+    "id": 2,
+    "unidade": "Cachoeira do Sul",
+    "unidadeId": 1,
+    "name": "Teatro",
+    "image": "../assets/imagens/TEATRO.jpg"
+  },
+  {
+    "id": 3,
+    "unidade": "Cachoeira do Sul",
+    "unidadeId": 1,
+    "name": "Patinação",
+    "image": "../assets/imagens/PATINAÇÃO.jpg"
+  },
+  {
+    "id": 4,
+    "unidade": "Cachoeira do Sul",
+    "unidadeId": 1,
+    "name": "Ballet",
+    "image": "../assets/imagens/BALLET.jpg"
+  },
+  {
+    "id": 5,
+    "unidade": "Cachoeira do Sul",
+    "unidadeId": 1,
+    "name": "Cooking Class",
+    "icon": "../assets/imagens/COOKING-CLASS.jpg"
+  },
+  {
+    "id": 6,
+    "unidade": "Cachoeira do Sul",
+    "unidadeId": 1,
+    "name": "Escolinha de Futsal",
+    "icon": "../assets/imagens/FUTSAL-1.jpg"
+  },
+  {
+    "id": 7,
+    "unidade": "Cachoeira do Sul",
+    "unidadeId": 1,
+    "name": "Futsal Juvenil",
+    "icon": "../assets/imagens/FUTSAL-2.jpg"
+  },
+  {
+    "id": 8,
+    "unidade": "Cachoeira do Sul",
+    "unidadeId": 1,
+    "name": "Desenho",
+    "icon": "../assets/imagens/DESENHO.jpg"
+  }
+]
