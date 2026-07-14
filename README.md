@@ -30,20 +30,18 @@
 
 ## For Devs
 
-**O projeto possui 3 modulos principais para o frontend**
-- totem_colegios_web
-- totem_main
-- totem_vestibulares_web
+**O projeto possui 4 modulos principais**
+- **totem_colegios_web** -> frontend para o portal institucional dos colégios
+- **totem_main** -> blog interativo, totem tv totem vocacional e painel administrativo
+- **totem_vestibulares_web** -> frontend para o portal institucional dos pré vestibulares
 
-**O projeto possui estas outras pastas o backend e o painel admin**
-- totem_admin
-- backend
 
 **arquivos e pastas importantes**
-- nginx -> para o proxy em produção
-- env.example -> variaveis de ambiente globais e para o back
-- Dockerfile -> arquivo de configuração em cada modulo para o build da imagem daquele módulo
-- docker-compose.yml -> arquivo na raiz para orquestração de todos os containers
+- **nginx** -> para o proxy em produção
+- **env.example** -> variaveis de ambiente globais
+- **Dockerfile** -> arquivo de configuração em cada modulo para o build da imagem daquele módulo
+- **docker-compose.yml** -> arquivo na raiz para orquestração de todos os containers
+- **backend/docker-compose.yml** -> arquivo para rodar o postgres localmente
 
 <b>
 framework NuxtJs SSR melhora de SEO, usa vue 3+, e depencias listadas abaixo
@@ -71,7 +69,7 @@ na mesma rede pode acessar por seu IP
 Componentes de Cliente (Client-Side Components)Por padrão, o Nuxt utiliza renderização universal (SSR). Se você tem um componente que precisa rodar exclusivamente no navegador (por interagir com a janela do navegador, usar localStorage ou exigir uma biblioteca que dependa do objeto window), você pode usar a tag <ClientOnly> ou criar um componente com .client no nome.
 </b>
 
-## [Deploy.MD]()
+## [Deploy.MD](/deploy.md)
 
 
 ## Adicionar tailwild v4 com vite no projeto
@@ -106,13 +104,11 @@ export default defineNuxtConfig({
 })
 ```
 
-## Outras dependencias importantes
+## Bibliotecas importantes
 
 1. Swipper para o carrossel
 
 2. Nuxt Images otimização de imagens antes de carregar as páginas
-
-
 
 
 ### [NuxImages Docs](https://image.nuxt.com/usage/nuxt-img)
@@ -122,3 +118,40 @@ export default defineNuxtConfig({
 ### [Documentação para o Nitro](/Nitro.docs.md)
 
 ### [Prisma Docs](https://www.prisma.io/docs/guides/frameworks)
+
+
+## Usando o Backend e API
+
+```bash
+cd backend
+npm i
+cp .env.example .env
+```
+
+substitua as variaveis de ambiente
+
+### arquitetura do back
+
+```bash
+meu-projeto/
+│
+├── server/
+│   ├── api/
+│   │   ├── users/
+│   │   │     get.ts
+│   │   │     post.ts
+│   │   └── auth/
+│   │
+│   ├── db/
+│   │     prisma.ts
+│   │
+│   └── utils/
+│
+├── prisma/
+│   ├── schema.prisma
+│   └── migrations/
+│
+├── .env
+├── package.json
+└── docker-compose.yml
+```
