@@ -34,7 +34,18 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import { news as defaultNews } from '@/data/totem.js'
+
+const news = [
+  {
+    title: "Crianças e telas: como encontrar o equilíbrio",
+    date: "17 de março de 2026",
+    excerpt:
+      "O uso de telas na infância e na adolescência é motivo de dúvida entre famílias e educadores. Conheça sinais de alerta e caminhos para um uso mais saudável e consciente da tecnologia no dia a dia.",
+    image: new URL("../assets/imagens/NOTÍCIA-1-CACHOEIRA.jpg", import.meta.url)
+      .href,
+    link: "#",
+  },
+];
 
 const props = defineProps({
   news: { type: Array, default: () => defaultNews },

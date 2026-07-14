@@ -35,7 +35,14 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import { results as defaultResults } from '@/data/totem.js'
+
+export const results = [
+  {
+    title: "TERCEIRÃO 2025",
+    subtitle: "17 aprovações em Medicina",
+    image: "/imagens/RESULTADO-1-CS.jpg",
+  },
+];
 
 const props = defineProps({
   results: { type: Array, default: () => defaultResults },
