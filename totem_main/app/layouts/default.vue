@@ -1,29 +1,23 @@
+<script>
+/**
+ * @author Jonas
+ * layout padrão definir o layout no script da página com definePageMeta ou setLayout
+ * */
+</script>
+
 <template>
-   <div class="relative min-h-screen">
+  <div class="relative min-h-screen">
 
     <!-- Fundo -->
-    <div
-      class="
-        fixed
-        inset-0
-        -z-20
-        bg-cover
-        bg-center
-        bg-fixed
-      "
-      style="background-image: url('/images/bkg-grafismo-lobo.jpg')"
-    />
+    <div class="fixed inset-0 -z-20 bg-cover bg-center bg-fixed"
+      style="background-image: url('/images/bkg-grafismo-lobo.jpg')" />
 
     <!-- Overlay -->
-    <div class="fixed inset-0 -z-10 bg-white/80"/>
+    <div class="fixed inset-0 -z-10 bg-white/80" />
 
-    <Menu/>
-
-    <main class="flex-1">
+    <main>
       <slot />
     </main>
-
-    <Footer/>
 
   </div>
 </template>

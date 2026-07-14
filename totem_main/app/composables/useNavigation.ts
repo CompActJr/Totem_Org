@@ -15,7 +15,7 @@ export default function useNavigation() {
     },
     {
       label: "VOCACIONAL",
-      href: "/vocacional/"
+      href: "/vocacional"
     }
   ]
 

@@ -4,6 +4,10 @@ import Result from '~/components/vocacional/Result.vue';
 import StartForm from '~/components/vocacional/StartForm.vue';
 import VocacionalStepper from '~/components/vocacional/VocacionalStepper.vue';
 
+definePageMeta({
+    layout: 'public'
+})
+
 const { state } = useVocacional();
 
 </script>
