@@ -1,39 +1,40 @@
-<template>
-  <div class="home">
-    <AppHeader />
+<script setup lang="ts">
+import AgendeSuaVisita from '~/components/home/AgendeSuaVisita.vue';
+import HeroDepoimentos from '~/components/home/HeroDepoimentos.vue';
+import HeroSlider from '~/components/home/HeroSlider.vue';
+import HeroTitle from '~/components/home/HeroTitle.vue';
+import HeroUnidades from '~/components/home/HeroUnidades.vue';
+import HeroVocacional from '~/components/home/HeroVocacional.vue';
 
-    <HeroSection />
+/**
+ * @author Jonas
+ * pagina pricipal do site, use as metatags abaixo para melhorar o SEO
+ */
 
-    <AboutSection />
+ definePageMeta({
+  title: 'Colégio Totem - Educação de Qualidade',
+  description: 'O Colégio Totem oferece educação de qualidade, preparando os alunos para o sucesso acadêmico e pessoal.',
+  ogTitle: 'Colégio Totem - Educação de Qualidade',
+  ogDescription: 'O Colégio Totem oferece educação de qualidade, preparando os alunos para o sucesso acadêmico e pessoal.',
+  ogImage: '/geral/logo-totem.jpg',
+  ogUrl: 'https://colegios.totem.com.br/',
+  ogType: 'website',
+ })
 
-    <UnitsSection />
-
-    <TestimonialsSection />
-
-    <VocationalSection />
-
-    <ScheduleVisitSection @submitted="onFormSubmitted" />
-
-    <AppFooter />
-  </div>
-</template>
-
-<script setup>
-// Este arquivo só compõe a página — toda a lógica e estilo de cada
-// bloco vive dentro do próprio componente. O style.css global (tokens,
-// grid, tipografia, botões) deve ser importado uma única vez no ponto
-// de entrada da aplicação (main.js / App.vue), e não aqui.
-
-import AppHeader from '@/components/layout/AppHeader.vue'
-import AppFooter from '@/components/layout/AppFooter.vue'
-import HeroSection from '@/components/home/HeroSection.vue'
-import AboutSection from '@/components/home/AboutSection.vue'
-import UnitsSection from '@/components/home/UnitsSection.vue'
-import TestimonialsSection from '@/components/home/TestimonialsSection.vue'
-import VocationalSection from '@/components/home/VocationalSection.vue'
-import ScheduleVisitSection from '@/components/home/ScheduleVisitSection.vue'
-
-function onFormSubmitted(data) {
-  console.log('Formulário enviado:', data)
-}
 </script>
+
+<template>
+
+  <HeroSlider/>
+
+  <HeroTitle/>
+
+  <HeroUnidades/>
+
+  <HeroDepoimentos/>
+
+  <HeroVocacional />
+
+  <AgendeSuaVisita />
+
+</template>

@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+.responsive-padding{
+    @apply py-8 lg:py-16 px-8 md:px-32 lg:px-80;
+}
