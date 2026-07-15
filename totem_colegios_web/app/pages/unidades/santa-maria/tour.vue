@@ -10,7 +10,7 @@ onMounted(async () => {
   if (viewerContainer) {
     const viewer = new Viewer({
       container: viewerContainer,
-      panorama: '/images/panoramas/imagem360.webp',
+      panorama: '/panoramas/santa-maria/teste360.webp',
     });
   }
 

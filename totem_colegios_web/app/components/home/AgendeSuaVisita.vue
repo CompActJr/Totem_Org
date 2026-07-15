@@ -1,3 +1,28 @@
+
+<script setup>
+import { ref } from "vue";
+import unidades from "~/data/unidades.json";
+
+
+const emit = defineEmits(["submitted"]);
+
+const form = ref({
+  name: "",
+  city: "",
+  level: "",
+  whatsapp: "",
+  email: "",
+});
+
+function submitForm() {
+  // TODO: integrar com endpoint / CRM real
+  emit("submitted", { ...form.value });
+  alert("Recebemos seus dados! Em breve entraremos em contato.");
+  form.value = { name: "", city: "", level: "", whatsapp: "", email: "" };
+}
+</script>
+
+
 <template>
   <section id="agende" class="section-cta">
     <img
@@ -52,28 +77,6 @@
     </div>
   </section>
 </template>
-
-<script setup>
-import { ref } from "vue";
-import { unidades, educationLevels } from "@/data/totem.js";
-
-const emit = defineEmits(["submitted"]);
-
-const form = ref({
-  name: "",
-  city: "",
-  level: "",
-  whatsapp: "",
-  email: "",
-});
-
-function submitForm() {
-  // TODO: integrar com endpoint / CRM real
-  emit("submitted", { ...form.value });
-  alert("Recebemos seus dados! Em breve entraremos em contato.");
-  form.value = { name: "", city: "", level: "", whatsapp: "", email: "" };
-}
-</script>
 
 <style scoped>
 .section-cta {
