@@ -6,8 +6,26 @@
     "unidadeId": 1,
     "inicio": "23 de março de 2026",
     "fim": "Prova da UFSM",
-    "imagem": "https://picsum.photos/400/500",
-    "link": "#"
+    "imagem": "https://picsum.photos/600/800",
+    "descricao": "TODO",
+    "horario": "TODO",
+    "desconto": "TODO",
+    "caracteristicas": [
+      "TODO",
+      "TODO"
+    ],
+    "material": [
+      "TODO",
+      "TODO"
+    ],
+    "kit": [
+      "TODO",
+      "TODO"
+    ],
+    "documentos": [
+      "TODO",
+      "TODO"
+    ]
   },
   {
     "id": 2,
@@ -16,8 +34,26 @@
     "unidadeId": 1,
     "inicio": "22 de abril de 2026",
     "fim": "Prova do ENEM",
-    "imagem": "https://picsum.photos/400/500",
-    "link": "#"
+    "imagem": "https://picsum.photos/600/800",
+    "descricao": "TODO",
+    "horario": "TODO",
+    "desconto": "TODO",
+    "caracteristicas": [
+      "TODO",
+      "TODO"
+    ],
+    "material": [
+      "TODO",
+      "TODO"
+    ],
+    "kit": [
+      "TODO",
+      "TODO"
+    ],
+    "documentos": [
+      "TODO",
+      "TODO"
+    ]
   },
   {
     "id": 3,
@@ -26,8 +62,26 @@
     "unidadeId": 1,
     "inicio": "23 de fevereiro de 2026",
     "fim": "Prova da UFSM",
-    "imagem": "https://picsum.photos/400/500",
-    "link": "#"
+    "imagem": "https://picsum.photos/600/800",
+    "descricao": "TODO",
+    "horario": "TODO",
+    "desconto": "TODO",
+    "caracteristicas": [
+      "TODO",
+      "TODO"
+    ],
+    "material": [
+      "TODO",
+      "TODO"
+    ],
+    "kit": [
+      "TODO",
+      "TODO"
+    ],
+    "documentos": [
+      "TODO",
+      "TODO"
+    ]
   },
   {
     "id": 4,
@@ -36,8 +90,26 @@
     "unidadeId": 2,
     "inicio": "23 de fevereiro de 2026",
     "fim": "Até a prova da UFRGS ou UFSM",
-    "imagem": "https://picsum.photos/400/500",
-    "link": "#"
+    "imagem": "https://picsum.photos/600/800",
+    "descricao": "Curso intensivo voltado para Medicina com foco em ENEM, UFSM, UFRGS e vestibulares particulares.",
+    "horario": "TODO",
+    "desconto": "TODO",
+    "caracteristicas": [
+      "TODO",
+      "TODO"
+    ],
+    "material": [
+      "TODO",
+      "TODO"
+    ],
+    "kit": [
+      "TODO",
+      "TODO"
+    ],
+    "documentos": [
+      "TODO",
+      "TODO"
+    ]
   },
   {
     "id": 5,
@@ -46,8 +118,26 @@
     "unidadeId": 2,
     "inicio": "09 de março de 2026",
     "fim": "Prova da UFRGS ou UFSM",
-    "imagem": "https://picsum.photos/400/500",
-    "link": "#"
+    "imagem": "https://picsum.photos/600/800",
+    "descricao": "TODO",
+    "horario": "TODO",
+    "desconto": "TODO",
+    "caracteristicas": [
+      "TODO",
+      "TODO"
+    ],
+    "material": [
+      "TODO",
+      "TODO"
+    ],
+    "kit": [
+      "TODO",
+      "TODO"
+    ],
+    "documentos": [
+      "TODO",
+      "TODO"
+    ]
   },
   {
     "id": 6,
@@ -56,8 +146,26 @@
     "unidadeId": 2,
     "inicio": "16 de março de 2026",
     "fim": "Prova da UFSM",
-    "imagem": "https://picsum.photos/400/500",
-    "link": "#"
+    "imagem": "https://picsum.photos/600/800",
+    "descricao": "TODO",
+    "horario": "TODO",
+    "desconto": "TODO",
+    "caracteristicas": [
+      "TODO",
+      "TODO"
+    ],
+    "material": [
+      "TODO",
+      "TODO"
+    ],
+    "kit": [
+      "TODO",
+      "TODO"
+    ],
+    "documentos": [
+      "TODO",
+      "TODO"
+    ]
   },
   {
     "id": 7,
@@ -66,8 +174,26 @@
     "unidadeId": 2,
     "inicio": "13 de abril de 2026",
     "fim": "Prova da UFSM",
-    "imagem": "https://picsum.photos/400/500",
-    "link": "#"
+    "imagem": "https://picsum.photos/600/800",
+    "descricao": "TODO",
+    "horario": "TODO",
+    "desconto": "TODO",
+    "caracteristicas": [
+      "TODO",
+      "TODO"
+    ],
+    "material": [
+      "TODO",
+      "TODO"
+    ],
+    "kit": [
+      "TODO",
+      "TODO"
+    ],
+    "documentos": [
+      "TODO",
+      "TODO"
+    ]
   },
   {
     "id": 8,
@@ -76,8 +202,26 @@
     "unidadeId": 2,
     "inicio": "13 de abril de 2026",
     "fim": "Prova da UFSM",
-    "imagem": "https://picsum.photos/400/500",
-    "link": "#"
+    "imagem": "https://picsum.photos/600/800",
+    "descricao": "TODO",
+    "horario": "TODO",
+    "desconto": "TODO",
+    "caracteristicas": [
+      "TODO",
+      "TODO"
+    ],
+    "material": [
+      "TODO",
+      "TODO"
+    ],
+    "kit": [
+      "TODO",
+      "TODO"
+    ],
+    "documentos": [
+      "TODO",
+      "TODO"
+    ]
   },
   {
     "id": 9,
@@ -86,8 +230,26 @@
     "unidadeId": 2,
     "inicio": "11 de agosto de 2025",
     "fim": "Vestibular da UFSM",
-    "imagem": "https://picsum.photos/400/500",
-    "link": "#"
+    "imagem": "https://picsum.photos/600/800",
+    "descricao": "TODO",
+    "horario": "TODO",
+    "desconto": "TODO",
+    "caracteristicas": [
+      "TODO",
+      "TODO"
+    ],
+    "material": [
+      "TODO",
+      "TODO"
+    ],
+    "kit": [
+      "TODO",
+      "TODO"
+    ],
+    "documentos": [
+      "TODO",
+      "TODO"
+    ]
   },
   {
     "id": 10,
@@ -96,8 +258,26 @@
     "unidadeId": 2,
     "inicio": "11 de agosto de 2025",
     "fim": "Vestibular da UFSM",
-    "imagem": "https://picsum.photos/400/500",
-    "link": "#"
+    "imagem": "https://picsum.photos/600/800",
+    "descricao": "TODO",
+    "horario": "TODO",
+    "desconto": "TODO",
+    "caracteristicas": [
+      "TODO",
+      "TODO"
+    ],
+    "material": [
+      "TODO",
+      "TODO"
+    ],
+    "kit": [
+      "TODO",
+      "TODO"
+    ],
+    "documentos": [
+      "TODO",
+      "TODO"
+    ]
   },
   {
     "id": 11,
@@ -106,8 +286,26 @@
     "unidadeId": 2,
     "inicio": "11 de agosto de 2025",
     "fim": "Vestibular da UFSM",
-    "imagem": "https://picsum.photos/400/500",
-    "link": "#"
+    "imagem": "https://picsum.photos/600/800",
+    "descricao": "TODO",
+    "horario": "TODO",
+    "desconto": "TODO",
+    "caracteristicas": [
+      "TODO",
+      "TODO"
+    ],
+    "material": [
+      "TODO",
+      "TODO"
+    ],
+    "kit": [
+      "TODO",
+      "TODO"
+    ],
+    "documentos": [
+      "TODO",
+      "TODO"
+    ]
   },
   {
     "id": 12,
@@ -116,8 +314,26 @@
     "unidadeId": 3,
     "inicio": "23 de fevereiro de 2026",
     "fim": "Prova da UFSM",
-    "imagem": "https://picsum.photos/400/500",
-    "link": "#"
+    "imagem": "https://picsum.photos/600/800",
+    "descricao": "TODO",
+    "horario": "TODO",
+    "desconto": "TODO",
+    "caracteristicas": [
+      "TODO",
+      "TODO"
+    ],
+    "material": [
+      "TODO",
+      "TODO"
+    ],
+    "kit": [
+      "TODO",
+      "TODO"
+    ],
+    "documentos": [
+      "TODO",
+      "TODO"
+    ]
   },
   {
     "id": 13,
@@ -126,8 +342,26 @@
     "unidadeId": 3,
     "inicio": "9 de março de 2026",
     "fim": "Prova da UFSM",
-    "imagem": "https://picsum.photos/400/500",
-    "link": "#"
+    "imagem": "https://picsum.photos/600/800",
+    "descricao": "TODO",
+    "horario": "TODO",
+    "desconto": "TODO",
+    "caracteristicas": [
+      "TODO",
+      "TODO"
+    ],
+    "material": [
+      "TODO",
+      "TODO"
+    ],
+    "kit": [
+      "TODO",
+      "TODO"
+    ],
+    "documentos": [
+      "TODO",
+      "TODO"
+    ]
   },
   {
     "id": 14,
@@ -136,7 +370,25 @@
     "unidadeId": 3,
     "inicio": "30 de março de 2026",
     "fim": "Prova da UFSM",
-    "imagem": "https://picsum.photos/400/500",
-    "link": "#"
-  }
+    "imagem": "https://picsum.photos/600/800",
+    "descricao": "TODO",
+    "horario": "TODO",
+    "desconto": "TODO",
+    "caracteristicas": [
+      "TODO",
+      "TODO"
+    ],
+    "material": [
+      "TODO",
+      "TODO"
+    ],
+    "kit": [
+      "TODO",
+      "TODO"
+    ],
+    "documentos": [
+      "TODO",
+      "TODO"
+    ]
+  }  
 ]

@@ -18,19 +18,18 @@ defineProps({
     fim: {
         type: String,
         required: true
-    },
-
-    link: {
-        type: String,
-        default: "#"
     }
 });
+
+const emit = defineEmits<{
+    (e: "abrir"): void;
+}>();
 </script>
 
 <template>
 
     <article
-        class="group relative overflow-hidden shadow-lg cursor-pointer aspect-[4/5]">
+        class="group relative overflow-hidden shadow-lg aspect-[4/5]">
 
         <!-- Imagem -->
         <img
@@ -42,8 +41,11 @@ defineProps({
         <div
             class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-center px-8">
 
-            <h3 class="text-white text-4xl font-light uppercase">
+            <h3
+                class="text-white text-4xl font-light uppercase">
+
                 {{ titulo }}
+
             </h3>
 
             <div class="w-24 h-px bg-white my-8"></div>
@@ -56,9 +58,7 @@ defineProps({
                         Início do período letivo
                     </p>
 
-                    <p>
-                        {{ inicio }}
-                    </p>
+                    <p>{{ inicio }}</p>
 
                 </div>
 
@@ -68,21 +68,19 @@ defineProps({
                         Fim do período letivo
                     </p>
 
-                    <p>
-                        {{ fim }}
-                    </p>
+                    <p>{{ fim }}</p>
 
                 </div>
 
             </div>
 
-            <NuxtLink
-                :to="link"
+            <button
+                @click="emit('abrir')"
                 class="mt-10 bg-orange-500 hover:bg-orange-600 transition px-8 py-3 text-white font-semibold uppercase text-sm tracking-wide">
 
                 + Infos sobre a turma
 
-            </NuxtLink>
+            </button>
 
         </div>
 
