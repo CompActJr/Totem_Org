@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "titulo": "Extensivo Manhã",
+    "unidade": "Santa Rosa",
+    "unidadeId": 1,
+    "inicio": "23 de março de 2026",
+    "fim": "Prova da UFSM",
+    "imagem": "https://picsum.photos/400/500",
+    "link": "#"
+  },
+  {
+    "id": 2,
+    "titulo": "Extensivo Noite",
+    "unidade": "Santa Rosa",
+    "unidadeId": 1,
+    "inicio": "22 de abril de 2026",
+    "fim": "Prova do ENEM",
+    "imagem": "https://picsum.photos/400/500",
+    "link": "#"
+  },
+  {
+    "id": 3,
+    "titulo": "Medicina Integral",
+    "unidade": "Santa Rosa",
+    "unidadeId": 1,
+    "inicio": "23 de fevereiro de 2026",
+    "fim": "Prova da UFSM",
+    "imagem": "https://picsum.photos/400/500",
+    "link": "#"
+  },
+  {
+    "id": 4,
+    "titulo": "MEDPLUS",
+    "unidade": "Santa Maria",
+    "unidadeId": 2,
+    "inicio": "23 de fevereiro de 2026",
+    "fim": "Até a prova da UFRGS ou UFSM",
+    "imagem": "https://picsum.photos/400/500",
+    "link": "#"
+  },
+  {
+    "id": 5,
+    "titulo": "Medicina Prime",
+    "unidade": "Santa Maria",
+    "unidadeId": 2,
+    "inicio": "09 de março de 2026",
+    "fim": "Prova da UFRGS ou UFSM",
+    "imagem": "https://picsum.photos/400/500",
+    "link": "#"
+  },
+  {
+    "id": 6,
+    "titulo": "Extensivo Manhã",
+    "unidade": "Santa Maria",
+    "unidadeId": 2,
+    "inicio": "16 de março de 2026",
+    "fim": "Prova da UFSM",
+    "imagem": "https://picsum.photos/400/500",
+    "link": "#"
+  },
+  {
+    "id": 7,
+    "titulo": "Extensivo Tarde",
+    "unidade": "Santa Maria",
+    "unidadeId": 2,
+    "inicio": "13 de abril de 2026",
+    "fim": "Prova da UFSM",
+    "imagem": "https://picsum.photos/400/500",
+    "link": "#"
+  },
+  {
+    "id": 8,
+    "titulo": "Extensivo Noite",
+    "unidade": "Santa Maria",
+    "unidadeId": 2,
+    "inicio": "13 de abril de 2026",
+    "fim": "Prova da UFSM",
+    "imagem": "https://picsum.photos/400/500",
+    "link": "#"
+  },
+  {
+    "id": 9,
+    "titulo": "Turma PSS 1 UFSM",
+    "unidade": "Santa Maria",
+    "unidadeId": 2,
+    "inicio": "11 de agosto de 2025",
+    "fim": "Vestibular da UFSM",
+    "imagem": "https://picsum.photos/400/500",
+    "link": "#"
+  },
+  {
+    "id": 10,
+    "titulo": "Turma PSS 2 UFSM",
+    "unidade": "Santa Maria",
+    "unidadeId": 2,
+    "inicio": "11 de agosto de 2025",
+    "fim": "Vestibular da UFSM",
+    "imagem": "https://picsum.photos/400/500",
+    "link": "#"
+  },
+  {
+    "id": 11,
+    "titulo": "Turma PSS 3 UFSM",
+    "unidade": "Santa Maria",
+    "unidadeId": 2,
+    "inicio": "11 de agosto de 2025",
+    "fim": "Vestibular da UFSM",
+    "imagem": "https://picsum.photos/400/500",
+    "link": "#"
+  },
+  {
+    "id": 12,
+    "titulo": "Medicina Integral",
+    "unidade": "Ijuí",
+    "unidadeId": 3,
+    "inicio": "23 de fevereiro de 2026",
+    "fim": "Prova da UFSM",
+    "imagem": "https://picsum.photos/400/500",
+    "link": "#"
+  },
+  {
+    "id": 13,
+    "titulo": "MEDICINA SEMI-INTEGRAL",
+    "unidade": "Ijuí",
+    "unidadeId": 3,
+    "inicio": "9 de março de 2026",
+    "fim": "Prova da UFSM",
+    "imagem": "https://picsum.photos/400/500",
+    "link": "#"
+  },
+  {
+    "id": 14,
+    "titulo": "Extensivo Noite",
+    "unidade": "Ijuí",
+    "unidadeId": 3,
+    "inicio": "30 de março de 2026",
+    "fim": "Prova da UFSM",
+    "imagem": "https://picsum.photos/400/500",
+    "link": "#"
+  }
+]
