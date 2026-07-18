@@ -1,10 +1,12 @@
+<script setup lang="ts">
 
-<script setup>
+/**
+ * @author Jonas
+ * @author Arthur
+ */
+
 import { ref } from "vue";
 import unidades from "~/data/unidades.json";
-
-
-const emit = defineEmits(["submitted"]);
 
 const form = ref({
   name: "",
@@ -14,130 +16,58 @@ const form = ref({
   email: "",
 });
 
-function submitForm() {
-  // TODO: integrar com endpoint / CRM real
-  emit("submitted", { ...form.value });
-  alert("Recebemos seus dados! Em breve entraremos em contato.");
-  form.value = { name: "", city: "", level: "", whatsapp: "", email: "" };
+//feat arthur implementar submissão e envio para o email da secretaria
+const submitForm = () => {
+
 }
+
 </script>
 
 
 <template>
-  <section id="agende" class="section-cta">
-    <img
-      src="/geral/AGENDE-SUA-VISITA.jpg"
-      alt="Quadra do Colégio Totem"
-      class="cta-bg"
-    />
-    <div class="cta-overlay"></div>
+  <section class="relative h-128 md:min-h-256 w-full overflow-hidden"  id="agende-visita">
+    <NuxtImg src="/geral/AGENDE-SUA-VISITA.jpg" alt="Quadra do Colégio Totem"
+      class="h-full w-full object-cover object-center" loading="lazy" />
 
-    <div class="container cta-inner">
-      <h1>Agende sua Visita</h1>
-      <h2 class="cta-subtitle">Colégio Totem</h2>
+    <div class="absolute inset-0 bg-black/50 responsive-padding overflow-y-auto">
 
-      <form class="cta-form" @submit.prevent="submitForm">
-        <input
-          type="text"
-          v-model="form.name"
-          placeholder="Nome"
-          class="full-width"
-          required
-        />
+      <h2 class="text-white text-2xl md:text-8xl font-black">Agende Sua Visita</h2>
+      <h4 class="text-white text-xl md:text-4xl mt-8">Colégio Totem</h4>
 
-        <select v-model="form.city" required>
-          <option value="" disabled selected>Cidade</option>
-          <option v-for="unit in unidades" :key="unit.city" :value="unit.city">
-            {{ unit.city }}
-          </option>
+      <form action="" method="POST" aria-label="formulario de matrícula" class="mt-8 w-full grid grid-cols-2 gap-8">
+        <input placeholder="Nome" type="text" id="nome" name="nome" class="p-4 bg-white/80 rounded-full col-span-2" />
+
+        <select id="cidade" name="cidade" class="p-4 bg-white/80 rounded-full col-span-2 md:col-span-1">
+          <option value="">Cidade</option>
         </select>
 
-        <select v-model="form.level" required>
-          <option value="" disabled selected>Nível de Ensino</option>
-          <option v-for="level in educationLevels" :key="level" :value="level">
-            {{ level }}
-          </option>
+        <select id="ensino" name="ensino" class="p-4 bg-white/80 rounded-full col-span-2 md:col-span-1">
+          <option value="">Nível De Ensino</option>
         </select>
 
-        <input
-          type="tel"
-          v-model="form.whatsapp"
-          placeholder="WhatsApp"
-          required
-        />
-        <input
-          type="email"
-          v-model="form.email"
-          placeholder="E-mail"
-          required
-        />
+        <input placeholder="Celular: (xx) 9 xxxx-xxxx" type="text" id="celular" name="celular"
+          class="p-4 bg-white/80 rounded-full col-span-2 md:col-span-1" required />
 
-        <button type="submit" class="btn btn-primary full-width">ENVIAR</button>
+        <input placeholder="Email" type="email" id="email" name="email"
+          class="p-4 bg-white/80 rounded-full col-span-2 md:col-span-1" required />
+
+        <button type="submit" 
+          class="p-2 lg:p-4 rounded-full
+            bg-yellow-400 text-lg lg:text-xl font-bold text-gray-600 
+              transition-all duration-300 hover:text-white
+              hover:scale-105 hover:bg-orange-400 ">
+          ENVIAR
+        </button>
+
       </form>
+
+      <div class="flex items-center justify-between w-full gap-8 mt-8">
+            <img src="/geral/logo-totem.png" alt="Colégio Totem" class="w-32 md:w-48 lg:w-64"/>
+            <p class="text-xl md:text-2xl lg:text-4xl font-extrabold text-yellow-300">
+                É MAIS QUE COLÉGIOS:<br />É TOTEM!
+            </p>
+      </div>
+
     </div>
   </section>
 </template>
-
-<style scoped>
-.section-cta {
-  position: relative;
-
-  padding: var(--space-8) 0;
-
-  overflow: hidden;
-}
-
-.cta-bg {
-  position: absolute;
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-  border-radius: 0;
-}
-
-.cta-overlay {
-  position: absolute;
-  inset: 0;
-
-  background: var(--overlay-cta);
-}
-
-.cta-inner {
-  position: relative;
-  z-index: 1;
-
-  max-width: 640px;
-}
-
-.cta-inner h1 {
-  color: var(--white);
-  text-align: center;
-}
-
-.cta-subtitle {
-  color: var(--white);
-  margin-bottom: var(--space-5);
-  font-weight: 400;
-  margin-top: -24px;
-  text-align: center;
-}
-
-.cta-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-2);
-}
-
-.cta-form .full-width {
-  grid-column: 1 / -1;
-}
-
-@media (max-width: 1024px) {
-  .cta-form {
-    grid-template-columns: 1fr;
-  }
-}
-</style>

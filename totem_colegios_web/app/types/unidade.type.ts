@@ -3,6 +3,7 @@ export type UnidadeType = {
   city: string
   slug: string
   image: string
+  levels: string[]
   cep: string
   address: string
   phone: string

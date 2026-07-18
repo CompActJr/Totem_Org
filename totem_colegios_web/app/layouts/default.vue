@@ -4,7 +4,7 @@
     <!-- Fundo -->
     <div
       class="fixed inset-0 -z-20 bg-cover bg-center bg-fixed"
-      style="background-image: url('/images/bkg-grafismo-lobo.jpg')"
+      style="background-image: url('/geral/bkg-grafismo-lobo.jpg')"
     />
 
     <!-- Overlay -->
@@ -12,7 +12,7 @@
 
     <Menu/>
 
-    <main class="flex-1">
+    <main class="flex-1 pt-20 md:pt-26">
       <slot />
     </main>
 
