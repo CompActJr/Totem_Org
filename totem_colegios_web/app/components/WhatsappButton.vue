@@ -1,74 +1,60 @@
-<template>
-  <a class="whatsapp-btn" :href="link" target="_blank" rel="noopener">
-    <svg class="icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
-      <path d="M16 3C9.4 3 4 8.4 4 15c0 2.4.7 4.6 1.9 6.5L4 29l7.7-1.8C13.4 27.7 14.7 28 16 28c6.6 0 12-5.4 12-12S22.6 3 16 3zm0 22c-1.2 0-2.4-.3-3.5-.8l-.3-.1-4.6 1.1 1.1-4.4-.2-.3C7.5 19 7 17 7 15c0-5 4-9 9-9s9 4 9 9-4 9-9 9z"/>
-    </svg>
-    <span class="whatsapp-label">{{ label }}</span>
-  </a>
-</template>
+<script lang="ts" setup>
+/**
+ * @author Jonas
+ * Botão flutuante para whats que ao focar nele abre uma caixinha de dialogo a esquerda
+ * com cada contato
+ */
 
-<script setup>
-import { computed } from 'vue'
-import { buildWhatsappLink } from '@/data/totem.js'
+import units from "~/data/unidades.json"
 
-const props = defineProps({
-  whatsapp: { type: String, required: true }, // ex.: "55 9 9088-3334"
-  message: { type: String, default: 'Olá! Gostaria de saber mais sobre o Colégio Totem.' },
-  label: { type: String, default: 'Mande um Whats' },
-})
+const open = ref(false);
 
-const link = computed(() => buildWhatsappLink(props.whatsapp, props.message))
 </script>
 
-<style scoped>
-.whatsapp-btn {
-  position: absolute;
-  right: 96px;
-  bottom: 48px;
+<template>
+  <div class="fixed bottom-32 right-8 z-50 hidden md:block">
+   <Transition name="fade">
+    <div
+      v-if="open"
+      class="
+        absolute
+        right-24
+        bottom-0
+        w-72
+        rounded-xl
+        bg-white
+        shadow-2xl
+        overflow-hidden
+      "
+    >
+      <div class="bg-green-600 text-white px-4 py-3">
+        <h2 class="font-bold">Escolha uma unidade</h2>
+        <p class="text-sm">Converse diretamente pelo WhatsApp</p>
+      </div>
 
-  display: flex;
-  align-items: center;
-  gap: var(--space-1);
+      <div class="p-3 flex flex-col gap-2">
+        <NuxtLink
+          v-for="unit in units"
+          :key="unit.city"
+          :to="unit.whatsapp"
+          target="_blank"
+          class="rounded-lg border p-3 hover:bg-green-50"
+        >
+          {{ unit.city }}
+        </NuxtLink>
+      </div>
+    </div>
+  </Transition>
 
-  background: var(--whatsapp-green);
-  color: var(--white);
+    <button 
+      class="bg-green-600 p-2 rounded-lg transition-all duration-300 hover:scale-105" 
+      @click="open = !open">
+      <svg xmlns="http://www.w3.org/2000/svg" width="4em" height="4em" viewBox="0 0 24 24">
+        <path d="M0 0h24v24H0z" fill="none" />
+        <path fill="#fff"
+          d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+      </svg>
+    </button>
 
-  padding: var(--space-2);
-  border-radius: 50px;
-
-  box-shadow: var(--shadow-md);
-}
-
-.whatsapp-btn .icon {
-  width: 32px;
-  height: 32px;
-
-  flex-shrink: 0;
-}
-
-.whatsapp-label {
-  font-size: 13px;
-  font-weight: 600;
-  max-width: 120px;
-  line-height: 1.2;
-}
-
-@media (max-width: 480px) {
-  .whatsapp-btn {
-    right: 12px;
-    bottom: 20px;
-
-    padding: 12px;
-    border-radius: 50%;
-  }
-
-  .whatsapp-label {
-    display: none;
-  }
-
-  .whatsapp-btn .icon {
-    width: 24px;
-    height: 24px;
-  }
-}
-</style>
+  </div>
+</template>

@@ -14,7 +14,7 @@ const banners = [
 </script>
 
 <template>
-    <section class="w-full h-100 lg:h-200 relative">
+    <section class="w-full h-100 lg:h-200 relative z-0 ">
         <Swiper :modules="[Autoplay, Pagination]" :autoplay="{ delay: 3000 }" :slides-per-view="1"
             :pagination="{ clickable: true }" class="h-full">
 
@@ -27,27 +27,26 @@ const banners = [
         </Swiper>
 
         <div class="absolute inset-0 bg-black/40">
-          
+
             <div class="absolute inset-0 z-10">
+
+                <div class="absolute z-10 lg:bottom-48 bottom-32 lg:left-16 left-4 text-white">
+                    <h1 class="lg:text-8xl md:text-4xl text-2xl font-bold">Matriculas Abertas</h1>
+                    <span class="lg:text-4xl md:text-2xl text-1xl">Colégios Totem</span>
+                </div>
+
                 <NuxtLink 
-                    to="/matriculas"
+                    to="/#agende-visita"
                     class="
-                        mt-8 
-                        rounded-full
-                        bg-yellow-400 
-                        px-8 py-4 text-xl 
-                        font-semibold
-                        text-gray-600 
-                        hover:text-white
-                        transition-all 
-                        duration-300 
-                        hover:scale-105
-                        hover:bg-orange-400 
-                        absolute bottom-16 left-16 
-                        hidden md:flex lg:flex"
-                >
+                        p-2 lg:p-4 rounded-full
+                        bg-yellow-400 text-lg lg:text-xl font-bold text-gray-600 
+                        transition-all duration-300 hover:text-white
+                        hover:scale-105 hover:bg-orange-400 
+                        absolute lg:bottom-16 lg:left-16 bottom-12 left-4
+                ">
                     Agende Sua Visita
                 </NuxtLink>
+                
             </div>
         </div>
 

@@ -3,7 +3,7 @@
         "id": 1,
         "city": "Cachoeira do Sul",
         "slug": "cachoeira-do-sul",
-        "image": "imagens/FACHADA-CACHOEIRA.jpg",
+        "image": "geral/FACHADA-CACHOEIRA.jpg",
         "levels": [
             "Berçário",
             "Educação Infantil",
@@ -23,7 +23,7 @@
         "id": 2,
         "city": "Santa Maria",
         "slug": "santa-maria",
-        "image": "imagens/FACHADA-SANTA-MARIA.jpg",
+        "image": "geral/FACHADA-SANTA-MARIA.jpg",
         "levels": [
             "Educação Infantil",
             "Ensino Fundamental I",
@@ -42,7 +42,7 @@
         "id": 3,
         "city": "Cruz Alta",
         "slug": "cruz-alta",
-        "image": "imagens/FACHADA-CRUZ-ALTA.jpg",
+        "image": "geral/FACHADA-CRUZ-ALTA.jpg",
         "levels": [
             "Educação Infantil",
             "Ensino Fundamental I",

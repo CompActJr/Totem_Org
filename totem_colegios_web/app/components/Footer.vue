@@ -6,15 +6,6 @@
 
 <template>
     <footer class="bg-[#332E29] py-8 lg:py-16 px-8 md:px-32 lg:px-80 min-h-60">
-        
-        <div class="flex items-center w-full gap-8">
-            <img src="/geral/logo-totem.png" alt="Colégio Totem" class="w-18 md:w-24 lg:w-24"/>
-            <p class="text-sm md:text-2xl lg:text-2xl font-extrabold text-[#FFA25A]">
-                É MAIS QUE COLÉGIOS:
-                <br />
-                É TOTEM!
-            </p>
-        </div>
 
         <div class="hidden lg:flex md:flex gap-8 justify-between mt-16 ">
             <div 

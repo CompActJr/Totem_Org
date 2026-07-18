@@ -37,4 +37,6 @@ import HeroVocacional from '~/components/home/HeroVocacional.vue';
 
   <AgendeSuaVisita />
 
+  <WhatsappButton/>
+
 </template>
