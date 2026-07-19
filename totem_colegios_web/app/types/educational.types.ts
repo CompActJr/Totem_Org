@@ -7,3 +7,10 @@ export const EducationalTypes = {
 } as const;
 
 export type EducationalTypes = typeof EducationalTypes[keyof typeof EducationalTypes];
+
+export interface EducationalLevel {
+    id: number,
+    name: EducationalTypes,
+    image: string,
+    link: string,
+}

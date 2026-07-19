@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import HeroSlider from '~/components/HeroSlider.vue';
 import AgendeSuaVisita from '~/components/home/AgendeSuaVisita.vue';
+import SecaoNiveisEnsino from '~/components/unidade/SecaoNiveisEnsino.vue';
 import HeroUnidadeTitle from '~/components/unidade/HeroUnidadeTitle.vue';
 import unidades from "~/data/unidades.json"
 import type { UnidadeType } from '~/types/unidade.type';
@@ -35,6 +36,8 @@ if (!unidade) {
         :imagem="'/geral/POR-QUE-O-TOTEM.jpg'" 
         :nome="'Colégio Cruz Alta'"
     />
+
+    <SecaoNiveisEnsino :unidade="unidade"/>
 
     <AgendeSuaVisita :unidades="[unidade]"/>
 

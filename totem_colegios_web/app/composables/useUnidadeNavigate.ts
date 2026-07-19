@@ -1,9 +1,7 @@
-export interface NavLink {
-  label: string
-  href: string
-}
+import type { NavLink } from "~/types/navlink"
 
-export function useNavigation(unidade: string) {
+
+export function useUnidadeNavigation(unidade: string) {
   const navLinks: NavLink[] = [
     {
       label: "HOME",
