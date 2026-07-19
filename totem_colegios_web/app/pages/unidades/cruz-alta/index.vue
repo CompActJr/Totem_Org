@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import HeroSlider from '~/components/HeroSlider.vue';
 import AgendeSuaVisita from '~/components/home/AgendeSuaVisita.vue';
+import HeroUnidadeTitle from '~/components/unidade/HeroUnidadeTitle.vue';
 import unidades from "~/data/unidades.json"
 import type { UnidadeType } from '~/types/unidade.type';
 /**
@@ -28,6 +29,12 @@ if (!unidade) {
 
     <HeroSlider :banners="banners" :titulo="'Cachoeira do Sul'" :subtitle="'Colégios totem'"
         :link="'/unidades/cruz-alta/#agende-visita'" />
+
+    <HeroUnidadeTitle
+        :unidade="unidade.slug" 
+        :imagem="'/geral/POR-QUE-O-TOTEM.jpg'" 
+        :nome="'Colégio Cruz Alta'"
+    />
 
     <AgendeSuaVisita :unidades="[unidade]"/>
 

@@ -1,10 +1,9 @@
-
 export interface NavLink {
   label: string
   href: string
 }
 
-export function useNavigation() {
+export function useNavigation(unidade: string) {
   const navLinks: NavLink[] = [
     {
       label: "HOME",
@@ -12,19 +11,19 @@ export function useNavigation() {
     },
     {
       label: "NOSSA ESCOLA",
-      href: "/sobre"
+      href: `/unidades/${unidade}/sobre`
     },
     {
         label: "UNIDADES",
         href: "/unidades"
     },
     {
-        label: "ESTUDE NO TOTEM",
-        href: "/matriculas"
+        label: "DIFERENCIAIS",
+        href: `/unidades/${unidade}/diferenciais`
     },
     {
         label: "FALE COM A GENTE",
-        href: "/contato"
+        href: `/unidades/${unidade}/#contato`
     },
   ]
 
