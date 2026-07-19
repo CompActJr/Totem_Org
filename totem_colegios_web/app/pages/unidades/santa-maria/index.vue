@@ -2,6 +2,7 @@
 import HeroSlider from '~/components/HeroSlider.vue';
 import AgendeSuaVisita from '~/components/home/AgendeSuaVisita.vue';
 import HeroUnidadeTitle from '~/components/unidade/HeroUnidadeTitle.vue';
+import SecaoInfra from '~/components/unidade/SecaoInfra.vue';
 import SecaoNiveisEnsino from '~/components/unidade/SecaoNiveisEnsino.vue';
 import unidades from "~/data/unidades.json"
 import type { UnidadeType } from '~/types/unidade.type';
@@ -38,6 +39,8 @@ if (!unidade) {
     />
 
     <SecaoNiveisEnsino :unidade="unidade"/>
+
+    <SecaoInfra :unidade="unidade"/>
 
     <AgendeSuaVisita :unidades="[unidade]"/>
 

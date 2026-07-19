@@ -24,7 +24,7 @@ const props = defineProps<Props>()
                 COLÉGIO...
             </h2>
 
-            <p class="mt-4 md:mt-8 mb-8 leading-12">
+            <p class="mt-4 md:mt-8 mb-8 leading-8 md:leading-12">
                 No <strong>{{ nome }}</strong>, ,os estudantes encontram um ambiente onde o
                 afeto e a atenção são prioridades, proporcionando bem-estar e segurança para
                 todos. Oferecemos a educação que desperta a criatividade e entrega um mundo de
