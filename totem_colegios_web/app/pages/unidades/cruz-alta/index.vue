@@ -6,6 +6,7 @@ import HeroUnidadeTitle from '~/components/unidade/HeroUnidadeTitle.vue';
 import unidades from "~/data/unidades.json"
 import type { UnidadeType } from '~/types/unidade.type';
 import SecaoInfra from '~/components/unidade/SecaoInfra.vue';
+import EntreEmContato from '~/components/unidade/EntreEmContato.vue';
 /**
  * @authors Jonas, Arthur, A.Pão
  */
@@ -41,6 +42,10 @@ if (!unidade) {
     <SecaoNiveisEnsino :unidade="unidade"/>
 
     <SecaoInfra :unidade="unidade"/>
+
+    <HeroVocacional/>
+
+    <EntreEmContato :unidade="unidade"/>
 
     <AgendeSuaVisita :unidades="[unidade]"/>
 
