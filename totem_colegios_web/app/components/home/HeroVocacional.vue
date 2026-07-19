@@ -2,18 +2,13 @@
     <section class="min-h-128 bg-white w-full responsive-padding">
 
         <div class="mt-4 lg:mt-8 flex items-center gap-32">
-           <div class="w-96 aspect-3/4 overflow-hidden rounded-xl hidden lg:block md:block">
-                <NuxtImg
-                    src="/geral/vocacional.jpg"
-                    alt="Estudante do Colégio Totem pensativa"
-                    class="h-full w-full object-cover"
-                    loading="lazy"
-                    format="webp"
-                />
+            <div class="w-96 aspect-3/4 overflow-hidden rounded-xl hidden lg:block md:block">
+                <NuxtImg src="/geral/vocacional.jpg" alt="Estudante do Colégio Totem pensativa"
+                    class="h-full w-full object-cover" loading="lazy" format="webp" />
             </div>
 
-            <div class="w-full lg:max-w-xl flex flex-col gap-8">
-                
+            <div class="w-full lg:max-w-xl flex flex-col items-start gap-8">
+
                 <div class="flex items-center">
                     <h2 class="text-orange-600 font-bold" aria-label="teste vocacional">
                         VOCACIONAL
@@ -35,7 +30,11 @@
                     Clique e faça o teste vocacional do Totem.
                 </p>
 
-                <a href="#" class="btn btn-primary btn-sm">ACESSE AGORA &rarr;</a>
+                <NuxtLink :to="`/unidades/cachoeira-do-sul/diferenciais`" class="rounded-full bg-white shadow-2xl px-6 py-3
+                font-semibold text-gray-700 
+                transition-all duration-300 hover:scale-115">
+                    Saiba mais →
+                </NuxtLink>
             </div>
         </div>
 

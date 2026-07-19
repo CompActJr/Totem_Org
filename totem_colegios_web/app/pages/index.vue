@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import AgendeSuaVisita from '~/components/home/AgendeSuaVisita.vue';
 import HeroDepoimentos from '~/components/home/HeroDepoimentos.vue';
-import HeroSlider from '~/components/home/HeroSlider.vue';
+import HeroSlider from '~/components/HeroSlider.vue';
 import HeroTitle from '~/components/home/HeroTitle.vue';
 import HeroUnidades from '~/components/home/HeroUnidades.vue';
 import HeroVocacional from '~/components/home/HeroVocacional.vue';
+
+import unidades from "~/data/unidades.json";
 
 /**
  * @author Jonas
@@ -21,11 +23,17 @@ import HeroVocacional from '~/components/home/HeroVocacional.vue';
   ogType: 'website',
  })
 
+ const banners = [
+    "/geral/BANNER.jpg",
+    "/geral/AGENDE-SUA-VISITA.jpg"
+]
+
+
 </script>
 
 <template>
 
-  <HeroSlider/>
+  <HeroSlider :banners="banners" :titulo="'Matriculas Abertas'" :subtitle="'Colégios totem'" :link="'/#agende-visita'"/>
 
   <HeroTitle/>
 
@@ -35,7 +43,7 @@ import HeroVocacional from '~/components/home/HeroVocacional.vue';
 
   <HeroVocacional />
 
-  <AgendeSuaVisita />
+  <AgendeSuaVisita :unidades="unidades" />
 
   <WhatsappButton/>
 

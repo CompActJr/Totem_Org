@@ -1,7 +1,7 @@
 import type { NavLink } from "~/types/navlink"
 
 
-export function useNavigation() {
+export function useUnidadeNavigation(unidade: string) {
   const navLinks: NavLink[] = [
     {
       label: "HOME",
@@ -9,19 +9,19 @@ export function useNavigation() {
     },
     {
       label: "NOSSA ESCOLA",
-      href: "/sobre"
+      href: `/unidades/${unidade}/sobre`
     },
     {
         label: "UNIDADES",
         href: "/unidades"
     },
     {
-        label: "ESTUDE NO TOTEM",
-        href: "/matriculas"
+        label: "DIFERENCIAIS",
+        href: `/unidades/${unidade}/diferenciais`
     },
     {
         label: "FALE COM A GENTE",
-        href: "/contato"
+        href: `/unidades/${unidade}/#contato`
     },
   ]
 

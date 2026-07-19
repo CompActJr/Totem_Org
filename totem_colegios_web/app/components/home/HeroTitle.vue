@@ -3,10 +3,10 @@
   <section class="min-h-128 w-full flex flex-col md:flex-row gap-4 bg-gray-200  responsive-padding">
     <article>
       <div class="flex items-center">
-        <h2 class="text-orange-600 font-bold" aria-label="nossas unidades">
+        <h2 class="text-gray-600 font-bold" aria-label="nossas unidades">
           PORQUE O TOTEM
         </h2>
-        <div class="bg-orange-600 w-16 h-0.5 ml-8"></div>
+        <div class="bg-orange-600 w-32 h-0.5 ml-8"></div>
       </div>
 
       <h2 class="text-2xl lg:text-8xl md:text-4xl mt-4 lg:mt-8 text-gray-700 font-bold">

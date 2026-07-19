@@ -6,20 +6,41 @@
  */
 
 import { ref } from "vue";
-import unidades from "~/data/unidades.json";
+import { reroute } from "vue-router/experimental";
+import type { EducationalTypes } from "~/types/educational.types";
+import type { UnidadeType } from "~/types/unidade.type";
 
-const form = ref({
+type Formulario = {
+  name: string,
+  city: string,
+  level: EducationalTypes,
+  whatsapp: string,
+  email: string,
+}
+
+const form = ref<Formulario>({
   name: "",
   city: "",
-  level: "",
+  level: "Ensino Fundamental I",
   whatsapp: "",
-  email: "",
+  email: ""
 });
+
+//recalcula os niveis de ensino de acordo com a unidade escolhida
+const levelsChanged = computed(()=>{
+  return props.unidades.find(unidade => form.value.city === unidade.city)?.levels || []
+})
 
 //feat arthur implementar submissão e envio para o email da secretaria
 const submitForm = () => {
 
 }
+
+interface Props {
+  unidades: UnidadeType[]
+}
+
+const props = defineProps<Props>();
 
 </script>
 
@@ -35,14 +56,24 @@ const submitForm = () => {
       <h4 class="text-white text-xl md:text-4xl mt-8">Colégio Totem</h4>
 
       <form action="" method="POST" aria-label="formulario de matrícula" class="mt-8 w-full grid grid-cols-2 gap-8">
-        <input placeholder="Nome" type="text" id="nome" name="nome" class="p-4 bg-white/80 rounded-full col-span-2" />
+        
+        <input placeholder="Nome" type="text" id="nome" name="nome" 
+          class="p-4 bg-white/80 rounded-full col-span-2" v-model="form.name"/>
 
-        <select id="cidade" name="cidade" class="p-4 bg-white/80 rounded-full col-span-2 md:col-span-1">
+        <select id="cidade" name="cidade" v-model="form.city"
+          class="p-4 bg-white/80 rounded-full col-span-2 md:col-span-1">
           <option value="">Cidade</option>
+          <option v-for="unidade in props.unidades" :value="unidade.city" :key="unidade.id">
+            {{ unidade.city }}
+          </option>
         </select>
 
-        <select id="ensino" name="ensino" class="p-4 bg-white/80 rounded-full col-span-2 md:col-span-1">
+        <select id="ensino" name="ensino" 
+          class="p-4 bg-white/80 rounded-full col-span-2 md:col-span-1">
           <option value="">Nível De Ensino</option>
+          <option v-for="value in levelsChanged" :value="value" :key="value">
+            {{ value }}
+          </option>
         </select>
 
         <input placeholder="Celular: (xx) 9 xxxx-xxxx" type="text" id="celular" name="celular"
