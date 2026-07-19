@@ -186,7 +186,7 @@ watch(
             <button
                 class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded font-semibold">
 
-                Agendar Entrevista
+                MATRICULE-SE AGORA MESMO
 
             </button>
 
