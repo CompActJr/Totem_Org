@@ -1,7 +1,8 @@
 <script lang="ts" setup>
-import { watch } from "vue";
+import { ref, watch } from "vue";
 import type { TurmaType } from "~/types/matriculas.types";
 import AccordionMatricula from "./AccordionMatricula.vue";
+import FormMatricula from "./FormMatricula.vue";
 
 const props = defineProps<{
     open: boolean;
@@ -12,12 +13,28 @@ const emit = defineEmits<{
     (e: "close"): void;
 }>();
 
+// Controla qual "tela" o modal está mostrando
+const view = ref<"detalhes" | "formulario">("detalhes");
+
 watch(
     () => props.open,
     (value) => {
         document.body.style.overflow = value ? "hidden" : "";
+
+        // Sempre que o modal abre (ou fecha), volta pra tela de detalhes
+        if (value) {
+            view.value = "detalhes";
+        }
     }
 );
+
+function abrirFormulario() {
+    view.value = "formulario";
+}
+
+function voltarParaDetalhes() {
+    view.value = "detalhes";
+}
 </script>
 
 <template>
@@ -77,114 +94,128 @@ watch(
 
         <div class="flex-1 overflow-y-auto p-10">
 
-            <p class="text-lg text-gray-700 leading-8">
+            <!-- TELA DE DETALHES DA TURMA -->
+            <template v-if="view === 'detalhes'">
 
-                {{ turma.descricao }}
+                <p class="text-lg text-gray-700 leading-8">
 
-            </p>
+                    {{ turma.descricao }}
 
-            <div
-                class="grid lg:grid-cols-3 gap-6 mt-10">
-
-                <!-- PERÍODO -->
+                </p>
 
                 <div
-                    class="bg-gray-100 rounded-lg p-6">
+                    class="grid lg:grid-cols-3 gap-6 mt-10">
 
-                    <h3
-                        class="text-orange-500 font-bold mb-5">
+                    <!-- PERÍODO -->
 
-                        Período Letivo
+                    <div
+                        class="bg-gray-100 rounded-lg p-6">
 
-                    </h3>
+                        <h3
+                            class="text-orange-500 font-bold mb-5">
 
-                    <p class="font-semibold">
-                        Início
-                    </p>
+                            Período Letivo
 
-                    <p>
-                        {{ turma.inicio }}
-                    </p>
+                        </h3>
 
-                    <div class="h-5"></div>
+                        <p class="font-semibold">
+                            Início
+                        </p>
 
-                    <p class="font-semibold">
-                        Término
-                    </p>
+                        <p>
+                            {{ turma.inicio }}
+                        </p>
 
-                    <p>
-                        {{ turma.fim }}
-                    </p>
+                        <div class="h-5"></div>
+
+                        <p class="font-semibold">
+                            Término
+                        </p>
+
+                        <p>
+                            {{ turma.fim }}
+                        </p>
+
+                    </div>
+
+                    <!-- HORÁRIO -->
+
+                    <div
+                        class="bg-gray-100 rounded-lg p-6">
+
+                        <h3
+                            class="text-orange-500 font-bold mb-5">
+
+                            Horários
+
+                        </h3>
+
+                        {{ turma.horario }}
+
+                    </div>
+
+                    <!-- DESCONTOS -->
+
+                    <div
+                        class="bg-gray-100 rounded-lg p-6">
+
+                        <h3
+                            class="text-orange-500 font-bold mb-5">
+
+                            Descontos
+
+                        </h3>
+
+                        {{ turma.desconto }}
+
+                    </div>
 
                 </div>
 
-                <!-- HORÁRIO -->
+                <div class="mt-10 space-y-5">
 
-                <div
-                    class="bg-gray-100 rounded-lg p-6">
+                    <AccordionMatricula
+                        titulo="Características da turma"
+                        :itens="turma.caracteristicas"
+                    />
 
-                    <h3
-                        class="text-orange-500 font-bold mb-5">
+                    <AccordionMatricula
+                        titulo="Material Didático"
+                        :itens="turma.material"
+                    />
 
-                        Horários
+                    <AccordionMatricula
+                        titulo="Kit Totem"
+                        :itens="turma.kit"
+                    />
 
-                    </h3>
-
-                    {{ turma.horario }}
-
-                </div>
-
-                <!-- DESCONTOS -->
-
-                <div
-                    class="bg-gray-100 rounded-lg p-6">
-
-                    <h3
-                        class="text-orange-500 font-bold mb-5">
-
-                        Descontos
-
-                    </h3>
-
-                    {{ turma.desconto }}
+                    <AccordionMatricula
+                        titulo="Documentos necessários"
+                        :itens="turma.documentos"
+                    />
 
                 </div>
 
-            </div>
+            </template>
 
-            <div class="mt-10 space-y-5">
-
-                <AccordionMatricula
-                    titulo="Características da turma"
-                    :itens="turma.caracteristicas"
-                />
-
-                <AccordionMatricula
-                    titulo="Material Didático"
-                    :itens="turma.material"
-                />
-
-                <AccordionMatricula
-                    titulo="Kit Totem"
-                    :itens="turma.kit"
-                />
-
-                <AccordionMatricula
-                    titulo="Documentos necessários"
-                    :itens="turma.documentos"
-                />
-
-            </div>
+            <!-- TELA DO FORMULÁRIO DE MATRÍCULA -->
+            <FormMatricula
+                v-else
+                :turma="turma"
+                @voltar="voltarParaDetalhes"
+            />
 
         </div>
 
         <!-- FOOTER -->
 
         <div
+            v-if="view === 'detalhes'"
             class="border-t p-6 flex justify-end">
 
             <button
-                class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded font-semibold">
+                class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded font-semibold"
+                @click="abrirFormulario">
 
                 MATRICULE-SE AGORA MESMO
 
