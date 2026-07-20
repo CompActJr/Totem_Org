@@ -11,13 +11,22 @@
             "Ensino Fundamental II",
             "Ensino Médio"
         ],
+        "infraestrutura": [
+            "/infraestrutura/cachoeira-do-sul/B-1.jpg",
+            "/infraestrutura/cachoeira-do-sul/B-2.jpg",
+            "/infraestrutura/cachoeira-do-sul/B-3.jpg",
+            "/infraestrutura/cachoeira-do-sul/B-4.jpg",
+            "/infraestrutura/cachoeira-do-sul/B-5.jpg",
+            "/infraestrutura/cachoeira-do-sul/B-6.jpg"
+        ],
         "cep": "98900-000",
         "address": "Rua Santa Rosa, 305",
         "phone": "(55) 3722-2977",
         "whatsapp": "(55) 9 9088-3334",
         "email": "cachoeira@colegiototem.com.br",
         "facebook": "https://www.facebook.com/totemvestibular/",
-        "instagram": "https://www.instagram.com/totemvestibulares/"
+        "instagram": "https://www.instagram.com/totemvestibulares/",
+        "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d863.4459269831603!2d-52.90042467518325!3d-30.043062487779572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10bd3a1f59f31b7%3A0x8ee2bf50c91b4ae3!2sCol%C3%A9gio%20Totem%20Cachoeira%20do%20Sul!5e0!3m2!1spt-BR!2sbr!4v1784490880093!5m2!1spt-BR!2sbr"
     },
     {
         "id": 2,
@@ -30,13 +39,22 @@
             "Ensino Fundamental II",
             "Ensino Médio"
         ],
+        "infraestrutura": [
+            "/infraestrutura/cachoeira-do-sul/B-1.jpg",
+            "/infraestrutura/cachoeira-do-sul/B-2.jpg",
+            "/infraestrutura/cachoeira-do-sul/B-3.jpg",
+            "/infraestrutura/cachoeira-do-sul/B-4.jpg",
+            "/infraestrutura/cachoeira-do-sul/B-5.jpg",
+            "/infraestrutura/cachoeira-do-sul/B-6.jpg"
+        ],
         "cep": "97010-033",
         "address": "RS-287, KM 234, Trevo de Uglione",
         "phone": "55 9 9125-8480",
         "whatsapp": "(55) 9 9125-8480",
         "email": "santamaria@colegiototem.com.br",
         "facebook": "https://www.facebook.com/totemvestibular/",
-        "instagram": "https://www.instagram.com/totemvestibulares/"
+        "instagram": "https://www.instagram.com/totemvestibulares/",
+        "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2312.7482640472363!2d-53.81819665087276!3d-29.713761335139225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9503cb1424027733%3A0x29a4830246f042e2!2sCol%C3%A9gio%20Totem%20Santa%20Maria!5e0!3m2!1spt-BR!2sbr!4v1784497464004!5m2!1spt-BR!2sbr"
     },
     {
         "id": 3,
@@ -49,12 +67,21 @@
             "Ensino Fundamental II",
             "Ensino Médio"
         ],
+        "infraestrutura": [
+            "/infraestrutura/cachoeira-do-sul/B-1.jpg",
+            "/infraestrutura/cachoeira-do-sul/B-2.jpg",
+            "/infraestrutura/cachoeira-do-sul/B-3.jpg",
+            "/infraestrutura/cachoeira-do-sul/B-4.jpg",
+            "/infraestrutura/cachoeira-do-sul/B-5.jpg",
+            "/infraestrutura/cachoeira-do-sul/B-6.jpg"
+        ],
         "cep": "98700-000",
         "address": "General Felipe Portinho, 1216",
         "phone": "(55) 3333-8569",
         "whatsapp": "(55) 9 9076-7990",
         "email": "cruzalta@colegiototem.com.br",
         "facebook": "https://www.facebook.com/totemvestibular/",
-        "instagram": "https://www.instagram.com/totemvestibulares/"
+        "instagram": "https://www.instagram.com/totemvestibulares/",
+        "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1909.2088506259433!2d-53.61070915676212!3d-28.644612207439764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94fd97c87e5202ab%3A0xc4883daf58e00f03!2sCol%C3%A9gio%20Totem%20Cruz%20Alta!5e0!3m2!1spt-BR!2sbr!4v1784497585649!5m2!1spt-BR!2sbr"
     }
 ]

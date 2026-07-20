@@ -4,11 +4,13 @@ export type UnidadeType = {
   slug: string
   image: string
   levels: string[]
+  infraestrutura: string[]
   cep: string
   address: string
   phone: string
   whatsapp: string
   email: string
   facebook: string
-  instagram: string
+  instagram: string,
+  maps: string
 }
