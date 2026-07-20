@@ -1,23 +1,27 @@
 <script setup lang="ts">
+/**
+ * @authors Jonas, Arthur, A.Pão
+ */
+
 import HeroSlider from '~/components/HeroSlider.vue';
 import AgendeSuaVisita from '~/components/home/AgendeSuaVisita.vue';
 import EntreEmContato from '~/components/unidade/EntreEmContato.vue';
 import HeroUnidadeTitle from '~/components/unidade/HeroUnidadeTitle.vue';
+import SecaoAtividades from '~/components/unidade/SecaoAtividades.vue';
 import SecaoInfra from '~/components/unidade/SecaoInfra.vue';
 import SecaoNiveisEnsino from '~/components/unidade/SecaoNiveisEnsino.vue';
-import unidades from "~/data/unidades.json"
+import type { AtividadeType } from '~/types/atividades.types';
+
 import type { UnidadeType } from '~/types/unidade.type';
-/**
- * @authors Jonas, Arthur, A.Pão
- */
 
 const banners = [
     "/geral/BANNER-1-CACHOEIRA.jpg",
     "/geral/FACHADA-CACHOEIRA.jpg"
 ]
 
-const unidade: UnidadeType | undefined = 
-    unidades.find((unidade: UnidadeType) => unidade.city.toLowerCase().trim() === 'cachoeira do sul')
+const repository = useUnidadeRepository();
+
+const unidade: UnidadeType | undefined = repository.getBySlug("cachoeira-do-sul")
 
 if (!unidade) {
   throw createError({
@@ -25,6 +29,10 @@ if (!unidade) {
     statusMessage: "Unidade não encontrada",
   })
 }
+
+const atividades: AtividadeType[] = repository.getAtividades(unidade.id)
+
+//const professores = repository.getProfessores(unidade.id)
 
 </script>
 
@@ -42,6 +50,8 @@ if (!unidade) {
     <SecaoNiveisEnsino :unidade="unidade"/>
 
     <SecaoInfra :unidade="unidade"/>
+
+    <SecaoAtividades :atividades="atividades"/>
 
     <HeroVocacional/>
 

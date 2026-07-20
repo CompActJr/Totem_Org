@@ -12,7 +12,7 @@ const props = defineProps<Props>()
     <section class="min-h-128 w-full flex flex-col md:flex-row gap-4 bg-gray-200 responsive-padding">
         <article>
             <div class="flex items-center">
-                <h2 class="text-gray-600 font-bold">
+                <h2 class="text-gray-600 text-xl md:text-2xl font-bold">
                     PORQUE O TOTEM
                 </h2>
 

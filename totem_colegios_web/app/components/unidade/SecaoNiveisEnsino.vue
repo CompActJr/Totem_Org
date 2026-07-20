@@ -25,7 +25,7 @@ const filteredNiveis = (niveis as EducationalLevel[]).filter((n) =>
 <template>
     <section class="min-h-128 w-full bg-[#FFF6C9] py-20 responsive-padding">
         <div class="flex items-center">
-            <h2 class="text-gray-600 font-bold">
+            <h2 class="text-gray-600 text-xl md:text-2xl font-bold">
                 NÍVEIS DE ENSINO
             </h2>
 

@@ -4,62 +4,277 @@
     "unidade": "Cachoeira do Sul",
     "unidadeId": 1,
     "name": "Escolinha de Voleibol",
-    "icon": "../assets/imagens/ESCOLINHA-DE-VOLEIBOL.jpg"
+     "turmas": [
+      {
+        "nome": "Escolinha de Voleibol - 3º e 4º ano",
+        "detalhes": "Ginásio. Sextas, das 9h30 às 10h30"
+      },
+      {
+        "nome": "Escolinha de Voleibol - 5º ano",
+        "detalhes": "Ginásio. Sextas, das 10h30 às 11h30"
+      },
+      {
+        "nome": "Escolinha de Voleibol - 6º ao 8º ano + Médio",
+        "detalhes": "Ginásio. Sextas, das 13h40 às 15h40"
+      }
+    ],
+    "professorNome": "",
+    "image": "/atividades/ESCOLINHA-DE-VOLEIBOL.jpg"
   },
   {
     "id": 2,
     "unidade": "Cachoeira do Sul",
     "unidadeId": 1,
     "name": "Voleibol",
-    "image": "../assets/imagens/VOLEIBOL.jpg"
-  },
-  {
-    "id": 2,
-    "unidade": "Cachoeira do Sul",
-    "unidadeId": 1,
-    "name": "Teatro",
-    "image": "../assets/imagens/TEATRO.jpg"
+    "turmas": [
+      {
+        "nome": "Voleibol Totem",
+        "detalhes": "Ginásio. Quintas, das 18h às 20h"
+      }
+    ],
+    "professorNome": "Professor Gideone",
+    "image": "/atividades/VOLEIBOL.jpg"
   },
   {
     "id": 3,
     "unidade": "Cachoeira do Sul",
     "unidadeId": 1,
-    "name": "Patinação",
-    "image": "../assets/imagens/PATINAÇÃO.jpg"
+    "name": "Teatro",
+     "turmas": [
+      {
+        "nome": "Totem em Cena (2º ano ao Ensino Médio)",
+        "detalhes": "Auditório. Quartas, das 18h às 20h"
+      }
+    ],
+    "professorNome": "Professora Josiela",
+    "image": "/atividades/TEATRO.jpg"
   },
   {
     "id": 4,
     "unidade": "Cachoeira do Sul",
     "unidadeId": 1,
-    "name": "Ballet",
-    "image": "../assets/imagens/BALLET.jpg"
+    "name": "Patinação",
+    "turmas": [
+      {
+        "nome": "Patinação - 4º ao 8º ano",
+        "detalhes": "Quadra Interna. Segundas, das 17h50 às 19h50"
+      },
+      {
+        "nome": "Patinação - Educação Infantil MII e Fundamental I (1º ao 3º ano)",
+        "detalhes": "Quadra Interna. Sextas, das 17h50 às 18h50"
+      }
+    ],
+    "professorNome": "Professor João Paulo",
+    "image": "/atividades/PATINAÇÃO.jpg"
   },
   {
     "id": 5,
     "unidade": "Cachoeira do Sul",
     "unidadeId": 1,
-    "name": "Cooking Class",
-    "icon": "../assets/imagens/COOKING-CLASS.jpg"
+    "name": "Ballet",
+    "turmas": [
+      {
+        "nome": "Turma Ballet - Maternal II, NI e NII",
+        "detalhes": "Sala de Ballet. Segundas, das 17h30 às 18h45"
+      },
+      {
+        "nome": "Turma Ballet Moderno - Fundamental I e II",
+        "detalhes": "Sala de Ballet. Terças, das 18h às 19h30"
+      }
+    ],
+    "professorNome": "Professora Ingrid",
+    "image": "/atividades/BALLET.jpg"
   },
   {
     "id": 6,
     "unidade": "Cachoeira do Sul",
     "unidadeId": 1,
-    "name": "Escolinha de Futsal",
-    "icon": "../assets/imagens/FUTSAL-1.jpg"
+    "name": "Cooking Class",
+    "turmas": [
+      {
+        "nome": "Totem Cooking Class - 3º ao 9º ano",
+        "detalhes": "Refeitório. Quintas, das 18h às 20h"
+      }
+    ],
+    "professorNome": "",
+    "image": "/atividades/COOKING-CLASS.jpg"
   },
   {
     "id": 7,
     "unidade": "Cachoeira do Sul",
     "unidadeId": 1,
-    "name": "Futsal Juvenil",
-    "icon": "../assets/imagens/FUTSAL-2.jpg"
+    "name": "Escolinha de Futsal",
+    "turmas":[
+      {
+        "nome": "Turma Futsal para crianças de 2 a 3 anos",
+        "detalhes": "Quadra interna Segundas, das 17h50 às 19h50"
+      },
+      {
+        "nome": "Futsal Sub 11/13",
+        "detalhes": "Quadra interna  Sextas, das 17h50 às 19h50"
+      }
+    ],
+    "professorNome": "Professor Marcelo",
+    "image": "/atividades/FUTSAL-1.jpg"
   },
   {
     "id": 8,
     "unidade": "Cachoeira do Sul",
     "unidadeId": 1,
+    "name": "Futsal Juvenil",
+    "turmas": [
+      {
+        "nome": "Futsal - Seleção Totem (FII e Médio)",
+        "detalhes": "Quadra Interna. Terças, das 18h50 às 19h50"
+      },
+      {
+        "nome": "Futsal Kids - Crianças de 4 a 6 anos",
+        "detalhes": "Quadra Interna. Terças, das 17h50 às 19h50"
+      },
+      {
+        "nome": "Futsal Kids - Crianças de 4 a 6 anos",
+        "detalhes": "Quadra Interna. Quartas, das 17h50 às 18h50"
+      },
+      {
+        "nome": "Futsal - Seleção Totem (FII e Médio)",
+        "detalhes": "Quadra Interna. Quartas, das 18h50 às 19h50"
+      }
+    ],
+    "professorNome": "Professor Givago",
+    "image": "/atividades/FUTSAL-2.jpg"
+  },
+  {
+    "id": 9,
+    "unidade": "Cachoeira do Sul",
+    "unidadeId": 1,
     "name": "Desenho",
-    "icon": "../assets/imagens/DESENHO.jpg"
+      "turmas": [
+      {
+        "nome": "Desenho - 3º ao 5º ano",
+        "detalhes": "Sala T.40. Quartas, das 10h às 11h"
+      },
+      {
+        "nome": "Desenho - 6º ao 7º ano",
+        "detalhes": "Sala T.81. Quartas, das 15h às 16h"
+      }
+    ],
+    "professorNome": "Professor Jarbas",
+    "image": "/atividades/DESENHO.jpg"
+  },
+    {
+    "id": 10,
+    "unidade": "Santa Maria",
+    "unidadeId": 2,
+    "name": "Escolinha de Voleibol",
+     "turmas": [
+      {
+        "nome": "Escolinha de Voleibol - 3º e 4º ano",
+        "detalhes": "Ginásio. Sextas, das 9h30 às 10h30"
+      },
+      {
+        "nome": "Escolinha de Voleibol - 5º ano",
+        "detalhes": "Ginásio. Sextas, das 10h30 às 11h30"
+      },
+      {
+        "nome": "Escolinha de Voleibol - 6º ao 8º ano + Médio",
+        "detalhes": "Ginásio. Sextas, das 13h40 às 15h40"
+      }
+    ],
+    "professorNome": "",
+    "image": "/atividades/ESCOLINHA-DE-VOLEIBOL.jpg"
+  },
+  {
+    "id": 11,
+    "unidade": "Santa Maria",
+    "unidadeId": 2,
+    "name": "Voleibol",
+    "turmas": [
+      {
+        "nome": "Voleibol Totem",
+        "detalhes": "Ginásio. Quintas, das 18h às 20h"
+      }
+    ],
+    "professorNome": "Professor Gideone",
+    "image": "/atividades/VOLEIBOL.jpg"
+  },
+  {
+    "id": 12,
+    "unidade": "Santa Maria",
+    "unidadeId": 2,
+    "name": "Patinação",
+    "turmas": [
+      {
+        "nome": "Patinação - 4º ao 8º ano",
+        "detalhes": "Quadra Interna. Segundas, das 17h50 às 19h50"
+      },
+      {
+        "nome": "Patinação - Educação Infantil MII e Fundamental I (1º ao 3º ano)",
+        "detalhes": "Quadra Interna. Sextas, das 17h50 às 18h50"
+      }
+    ],
+    "professorNome": "Professor João Paulo",
+    "image": "/atividades/PATINAÇÃO.jpg"
+  },
+  {
+    "id": 13,
+    "unidade": "Santa Maria",
+    "unidadeId": 2,
+    "name": "Ballet",
+    "turmas": [
+      {
+        "nome": "Turma Ballet - Maternal II, NI e NII",
+        "detalhes": "Sala de Ballet. Segundas, das 17h30 às 18h45"
+      },
+      {
+        "nome": "Turma Ballet Moderno - Fundamental I e II",
+        "detalhes": "Sala de Ballet. Terças, das 18h às 19h30"
+      }
+    ],
+    "professorNome": "Professora Ingrid",
+    "image": "/atividades/BALLET.jpg"
+  },
+  {
+    "id": 14,
+    "unidade": "Cruz Alta",
+    "unidadeId": 3,
+    "name": "Escolinha de Futsal",
+    "turmas":[
+      {
+        "nome": "Turma Futsal para crianças de 2 a 3 anos",
+        "detalhes": "Quadra interna Segundas, das 17h50 às 19h50"
+      },
+      {
+        "nome": "Futsal Sub 11/13",
+        "detalhes": "Quadra interna  Sextas, das 17h50 às 19h50"
+      }
+    ],
+    "professorNome": "Professor Marcelo",
+    "image": "/atividades/FUTSAL-1.jpg"
+  },
+  {
+    "id": 15,
+    "unidade": "Cruz Alta",
+    "unidadeId": 3,
+    "name": "Futsal Juvenil",
+    "turmas": [
+      {
+        "nome": "Futsal - Seleção Totem (FII e Médio)",
+        "detalhes": "Quadra Interna. Terças, das 18h50 às 19h50"
+      },
+      {
+        "nome": "Futsal Kids - Crianças de 4 a 6 anos",
+        "detalhes": "Quadra Interna. Terças, das 17h50 às 19h50"
+      },
+      {
+        "nome": "Futsal Kids - Crianças de 4 a 6 anos",
+        "detalhes": "Quadra Interna. Quartas, das 17h50 às 18h50"
+      },
+      {
+        "nome": "Futsal - Seleção Totem (FII e Médio)",
+        "detalhes": "Quadra Interna. Quartas, das 18h50 às 19h50"
+      }
+    ],
+    "professorNome": "Professor Givago",
+    "image": "/atividades/FUTSAL-2.jpg"
   }
 ]
