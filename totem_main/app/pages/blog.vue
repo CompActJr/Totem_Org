@@ -1,17 +1,10 @@
 <script lang="ts" setup>
-
-/**
- * Blog Interativo
- * @author Jonas
- */
+import BlogList from '~/components/blog/BlogList.vue'
+import { useBlogPosts } from '~/composables/useBlogPosts'
 
 definePageMeta({
   layout: 'public'
 })
-
-import Post from '~/components/blog/Post.vue';
-import data from '~/data/posts.json';
-import type { PostType } from '~/types/post';
 
 useSeoMeta({
   title: 'Blog do Totem | Notícias, eventos e novidades',
@@ -20,59 +13,10 @@ useSeoMeta({
   ogDescription: 'Acompanhe notícias, eventos e novidades das unidades do Totem em um só lugar. Descubra conteúdos relevantes para pais, alunos e comunidade.'
 })
 
-const filters = reactive({
-  categoria: '',
-  order: 'recentes' as 'recentes' | 'antigos',
-  destaque: true
-})
-
-const applyFiterDate = (posts: PostType[]) => {
-  switch (filters.order) {
-
-    case 'antigos':
-      return posts.sort(
-        (a, b) =>
-          new Date(a.createdAt).getTime() -
-          new Date(b.createdAt).getTime()
-      )
-
-    case 'recentes':
-    default:
-      return posts.sort(
-        (a, b) =>
-          new Date(b.createdAt).getTime() -
-          new Date(a.createdAt).getTime()
-      )
-  }
-}
-
-const applyFilterDestaques = (posts: PostType[]) => {
-  if (!filters.destaque) return posts
-
-  return posts.sort(
-    (a, b) => Number(b.destaque) - Number(a.destaque)
-  )
-}
-
-const filteredPosts = computed(() => {
-  let posts = [...data]
-
-  posts = applyFiterDate(posts)
-  posts = applyFilterDestaques(posts)
-
-  return posts
-})
-
-/*
-const { data: posts } = await useFetch('/api/posts', {
-  query: filters
-})
-*/
-
+const { filters, filteredPosts } = useBlogPosts()
 </script>
 
 <template>
-
   <div class="px-4 py-16">
     <h1 class="px-4 py-3 text-gray-600 text-6xl text-center font-bold">
       Totem Blog
@@ -83,10 +27,10 @@ const { data: posts } = await useFetch('/api/posts', {
     </p>
   </div>
 
-  <div class="mx-auto max-w-7xl p-4 flex flex-col iten md:flex-row lg:flex-row items-center gap-16">
+  <div class="mx-auto max-w-7xl p-4 flex flex-col md:flex-row lg:flex-row items-center gap-16">
     <div class="flex items-center gap-4">
-      <label for="tags" class="text-gray-600">Categoria: </label>
-      <input id="tags" class="input" />
+      <label for="categoria" class="text-gray-600">Categoria: </label>
+      <input id="categoria" v-model="filters.categoria" class="input" />
     </div>
 
     <div class="flex items-center gap-2">
@@ -103,14 +47,9 @@ const { data: posts } = await useFetch('/api/posts', {
 
     <div class="flex items-center gap-4">
       <input type="checkbox" v-model="filters.destaque" class="h-6 w-6" />
-      <label for="tags" class="text-gray-600">Destaques</label>
+      <label class="text-gray-600">Destaques</label>
     </div>
   </div>
 
-  <div class="grid-container">
-    <div class="h-full" v-for="post in filteredPosts" :key="post.id">
-      <Post :post="post" />
-    </div>
-  </div>
-
+  <BlogList :posts="filteredPosts" />
 </template>

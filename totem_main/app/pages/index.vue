@@ -1,39 +1,27 @@
 <script lang="ts" setup>
+import HeroSlider from '~/components/HeroSlider.vue'
+import IntroSection from '~/components/home/IntroSection.vue'
+import PortalTimelineSection from '~/components/home/PortalTimelineSection.vue'
+import VideoGallery from '~/components/home/VideoGallery.vue'
 
 definePageMeta({
-    layout: 'public'
+  layout: 'public'
 })
 
 useSeoMeta({
-    title: 'Página principal',
-    description: 'esta é a página principal do Site',
+  title: 'Página principal',
+  description: 'esta é a página principal do Site',
 })
-
-import videos from "~/data/videos.json";
-
 </script>
 
 <template>
+  <HeroSlider />
 
-    <HeroSlider />
+  <IntroSection />
 
-    <div class="px-4 py-32">
-        <h1 class="px-4 py-3 text-gray-600 text-6xl text-center font-bold">
-            Totem
-        </h1>
-        <p class="px-4 py-3 text-gray-600 text-center text-xl">
-            Conheça a organização e seus principais portais institucionais
-        </p>
-    </div>
+  <PortalTimelineSection />
 
-    <Timeline id="portais" />
+  <div class="w-full bg-gray-600 mt-8 mb-8 h-2" />
 
-    <div class="w-full bg-gray-600 mt-8 mb-8 h-2"></div>
-
-    <div class="grid-container">
-        <div class="h-" v-for="video in videos" :key="video.id">
-            <Video :video="video" />
-        </div>
-    </div>
-
+  <VideoGallery />
 </template>
