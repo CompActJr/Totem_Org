@@ -1,6 +1,6 @@
 <template>
 
-  <section class="min-h-128 w-full flex flex-col md:flex-row gap-4 bg-gray-200  responsive-padding">
+  <section id="porque_o_totem" class="scroll-mt-24 min-h-128 w-full flex flex-col md:flex-row gap-4 bg-gray-200  responsive-padding">
     <article>
       <div class="flex items-center">
         <h2 class="text-gray-600 font-bold" aria-label="nossas unidades">

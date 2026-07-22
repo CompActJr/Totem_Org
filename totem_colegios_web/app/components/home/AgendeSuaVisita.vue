@@ -46,7 +46,7 @@ const props = defineProps<Props>();
 
 
 <template>
-  <section class="relative h-128 md:min-h-256 w-full overflow-hidden"  id="agende-visita">
+  <section class="scroll-mt-24 relative h-128 md:min-h-256 w-full overflow-hidden"  id="agende-visita">
     <NuxtImg src="/geral/AGENDE-SUA-VISITA.jpg" alt="Quadra do Colégio Totem"
       class="h-full w-full object-cover object-center" loading="lazy" />
 
