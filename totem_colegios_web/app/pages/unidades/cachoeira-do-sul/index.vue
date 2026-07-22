@@ -62,4 +62,6 @@ const professores = repository.getProfessores(unidade.id)
 
     <AgendeSuaVisita :unidades="[unidade]"/>
 
+    <WhatsappButton :unidades="[unidade]"/>
+
 </template>
