@@ -1,10 +1,146 @@
 [
+  {
+    "id": 1,
+    "nome": "Cássia",
+    "areaEnsino": "",
+    "unidade": "cachoeira-do-sul",
+    "unidadeId": 1,
+    "imagemUrl": "",
+    "texto": ""
+  },
+  {
+    "id": 2,
+    "nome": "Cássia Machado",
+    "areaEnsino": "Matemática",
+    "unidade": "cachoeira-do-sul",
+    "unidadeId": 1,
+    "imagemUrl": "",
+    "texto": "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
+  },
+  {
+    "id": 3,
+    "nome": "Márcio Macedo",
+    "areaEnsino": "",
+    "unidade": "cachoeira-do-sul",
+    "unidadeId": 1,
+    "imagemUrl": "",
+    "texto": "Formado em Ciências Sociais pela UFSM e Pós-graduado em Filosofia, Ética e Cidadania. É professor de Filosofia e Sociologia há 8 anos, com foco na preparação de alunos para o ENEM e os vestibulares, dedicando-se a desenvolver o pensamento crítico para o seu melhor desempenho nas mais diversas avaliações. Sua experiência é enriquecida pela atuação como Inspetor de Polícia Civil no Rio Grande do Sul (PC-RS), o que traz para a sala de aula uma visão prática e profunda sobre temas de ética, justiça e a complexidade das relações sociais. Nos momentos de folga, é praticante de esportes e um músico apaixonado, dedicando- se a tocar instrumentos como violão, cavaco, ukulele e piano. Mariane Paiva Licenciada e bacharela em Educação Física, atua há mais de 10 anos no ambiente escolar, trabalhando com diferentes faixas etárias. Cria aulas dinâmicas que estimulam autonomia, cooperação e movimento com propósito. Acredita que a Educação Física vai além do “fazer exercícios”: é um espaço de descoberta, expressão, construção de confiança, valores e conquistas que os alunos levam para a vida inteira. Ama esportes e está sempre se atualizando na área de bem-estar e práticas integrativas, trazendo um olhar humano e acolhedor para a escola. Sua maior satisfação é ver os alunos superando desafios, descobrindo suas capacidades e se reconhecendo como protagonistas do próprio processo."
+  },
+  {
+    "id": 4,
+    "nome": "Clais Willig",
+    "areaEnsino": "Arte",
+    "unidade": "cachoeira-do-sul",
+    "unidadeId": 1,
+    "imagemUrl": "",
+    "texto": "Formada em Educação Artística e especializada em Psicopedagogia Institucional. No Colégio Totem desde 2013, onde encontrou sua segunda casa. Responsável pelas decorações dos eventos, levando criatividade e sensibilidade a cada detalhe. Apaixonada por fotografia, traz esse olhar atento para o dia a dia escolar."
+  },
+  {
+    "id": 5,
+    "nome": "Alessandra – educação infantil",
+    "areaEnsino": "",
+    "unidade": "cachoeira-do-sul",
+    "unidadeId": 1,
+    "imagemUrl": "",
+    "texto": "Formada em Pedagogia e pós-graduada em Psicopedagogia Clínica e Institucional, atua na área da educação desde 2018, dedicando-se principalmente à Educação Infantil. Em sua prática, transmite afeto, atenção e incentiva descobertas, valorizando cada etapa do desenvolvimento infantil. Além da paixão pela educação, gosta de praticar atividade física, mas não abre mão de estar com a família, amigos e desfrutar de bons momentos ao redor de uma boa gastronomia. Mayxine Feijó Formada no Curso Normal e acadêmica de Pedagogia, atua no Colégio Top há quatro anos, sempre exercendo seu trabalho com comprometimento e cuidado. Tem imenso orgulho de fazer parte da equipe que inspira, orienta e transforma estudantes em grandes profissionais. Apaixonada pela convivência em família, encontra ainda mais satisfação ao saber que seus filhos — assim como todos os alunos — estão seguros, acolhidos e aprendendo com qualidade dentro do Colégio Totem."
+  },
+  {
+    "id": 6,
+    "nome": "Denise",
+    "areaEnsino": "",
+    "unidade": "cachoeira-do-sul",
+    "unidadeId": 1,
+    "imagemUrl": "",
+    "texto": "Bom dia!"
+  },
+  {
+    "id": 7,
+    "nome": "Minha apresentação",
+    "areaEnsino": "",
+    "unidade": "cachoeira-do-sul",
+    "unidadeId": 1,
+    "imagemUrl": "",
+    "texto": "\"Há quase quatro décadas envolvida com o magistério, mesmo quando concomitando a atuvidade de dar aulas com a orientação, coordenação e direção de escola. Formada no Curso do Magistério, graduada em Ciências Exatas e pós-graduada em Administração Escolar, encontra a verdadeira realização na oportunidade de trocar conhecimentos com crianças e jovens, o que permite seu constante crescimento e ainda colabora na formação de gerações que vão construindo aprendizagens, baseadas nas relações de empatia. Grata ao Colégio Totem por emprestar a sua casa para acontecer esse trabalho e me realizar nessa missão!"
+  },
+  {
+    "id": 8,
+    "nome": "Mayra",
+    "areaEnsino": "",
+    "unidade": "cachoeira-do-sul",
+    "unidadeId": 1,
+    "imagemUrl": "",
+    "texto": "Formada em Matemática pela UNISC, possui certificação FCE em língua inglesa e atua como professora no Totem desde 2023, onde foi aluna desde 2013 no ensino fundamental e médio. Interessada pelo universo financeiro, seu funcionamento e aplicabilidade cotidiana. Pratica muay thai, crossfit e musculação. Gosta de música, toca violão e teclado. Hélcio Formado em Educação Física pela Ulbra (2006) e pós-graduado em Fisiologia do Exercício pela Gama Filho do Rio de Janeiro, é profissional certificado em cursos internacionais e em constante atualização. Atua no Totem desde 2013, trabalhando com Educação Infantil, Ensino Fundamental e Médio. Apaixonado por atividade física, pratica ciclismo e musculação. Também aprecia música e canta. Rafaela Formada em Pedagogia – Licenciatura pela ULBRA/Cachoeira do Sul, atuo há 8 anos em ambientes escolares, contribuindo ativamente para o processo de aprendizagem e desenvolvimento dos alunos. Sou apaixonada por filmes, praticante de musculação e ritmos, e amante dos dias nublados. Também sou uma leitora voraz, especialmente de romances. Roberta Me chamo Roberta, sou pedagoga, pós-graduada em Atendimento Educacional Especializado e Educação Especial, e sigo estudando com a pós em Alfabetização e Letramento. Há 10 anos faço parte do corpo docente do Colégio Totem. Trabalhar com as crianças do Nível 2 é uma das minhas maiores alegrias. Ver cada descoberta acontecendo, acompanhar o crescimento deles e fazer parte desse início de trajetória escolar é algo que realmente me inspira. No meu tempo livre, adoro ler, estar com a família e fazer passeios que me deixam renovada para estar com os que amo."
+  },
+  {
+    "id": 9,
+    "nome": "Mônica",
+    "areaEnsino": "",
+    "unidade": "cachoeira-do-sul",
+    "unidadeId": 1,
+    "imagemUrl": "",
+    "texto": "Formada em Pedagoga e habilitada pelo Curso Normal, pós-graduada em Biblioteconomia, atualmente cursando pós-graduação em Educação Especial e em Coordenação Pedagógica e Supervisão Escolar, buscando sempre por conhecimentos para aperfeiçoar ainda mais minha prática pedagógica. Atuo em sala de aula há 7 anos, tendo como uma das coisas que mais amo em ser professora é poder acompanhar a evolução e as conquistas dos meus alunos, por menor que seja, me enche de alegria e me motiva a continuar a oferecer experiências que contribuam para o desenvolvimento integral de cada crianças. Tenho a convicção de que a educação transforma vidas e, diariamente, busco ser uma agente dessa transformação."
+  },
+  {
+    "id": 10,
+    "nome": "Priscila Couto – Pedagoga",
+    "areaEnsino": "",
+    "unidade": "cachoeira-do-sul",
+    "unidadeId": 1,
+    "imagemUrl": "",
+    "texto": "Formada em Pedagogia e pós-graduada em Psicopedagogia. Atuo no Totem há 10 anos, desenvolvendo um trabalho pautado no cuidado, na responsabilidade e no compromisso com a aprendizagem integral das crianças. Prezo por um ambiente seguro, acolhedor e estimulante, que favoreça o desenvolvimento contínuo e significativo. É uma alegria fazer parte desses primeiros passos. Priscila Strenzel Professora de Português e de Redação no Colégio Totem desde 2017. Graduada e Mestra em Letras pela UFSM, encontrou na sala de aula a paixão pelo ensino da leitura, da escrita e da gramática de forma significativa e contextualizada. Entre correções e temas de redação, encontra tempo para suas outras paixões: viajar e ler. Cris Garin (Cristiane Garin Krause) Graduada em Pedagogia pela UFPel e pós-graduada em Ensino de Língua Portuguesa e Literatura, Sociologia para o Ensino Médio e Educação Inclusiva com ênfase no AEE. Esposa, mãe, professora, empreendedora, mentora, palestrante e escritora, coloco-me à disposição para servir à educação com compromisso e sensibilidade, valorizando cada estudante como um ser único e integral. Sou apaixonada pelo desenvolvimento pessoal na infância e na adolescência e acredito que cada aprendizado é uma oportunidade de ampliar habilidades e elevar cada indivíduo em seus aspectos cognitivos, emocionais e relacionais. Entusiasta, estudiosa e praticante de Barras de Access."
+  },
+  {
+    "id": 11,
+    "nome": "Silvia de Castro",
+    "areaEnsino": "",
+    "unidade": "cachoeira-do-sul",
+    "unidadeId": 1,
+    "imagemUrl": "",
+    "texto": "Sou a professora Silvia de Castro, formada no Magistério e licenciada em Sociologia, com pós-graduação em Mídias na Educação, ambas pela UFSM. Apaixonada pela educação, acredito no poder transformador do conhecimento e na construção de vínculos que inspiram a aprendizagem. Amo estar com minha família e curtir o meu lar, sempre procurando ser grata e observar o encanto que existe nas coisas simples da vida."
+  },
+  {
+    "id": 12,
+    "nome": "Valdirene",
+    "areaEnsino": "",
+    "unidade": "cachoeira-do-sul",
+    "unidadeId": 1,
+    "imagemUrl": "",
+    "texto": "Sou formada em Pedagogia e pós-graduada em Educação Especial e Inclusiva. Atuo como professora de Educação Infantil há 22 anos, profissão pela qual sou profundamente apaixonada. Dedicação, criatividade e empatia são marcas do meu trabalho, buscando criar um ambiente acolhedor, seguro e estimulante para que cada criança se desenvolva com confiança e alegria. Apaixonada pela infância e por contribuir diariamente com o desenvolvimento dos meus alunos, acompanhando cada descoberta com carinho e compromisso. Acredito muito na importância da parceria com as famílias, pois sei que a colaboração entre escola e lar é essencial para o desenvolvimento integral da criança. Gosto de aproveitar meu tempo livre curtindo minha família, lendo, cozinhando e mantendo contato com pessoas — algo que me inspira e fortalece."
+  },
+  {
+    "id": 13,
+    "nome": "Matheus Pinto",
+    "areaEnsino": "",
+    "unidade": "cachoeira-do-sul",
+    "unidadeId": 1,
+    "imagemUrl": "",
+    "texto": "Professor formado em História pela UNIFRA, com especialização em História do Brasil e Mestrado pela UFSM. Apaixonado por futebol, videogames e literatura, busca constantemente promover o desenvolvimento crítico dos educandos, integrando conhecimento, diálogo e reflexão em sua prática pedagógica. Jéssica Com licenciatura plena em pedagogia, cursando pós-graduação em neuro- psicopedagogia, é uma professora apaixonada por música, compositora de paródias para seus alunos, ajudando a construir melhor novos conhecimentos. Seus robbies favoritos são tocar violão e ver séries e filmes antigos. Ama seus 4 gatos e sua filha de 4 patas, Fiona."
+  },
+  {
+    "id": 14,
+    "nome": "Roberto Müller",
+    "areaEnsino": "",
+    "unidade": "cachoeira-do-sul",
+    "unidadeId": 1,
+    "imagemUrl": "",
+    "texto": "Sou Roberto Muller, profissional com sólida atuação na área de gestão e educação. Sou formado em Gestão de Empresas e possuo especializações pela FGV em Gestão de Empresas, além de ser especialista em Gestão, Orientação e Supervisão Escolar. Também valorizo profundamente o desenvolvimento contínuo e, ao longo da minha trajetória, busquei formações relevantes, incluindo treinamentos com a Dale Carnegie, que ampliaram minhas competências em liderança, comunicação e relações humanas. Atualmente estou cursando o sétimo semestre de Pedagogia, fortalecendo ainda mais meu compromisso com a educação e com práticas pedagógicas atualizadas e humanizadas. Atuo há mais de 20 anos na educação, área pela qual tenho verdadeira paixão. Acredito no poder transformador do ensino e na importância de criar ambientes que inspiram, acolhem e estimulam o desenvolvimento de cada pessoa. Sou alguém que ama trabalhar com pessoas, aprender com elas e contribuir para que cada indivíduo alcance seu melhor. No âmbito pessoal, gosto de viajar, conhecer novas culturas, viver experiências únicas e experimentar diferentes culinárias e lugares, algo que amplia minha visão de mundo e me ajuda a crescer como ser humano e profissional. Busco diariamente evoluir, aprimorar minhas habilidades e atuar com ética, sensibilidade e dedicação. Meu propósito é fazer a diferença onde estiver, contribuindo para uma educação cada vez"
+  },
     {
-        "id": 1,
-        "nome": "",
-        "unidade": "",
-        "unidadeId": 1,
-        "imagemUrl": "",
-        "texto": ""
-    }
+    "id": 15,
+    "nome": "Professor de Teste",
+    "areaEnsino": "",
+    "unidade": "santa-maria",
+    "unidadeId": 2,
+    "imagemUrl": "",
+    "texto": "descrição da experiência do professor"
+  },
+   {
+    "id": 16,
+    "nome": "Professor de Teste",
+    "areaEnsino": "",
+    "unidade": "cruz alta",
+    "unidadeId": 3,
+    "imagemUrl": "",
+    "texto": "descrição da experiência do professor"
+  }
 ]

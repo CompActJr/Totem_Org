@@ -14,6 +14,7 @@ import SecaoInfra from '~/components/unidade/SecaoInfra.vue';
 import EntreEmContato from '~/components/unidade/EntreEmContato.vue';
 import SecaoAtividades from '~/components/unidade/SecaoAtividades.vue';
 import type { AtividadeType } from '~/types/atividades.types';
+import SecaoProfessores from '~/components/unidade/SecaoProfessores.vue';
 
 const banners = [
     "/geral/BANNER-1-CACHOEIRA.jpg",
@@ -33,7 +34,7 @@ if (!unidade) {
 
 const atividades: AtividadeType[] = repository.getAtividades(unidade.id)
 
-//const professores = repository.getProfessores(unidade.id)
+const professores = repository.getProfessores(unidade.id)
 
 </script>
 
@@ -53,6 +54,8 @@ const atividades: AtividadeType[] = repository.getAtividades(unidade.id)
     <SecaoInfra :unidade="unidade"/>
 
     <SecaoAtividades :atividades="atividades"/>
+
+    <SecaoProfessores :professores="professores"/>
 
     <HeroVocacional/>
 
