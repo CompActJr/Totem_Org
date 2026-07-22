@@ -8,7 +8,7 @@
 
         <!-- Imagem de fundo -->
         <img
-            src="https://picsum.photos/1600/600"
+            src="/images/FUNDO_MATRICULA.jpg"
             alt="Escolha sua turma"
             class="absolute inset-0 w-full h-full object-cover" />
 
