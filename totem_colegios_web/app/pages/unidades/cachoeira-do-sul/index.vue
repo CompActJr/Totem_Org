@@ -10,6 +10,7 @@ import HeroUnidadeTitle from '~/components/unidade/HeroUnidadeTitle.vue';
 import SecaoAtividades from '~/components/unidade/SecaoAtividades.vue';
 import SecaoInfra from '~/components/unidade/SecaoInfra.vue';
 import SecaoNiveisEnsino from '~/components/unidade/SecaoNiveisEnsino.vue';
+import SecaoProfessores from '~/components/unidade/SecaoProfessores.vue';
 import type { AtividadeType } from '~/types/atividades.types';
 
 import type { UnidadeType } from '~/types/unidade.type';
@@ -32,7 +33,7 @@ if (!unidade) {
 
 const atividades: AtividadeType[] = repository.getAtividades(unidade.id)
 
-//const professores = repository.getProfessores(unidade.id)
+const professores = repository.getProfessores(unidade.id)
 
 </script>
 
@@ -53,10 +54,14 @@ const atividades: AtividadeType[] = repository.getAtividades(unidade.id)
 
     <SecaoAtividades :atividades="atividades"/>
 
+    <SecaoProfessores :professores="professores"/>
+
     <HeroVocacional/>
 
     <EntreEmContato :unidade="unidade"/>
 
     <AgendeSuaVisita :unidades="[unidade]"/>
+
+    <WhatsappButton :unidades="[unidade]"/>
 
 </template>
