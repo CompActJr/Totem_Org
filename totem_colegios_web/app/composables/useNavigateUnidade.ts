@@ -6,6 +6,7 @@ export function useNavigationUnidade(unidadeSlug: string, levels: EducationalLev
   const navUnidadesLinks = new NavigationBuilder()
     .buildHome()
     .buildNossaEscola()
+    .buildUnidades()
     .buildUnidadesNiveis(unidadeSlug, levels)
     .buildUnidadeDiferenciais(unidadeSlug)
     .buildUnidadeFaleComAGente(unidadeSlug)
