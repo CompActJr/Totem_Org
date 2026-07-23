@@ -1,11 +1,17 @@
 <script lang="ts" setup>
+import type { UnidadeType } from '~/types/unidade.type';
+
 /**
  * @author Jonas
  * Botão flutuante para whats que ao focar nele abre uma caixinha de dialogo a esquerda
  * com cada contato
  */
 
-import units from "~/data/unidades.json"
+interface Props {
+  unidades: UnidadeType[]
+}
+
+const props = defineProps<Props>();
 
 const open = ref(false);
 
@@ -34,13 +40,13 @@ const open = ref(false);
 
       <div class="p-3 flex flex-col gap-2">
         <NuxtLink
-          v-for="unit in units"
-          :key="unit.city"
-          :to="unit.whatsapp"
+          v-for="unidade in props.unidades"
+          :key="unidade.id"
+          :to="`https://wa.me/${unidade.whatsapp.replace(/\D/g, '')}`"
           target="_blank"
-          class="rounded-lg border p-3 hover:bg-green-50"
+          class="p-3 hover:bg-green-50"
         >
-          {{ unit.city }}
+          {{ unidade.city }}
         </NuxtLink>
       </div>
     </div>

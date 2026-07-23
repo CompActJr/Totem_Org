@@ -24,7 +24,7 @@ const props = defineProps<Props>();
             <SwiperSlide v-for="banner in props.banners" :key="banner">
                 <NuxtImg :src="banner" class="absolute inset-0 w-full h-full object-cover" :quality="100" loading="lazy"
                     format="webp" />
-
+                
             </SwiperSlide>
 
         </Swiper>

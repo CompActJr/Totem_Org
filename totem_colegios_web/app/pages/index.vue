@@ -37,7 +37,7 @@ import unidades from "~/data/unidades.json";
 
   <HeroTitle/>
 
-  <HeroUnidades/>
+  <HeroUnidades :unidades="unidades"/>
 
   <HeroDepoimentos/>
 
@@ -45,6 +45,6 @@ import unidades from "~/data/unidades.json";
 
   <AgendeSuaVisita :unidades="unidades" />
 
-  <WhatsappButton/>
+  <WhatsappButton :unidades="unidades"/>
 
 </template>
