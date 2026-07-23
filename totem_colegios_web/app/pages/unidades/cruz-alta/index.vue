@@ -42,7 +42,7 @@ const professores = repository.getProfessores(unidade.id)
 
 <template>
 
-    <HeroSlider :banners="banners" :titulo="'Cachoeira do Sul'" :subtitle="'Colégios totem'"
+    <HeroSlider :banners="banners" :titulo="'Cruz Alta'" :subtitle="'Colégios totem'"
         :link="'/unidades/cruz-alta/#agende-visita'" />
 
     <HeroUnidadeTitle

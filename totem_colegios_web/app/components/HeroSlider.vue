@@ -33,9 +33,13 @@ const props = defineProps<Props>();
 
             <div class="absolute inset-0 z-10">
 
-                <div class="absolute z-10 lg:bottom-48 bottom-32 lg:left-16 left-4 text-white">
-                    <h1 class="lg:text-8xl md:text-4xl text-2xl font-bold">{{ props.titulo }}</h1>
-                    <span class="lg:text-4xl md:text-2xl text-1xl">{{ props.subtitle }}</span>
+                <div class="absolute z-10 lg:bottom-48 bottom-32 lg:left-16 left-4">
+                    <h1 class="lg:text-8xl md:text-4xl text-2xl text- font-bold text-amber-50">
+                        {{ props.titulo }}
+                    </h1>
+                    <span class="lg:text-4xl md:text-2xl text-1xl text-amber-50">
+                        {{ props.subtitle }}
+                    </span>
                 </div>
 
                 <NuxtLink 
