@@ -15,6 +15,8 @@ import EntreEmContato from '~/components/unidade/EntreEmContato.vue';
 import SecaoAtividades from '~/components/unidade/SecaoAtividades.vue';
 import type { AtividadeType } from '~/types/atividades.types';
 import SecaoProfessores from '~/components/unidade/SecaoProfessores.vue';
+import SecaoParceiros from '~/components/unidade/SecaoParceiros.vue';
+import HeroVocacional from '~/components/home/HeroVocacional.vue';
 
 const banners = [
     "/geral/BANNER-1-CACHOEIRA.jpg",
@@ -54,6 +56,8 @@ const professores = repository.getProfessores(unidade.id)
     <SecaoInfra :unidade="unidade"/>
 
     <SecaoAtividades :atividades="atividades"/>
+
+    <SecaoParceiros/>
 
     <SecaoProfessores :professores="professores"/>
 
