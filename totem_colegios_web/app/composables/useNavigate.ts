@@ -11,9 +11,9 @@ export function useNavigation() {
       href: "/nossa-escola",
       children: [
         { label: "Por que o Totem", href: "/nossa-escola#porque_o_totem" },
-        { label: "Nossa História", href: "/nossa-escola" },
-        { label: "Visão de Educação", href: "/nossa-escola" },
-        { label: "Metodologias", href: "/nossa-escola" },
+        { label: "Nossa História", href: "/nossa-escola#nossa_historia" },
+        { label: "Visão de Educação", href: "/nossa-escola#visao_de_educacao" },
+        { label: "Metodologias", href: "/nossa-escola#metodologias" },
         { label: "Perguntas Frequentes", href: "/nossa-escola" },
       ]
     },
