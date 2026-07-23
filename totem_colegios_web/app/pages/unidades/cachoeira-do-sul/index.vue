@@ -16,6 +16,10 @@ import type { AtividadeType } from '~/types/atividades.types';
 
 import type { UnidadeType } from '~/types/unidade.type';
 
+definePageMeta({
+  layout: "unidade"
+})
+
 const banners = [
     "/geral/BANNER-1-CACHOEIRA.jpg",
     "/geral/FACHADA-CACHOEIRA.jpg"
@@ -31,6 +35,9 @@ if (!unidade) {
     statusMessage: "Unidade não encontrada",
   })
 }
+
+const currentUnit = useCurrentUnit()
+currentUnit.value = unidade
 
 const atividades: AtividadeType[] = repository.getAtividades(unidade.id)
 

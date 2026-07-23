@@ -1,3 +1,8 @@
+<script lang="ts" setup>
+import {useNavigation} from "~/composables/useNavigate"
+const { navLinks } = useNavigation()
+</script>
+
 <template>
    <div class="relative min-h-screen">
 
@@ -10,7 +15,7 @@
     <!-- Overlay -->
     <div class="fixed inset-0 -z-10 bg-white/80"/>
 
-    <Menu/>
+    <Menu :links="navLinks"/>
 
     <main class="flex-1 pt-20 md:pt-26">
       <slot />

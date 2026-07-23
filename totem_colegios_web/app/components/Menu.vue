@@ -1,10 +1,14 @@
-<script setup>
-    import { useNavigation } from '~/composables/useNavigate';
+<script setup lang="ts">
     const menuOpen = ref(false)
     const openSubmenu = ref(null) // controla qual submenu mobile está aberto (por label)
-    const { navLinks } = useNavigation();
+    
+    interface Props {
+      links: NavigationLink[]
+    }
 
-    function toggleSubmenu(label) {
+    const props = defineProps<Props>();
+
+    function toggleSubmenu(label: any) {
       openSubmenu.value = openSubmenu.value === label ? null : label
     }
 
@@ -34,7 +38,7 @@
         menuOpen ? 'flex' : 'hidden',
         'absolute bg-orange-600 md:bg-transparent z-20 left-0 top-16 w-full flex-col md:static md:flex md:w-auto md:flex-row max-h-[calc(100vh-4rem)] overflow-y-auto md:overflow-visible md:max-h-none'
       ]">
-        <div v-for="link in navLinks" :key="link.href + link.label"
+        <div v-for="link in props.links" :key="link.href + link.label"
           class="relative group w-full md:w-auto">
 
           <!-- Item sem filhos (ex: HOME) -->
