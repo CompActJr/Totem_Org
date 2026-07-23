@@ -15,7 +15,7 @@ const props = defineProps<Props>();
 </script>
 
 <template>
-    <section id="entre-em-contato" class="min-h-128 bg-gray-200 w-full flex flex-col md:flex-row justify-between  gap-8 responsive-padding">
+    <section id="section_contato" class="scroll-mt-32 min-h-128 bg-gray-200 w-full flex flex-col md:flex-row justify-between  gap-8 responsive-padding">
         <article>
             <div class="flex items-center">
                 <h2 class="text-gray-600 text-xl md:text-2xl font-bold">
