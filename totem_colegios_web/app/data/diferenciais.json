@@ -1,0 +1,302 @@
+[
+    {
+        "id": 1,
+        "unidadeId": 1,
+        "diferencial": "Ambientes diferenciados para cada nível de ensino"
+    },
+    {
+        "id": 2,
+        "unidadeId": 1,
+        "diferencial": "Calendário escolar prolongado"
+    },
+    {
+        "id": 3,
+        "unidadeId": 1,
+        "diferencial": "Mundo Kids com refeitório"
+    },
+    {
+        "id": 4,
+        "unidadeId": 1,
+        "diferencial": "Playground interno e externo com ambientes de recreação"
+    },
+    {
+        "id": 5,
+        "unidadeId": 1,
+        "diferencial": "Momentos de vivências e de interação entre escola e família"
+    },
+    {
+        "id": 6,
+        "unidadeId": 1,
+        "diferencial": "Apresentações artísticas com aptidões exploradas a partir da arte, da música, do teatro e da dança"
+    },
+    {
+        "id": 7,
+        "unidadeId": 1,
+        "diferencial": "Projetos interdisciplinares de acordo com o interesse de cada estudante"
+    },
+    {
+        "id": 8,
+        "unidadeId": 1,
+        "diferencial": "Metodologia com personagens que acompanham o desenvolvimento"
+    },
+    {
+        "id": 9,
+        "unidadeId": 1,
+        "diferencial": "Horários diferenciados de entrada e saída: 13h15min até às 18h, de segunda à sexta"
+    },
+    {
+        "id": 10,
+        "unidadeId": 1,
+        "diferencial": "Segurança aos estudantes e tranquilidade aos pais"
+    },
+    {
+        "id": 11,
+        "unidadeId": 1,
+        "diferencial": "Material didático do J. Piaget sem custo adicional"
+    },
+    {
+        "id": 12,
+        "unidadeId": 1,
+        "diferencial": "Plataforma digital do J. Piaget com mais de 500 jogos e conteúdo multimídia totalmente articulados com os conhecimentos abordados em sala de aula*"
+    },
+    {
+        "id": 13,
+        "unidadeId": 1,
+        "diferencial": "Aulas de Educação Física e de Língua Inglesa (Projeto Bilíngue) com profissional especializado**"
+    },
+    {
+        "id": 14,
+        "unidadeId": 1,
+        "diferencial": "Programa União Faz a Vida"
+    },
+    {
+        "id": 15,
+        "unidadeId": 1,
+        "diferencial": "Projetos de transição dos alunos que se encontram no Nível II para o 1° ano do Ensino Fundamental"
+    },
+    {
+        "id": 16,
+        "unidadeId": 1,
+        "diferencial": "Entrevistas individuais com os professores, no início do ano letivo"
+    },
+    {
+        "id": 17,
+        "unidadeId": 1,
+        "diferencial": "Reuniões de acolhimento e orientação a cada turma"
+    },
+    {
+        "id": 18,
+        "unidadeId": 1,
+        "diferencial": "Lindo Cerimonial de Formatura do Nível II, registrando a conclusão desta etapa da vida escolar"
+    },
+    {
+        "id": 19,
+        "unidadeId": 1,
+        "diferencial": "Encontro Reflexivo da Aprendizagem Escolar"
+    },
+    {
+        "id": 20,
+        "unidadeId": 1,
+        "diferencial": "Plataforma educacional Totem, possibilitando acesso e acompanhamento escolar dos alunos."
+    },
+    {
+        "id": 21,
+        "unidadeId": 2,
+        "diferencial": "Atendimento personalizado, afetuoso, com equipe altamente qualificada e experiente;"
+    },
+    {
+        "id": 22,
+        "unidadeId": 2,
+        "diferencial": "Estrutura física moderna, planejada para maior segurança, conforto e produtividade detodos"
+    },
+    {
+        "id": 23,
+        "unidadeId": 2,
+        "diferencial": "Projeto pedagógico focado no resultado e na formação para a vida real"
+    },
+    {
+        "id": 24,
+        "unidadeId": 2,
+        "diferencial": "Material didático colorido, atualizado e com suporte digital, em plataformas modernas e interativas"
+    },
+    {
+        "id": 25,
+        "unidadeId": 2,
+        "diferencial": "Reconhecido pelo ambiente familiar – Família Totem – e pelo total apoio ao estudante e seus responsáveis"
+    },
+    {
+        "id": 26,
+        "unidadeId": 2,
+        "diferencial": "Salas de aula com mobiliário adequado a cada nível de ensino, climatizadas, com acesso à internet e recursos multimídia completos"
+    },
+    {
+        "id": 27,
+        "unidadeId": 2,
+        "diferencial": "Plataformas Digitais com jogos e conteúdos multimídias totalmente articulados com os conhecimentos abordados em sala de aula"
+    },
+    {
+        "id": 28,
+        "unidadeId": 2,
+        "diferencial": "Segurança aos estudantes e tranquilidade aos pais"
+    },
+    {
+        "id": 29,
+        "unidadeId": 2,
+        "diferencial": "Metodologia com aprendizagem cooperativa, lúdica e científica"
+    },
+    {
+        "id": 30,
+        "unidadeId": 2,
+        "diferencial": "Recursos educacionais e pedagógicos adequados à faixa etária"
+    },
+    {
+        "id": 31,
+        "unidadeId": 2,
+        "diferencial": "Aulas de Inglês, Arte, Educação Física com professores especializados"
+    },
+    {
+        "id": 32,
+        "unidadeId": 2,
+        "diferencial": "Viagens pedagógicas"
+    },
+    {
+        "id": 33,
+        "unidadeId": 2,
+        "diferencial": "Vivências em família com apresentações de talentos (arte, música, dança, poesia e teatro)"
+    },
+    {
+        "id": 34,
+        "unidadeId": 2,
+        "diferencial": "Concurso de Fotografia, Literário e Simulados"
+    },
+    {
+        "id": 35,
+        "unidadeId": 2,
+        "diferencial": "Técnicas contextualizadas à valorização do meio ambiente"
+    },
+    {
+        "id": 36,
+        "unidadeId": 2,
+        "diferencial": "Participação na Olimpíada de Matemática - OBMEP e demais olimpíadas do conhecimento"
+    },
+    {
+        "id": 37,
+        "unidadeId": 2,
+        "diferencial": "Atendimento individualizado aos pais"
+    },
+    {
+        "id": 38,
+        "unidadeId": 2,
+        "diferencial": "Realização do Simulado Enemzinho ou Avaliação Unificada Totem (AUT) como preparação para as provas do ENEM"
+    },
+    {
+        "id": 39,
+        "unidadeId": 2,
+        "diferencial": "Viagens de estudo e visitas às universidades;"
+    },
+    {
+        "id": 40,
+        "unidadeId": 2,
+        "diferencial": "Acompanhamento do estudante às principais excursões e eventos do Totem Vestibulares para integração e familiarização com a rede"
+    },
+      {
+        "id": 41,
+        "unidadeId": 3,
+        "diferencial": "Atendimento personalizado, afetuoso, com equipe altamente qualificada e experiente;"
+    },
+    {
+        "id": 42,
+        "unidadeId": 3,
+        "diferencial": "Estrutura física moderna, planejada para maior segurança, conforto e produtividade detodos"
+    },
+    {
+        "id": 43,
+        "unidadeId": 3,
+        "diferencial": "Projeto pedagógico focado no resultado e na formação para a vida real"
+    },
+    {
+        "id": 44,
+        "unidadeId": 3,
+        "diferencial": "Material didático colorido, atualizado e com suporte digital, em plataformas modernas e interativas"
+    },
+    {
+        "id": 45,
+        "unidadeId": 3,
+        "diferencial": "Reconhecido pelo ambiente familiar – Família Totem – e pelo total apoio ao estudante e seus responsáveis"
+    },
+    {
+        "id": 46,
+        "unidadeId": 3,
+        "diferencial": "Salas de aula com mobiliário adequado a cada nível de ensino, climatizadas, com acesso à internet e recursos multimídia completos"
+    },
+    {
+        "id": 47,
+        "unidadeId": 3,
+        "diferencial": "Plataformas Digitais com jogos e conteúdos multimídias totalmente articulados com os conhecimentos abordados em sala de aula"
+    },
+    {
+        "id": 48,
+        "unidadeId": 3,
+        "diferencial": "Segurança aos estudantes e tranquilidade aos pais"
+    },
+    {
+        "id": 49,
+        "unidadeId": 3,
+        "diferencial": "Metodologia com aprendizagem cooperativa, lúdica e científica"
+    },
+    {
+        "id": 49,
+        "unidadeId": 3,
+        "diferencial": "Recursos educacionais e pedagógicos adequados à faixa etária"
+    },
+    {
+        "id": 50,
+        "unidadeId": 3,
+        "diferencial": "Aulas de Inglês, Arte, Educação Física com professores especializados"
+    },
+    {
+        "id": 51,
+        "unidadeId": 3,
+        "diferencial": "Viagens pedagógicas"
+    },
+    {
+        "id": 52,
+        "unidadeId": 3,
+        "diferencial": "Vivências em família com apresentações de talentos (arte, música, dança, poesia e teatro)"
+    },
+    {
+        "id": 53,
+        "unidadeId": 3,
+        "diferencial": "Concurso de Fotografia, Literário e Simulados"
+    },
+    {
+        "id": 54,
+        "unidadeId": 3,
+        "diferencial": "Técnicas contextualizadas à valorização do meio ambiente"
+    },
+    {
+        "id": 55,
+        "unidadeId": 3,
+        "diferencial": "Participação na Olimpíada de Matemática - OBMEP e demais olimpíadas do conhecimento"
+    },
+    {
+        "id": 56,
+        "unidadeId": 3,
+        "diferencial": "Atendimento individualizado aos pais"
+    },
+    {
+        "id": 57,
+        "unidadeId": 3,
+        "diferencial": "Realização do Simulado Enemzinho ou Avaliação Unificada Totem (AUT) como preparação para as provas do ENEM"
+    },
+    {
+        "id": 58,
+        "unidadeId": 3,
+        "diferencial": "Viagens de estudo e visitas às universidades;"
+    },
+    {
+        "id": 59,
+        "unidadeId": 3,
+        "diferencial": "Acompanhamento do estudante às principais excursões e eventos do Totem Vestibulares para integração e familiarização com a rede"
+    }
+]
