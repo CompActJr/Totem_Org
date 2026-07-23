@@ -30,6 +30,36 @@
 
 ## For Devs
 
+```bash
+Internet
+      │
+      ▼
+┌────────────────────────────────────────────┐
+│ Ubuntu Lightsail                           │
+│                                            │
+│ Certbot (host)                             │
+│ /etc/letsencrypt                           │
+│                                            │
+│ Docker                                     │
+│                                            │
+│ ┌──────────────┐                           │
+│ │ nginx        │ 443                       │
+│ └──────┬───────┘                           │
+│        │                                   │
+│ ┌──────┴──────┐                            │
+│ │ principal   │ :8001                      │
+│ └─────────────┘                            │
+│                                            │
+│ ┌─────────────┐                            │
+│ │ colegios    │ :8002                      │
+│ └─────────────┘                            │
+│                                            │
+│ ┌─────────────┐                            │
+│ │ vestibulares│ :8003                      │
+│ └─────────────┘                            │
+└────────────────────────────────────────────┘
+```
+
 **O projeto possui 4 modulos principais**
 - **totem_colegios_web** -> frontend para o portal institucional dos colégios
 - **totem_main** -> blog interativo, totem tv totem vocacional e painel administrativo

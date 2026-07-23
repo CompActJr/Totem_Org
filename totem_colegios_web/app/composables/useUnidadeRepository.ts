@@ -5,6 +5,7 @@
 
 
 import type { AtividadeType } from "~/types/atividades.types";
+import type { DiferencialType }  from "~/types/diferenciais.types";
 import type { DepoimentoType } from "~/types/depoimentos.types";
 import type { ProfessorType } from "~/types/professores.types";
 import type { UnidadeType } from "~/types/unidade.type";
@@ -12,6 +13,8 @@ import type { UnidadeType } from "~/types/unidade.type";
 import unidades from "~/data/unidades.json";
 import atividades from "~/data/atividades.json";
 import professores from "~/data/professores.json";
+import diferenciais from "~/data/diferenciais.json";
+import depoimentos from "~/data/depoimentos.json";
 
 export interface IUnidadeRepository {
     getBySlug(slug: string): UnidadeType | undefined;
@@ -20,13 +23,23 @@ export interface IUnidadeRepository {
 
     getDepoimentos(unidadeId: number): DepoimentoType[];
 
+    getDiferenciais(unidadeId: number): DiferencialType[];
+
     getProfessores(unidadeId: number): ProfessorType[];
 
 }
 
 export class JsonUnidadeRepository implements IUnidadeRepository {
     getDepoimentos(unidadeId: number): DepoimentoType[] {
-        throw new Error("Method not implemented.");
+        return depoimentos.filter(
+            d => d.unidadeId === unidadeId
+        )
+    }
+
+    getDiferenciais(unidadeId: number): DiferencialType[] {
+        return diferenciais.filter(
+            d => d.unidadeId === unidadeId
+        )
     }
     
     getProfessores(unidadeId: number): ProfessorType[] {
