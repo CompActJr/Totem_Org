@@ -12,7 +12,7 @@
 			<div class="bg-orange-600 w-32 h-0.5 ml-8"></div>
 		</div>
 
-		<p class="mt-4 text-lg">
+		<p class="mt-4 text-lg leading-12">
 			O nome Totem traduz, em uma única palavra, a essência da nossa história, dos nossos valores e daquilo que
 			acreditamos sobre educação.
 
@@ -76,7 +76,7 @@
 			<div class="bg-orange-600 w-32 h-0.5 ml-8"></div>
 		</div>
 
-		<p class="mt-4 text-lg">
+		<p class="mt-4 text-lg leading-12">
 			Todo colégio nasce de um sonho.
 			Mas alguns nascem de um chamado.
 
@@ -222,7 +222,7 @@
 			<div class="bg-orange-600 w-32 h-0.5 ml-8"></div>
 		</div>
 
-		<p class="mt-4 text-lg">
+		<p class="mt-4 text-lg leading-12">
 			No Totem, acreditamos que aprender não é um ato passivo. É um processo vivo, construído diariamente, com sentido, participação e propósito.
 
 			Nossa metodologia nasce de uma base sólida: o construtivismo, inspirado nos estudos de Jean Piaget, que compreende o aluno como protagonista do próprio aprendizado, alguém que não apenas recebe informações, mas interpreta, experimenta, questiona e constrói conhecimento a partir das suas vivências.

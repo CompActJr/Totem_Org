@@ -34,6 +34,9 @@ if (!unidade) {
   })
 }
 
+const currentUnit = useCurrentUnit()
+currentUnit.value = unidade
+
 const atividades: AtividadeType[] = repository.getAtividades(unidade.id)
 
 const professores = repository.getProfessores(unidade.id)

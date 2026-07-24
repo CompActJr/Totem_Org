@@ -35,8 +35,10 @@ function toggle() {
             <div class="absolute inset-0 flex items-end">
 
                 <div
-                    class="relative w-full bg-orange-500 p-5 overflow-hidden transition-all duration-500 ease-in-out"
-                    :class="aberto ? 'min-h-[80%]' : 'min-h-46'">
+                    class="relative w-full bg-orange-500 p-5 overflow-hidden transition-all
+                        duration-500 ease-in-out"
+                    :class="aberto ? 'min-h-[80%]' : 'min-h-46'"
+                >
 
                     <Transition name="fade" mode="out-in">
 

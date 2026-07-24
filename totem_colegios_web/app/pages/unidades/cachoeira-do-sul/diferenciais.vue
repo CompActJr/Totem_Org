@@ -4,6 +4,10 @@ import type { DiferencialType } from '~/types/diferenciais.types';
 import type { UnidadeType } from '~/types/unidade.type';
 
 
+definePageMeta({
+  layout: "unidade"
+})
+
 const repository = useUnidadeRepository();
 
 const unidade: UnidadeType | undefined = repository.getBySlug("cachoeira-do-sul")
@@ -14,6 +18,9 @@ if (!unidade) {
     statusMessage: "Unidade não encontrada",
   })
 }
+
+const currentUnit = useCurrentUnit()
+currentUnit.value = unidade
 
 const diferenciais: DiferencialType[] = repository.getDiferenciais(unidade.id);
 
