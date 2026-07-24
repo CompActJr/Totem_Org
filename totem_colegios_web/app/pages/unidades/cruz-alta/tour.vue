@@ -1,24 +1,28 @@
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue';
-let viewerContainer: HTMLElement | null = null;
+import Viewer360 from '~/components/Viewer360.vue';
 
-onMounted(async () => {
-  const { Viewer } = await import('@photo-sphere-viewer/core');
-  await import('@photo-sphere-viewer/core/index.css');
-  viewerContainer = document.querySelector('#viewer')
-
-  if (viewerContainer) {
-    const viewer = new Viewer({
-      container: viewerContainer,
-      panorama: '/panoramas/cruz-alta/teste360.webp',
-    });
+const panoramas = [
+  {
+    id: 'hall',
+    name: 'Hall de entrada',
+    panorama: '/panoramas/cruz_alta/hall.webp'
+  },
+  {
+    id: 'biblioteca',
+    name: 'Biblioteca',
+    panorama: '/panoramas/cruz_alta/hall.webp'
+  },
+  {
+    id: 'laboratorio',
+    name: 'Laboratório',
+    panorama: '/panoramas/cruz_alta/hall.webp'
   }
+]
 
-});
 </script>
 
 <template>
   <ClientOnly>
-    <div id="viewer" style="width: 100vw; height: 100vh;"></div>
+    <Viewer360 :panoramas="panoramas"/>
   </ClientOnly>
 </template>

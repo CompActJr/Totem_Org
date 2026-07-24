@@ -1,48 +1,75 @@
-<template>
-  <div ref="viewerContainer" class="meu-visualizador"></div>
-</template>
-
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
+/**
+ * @Authors Jonas, Fabricio
+ * Thanks Fabricios :D
+ */
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+import type { Viewer } from '@photo-sphere-viewer/core'
+import { GalleryPlugin } from '@photo-sphere-viewer/gallery-plugin';
 
-const props = defineProps<{
-  url: string
-}>()
+interface PanoramaItem {
+  id: string
+  panorama: string
+  name: string
+  thumbnail?: string
+}
+
+interface Props {
+  panoramas: PanoramaItem[]
+  initialPanorama?: string
+}
+
+const props = defineProps<Props>()
 
 const viewerContainer = ref<HTMLElement | null>(null)
-let viewerInstance: any = null
+let viewerInstance: Viewer | null = null
 
 onMounted(async () => {
   const { Viewer } = await import('@photo-sphere-viewer/core')
+
   await import('@photo-sphere-viewer/core/index.css')
+  await import('@photo-sphere-viewer/gallery-plugin/index.css')
 
-  if (viewerContainer.value) {
-    viewerInstance = new Viewer({
-      container: viewerContainer.value,
-      panorama: props.url,
-      navbar: ['zoom', 'fullscreen'],
-    })
-  }
-})
+  if (!viewerContainer.value) return
 
-watch(() => props.url, (newUrl) => {
-  if (viewerInstance && newUrl) {
-    viewerInstance.setPanorama(newUrl)
-  }
+  viewerInstance = new Viewer({
+    container: viewerContainer.value,
+
+    panorama:
+      props.initialPanorama ??
+      props.panoramas[0]?.panorama,
+
+    caption: props.panoramas[0]?.name,
+
+    navbar: [
+      'gallery',
+      'zoom',
+      'move',
+      'caption',
+      'fullscreen'
+    ],
+
+    plugins: [
+      [GalleryPlugin, {
+        items: props.panoramas.map(p => ({
+          id: p.id,
+          panorama: p.panorama,
+          name: p.name,
+          thumbnail: p.thumbnail ?? p.panorama
+        }))
+      }]
+    ]
+  })
 })
 
 onBeforeUnmount(() => {
-  if (viewerInstance) {
-    viewerInstance.destroy()
-  }
+  viewerInstance?.destroy()
 })
 </script>
 
-<style scoped>
-.meu-visualizador {
-  width: 100%;
-  height: 500px;
-  background-color: #222;
-  border-radius: 8px;
-}
-</style>
+<template>
+  <div
+    ref="viewerContainer"
+    class="w-full h-150 md:h-200  overflow-hidden"
+  />
+</template>
