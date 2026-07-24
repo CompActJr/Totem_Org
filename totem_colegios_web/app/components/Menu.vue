@@ -20,12 +20,12 @@
 
 <template>
    <header class="fixed z-50 w-full flex items-center justify-between 
-    px-6 py-6 lg:bg-orange-600/90 bg-orange-600 text-white 
+    px-12 md:px-24 py-6 lg:bg-orange-500/95 bg-orange-500 text-white 
     shadow-xl min-h-12
   ">
 
       <NuxtLink to="/" @click="closeAll">
-        <img src="/geral/logo-totem.png" alt="Colégio Totem" class="w-36"/>
+        <img src="/geral/logo-totem.png" alt="Colégio Totem" class="w-36 md:w-48"/>
       </NuxtLink>
 
       <button class="flex flex-col gap-1 md:hidden" @click="menuOpen = !menuOpen">
@@ -100,5 +100,7 @@
 
         </div>
       </nav>
+
+
   </header>
 </template>

@@ -27,7 +27,7 @@ const props = defineProps<Props>();
 
 
             <div class=" absolute inset-0 flex items-end">
-                <div class="bg-orange-600/80 p-4 w-full min-h-46">
+                <div class="bg-orange-500/80 p-4 w-full min-h-46">
                     <h2 class="text-3xl font-bold text-white text-center">
                         {{ nivel.name }}
                     </h2>
