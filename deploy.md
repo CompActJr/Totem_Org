@@ -1,55 +1,53 @@
-## Deploy do totem main
-
+# Compilando e gerando as imagens
 ```bash
-cd totem_main
+docker build -t totem-main:latest ./totem_main
+docker build -t totem-colegios:latest ./totem_colegios_web
+docker build -t totem-vestibulares:latest ./totem_vestibulares_web
 ```
 
+# Salvando em arquivos .tar para enviar via SCP
 ```bash
-docker build -t totem_main .
+docker save totem-main:latest | gzip > totem-main.tar.gz
+docker save totem-colegios:latest | gzip > totem-colegios.tar.gz
+docker save totem-vestibulares:latest | gzip > totem-vestibulares.tar.gz
 ```
 
-> totem main porta 8000
+Na AWS Lightsail (Servidor de Produção)
 
-## Deploy do totem colegios
-
-```bash
-cd totem_colegios_web
-```
-
-```bash
-docker build -t totem_colegios .
-```
-
-> totem colegios porta 8001
-
-
-## Deploy do Totem vestibulares
-
-```bash
-cd totem_vestibulares_web
-```
-
-```bash
-docker build -t totem_vestibulares .
-```
-
-## Deploy do teste vocacional
-
-```bash
-cd totem_vocacional
-```
-
-```bash
-docker build -t teste_vocacional .
-```
-
-> teste vocacional porta 3000
+No servidor, não precisará do código fonte nem do código de build dos Dockerfiles. precisa apenas
+- Dos arquivos .tar.gz (carregados via docker load)
+- Do arquivo docker-compose.yml da raiz
+- Do arquivo .env (ou arquivos .env específicos) contendo as variáveis de produção
 
 
 ## Deploy do nginx
 
 
-## Deploy do CMS (totem admin)
+## Deploy do Backend
 
 
 ## Gerar certificado ssl no nginx
+
+
+> ENV no Dockerfile
+
+```bash
+-e / --env (no docker run):
+```
+
+- Momento: Fica gravado dentro da imagem durante o build (construção) e persiste na execução do contêiner.
+- Visibilidade: Fica embutido na imagem; qualquer pessoa que inspecionar a imagem (docker inspect) consegue ler os valores.
+- Uso ideal: Definir padrões fixos, caminhos de sistema (PATH) ou configurações padrão que não mudam entre ambientes
+
+
+> ARG (no Dockerfile)
+
+- Momento: Disponível apenas durante o processo de build da imagem.
+- Visibilidade: Não persiste no contêiner em execução (desaparece após gerar a imagem).
+- Uso ideal: Definir parâmetros transitórios para compilar o código (ex: versão de um pacote ou chave temporária de build).
+
+> Arquivo .env / env_file (Docker Compose)
+
+- Momento: Carregado externamente em tempo de execução pelo Docker Compose.
+- Visibilidade: Mantido fora do código-fonte da imagem (geralmente ignorado no controle de versão).
+- Uso ideal: Organizar múltiplos segredos e parâmetros de configuração local ou de produção de forma limpa.

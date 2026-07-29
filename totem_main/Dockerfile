@@ -15,9 +15,6 @@ WORKDIR /app
 
 COPY --from=build /app/.output/ ./
 
-ENV PORT=8000
-ENV HOST=0.0.0.0
-
 EXPOSE 8000
 
 CMD ["node", "/app/server/index.mjs"]

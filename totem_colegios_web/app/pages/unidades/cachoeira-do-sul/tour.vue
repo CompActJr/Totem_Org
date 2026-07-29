@@ -5,17 +5,12 @@ const panoramas = [
   {
     id: 'hall',
     name: 'Hall de entrada',
-    panorama: '/panoramas/cruz_alta/hall.webp'
+    panorama: '/panoramas/cachoeira_do_sul/c_sala1.jpeg'
   },
   {
     id: 'biblioteca',
     name: 'Biblioteca',
-    panorama: '/panoramas/cruz_alta/hall.webp'
-  },
-  {
-    id: 'laboratorio',
-    name: 'Laboratório',
-    panorama: '/panoramas/cruz_alta/hall.webp'
+    panorama: '/panoramas/cachoeira_do_sul/c_refeitorio.jpeg'
   }
 ]
 

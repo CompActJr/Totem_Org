@@ -2,59 +2,43 @@ version: "3.9"
 
 services:
 
+  principal:
+    image: totem-main:latest
+    container_name: principal
+    expose:
+      - "8001"
+    env_file:
+      - ./totem_main/.env
+    restart: unless-stopped
+
+  colegios:
+    image: totem-colegios:latest
+    container_name: colegios
+    expose:
+      - "8002"
+    env_file:
+      - ./totem_colegios_web/.env
+    restart: unless-stopped
+
+  vestibulares:
+    image: totem-vestibulares:latest
+    container_name: vestibulares
+    expose:
+      - "8003"
+    env_file:
+      - ./totem_vestibulares_web/.env
+    restart: unless-stopped
+
   nginx:
     image: nginx:alpine
     container_name: nginx
-
     ports:
       - "80:80"
       - "443:443"
-
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-
-      # certificados
-      - /etc/letsencrypt:/etc/letsencrypt:ro
-
+      - ./nginx:/etc/nginx/conf.d:ro
     depends_on:
       - principal
       - colegios
       - vestibulares
-
-    restart: unless-stopped
-
-  principal:
-    build: ./principal
-    container_name: principal
-
-    environment:
-      PORT: 8001
-
-    expose:
-      - "8001"
-
-    restart: unless-stopped
-
-  colegios:
-    build: ./colegios
-    container_name: colegios
-
-    environment:
-      PORT: 8002
-
-    expose:
-      - "8002"
-
-    restart: unless-stopped
-
-  vestibulares:
-    build: ./vestibulares
-    container_name: vestibulares
-
-    environment:
-      PORT: 8003
-
-    expose:
-      - "8003"
-
     restart: unless-stopped

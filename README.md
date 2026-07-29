@@ -7,7 +7,6 @@
 ![Jonas](https://img.shields.io/badge/Jonas-000000?style=for-the-badge&logo=github&logoColor=white)
 ![A.Asan](https://img.shields.io/badge/A.Asan-360276?style=for-the-badge&logo=github&logoColor=white)
 ![Jean](https://img.shields.io/badge/Jean-760202?style=for-the-badge&logo=github&logoColor=white)
-![Mari](https://img.shields.io/badge/Mari-00d2ac?style=for-the-badge&logo=github&logoColor=white)
 ![A.Pão](https://img.shields.io/badge/A.Pão-016325?style=for-the-badge&logo=github&logoColor=white)
 ![Matheus](https://img.shields.io/badge/Matheus-c98300?style=for-the-badge&logo=github&logoColor=white)
 ![Fabricio](https://img.shields.io/badge/Fabricio-0072c4?style=for-the-badge&logo=github&logoColor=white)
@@ -119,6 +118,24 @@ na mesma rede pode acessar por seu IP
 <b>
 Componentes de Cliente (Client-Side Components)Por padrão, o Nuxt utiliza renderização universal (SSR). Se você tem um componente que precisa rodar exclusivamente no navegador (por interagir com a janela do navegador, usar localStorage ou exigir uma biblioteca que dependa do objeto window), você pode usar a tag <ClientOnly> ou criar um componente com .client no nome.
 </b>
+
+
+> definindo variaveis de ambiente no nuxt:
+
+```bash
+// nuxt.config.ts em cada projeto Nuxt
+export default defineNuxtConfig({
+  runtimeConfig: {
+    // Variáveis privadas (apenas no servidor Node)
+    apiSecret: '', 
+
+    // Variáveis públicas (disponíveis no cliente/navegador)
+    public: {
+      apiBase: process.env.NUXT_PUBLIC_API_BASE || 'http://localhost:3000'
+    }
+  }
+})
+```
 
 ## [Deploy.MD](/deploy.md)
 
