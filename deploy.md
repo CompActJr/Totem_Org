@@ -20,7 +20,17 @@ No servidor, não precisará do código fonte nem do código de build dos Docker
 - Do arquivo .env (ou arquivos .env específicos) contendo as variáveis de produção
 
 
-## Deploy do nginx
+## Como testar localmente na sua máquina antes de subir para a Lightsail
+
+Edite o arquivo hosts da sua máquina (C:\Windows\System32\drivers\etc\hosts no Windows ou /etc/hosts no Linux/Mac) e adicione:
+
+sudo nano /etc/hosts
+
+```bash
+127.0.0.1 totem.com
+127.0.0.1 colegios.totem.com
+127.0.0.1 vestibulares.totem.com
+```
 
 
 ## Deploy do Backend
