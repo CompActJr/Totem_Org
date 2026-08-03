@@ -23,5 +23,6 @@ useSeoMeta({
 
   <div class="w-full bg-gray-600 mt-8 mb-8 h-2" />
 
-  <VideoGallery />
+  <!--  <VideoGallery />  -->
+ 
 </template>

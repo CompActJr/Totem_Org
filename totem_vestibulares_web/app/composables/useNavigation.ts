@@ -25,10 +25,12 @@ export function useNavigation() {
         label: "FALE COM A GENTE",
         href: "/contato"
     },
+    /** 
     {
         label: "APOSTILHAS",
         href: "/biblioteca"
     },
+    */
     {
         label: "ESCOLHA SUA TURMA",
         href: "/matriculas"
