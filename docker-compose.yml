@@ -4,8 +4,8 @@ services:
   principal:
     image: totem-main:latest
     container_name: principal
-    expose:
-      - "8001"
+    ports:
+      - "8001:8001"
     env_file:
       - ./totem_main/.env
     restart: unless-stopped
@@ -13,8 +13,8 @@ services:
   colegios:
     image: totem-colegios:latest
     container_name: colegios
-    expose:
-      - "8002"
+    ports:
+      - "8002:8002"
     env_file:
       - ./totem_colegios_web/.env
     restart: unless-stopped
@@ -22,8 +22,8 @@ services:
   vestibulares:
     image: totem-vestibulares:latest
     container_name: vestibulares
-    expose:
-      - "8003"
+    ports:
+      - "8003:8003"
     env_file:
       - ./totem_vestibulares_web/.env
     restart: unless-stopped

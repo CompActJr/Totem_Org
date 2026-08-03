@@ -17,7 +17,7 @@ Na AWS Lightsail (Servidor de Produção)
 No servidor, não precisará do código fonte nem do código de build dos Dockerfiles. precisa apenas
 - Dos arquivos .tar.gz (carregados via docker load)
 - Do arquivo docker-compose.yml da raiz
-- Do arquivo .env (ou arquivos .env específicos) contendo as variáveis de produção
+- Do arquivo .env (ou arquivos .env específicos) contendo as variáveis de produção e o caminho deles certinho com as pastas
 
 
 ## Como testar localmente na sua máquina antes de subir para a Lightsail
@@ -30,6 +30,15 @@ sudo nano /etc/hosts
 127.0.0.1 totem.com
 127.0.0.1 colegios.totem.com
 127.0.0.1 vestibulares.totem.com
+```
+
+Execute o comando docker para executar o script do docker-compose.yml para orquetrar os containers
+mas antes certifique de ter as imagens tudo em mão com o nome batendo ali no script
+
+```bash
+docker images
+docker compose up -d
+docker compose stats -> monitora uso de RAM e CPU dos containers
 ```
 
 
