@@ -10,14 +10,13 @@ COPY . ./
 
 RUN npm run build
 
-FROM node:24-alpine
+FROM node:24-alpine AS runner
 WORKDIR /app
 
 COPY --from=build /app/.output/ ./
 
-ENV PORT=8000
-ENV HOST=0.0.0.0
-
-EXPOSE 8000
+ENV NITRO_HOST=0.0.0.0
+ENV NITRO_PORT=8001
+EXPOSE 8001
 
 CMD ["node", "/app/server/index.mjs"]

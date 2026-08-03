@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import type { Portal } from '~/types/portal';
 
-const config = useRuntimeConfig();
+    const config = useRuntimeConfig();
+    const colegiosUrl: string = config.public.colegiosUrl as string;
+    const vestibularesUrl: string = config.public.vestibularesUrl as string;
+    console.log('logger: ' + colegiosUrl);
+    console.log('logger: ' + vestibularesUrl);
 
 const portals: Portal[] = [
   {
@@ -9,14 +13,14 @@ const portals: Portal[] = [
     description:
       'Conheça nossos cursos preparatórios para ENEM e vestibulares, descubra a metodologia de ensino, explore nossas unidades em tour 360°, conheça a equipe de professores e realize sua pré-matrícula de forma rápida e segura.',
     image: '/images/totem-on.png',
-    link: config.public.vestibularesApp
+    link: vestibularesUrl
   },
   {
     title: 'Totem Colégios',
     description:
       'Explore tudo sobre nossos colégios: proposta pedagógica, estrutura das unidades, tour virtual 360°, corpo docente, atividades extracurriculares e o formulário de matrícula para novos alunos.',
     image: '/images/FACHADA-CRUZ-ALTA.jpg',
-     link: config.public.colegiosApp
+     link: colegiosUrl
   },
   {
     title: 'Totem Vocacional',

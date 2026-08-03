@@ -1,13 +1,23 @@
-FROM node:22-slim AS build
+
+FROM node:24-alpine AS build
 WORKDIR /app
+
 COPY package*.json ./
+
 RUN npm ci
-COPY . .
+
+COPY . ./
+
 RUN npm run build
 
-FROM node:22-slim AS runtime
+FROM node:24-alpine AS runner
 WORKDIR /app
-ENV NODE_ENV=production
-COPY --from=build /app/.output ./.output
-EXPOSE 3000
-CMD ["node", ".output/server/index.mjs"]
+
+COPY --from=build /app/.output/ ./
+
+ENV NITRO_HOST=0.0.0.0
+ENV NITRO_PORT=8003
+
+EXPOSE 8003
+
+CMD ["node", "/app/server/index.mjs"]

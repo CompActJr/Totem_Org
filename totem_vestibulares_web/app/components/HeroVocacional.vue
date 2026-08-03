@@ -1,3 +1,10 @@
+<script lang="ts" setup>
+    const config = useRuntimeConfig();
+    const mainUrl: string = config.public.mainUrl as string;
+    console.log('logger: ' + mainUrl);
+</script>
+
+
 <template>
     <section class="min-h-128 bg-white w-full responsive-padding">
 
@@ -35,7 +42,7 @@
                     Clique e faça o teste vocacional do Totem.
                 </p>
 
-                <a href="#" class="btn btn-primary btn-sm">ACESSE AGORA &rarr;</a>
+                <a :href="mainUrl" class="btn btn-primary btn-sm">ACESSE AGORA &rarr;</a>
             </div>
         </div>
 

@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+    const config = useRuntimeConfig();
+    const mainUrl: string = config.public.mainUrl as string;
+    console.log('logger: ' + mainUrl);
+</script>
+
 <template>
     <section class="min-h-128 bg-white w-full responsive-padding">
 
@@ -30,7 +36,7 @@
                     Clique e faça o teste vocacional do Totem.
                 </p>
 
-                <NuxtLink :to="`/unidades/cachoeira-do-sul/diferenciais`" class="rounded-full bg-white shadow-2xl px-6 py-3
+                <NuxtLink :to="mainUrl" class="rounded-full bg-white shadow-2xl px-6 py-3
                 font-semibold text-gray-700 
                 transition-all duration-300 hover:scale-115">
                     Saiba mais →

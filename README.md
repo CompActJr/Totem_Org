@@ -7,7 +7,6 @@
 ![Jonas](https://img.shields.io/badge/Jonas-000000?style=for-the-badge&logo=github&logoColor=white)
 ![A.Asan](https://img.shields.io/badge/A.Asan-360276?style=for-the-badge&logo=github&logoColor=white)
 ![Jean](https://img.shields.io/badge/Jean-760202?style=for-the-badge&logo=github&logoColor=white)
-![Mari](https://img.shields.io/badge/Mari-00d2ac?style=for-the-badge&logo=github&logoColor=white)
 ![A.Pão](https://img.shields.io/badge/A.Pão-016325?style=for-the-badge&logo=github&logoColor=white)
 ![Matheus](https://img.shields.io/badge/Matheus-c98300?style=for-the-badge&logo=github&logoColor=white)
 ![Fabricio](https://img.shields.io/badge/Fabricio-0072c4?style=for-the-badge&logo=github&logoColor=white)
@@ -73,6 +72,27 @@ Internet
 - **docker-compose.yml** -> arquivo na raiz para orquestração de todos os containers
 - **backend/docker-compose.yml** -> arquivo para rodar o postgres localmente
 
+## Baixar a chave privada:
+
+ Acesse o painel da sua conta do Amazon Lightsail, vá em Account > Account > aba SSH Keys e baixe a chave correspondente à região da sua instância (ou baixe diretamente na aba Connect da própria instância)
+ 
+## Mudar a permissão da chave:
+  No seu terminal local, mude as permissões do arquivo .pem baixado para que ele seja seguro e legível apenas por você. Execute:
+
+  ```bash
+  chmod 400 nome-da-chave.pem
+  ```
+
+## Identificar os dados de acesso: 
+  Copie o Endereço IP público da sua instância no painel do Lightsail e descubra o nome de usuário padrão conforme o sistema operacional (ex: ubuntu para Ubuntu, admin para Debian, bitnami para Bitnami, ec2-user para Amazon Linux)
+  .Executar o comando de conexão: No terminal, navegue até a pasta onde salvou a chave e conecte-se usando:
+
+  ```bash  
+  ssh -i nome-da-chave.pem usuario@endereco-ip-publico
+  ```
+
+## NUXT
+
 <b>
 framework NuxtJs SSR melhora de SEO, usa vue 3+, e depencias listadas abaixo
 para executar em modo de desenvolvimento va até a pasta do projeto onde tem
@@ -98,6 +118,24 @@ na mesma rede pode acessar por seu IP
 <b>
 Componentes de Cliente (Client-Side Components)Por padrão, o Nuxt utiliza renderização universal (SSR). Se você tem um componente que precisa rodar exclusivamente no navegador (por interagir com a janela do navegador, usar localStorage ou exigir uma biblioteca que dependa do objeto window), você pode usar a tag <ClientOnly> ou criar um componente com .client no nome.
 </b>
+
+
+> definindo variaveis de ambiente no nuxt:
+
+```bash
+// nuxt.config.ts em cada projeto Nuxt
+export default defineNuxtConfig({
+  runtimeConfig: {
+    // Variáveis privadas (apenas no servidor Node)
+    apiSecret: '', 
+
+    // Variáveis públicas (disponíveis no cliente/navegador)
+    public: {
+      apiBase: process.env.NUXT_PUBLIC_API_BASE || 'http://localhost:3000'
+    }
+  }
+})
+```
 
 ## [Deploy.MD](/deploy.md)
 
