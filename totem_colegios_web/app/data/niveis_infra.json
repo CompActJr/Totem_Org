@@ -7,14 +7,26 @@
     },
     {
         "id": 2,
-        "unidade": 1,
-        "nivel": 1,
-        "image": "/infraestrutura/cachoeira-do-sul/B-1.jpg"
+        "unidadeId": 1,
+        "nivelId": 1,
+        "image": "/infraestrutura/cachoeira-do-sul/B-2.jpg"
     },
     {
         "id": 3,
-        "unidade": 2,
-        "nivel": 1,
-        "image": "/infraestrutura/cachoeira-do-sul/B-1.jpg"
+        "unidadeId": 1,
+        "nivelId": 1,
+        "image": "/infraestrutura/cachoeira-do-sul/B-3.jpg"
+    },
+    {
+        "id": 4,
+        "unidadeId": 1,
+        "nivelId": 1,
+        "image": "/infraestrutura/cachoeira-do-sul/B-4.jpg"
+    },
+    {
+        "id": 5,
+        "unidadeId": 1,
+        "nivelId": 1,
+        "image": "/infraestrutura/cachoeira-do-sul/B-5.jpg"
     }
 ]
