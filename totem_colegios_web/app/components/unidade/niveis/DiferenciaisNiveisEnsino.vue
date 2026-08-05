@@ -44,12 +44,15 @@ import diferenciaisData from '../../../data/diferenciais_niveis.json'
 
 const props = defineProps<{
   nivelId: number
+  unidadeId: number
 }>()
 
 const diferenciais = diferenciaisData as DiferencialNivel[]
 
 const diferenciaisFiltrados = computed(() =>
-  diferenciais.filter((d) => d.nivelId === props.nivelId)
+  diferenciais.filter((d) => 
+    d.nivelId === props.nivelId &&
+    d.unidadeId === props.unidadeId)
 )
 
 function paragrafos(descricao: string) {

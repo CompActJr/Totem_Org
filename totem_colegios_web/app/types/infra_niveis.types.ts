@@ -1,6 +1,6 @@
 export interface InfraNivel {
   id: number
-  unidade: string
-  nivel: string
+  unidadeId: number
+  nivelId: number
   image: string
 }

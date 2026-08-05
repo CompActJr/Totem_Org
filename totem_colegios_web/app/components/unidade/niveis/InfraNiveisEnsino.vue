@@ -4,8 +4,8 @@ import type { InfraNivel } from '../../../types/infra_niveis.types'
 import infraData from '../../../data/niveis_infra.json'
 
 const props = defineProps<{
-  nivel: string
-  unidade: string
+  nivelId: number
+  unidadeId: number
 }>()
 
 const infras = infraData as InfraNivel[]
@@ -13,8 +13,8 @@ const infras = infraData as InfraNivel[]
 const infrasFiltrados = computed(() =>
   infras.filter(
     (d) =>
-      d.nivel === props.nivel &&
-      d.unidade === props.unidade
+      d.nivelId === props.nivelId &&
+      d.unidadeId === props.unidadeId
   )
 )
 

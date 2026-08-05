@@ -12,14 +12,14 @@ import depoimentosData from "~/data/niveis_depoimentos.json";
 
 const props = defineProps<{
   unidadeId: number;
-  nivel: string;
+  nivelId: number;
 }>();
 
 const depoimentos = computed(() =>
   (depoimentosData as DepoimentoNivel[]).filter(
     (depoimento) =>
       depoimento.unidadeId === props.unidadeId &&
-      depoimento.nivel === props.nivel
+      depoimento.nivelId === props.nivelId
   )
 );
 </script>

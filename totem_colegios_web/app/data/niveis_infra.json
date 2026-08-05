@@ -1,20 +1,20 @@
 [
     {
         "id": 1,
-        "unidade": "cachoeira",
-        "nivel": "bercario",
+        "unidadeId": 1,
+        "nivelId": 1,
         "image": "/infraestrutura/cachoeira-do-sul/B-1.jpg"
     },
     {
         "id": 2,
-        "unidade": "cachoeira",
-        "nivel": "bercario",
+        "unidade": 1,
+        "nivel": 1,
         "image": "/infraestrutura/cachoeira-do-sul/B-1.jpg"
     },
     {
         "id": 3,
-        "unidade": "santa maria",
-        "nivel": "bercario",
+        "unidade": 2,
+        "nivel": 1,
         "image": "/infraestrutura/cachoeira-do-sul/B-1.jpg"
     }
 ]

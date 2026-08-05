@@ -4,7 +4,12 @@ import AgendeSuaVisita from '~/components/home/AgendeSuaVisita.vue';
 import EntreEmContato from '~/components/unidade/EntreEmContato.vue';
 import SecaoProfessores from '~/components/unidade/SecaoProfessores.vue';
 import WhatsappButton from '~/components/WhatsappButton.vue';
+import HeroNiveisEnsino from '~/components/unidade/niveis/HeroNiveisEnsino.vue';
+import DiferenciaisNiveisEnsino from '~/components/unidade/niveis/DiferenciaisNiveisEnsino.vue';
+import InfraNiveisEnsino from '~/components/unidade/niveis/InfraNiveisEnsino.vue';
+import DepoimentosNiveisEnsino from '~/components/unidade/niveis/DepoimentosNiveisEnsino.vue';
 import type { UnidadeType } from '~/types/unidade.type';
+
 
 /**
  * @authors Jonas, Arthur, A.Pão
@@ -41,10 +46,23 @@ const professores = repository.getProfessores(unidade.id)
 <template>
     <HeroSlider :banners="banners" 
         :titulo="'Ensino Médio'" 
-        :subtitle="'Cruz Alta'"
+        :subtitle="'Cachoeira do Sul'"
         :link="'/unidades/cachoeira-do-sul/ensino-medio/#agende-visita'" />
 
+    <HeroNiveisEnsino :nivel="'Ensino Médio'"
+      :destaque="'TODO: destaque'"
+      :descricao="'TODO: descricao'" />
+
+    <DiferenciaisNiveisEnsino :nivelId="5"
+        :unidadeId="1"/>
+
     <SecaoProfessores :professores="professores"/>
+
+    <InfraNiveisEnsino :nivelId="5"
+      :unidadeId="1" />
+
+    <DepoimentosNiveisEnsino :nivelId="5"
+      :unidadeId="1" />
 
     <EntreEmContato :unidade="unidade"/>
 

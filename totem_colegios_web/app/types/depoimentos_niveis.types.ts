@@ -3,7 +3,7 @@ export interface DepoimentoNivel {
   nome: string
   unidade: string
   unidadeId: number
-  nivel: string
+  nivelId: number
   image: string
   depoimento: string
 }
