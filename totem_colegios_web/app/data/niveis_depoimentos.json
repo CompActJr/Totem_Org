@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "nome": "Carine",
+    "unidade": "Cachoeira do Sul",
+    "unidadeId": 1,
+    "nivel": "bercario",
+    "image": "/geral/Carine.jpg",
+    "depoimento": "O Totem transmite confiança, segurança e estimula os alunos ao aprendizado. A equipe diretiva está constantemente envolvida e próxima dos alunos."
+  },
+  {
+    "id": 2,
+    "nome": "Vanessa Giroldi",
+    "unidade": "Cachoeira do Sul",
+    "unidadeId": 1,
+    "nivel": "bercario",
+    "image": "/geral/Vanessa.jpg",
+    "depoimento": "Escolhi o Totem porque quero que meus filhos cresçam em um ambiente onde se sintam acolhidos, valorizados e felizes. Aqui encontrei não só qualidade no ensino, mas também cuidado, carinho e valores que fazem diferença na formação deles como pessoas. Confio na proposta pedagógica e acredito que aqui meus filhos terão um bom desenvolvimento acadêmico e pessoal. Sem dúvida foi uma das melhores escolhas que fiz para o futuro deles."
+  },
+  {
+    "id": 3,
+    "nome": "Luisa Felix Muller",
+    "unidade": "Cachoeira do Sul",
+    "unidadeId": 1,
+    "nivel": "bercario",
+    "image": "/geral/Luisa.jpg",
+    "depoimento": "Vejo meu filho se desenvolvendo com alegria, autonomia e valores sólidos. Vejo diariamente o brilho nos olhos dele, a curiosidade florescendo e a autonomia se fortalecendo. É uma escola que prepara o mundo, sem abrir mão da infância. E isso, para mim, é transformador. A escola supera minhas expectativas ao educar com afeto e propósito. "
+  },
+  {
+    "id": 4,
+    "nome": "Vanice Moraes",
+    "unidade": "vó do Eduardo e do Guilherme - Totem Cachoeira do Sul",
+    "unidadeId": 1,
+    "nivel": "bercario",
+    "image": "/geral/Vanice.jpg",
+    "depoimento": "Quem escolheu o Totem foram eles. O Eduardo e o Guilherme escolheram pela qualidade do ensino, pelos professores (ótimos) que transmitem segurança aos alunos e pelo acolhimento de todos."
+  }
+]

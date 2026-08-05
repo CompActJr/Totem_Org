@@ -39,8 +39,8 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { DiferencialNivel } from '../../types/diferenciais_niveis.types'
-import diferenciaisData from '../../data/diferenciais_niveis.json'
+import type { DiferencialNivel } from '../../../types/diferenciais_niveis.types'
+import diferenciaisData from '../../../data/diferenciais_niveis.json'
 
 const props = defineProps<{
   nivelId: number

@@ -3,10 +3,11 @@ import HeroSlider from '~/components/HeroSlider.vue';
 import AgendeSuaVisita from '~/components/home/AgendeSuaVisita.vue';
 import EntreEmContato from '~/components/unidade/EntreEmContato.vue';
 import SecaoProfessores from '~/components/unidade/SecaoProfessores.vue';
-import DiferenciaisNiveisEnsino from '~/components/unidade/DiferenciaisNiveisEnsino.vue';
+import DiferenciaisNiveisEnsino from '~/components/unidade/niveis/DiferenciaisNiveisEnsino.vue';
 import WhatsappButton from '~/components/WhatsappButton.vue';
-import HeroNiveisEnsino from '~/components/unidade/HeroNiveisEnsino.vue';
-import InfraNiveisEnsino from '~/components/unidade/InfraNiveisEnsino.vue';
+import HeroNiveisEnsino from '~/components/unidade/niveis/HeroNiveisEnsino.vue';
+import InfraNiveisEnsino from '~/components/unidade/niveis/InfraNiveisEnsino.vue';
+import DepoimentosNiveisEnsino from '~/components/unidade/niveis/DepoimentosNiveisEnsino.vue';
 import type { UnidadeType } from '~/types/unidade.type';
 
 /**
@@ -57,6 +58,9 @@ const professores = repository.getProfessores(unidade.id)
 
     <InfraNiveisEnsino :nivel="'bercario'"
       :unidade="'cachoeira'" />
+
+    <DepoimentosNiveisEnsino :nivel="'bercario'"
+      :unidadeId="1" />
 
     <EntreEmContato :unidade="unidade"/>
 

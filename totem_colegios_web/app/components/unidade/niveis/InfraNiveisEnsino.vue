@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { InfraNivel } from '../../types/infra_niveis.types'
-import infraData from '../../data/niveis_infra.json'
+import type { InfraNivel } from '../../../types/infra_niveis.types'
+import infraData from '../../../data/niveis_infra.json'
 
 const props = defineProps<{
   nivel: string
