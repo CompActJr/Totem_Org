@@ -6,6 +6,7 @@ import SecaoProfessores from '~/components/unidade/SecaoProfessores.vue';
 import DiferenciaisNiveisEnsino from '~/components/unidade/DiferenciaisNiveisEnsino.vue';
 import WhatsappButton from '~/components/WhatsappButton.vue';
 import HeroNiveisEnsino from '~/components/unidade/HeroNiveisEnsino.vue';
+import InfraNiveisEnsino from '~/components/unidade/InfraNiveisEnsino.vue';
 import type { UnidadeType } from '~/types/unidade.type';
 
 /**
@@ -53,6 +54,9 @@ const professores = repository.getProfessores(unidade.id)
     <DiferenciaisNiveisEnsino :nivelId="1"/>
 
     <SecaoProfessores :professores="professores"/>
+
+    <InfraNiveisEnsino :nivel="'bercario'"
+      :unidade="'cachoeira'" />
 
     <EntreEmContato :unidade="unidade"/>
 
