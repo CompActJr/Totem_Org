@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nivelId": 1,
+    "imagem": "",
+    "titulo": "Diferencial 1",
+    "descricao": "Lorem ipsum dolor sit amet. Sed unde voluptas hic accusantium impedit qui perspiciatis atque et quis repellendus est vero delectus. Aut vitae voluptatum est quasi error sit eaque facere in error voluptas? Ut consequatur beatae et architecto autem qui perspiciatis omnis aut autem voluptas sed voluptatibus aspernatur.\n\nEos quia nisi hic saepe error ut quod veritatis sit deleniti odio 33 dolor voluptas ut eaque mollitia non error reiciendis. Aut tempore voluptatem nam dolores quibusdam non internos odit et neque veritatis qui temporibus similique est sunt quia."
+  },
+  {
+    "id": 2,
+    "nivelId": 1,
+    "imagem": "",
+    "titulo": "Diferencial 2",
+    "descricao": "Lorem ipsum dolor sit amet. Sed unde voluptas hic accusantium impedit qui perspiciatis atque et quis repellendus est vero delectus. Aut vitae voluptatum est quasi error sit eaque facere in error voluptas? Ut consequatur beatae et architecto autem qui perspiciatis omnis aut autem voluptas sed voluptatibus aspernatur.\n\nEos quia nisi hic saepe error ut quod veritatis sit deleniti odio 33 dolor voluptas ut eaque mollitia non error reiciendis. Aut tempore voluptatem nam dolores quibusdam non internos odit et neque veritatis qui temporibus similique est sunt quia."
+  },
+  {
+    "id": 3,
+    "nivelId": 2,
+    "imagem": "",
+    "titulo": "Diferencial 1",
+    "descricao": "Lorem ipsum dolor sit amet. Sed unde voluptas hic accusantium impedit qui perspiciatis atque et quis repellendus est vero delectus.\n\nEos quia nisi hic saepe error ut quod veritatis sit deleniti odio 33 dolor voluptas ut eaque mollitia non error reiciendis."
+  }
+]
