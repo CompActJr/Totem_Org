@@ -9,7 +9,7 @@
 </script>
 
 <template>
-  <header class="fixed z-50 w-full flex items-center justify-between px-6 bg-white text-[#332E29] shadow-xl min-h-12">
+  <header class="fixed z-50 w-full flex items-center justify-between  px-12 md:px-24 py-2 bg-white text-[#332E29] shadow-xl min-h-12">
 
       <NuxtLink to="/">
         <img src="/images/logo_vestibulares.png" alt="Colégio Totem" class="w-36"/>
