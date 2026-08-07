@@ -36,9 +36,6 @@ if (!unidade) {
 const currentUnit = useCurrentUnit()
 currentUnit.value = unidade
 
-//todo filtrar daqueles pelo nivel de ensino
-const professores = repository.getProfessores(unidade.id)
-
 </script>
 
 <template>
@@ -54,7 +51,7 @@ const professores = repository.getProfessores(unidade.id)
     <DiferenciaisNiveisEnsino :nivelId="3"
         :unidadeId="2"/>
 
-    <SecaoProfessores :professores="professores"/>
+    <SecaoProfessores :unidadeId="2" :nivelId="3"/>
 
     <InfraNiveisEnsino :nivelId="3"
       :unidadeId="2" />

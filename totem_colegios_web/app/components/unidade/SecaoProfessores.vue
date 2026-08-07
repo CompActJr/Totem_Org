@@ -7,10 +7,23 @@ import type { ProfessorType } from '~/types/professores.types';
 import ProfessorCard from './ProfessorCard.vue';
 
 interface Props {
-  professores: ProfessorType[]
+  unidadeId: number
+  nivelId?: number
 }
 
 const props = defineProps<Props>();
+
+const repository = useUnidadeRepository();
+
+const professores = computed<ProfessorType[]>(() => {
+  const todos = repository.getProfessores(props.unidadeId);
+
+  if (props.nivelId === undefined) {
+    return todos;
+  }
+
+  return todos.filter((professor) => professor.nivelId.includes(props.nivelId!));
+});
 
 </script>
 

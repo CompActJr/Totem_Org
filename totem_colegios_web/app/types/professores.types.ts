@@ -4,6 +4,7 @@ export type ProfessorType = {
     areaEnsino: string,
     unidade: string,
     unidadeId: number,
+    nivelId: number[],
     imagemUrl: string,
     texto: string
 }
