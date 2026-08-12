@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nivelId": 1,
+    "unidadeId":1,
+    "imagem": "/geral/ACOLHIMENTO.jpg",
+    "titulo": "NOSSO ACOLHIMENTO",
+    "descricao": "No Colégio Totem, sabemos que nos primeiros anos de vida o cérebro do bebê forma milhões de conexões por segundo, e cada estímulo, cada interação e cada experiência fazem toda a diferença no futuro da criança. Por isso, nosso Berçário 1 e 2 não é apenas um espaço de cuidado, é um ambiente planejado com intencionalidade pedagógica, baseado em estudos da neurociência e no desenvolvimento integral do bebê. Nossos profissionais são preparados para estimular cada fase do desenvolvimento com intencionalidade. Valorizamos o vínculo afetivo, pois sabemos que o afeto fortalece o desenvolvimento cerebral."
+  },
+  {
+    "id": 2,
+    "nivelId": 1,
+    "unidadeId":1,
+    "imagem": "/geral/AMBIENTE.jpg",
+    "titulo": "NOSSO AMBIENTE",
+    "descricao": "No Totem, criamos um ambiente rico em estímulos, favorecendo a formação de conexões neurais fundamentais para a aprendizagem. Aqui, o bebê aprende explorando — em um ambiente seguro, acolhedor e preparado. Desenvolvemos a autonomia desde cedo, respeitando o tempo de cada criança. Criamos um ambiente emocionalmente seguro, que favorece o aprendizado. Incentivamos a interação, o compartilhar e a convivência, para que o meio estimule de várias formas o desenvolvimento socioemocional dos bebês."
+  },
+  {
+    "id": 3,
+    "nivelId": 1,
+    "unidadeId":1,
+    "imagem": "/geral/METODOLOGIA.jpg",
+    "titulo": "NOSSA METODOLOGIA",
+    "descricao": "Preparamos seu filho, desde cedo, para os próximos desafios escolares. Nossa rotina estruturada transmite segurança emocional, essencial para o desenvolvimento saudável.  Trabalhamos com atividades sensoriais planejadas, ampliando as experiências que o bebê vivencia. Assim, o brincar se torna ferramenta essencial de aprendizagem. Estimulamos a curiosidade natural do bebê, base para a construção do conhecimento. No Totem, cada detalhe é pensado para desenvolver o máximo potencial dos pequenos."
+  }
+]
