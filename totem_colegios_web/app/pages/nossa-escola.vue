@@ -4,7 +4,7 @@
 
 
 <template>
-	<section id="porque_o_totem" class="min-h-128 bg-white responsive-padding">
+	<section id="porque_o_totem" class="min-h-128 bg-white responsive-padding scroll-mt-20">
 		<div class="flex items-center">
 			<h2 class="text-gray-600 font-bold" aria-label="nossas unidades">
 				PORQUE O TOTEM
@@ -68,7 +68,7 @@
 
 	</section>
 
-	<section id="nossa_historia" class="min-h-128  responsive-padding">
+	<section id="nossa_historia" class="min-h-128  responsive-padding scroll-mt-20">
 		<div class="flex items-center">
 			<h2 class="text-gray-600 font-bold" aria-label="nossas unidades">
 				NOSSA HISTÓRIA
@@ -168,7 +168,7 @@
 		</p>
 	</section>
 
-	<section id="visao_de_educacao" class="min-h-128 bg-white responsive-padding">
+	<section id="visao_de_educacao" class="min-h-128 bg-white responsive-padding scroll-mt-20">
 		<div class="flex items-center">
 			<h2 class="text-gray-600 font-bold" aria-label="nossas unidades">
 				VISÃO DE EDUCAÇÃO
@@ -214,7 +214,7 @@
 
 	</section>
 
-	<section id="metodologias" class="min-h-128  responsive-padding">
+	<section id="metodologias" class="min-h-128  responsive-padding scroll-mt-20">
 		<div class="flex items-center">
 			<h2 class="text-gray-600 font-bold" aria-label="nossas unidades">
 				METODOLOGIAS

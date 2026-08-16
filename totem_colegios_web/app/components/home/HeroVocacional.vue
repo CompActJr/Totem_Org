@@ -7,11 +7,9 @@
 <template>
     <section class="min-h-128 bg-white w-full responsive-padding">
 
-        <div class="mt-4 lg:mt-8 flex items-center gap-32">
-            <div class="w-96 aspect-3/4 overflow-hidden rounded-xl hidden lg:block md:block">
-                <NuxtImg src="/geral/vocacional.jpg" alt="Estudante do Colégio Totem pensativa"
-                    class="h-full w-full object-cover" loading="lazy" format="webp" />
-            </div>
+        <div class="mt-4 lg:mt-8 flex items-center gap-16">
+            <NuxtImg src="/geral/vocacional.jpg" alt="Estudante do Colégio Totem pensativa"
+                class="h-full w-6/12 object-cover rounded-xl lg:w-5/12" loading="lazy" format="webp" />
 
             <div class="w-full lg:max-w-xl flex flex-col items-start gap-8">
 
