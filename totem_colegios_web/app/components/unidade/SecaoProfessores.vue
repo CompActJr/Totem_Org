@@ -37,7 +37,7 @@ const professores = computed<ProfessorType[]>(() => {
             <div class="bg-orange-600 w-32 h-0.5 ml-8"></div>
         </div>
 
-        <div class="mt-8 flex flex-row flex-wrap gap-16 justify-start">
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-16 justify-items-start">
             <ProfessorCard v-for="professor in professores" :professor="professor" :key="professor.id"/>
         </div>
 

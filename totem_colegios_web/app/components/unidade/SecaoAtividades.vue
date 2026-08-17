@@ -38,7 +38,7 @@ const props = defineProps<Props>();
             e desenvolvimento.
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-8 gap-8">
             <AtividadeCard 
                 v-for="atividade in atividades" 
                 :atividade="atividade" 

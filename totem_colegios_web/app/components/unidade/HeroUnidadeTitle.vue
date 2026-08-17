@@ -10,7 +10,7 @@ const props = defineProps<Props>()
 
 <template>
     <section class="min-h-128 w-full flex flex-col md:flex-row gap-4 bg-gray-200 responsive-padding">
-        <article>
+        <article class="w-full md:w-7/12 lg:w-8/12">
             <div class="flex items-center">
                 <h2 class="text-gray-600 text-xl md:text-2xl font-bold">
                     PORQUE O TOTEM
@@ -19,7 +19,7 @@ const props = defineProps<Props>()
                 <div class="bg-orange-600 w-32 h-0.5 ml-8"></div>
             </div>
 
-            <h2 class="text-2xl lg:text-8xl md:text-4xl mt-4 lg:mt-8 text-gray-700 font-bold">
+            <h2 class="text-2xl md:text-4xl mt-4 lg:text-6xl mt-8 text-gray-700 font-bold">
                 É MAIS QUE<br />
                 COLÉGIO...
             </h2>
@@ -40,8 +40,8 @@ const props = defineProps<Props>()
             </NuxtLink>
         </article>
 
-        <div>
-            <img :src="imagem" :alt="nome" />
+        <div class="w-full md:w-5/12 lg:w=4/12">
+            <img :src="imagem" :alt="nome" class="w-full md:min-h-[90%] object-cover" />
         </div>
     </section>
 </template>

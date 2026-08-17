@@ -12,7 +12,7 @@
       :key="diferencial.id"
       class="flex flex-col md:flex-row gap-4 mb-12 last:mb-0"
     >
-      <div class="flex-[2]">
+      <div class="w-10/12 md:w-4/12 lg:w-3/12">
         <img
           :src="diferencial.imagem"
           :alt="diferencial.titulo"
@@ -20,7 +20,7 @@
         />
       </div>
 
-      <article class="flex-[8]">
+      <article class="w-10/12 md:w-8/12 lg:w-9/12">
         <h3 class="text-xl md:text-2xl text-gray-700 font-bold mb-4">
           {{ diferencial.titulo }}
         </h3>
