@@ -5,7 +5,7 @@
 
 
 <template>
-    <footer class="bg-[#332E29] py-8 lg:py-16 px-8 md:px-32 lg:px-80 min-h-60">
+    <footer class="bg-[#332E29] py-8 lg:py-16 px-8 md:px-8 lg:px-16 min-h-60">
 
         <div class="hidden lg:flex md:flex gap-8 justify-between mt-16 ">
             <div 
