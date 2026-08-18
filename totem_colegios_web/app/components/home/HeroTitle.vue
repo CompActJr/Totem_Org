@@ -1,6 +1,6 @@
 <template>
 
-  <section id="porque_o_totem" class="scroll-mt-24 min-h-128 w-full flex flex-col md:flex-row gap-4 bg-gray-200  responsive-padding">
+  <section id="porque_o_totem" class="scroll-mt-24 min-h-128 w-full flex flex-col md:flex-row gap-4 bg-gray-200  xl:gap-[5vw] responsive-padding">
     <article class="w-full md:w-7/12 lg:w-8/12">
       <div class="flex items-center">
         <h2 class="text-gray-600 font-bold" aria-label="nossas unidades">
@@ -14,7 +14,7 @@
         COLÈGIO...
       </h2>
 
-      <p class="mt-4 md:mt-8">Bem-vindo(a) ao SEU FUTURO! Prepare-se para construir o amanhã.
+      <p class="mt-4 md:mt-8 lg:text-lg">Bem-vindo(a) ao SEU FUTURO! Prepare-se para construir o amanhã.
         No <strong>Colégio Totem</strong>, acreditamos que a escolha certa é a que motiva,
         acolhe e faz feliz. Aqui, nossos estudantes encontram um ambiente onde o afeto e a
         atenção são prioridades, proporcionando bem-estar e segurança para todos. Oferecemos

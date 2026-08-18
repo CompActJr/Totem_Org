@@ -12,7 +12,7 @@
 			<div class="bg-orange-600 w-32 h-0.5 ml-8"></div>
 		</div>
 
-		<p class="mt-4 text-lg leading-12">
+		<p class="mt-4 text-md leading-12 lg:text-lg">
 			O nome Totem traduz, em uma única palavra, a essência da nossa história, dos nossos valores e daquilo que
 			acreditamos sobre educação.
 

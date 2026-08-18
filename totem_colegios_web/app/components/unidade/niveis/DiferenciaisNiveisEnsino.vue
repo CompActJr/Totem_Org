@@ -1,5 +1,5 @@
 <template>
-  <section class="scroll-mt-24 w-full responsive-padding py-12">
+  <section class="scroll-mt-24 w-full py-8 px-12 md:px-8 lg:py-16 lg:px-16 xl:px-48">
     <div class="flex items-center mb-8">
       <h2 class="text-gray-600 font-bold" aria-label="motivos para matricular">
         Motivos para Matricular
@@ -12,15 +12,12 @@
       :key="diferencial.id"
       class="flex flex-col md:flex-row gap-4 mb-12 last:mb-0"
     >
-      <div class="w-10/12 md:w-4/12 lg:w-3/12">
-        <img
-          :src="diferencial.imagem"
-          :alt="diferencial.titulo"
-          class="w-full h-full object-cover"
-        />
+      <div class="mx-auto md:mx-0 w-10/12 md:w-6/12 lg:w-3/12">
+        <NuxtImg :src="diferencial.imagem" :alt="diferencial.titulo"
+            class="h-full w-full rounded-2xl object-cover shadow-lg" loading="lazy" format="webp" />
       </div>
 
-      <article class="w-10/12 md:w-8/12 lg:w-9/12">
+      <article class="w-10/12 md:w-6/12 lg:w-9/12">
         <h3 class="text-xl md:text-2xl text-gray-700 font-bold mb-4">
           {{ diferencial.titulo }}
         </h3>

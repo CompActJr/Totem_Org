@@ -11,7 +11,8 @@ const props = defineProps<Props>();
 </script>
 
 <template>
-  <section id="porque_o_totem" class="scroll-mt-24 min-h-128 w-full flex flex-col md:flex-row gap-1 bg-gray-200  responsive-padding">
+  <section id="porque_o_totem" class="scroll-mt-24 min-h-128 w-full flex flex-col md:flex-row gap-1 bg-gray-200
+    py-8 px-12 md:px-16 lg:py-16 lg:px-36 xl:px-60">
     <article class="w-full md:w-7/12 lg:w-8/12">
       <div class="flex items-center">
         <h2 class="text-gray-600 font-bold" aria-label="nossas unidades">
@@ -24,7 +25,7 @@ const props = defineProps<Props>();
         {{ destaque }}
       </h2>
 
-      <p class="mt-4 mr-4 md:mt-8 mr-12">
+      <p class="mt-4 mr-4 md:mt-8 md:mr-12 md:text-sm lg:text-base">
         {{ descricao }}
       </p>
     </article>

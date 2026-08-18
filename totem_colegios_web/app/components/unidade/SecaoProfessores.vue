@@ -28,7 +28,7 @@ const professores = computed<ProfessorType[]>(() => {
 </script>
 
 <template>
-    <section class="min-h-128 w-full bg-[#FFF6C9] responsive-padding">
+    <section class="min-h-128 w-full bg-[#FFF6C9] py-8 px-11 md:px-16 lg:py-16 lg:px-20 xl:px-34">
         <div class="flex items-center">
             <h2 class="text-gray-600 text-xl md:text-2xl font-bold">
                 CONHEÇA NOSSOS PROFISSIONAIS
