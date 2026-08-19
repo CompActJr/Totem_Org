@@ -32,7 +32,7 @@ export class NavigationBuilder {
         { label: "Nossa História", href: "/nossa-escola#nossa_historia" },
         { label: "Visão de Educação", href: "/nossa-escola#visao_de_educacao" },
         { label: "Metodologias", href: "/nossa-escola#metodologias" },
-        { label: "Perguntas Frequentes", href: "/nossa-escola" },
+        { label: "Perguntas Frequentes", href: "/nossa-escola#faq" },
       ]
     })
 
