@@ -20,12 +20,12 @@
 
 <template>
    <header class="fixed z-50 w-full flex items-center justify-between 
-    px-12 md:px-24 py-6 lg:bg-orange-500/95 bg-orange-500 text-white 
+    px-10 md:px-8 lg:px-12 xl:px-24 py-6 lg:bg-orange-500/95 bg-orange-500 text-white 
     shadow-xl min-h-12
   ">
 
       <NuxtLink to="/" @click="closeAll">
-        <img src="/geral/logo-totem.png" alt="Colégio Totem" class="w-36 md:w-48"/>
+        <img src="/geral/logo-totem.png" alt="Colégio Totem" class="w-36 md:w-30 lg:w-44 xl:54"/>
       </NuxtLink>
 
       <button class="flex flex-col gap-1 md:hidden" @click="menuOpen = !menuOpen">
@@ -43,7 +43,7 @@
 
           <!-- Item sem filhos (ex: HOME) -->
           <NuxtLink v-if="!link.children" :to="link.href"
-            class="block px-5 py-4 font-semibold text-white transition duration-300 hover:text-orange-200 hover:underline"
+            class="block py-4 text-sm font-semibold text-white transition duration-300 md:px-3 lg:text-base lg:px-4 xl:px-6 hover:text-orange-200 hover:underline"
             @click="closeAll">
             {{ link.label }}
           </NuxtLink>
@@ -51,9 +51,9 @@
           <!-- Item com filhos: desktop = hover dropdown / mobile = accordion -->
           <template v-else>
             <button
-              class="w-full flex items-center justify-between gap-2 px-5 py-4 font-semibold
+              class="w-full flex items-center justify-between gap-2 py-4 text-base font-semibold
                 text-white transition duration-300 hover:text-orange-200 hover:underline
-                md:cursor-default"
+                md:cursor-default px-1 text-sm lg:px-3 xl:px-5 lg:text-base"
               @click="toggleSubmenu(link.label)">
               {{ link.label }}
               <svg

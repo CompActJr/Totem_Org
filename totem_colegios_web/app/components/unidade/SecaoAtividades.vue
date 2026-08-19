@@ -16,7 +16,7 @@ const props = defineProps<Props>();
 </script>
 
 <template>
-    <section class="min-h-128 bg-gray-200 responsive-padding">
+    <section class="min-h-128 bg-gray-200 py-8 px-11 md:px-16 lg:py-16 lg:px-20 xl:px-34">
         <div class="flex items-center">
             <h2 class="text-gray-600 text-xl md:text-2xl font-bold">
                 ATIVIDADES EXTRACLASSES
@@ -38,7 +38,7 @@ const props = defineProps<Props>();
             e desenvolvimento.
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-8 gap-8">
             <AtividadeCard 
                 v-for="atividade in atividades" 
                 :atividade="atividade" 
