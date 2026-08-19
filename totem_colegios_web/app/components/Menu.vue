@@ -20,7 +20,7 @@
 
 <template>
    <header class="fixed z-50 w-full flex items-center justify-between 
-    px-12 md:px-24 py-6 lg:bg-orange-500/95 bg-orange-500 text-white 
+    px-10 md:px-8 lg:px-12 xl:px-24 py-6 lg:bg-orange-500/95 bg-orange-500 text-white 
     shadow-xl min-h-12
   ">
 
@@ -43,7 +43,7 @@
 
           <!-- Item sem filhos (ex: HOME) -->
           <NuxtLink v-if="!link.children" :to="link.href"
-            class="block py-4 text-sm font-semibold text-white transition duration-300 md:px-2 lg:text-base lg:px-5 hover:text-orange-200 hover:underline"
+            class="block py-4 text-sm font-semibold text-white transition duration-300 md:px-3 lg:text-base lg:px-4 xl:px-6 hover:text-orange-200 hover:underline"
             @click="closeAll">
             {{ link.label }}
           </NuxtLink>
@@ -53,7 +53,7 @@
             <button
               class="w-full flex items-center justify-between gap-2 py-4 text-base font-semibold
                 text-white transition duration-300 hover:text-orange-200 hover:underline
-                md:cursor-default px-1 text-sm lg:px-5 lg:text-base"
+                md:cursor-default px-1 text-sm lg:px-3 xl:px-5 lg:text-base"
               @click="toggleSubmenu(link.label)">
               {{ link.label }}
               <svg
