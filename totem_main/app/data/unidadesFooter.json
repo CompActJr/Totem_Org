@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "city": "Cachoeira do Sul",
+        "address": "Rua Santa Rosa, 305",
+        "phone": "(55) 3722-2977",
+        "whatsapp": "(55) 9 9088-3334",
+        "email": "cachoeira@colegiototem.com.br"
+    },
+    {
+        "id": 2,
+        "city": "Santa Maria",
+        "address": "RS-287, KM 234, Trevo de Uglione",
+        "phone": "55 9 9125-8480",
+        "whatsapp": "(55) 9 9125-8480",
+        "email": "santamaria@colegiototem.com.br"
+    },
+    {
+        "id": 3,
+        "city": "Cruz Alta",
+        "address": "General Felipe Portinho, 1216",
+        "phone": "(55) 3333-8569",
+        "whatsapp": "(55) 9 9076-7990",
+        "email": "cruzalta@colegiototem.com.br"
+    }
+]

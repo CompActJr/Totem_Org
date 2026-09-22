@@ -40,8 +40,6 @@ currentUnit.value = unidade
 
 const atividades: AtividadeType[] = repository.getAtividades(unidade.id)
 
-const professores = repository.getProfessores(unidade.id)
-
 </script>
 
 <template>
@@ -63,7 +61,7 @@ const professores = repository.getProfessores(unidade.id)
 
     <SecaoParceiros/>
 
-    <SecaoProfessores :professores="professores"/>
+    <SecaoProfessores :unidadeId="2"/>
 
     <HeroVocacional/>
 

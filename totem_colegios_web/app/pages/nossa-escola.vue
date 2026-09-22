@@ -4,7 +4,7 @@
 
 
 <template>
-	<section id="porque_o_totem" class="min-h-128 bg-white responsive-padding">
+	<section id="porque_o_totem" class="min-h-128 bg-white responsive-padding scroll-mt-20">
 		<div class="flex items-center">
 			<h2 class="text-gray-600 font-bold" aria-label="nossas unidades">
 				PORQUE O TOTEM
@@ -12,7 +12,7 @@
 			<div class="bg-orange-600 w-32 h-0.5 ml-8"></div>
 		</div>
 
-		<p class="mt-4 text-lg leading-12">
+		<p class="mt-4 text-md leading-12 lg:text-lg">
 			O nome Totem traduz, em uma única palavra, a essência da nossa história, dos nossos valores e daquilo que
 			acreditamos sobre educação.
 
@@ -68,7 +68,7 @@
 
 	</section>
 
-	<section id="nossa_historia" class="min-h-128  responsive-padding">
+	<section id="nossa_historia" class="min-h-128  responsive-padding scroll-mt-20">
 		<div class="flex items-center">
 			<h2 class="text-gray-600 font-bold" aria-label="nossas unidades">
 				NOSSA HISTÓRIA
@@ -168,7 +168,7 @@
 		</p>
 	</section>
 
-	<section id="visao_de_educacao" class="min-h-128 bg-white responsive-padding">
+	<section id="visao_de_educacao" class="min-h-128 bg-white responsive-padding scroll-mt-20">
 		<div class="flex items-center">
 			<h2 class="text-gray-600 font-bold" aria-label="nossas unidades">
 				VISÃO DE EDUCAÇÃO
@@ -214,7 +214,7 @@
 
 	</section>
 
-	<section id="metodologias" class="min-h-128  responsive-padding">
+	<section id="metodologias" class="min-h-128  responsive-padding scroll-mt-20">
 		<div class="flex items-center">
 			<h2 class="text-gray-600 font-bold" aria-label="nossas unidades">
 				METODOLOGIAS
@@ -255,5 +255,228 @@
 			No Totem, ensinamos conteúdo. Mas, acima de tudo, desenvolvemos competências, despertamos potencial e formamos pessoas prontas para construir o seu próprio caminho. Porque aprender, aqui, é muito mais do que saber. É entender, viver e transformar.
 
 		</p>
+	</section>
+	<section id="faq" class="min-h-128 bg-white responsive-padding scroll-mt-20">
+		<div class="flex items-center">
+			<h2 class="text-gray-600 font-bold" aria-label="perguntas frequentes">
+				PERGUNTAS FREQUENTES
+			</h2>
+			<div class="bg-orange-600 w-32 h-0.5 ml-8"></div>
+		</div>
+
+		<article class="mt-8 flex flex-col gap-8">
+
+			<div>
+				<h3 class="text-xl font-bold text-gray-600">
+					1. Qual é a proposta pedagógica do Colégio Totem?
+				</h3>
+				<p class="mt-3 text-lg leading-8">
+					Nossa proposta une o construtivismo, inspirado em Jean Piaget, com uma metodologia própria
+					desenvolvida ao longo de mais de 25 anos. Aqui, o aluno é protagonista do seu aprendizado,
+					com estímulo à autonomia, pensamento crítico e responsabilidade, sempre aliado a um ensino
+					estruturado e com foco em resultados.
+				</p>
+			</div>
+
+			<div>
+				<h3 class="text-xl font-bold text-gray-600">
+					2. O Totem realmente prepara para vestibulares e ENEM?
+				</h3>
+				<p class="mt-3 text-lg leading-8">
+					Sim, essa é uma das nossas maiores forças. Nascemos como pré-vestibular e carregamos até
+					hoje um sólido DNA de aprovação. No Ensino Médio, oferecemos preparação estratégica, com
+					simulados frequentes, acompanhamento de desempenho e direcionamento individualizado para
+					cada aluno.
+				</p>
+			</div>
+
+			<div>
+				<h3 class="text-xl font-bold text-gray-600">
+					3. Como funciona o acompanhamento individual do aluno?
+				</h3>
+				<p class="mt-3 text-lg leading-8">
+					O acompanhamento no Totem é próximo, contínuo e personalizado. Cada aluno é observado de
+					forma integral, considerando seu desempenho acadêmico, comportamento, organização e evolução
+					individual.
+				</p>
+				<p class="mt-3 text-lg leading-8">
+					Além disso, oferecemos atendimentos fora do horário de aula, com suporte direto de professores
+					para reforço, dúvidas e aprofundamento. Nosso objetivo é garantir que nenhum aluno fique para trás.
+				</p>
+			</div>
+
+			<div>
+				<h3 class="text-xl font-bold text-gray-600">
+					4. Existem atendimentos fora do horário de aula?
+				</h3>
+				<p class="mt-3 text-lg leading-8">
+					Sim, e esse é um dos nossos grandes diferenciais. O aluno Totem conta com plantões de dúvidas,
+					atendimentos individuais com professores, apoio pedagógico direcionado e momentos de reforço
+					e aprofundamento.
+				</p>
+				<p class="mt-3 text-lg leading-8">
+					Tudo isso é pensado para oferecer segurança no aprendizado e confiança nos resultados.
+				</p>
+			</div>
+
+			<div>
+				<h3 class="text-xl font-bold text-gray-600">
+					5. Como funcionam os projetos pedagógicos?
+				</h3>
+				<p class="mt-3 text-lg leading-8">
+					Trabalhamos com projetos por turma, que dão voz aos alunos e estimulam o protagonismo.
+					Esses projetos desenvolvem autonomia e responsabilidade, conectam teoria com prática,
+					estimulam criatividade e trabalho em equipe e geram aprendizado com significado.
+				</p>
+				<p class="mt-3 text-lg leading-8">
+					O aluno participa ativamente, constrói ideias e se torna parte do processo.
+				</p>
+			</div>
+
+			<div>
+				<h3 class="text-xl font-bold text-gray-600">
+					6. A escola realiza viagens pedagógicas?
+				</h3>
+				<p class="mt-3 text-lg leading-8">
+					Sim. As viagens pedagógicas fazem parte da nossa proposta de aprendizagem ampliada.
+					Elas proporcionam experiências reais, contato com diferentes contextos e aprofundamento
+					de conteúdos de forma prática.
+				</p>
+				<p class="mt-3 text-lg leading-8">
+					Aprender, no Totem, vai além da sala de aula.
+				</p>
+			</div>
+
+			<div>
+				<h3 class="text-xl font-bold text-gray-600">
+					7. Qual é o diferencial do Colégio Totem em relação a outras escolas?
+				</h3>
+				<p class="mt-3 text-lg leading-8">
+					O Totem se destaca por unir três pilares fundamentais: resultados comprovados, formação
+					humana e desenvolvimento integral, e acompanhamento próximo e individualizado.
+				</p>
+				<p class="mt-3 text-lg leading-8">
+					Além disso, contamos com professores altamente qualificados, metodologia própria e atualizada,
+					um ambiente que equilibra exigência e acolhimento e suporte ao aluno dentro e fora da sala de aula.
+				</p>
+			</div>
+
+			<div>
+				<h3 class="text-xl font-bold text-gray-600">
+					8. A escola é mais exigente ou acolhedora?
+				</h3>
+				<p class="mt-3 text-lg leading-8">
+					Somos os dois, e esse é o nosso diferencial.
+				</p>
+				<p class="mt-3 text-lg leading-8">
+					No Totem, o aluno encontra exigência para crescer e acolhimento para se desenvolver com
+					segurança. Acreditamos que grandes resultados vêm de um ambiente equilibrado, onde o aluno
+					é desafiado, mas também apoiado.
+				</p>
+			</div>
+
+			<div>
+				<h3 class="text-xl font-bold text-gray-600">
+					9. Como a escola trabalha a autonomia dos alunos?
+				</h3>
+				<p class="mt-3 text-lg leading-8">
+					A autonomia é construída diariamente. Incentivamos o aluno a organizar sua rotina, assumir
+					responsabilidades, tomar decisões e desenvolver pensamento crítico, sempre com orientação
+					próxima dos professores e da equipe pedagógica.
+				</p>
+			</div>
+
+			<div>
+				<h3 class="text-xl font-bold text-gray-600">
+					10. Como é a relação da escola com as famílias?
+				</h3>
+				<p class="mt-3 text-lg leading-8">
+					A parceria com a família é essencial. Mantemos comunicação constante, acompanhamento
+					compartilhado, reuniões, devolutivas e abertura para diálogo.
+				</p>
+				<p class="mt-3 text-lg leading-8">
+					Acreditamos que os melhores resultados acontecem quando escola e família caminham juntas.
+				</p>
+			</div>
+
+			<div>
+				<h3 class="text-xl font-bold text-gray-600">
+					11. O aluno recebe apoio emocional além do acadêmico?
+				</h3>
+				<p class="mt-3 text-lg leading-8">
+					Sim. Nós nos preocupamos com o desenvolvimento integral. O aluno é acompanhado não apenas
+					no desempenho escolar, mas também em aspectos emocionais, comportamentais e sociais.
+				</p>
+			</div>
+
+			<div>
+				<h3 class="text-xl font-bold text-gray-600">
+					12. O Totem atende quais níveis de ensino?
+				</h3>
+				<p class="mt-3 text-lg leading-8">
+					Atendemos a Educação Básica, com foco no Ensino Fundamental e Ensino Médio, garantindo uma
+					formação contínua, estruturada e alinhada com os desafios atuais.
+				</p>
+			</div>
+
+			<div>
+				<h3 class="text-xl font-bold text-gray-600">
+					13. O ensino é tradicional ou moderno?
+				</h3>
+				<p class="mt-3 text-lg leading-8">
+					O Totem une o melhor dos dois mundos: estrutura e disciplina para resultados, aliadas a
+					metodologias modernas para engajamento e aprendizado real.
+				</p>
+			</div>
+
+			<div>
+				<h3 class="text-xl font-bold text-gray-600">
+					14. Existem atividades além da sala de aula?
+				</h3>
+				<p class="mt-3 text-lg leading-8">
+					Sim, e elas são parte fundamental do nosso ensino. Desenvolvemos projetos interdisciplinares,
+					simulados, eventos pedagógicos, atividades práticas e experiências fora da escola.
+				</p>
+			</div>
+
+			<div>
+				<h3 class="text-xl font-bold text-gray-600">
+					15. O aluno sai preparado para o futuro?
+				</h3>
+				<p class="mt-3 text-lg leading-8">
+					Esse é o nosso compromisso. Formamos alunos preparados para ENEM e vestibulares, com
+					pensamento crítico, autonomia, responsabilidade e valores sólidos.
+				</p>
+			</div>
+
+			<div>
+				<h3 class="text-xl font-bold text-gray-600">
+					16. Quantas unidades o Totem possui?
+				</h3>
+				<p class="mt-3 text-lg leading-8">
+					Estamos presentes em três cidades:
+				</p>
+				<ul class="mt-3 text-lg leading-8 list-disc list-inside">
+					<li>Cachoeira do Sul, com 14 anos de história;</li>
+					<li>Santa Maria;</li>
+					<li>Cruz Alta.</li>
+				</ul>
+			</div>
+
+			<div>
+				<h3 class="text-xl font-bold text-gray-600">
+					17. Como funciona o processo de matrícula?
+				</h3>
+				<p class="mt-3 text-lg leading-8">
+					É simples e rápido. Você pode entrar em contato via WhatsApp, agendar uma visita ou
+					conversar diretamente com nossa equipe.
+				</p>
+				<p class="mt-3 text-lg leading-8">
+					Teremos prazer em apresentar nossa estrutura, metodologia e diferenciais e ajudar sua
+					família a encontrar o melhor caminho para o aluno.
+				</p>
+			</div>
+
+		</article>
 	</section>
 </template>

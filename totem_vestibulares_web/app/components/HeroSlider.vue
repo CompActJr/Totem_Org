@@ -39,18 +39,12 @@ const banners = [
                 <NuxtLink 
                     to="/matriculas"
                     class="
-                        mt-8 
-                        rounded-full
-                        bg-orange-500 
-                        px-4 py-2 text-lg 
-                        font-semibold text-white 
-                        transition-all 
-                        duration-300 
-                        hover:scale-105
-                        hover:bg-orange-600 
-                        absolute bottom-16 left-16 
-                        hidden md:flex lg:flex"
-                >
+                        p-2 lg:p-4 rounded-full
+                        bg-yellow-400 text-lg lg:text-xl font-bold text-gray-600 
+                        transition-all duration-300 hover:text-white
+                        hover:scale-105 hover:bg-orange-400 
+                        absolute lg:bottom-16 lg:left-16 bottom-12 left-4
+                ">
                     Escolha Sua Turma
                 </NuxtLink>
             </div>
