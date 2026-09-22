@@ -11,7 +11,7 @@ const props = defineProps<Props>();
 </script>
 
 <template>
-    <section class="min-h-128 bg-white responsive-padding">
+    <section class="min-h-128 bg-white py-8 px-10 md:px-10 lg:py-16 lg:px-9 xl:px-40">
         <div class="flex items-center">
             <h2 class="text-orange-600 font-bold" aria-label="nossas unidades">
                 NOSSAS UNIDADES

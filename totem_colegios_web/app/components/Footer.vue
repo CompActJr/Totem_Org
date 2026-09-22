@@ -5,24 +5,26 @@
 
 
 <template>
-    <footer class="bg-[#332E29] py-8 lg:py-16 px-8 md:px-32 lg:px-80 min-h-60">
+    <footer class="bg-[#332E29] py-2 md:py-8 lg:py-16 px-8 md:px-[2%] lg:px-20 xl:px-40 min-h-60">
 
-        <div class="hidden lg:flex md:flex gap-8 justify-between mt-16 ">
-            <div 
-                class="min-h-24 text-gray-200 text-start " 
+        <div class="flex flex-col items-center text-center md:flex-row md:items-start md:text-left md:gap-4 justify-between mt-16">
+            <div
+                class="min-h-24 text-gray-200"
                 v-for="unit in unidades"
                 :key="unit.city"
             >
-                <h5 class="font-bold text-white text-lg mb-8">
+                <h5 class="font-bold text-white text-lg mb-8 mt-12 md:mt-0">
                     {{ unit.city }}
                 </h5>
-                
+
                 <p class="mb-4">
                     {{ unit.address }}
                 </p>
 
                 <p class="mb-4">
-                    Telefone: {{ unit.phone }}</p>
+                    Telefone: {{ unit.phone }}
+                </p>
+
                 <p class="mb-4">
                     WhatsApp: {{ unit.whatsapp }}
                 </p>
