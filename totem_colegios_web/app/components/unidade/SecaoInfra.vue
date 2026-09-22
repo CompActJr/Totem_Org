@@ -22,7 +22,7 @@ const props = defineProps<Props>();
             <div class="bg-orange-600 w-64 h-0.5 ml-8"></div>
         </div>
 
-        <article class="mt-8 w-full leading-8 md:leading-12 flex flex-col md:flex-row justify-start gap-8">
+        <article class="mt-8 w-full text-justify leading-8 md:leading-10 flex flex-col md:flex-row justify-start gap-8">
             <p class="flex-1">
                 A Totem acredita que uma escola de alto nível começa pela qualidade do ambiente que
                 oferece. Por isso, cada espaço foi pensado para garantir segurança, conforto e acolhimento,

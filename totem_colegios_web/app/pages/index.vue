@@ -33,7 +33,7 @@ import unidades from "~/data/unidades.json";
 
 <template>
 
-  <HeroSlider :banners="banners" :titulo="'Matriculas Abertas'" :subtitle="'Colégios totem'" :link="'/#agende-visita'"/>
+  <HeroSlider :banners="banners" :titulo="'Matrículas Abertas'" :subtitle="'Colégios Totem'" :link="'/#agende-visita'"/>
 
   <HeroTitle/>
 
