@@ -36,7 +36,6 @@
         "slug": "cruz-alta",
         "image": "geral/FACHADA-CRUZ-ALTA.jpg",
         "levels": [
-            "Educação Infantil",
             "Ensino Fundamental I",
             "Ensino Fundamental II",
             "Ensino Médio"
@@ -65,7 +64,6 @@
         "slug": "santa-maria",
         "image": "geral/FACHADA-SANTA-MARIA.jpg",
         "levels": [
-            "Educação Infantil",
             "Ensino Fundamental I",
             "Ensino Fundamental II",
             "Ensino Médio"

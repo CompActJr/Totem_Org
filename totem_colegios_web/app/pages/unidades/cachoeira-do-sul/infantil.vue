@@ -46,8 +46,8 @@ currentUnit.value = unidade
         :link="'/unidades/cachoeira-do-sul/infantil/#agende-visita'" />
 
     <HeroNiveisEnsino :nivel="'Infantil'"
-      :destaque="'TODO: destaque'"
-      :descricao="'TODO: descricao'" />
+      :destaque="'OS PRIMEIROS PASSOS\nSÃO OS MAIS IMPORTANTES'"
+      :descricao="'Ambiente amplo, rico em cuidados, segurança, experiências e aprendizagens — planejado para que cada criança se sinta acolhida e segura enquanto descobre o mundo. O projeto de alimentação saudável e balanceada é prioridade máxima.\n\nProfissionais experientes e apaixonados por educar, em constante formação, que estimula as crianças a explorar, experienciar, interagir, brincar, criar hipóteses e enfrentar desafios para desenvolverem novas habilidades.\nCom as atividades que são preparadas de acordo com cada faixa etária, acolhemos as crianças valorizando suas particularidades e potencialidades, proporcionando seu desenvolvimento integral por meio do vínculo afetivo, com olhar pedagógico e cuidadoso.\n\nTrabalhamos em sintonia com os valores de cada família, criando uma rede de apoio real para os pais. Sistema de Ensino J. Piaget, que propicia o protagonismo na construção do próprio conhecimento; jogos, músicas e histórias, motivando nossas crianças a aprender de forma divertida e interativa; Programa Bilíngue Totem; aulas de educação física com profissionais especialistas; atividades extracurriculares diversificadas; e projetos que partem do interesse da criança, transformando a aprendizagem em uma aventura mágica de descoberta e autonomia.'" />
 
     <DiferenciaisNiveisEnsino :nivelId="2"
         :unidadeId="1"/>
