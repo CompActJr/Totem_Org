@@ -4,7 +4,6 @@ npm install fastify
 npm install -D typescript tsx @types/node
 npm i fastify-plugin @fastify/mongodb
 npm install @fastify/autoload
-npm install migrate-mongo
 npm install zod
 ```
 
@@ -23,11 +22,24 @@ src/
         └── user.routes.ts     # Rotas encapsuladas como plugin
 ```
 
+## migrate mongo
 ```bash
+npm install migrate-mongo
 migrate-mongo init
 npx migrate-mongo create create-users
 migrations/
 └── 20260929230000-create-users.js
+```
+
+## scripts de inicialização do mongo rodar com npm run
+
+```json
+{
+    "migrate:create": "migrate-mongo create",
+    "migrate:up": "migrate-mongo up",
+    "migrate:down": "migrate-mongo down",
+    "migrate:status": "migrate-mongo status"
+}
 ```
 
 Se você tiver dezenas de plugins e módulos e não quiser registrar um por um manualmente, a comunidade do Fastify criou o @fastify/autoload. Ele varre as suas pastas e registra tudo de forma automática respeitando a ordem correta.

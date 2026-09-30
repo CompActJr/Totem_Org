@@ -7,17 +7,11 @@ const config = {
   },
 
   migrationsDir: 'migrations',
-
   changelogCollectionName: 'changelog',
-
   lockCollectionName: 'changelog_lock',
-
   lockTtl: 0,
-
   migrationFileExtension: '.js',
-
   useFileHash: false,
-
   moduleSystem: "esm"
 };
 

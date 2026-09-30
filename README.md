@@ -24,7 +24,7 @@
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
 
-## Rodando a imagem do mongo localmente
+## Rodando a imagem do mongo localmente pra testes
 
 ```bash
 docker run --name totem_mongo \
