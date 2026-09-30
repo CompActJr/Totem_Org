@@ -1,24 +1,34 @@
 {
-  "name": "nitro-starter",
-  "type": "module",
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "1. Modelagem de Dados no MongoDB (Schema Único por Unidade)",
+  "main": "build/server.js",
   "scripts": {
-    "build": "nitro build",
-    "dev": "nitro dev",
-    "preview": "nitro preview"
+    "build": "tsc",
+    "dev": "tsx watch --env-file=.env src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --env-file=.env build/server.js",
+   
+    "migrate:create": "migrate-mongo create",
+    "migrate:up": "migrate-mongo up",
+    "migrate:down": "migrate-mongo down",
+    "migrate:status": "migrate-mongo status"
   },
-  "imports": {
-    "#*": "./*"
+  "keywords": [],
+  "author": "CompActJr",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@fastify/autoload": "^6.5.0",
+    "@fastify/mongodb": "^10.0.1",
+    "fastify": "^5.12.5",
+    "fastify-plugin": "^6.0.0",
+    "migrate-mongo": "^14.0.7",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
-    "@types/node": "latest",
-    "dotenv": "^17.4.2",
-    "nitro": "latest",
-    "prisma": "^7.8.0",
-    "typescript": "latest"
-  },
-  "dependencies": {
-    "@prisma/adapter-pg": "^7.8.0",
-    "@prisma/client": "^7.8.0",
-    "pg": "^8.22.0"
+    "@types/node": "^26.6.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
   }
 }

@@ -1,8 +1,13 @@
 {
-  "extends": ["nitro/tsconfig"],
+  // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-    "paths": {
-      "~/*": ["./*"]
-    }
-  }
+    "module": "nodenext",
+    "target": "esnext",
+    "strict": true,
+    "moduleResolution": "nodenext",
+    "rootDir": "./src",
+    "outDir": "./build"
+  },
+  "include": ["src/**/*", "tests/**/*"],
+  "exclude": ["node_modules", "build"]
 }

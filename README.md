@@ -1,7 +1,6 @@
 # Totem.Org
 
 
-
 ## Authors
 
 ![Jonas](https://img.shields.io/badge/Jonas-000000?style=for-the-badge&logo=github&logoColor=white)
@@ -22,10 +21,103 @@
 <br/>
 
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
+
+## Rodando a imagem do mongo localmente pra testes
+
+```bash
+docker run --name totem_mongo \
+  --env-file .env \
+  -p 27017:27017 \
+  -d mongo:8.3.11-noble
+```
+
+## Subindo o Backend
+
+
+## Compilando e gerando as imagens
+```bash
+docker build -t totem-main:latest ./totem_main
+docker build -t totem-colegios:latest ./totem_colegios_web
+docker build -t totem-vestibulares:latest ./totem_vestibulares_web
+```
+
+## Compilando o nginx
+
+```bash
+$ docker build -t nginx-totem .
+$ docker run --name nginx-totem -d some-content-nginx
+```
+
+## Customize configuration
+
+
+# Salvando em arquivos .tar para enviar via SCP
+```bash
+docker save totem-main:latest | gzip > totem-main.tar.gz
+docker save totem-colegios:latest | gzip > totem-colegios.tar.gz
+docker save totem-vestibulares:latest | gzip > totem-vestibulares.tar.gz
+```
+
+Na AWS Lightsail (Servidor de Produção)
+
+No servidor, não precisará do código fonte nem do código de build dos Dockerfiles. precisa apenas
+- Dos arquivos .tar.gz (carregados via docker load)
+- Do arquivo docker-compose.yml da raiz
+- Do arquivo .env (ou arquivos .env específicos) contendo as variáveis de produção e o caminho deles certinho com as pastas
+
+
+## Como testar localmente na sua máquina antes de subir para a Lightsail
+
+Edite o arquivo hosts da sua máquina (C:\Windows\System32\drivers\etc\hosts no Windows ou /etc/hosts no Linux/Mac) e adicione:
+
+sudo nano /etc/hosts
+
+```bash
+127.0.0.1 totem.com
+127.0.0.1 colegios.totem.com
+127.0.0.1 vestibulares.totem.com
+```
+
+Execute o comando docker para executar o script do docker-compose.yml para orquetrar os containers
+mas antes certifique de ter as imagens tudo em mão com o nome batendo ali no script
+
+```bash
+docker images
+docker compose up -d
+docker compose stats -> monitora uso de RAM e CPU dos containers
+```
+
+
+## Deploy do Backend
+
+
+## Gerar certificado ssl no nginx
+
+
+> ENV no Dockerfile
+
+```bash
+-e / --env (no docker run):
+```
+
+- Momento: Fica gravado dentro da imagem durante o build (construção) e persiste na execução do contêiner.
+- Visibilidade: Fica embutido na imagem; qualquer pessoa que inspecionar a imagem (docker inspect) consegue ler os valores.
+- Uso ideal: Definir padrões fixos, caminhos de sistema (PATH) ou configurações padrão que não mudam entre ambientes
+
+
+> ARG (no Dockerfile)
+
+- Momento: Disponível apenas durante o processo de build da imagem.
+- Visibilidade: Não persiste no contêiner em execução (desaparece após gerar a imagem).
+- Uso ideal: Definir parâmetros transitórios para compilar o código (ex: versão de um pacote ou chave temporária de build).
+
+> Arquivo .env / env_file (Docker Compose)
+
+- Momento: Carregado externamente em tempo de execução pelo Docker Compose.
+- Visibilidade: Mantido fora do código-fonte da imagem (geralmente ignorado no controle de versão).
+- Uso ideal: Organizar múltiplos segredos e parâmetros de configuração local ou de produção de forma limpa.
 
 ## For Devs
 
@@ -185,88 +277,3 @@ export default defineNuxtConfig({
 
 ### [Prisma Docs](https://www.prisma.io/docs/guides/frameworks)
 
-
-## Usando o Backend e API
-
-projeto criado com nitro SSR e prisma para ORM com postgres e supabase para testes
-
-```bash
-npx create-nitro-app
-```
-
-> primeiros passos
-
-```bash
-cd backend
-npm i
-cp .env.example .env
-```
-
-> substitua as variaveis de ambiente
-
-DATABASE_URL="postgresql://user:password@localhost:5432/mydb?schema=public"
-
-> rodando banco local com docker
-
-```bash
-docker compose up -d
-```
-
-O Nitro usa c12, então você não precisa instalar o dotenv.
-
-é só usar 
-
-```bash
-process.env.ADMIN_EMAIL
-```
-
-Nitro é construído em cima do H3.
-
-O H3 é um framework HTTP criado pela equipe do Nuxt/UnJS. O Nitro utiliza o H3 para todo o tratamento de requisições.
-
-### [H3 DOCS](https://v1.h3.dev/)
-
-### adicionando prisma ORM no projeto já criado com o nitro
-
-```bash
-npm install @prisma/client @prisma/adapter-pg pg
-npm install -D prisma dotenv
-npx prisma init
-```
-
-vai criar uma pasta /prisma com um schema.prisma onde você ira fazer a
-sua configuração dos seus models que virão a ser as tabelas e de migrations
-se tiver ja o .env com a variavel de ambiente configurada com a url de conexão
-do banco não será nescessário ajustes
-
-### executando as migrations para desenvolvimento
-
-```bash
-npx prisma migrate dev --name nome_da_migration
-```
-
-1. O Prisma compara o banco com o schema.
-2. Gera um SQL.
-3. Cria uma migration.
-4. Executa esse SQL.
-5. Atualiza o banco.
-6. Gera o Prisma Client.
-
-### apenas executar as migrations existentes (para ambiente de produção)
-
-```bash
-npx prisma migrate deploy
-```
-
-### cenário onde o banco já existe e quer atualizar seu schema
-
-```bash
-npx prisma db pull
-```
-
-
-### arquitetura do back
-
-```bash
-
-```
