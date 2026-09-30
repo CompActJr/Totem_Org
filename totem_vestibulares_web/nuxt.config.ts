@@ -7,10 +7,6 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     // Variáveis Privadas (O Nuxt preenche automaticamente buscando NUXT_<NOME>
-    smtpEndpoint: '',
-    smtpPort: '',
-    smtpUsername: '',
-    smtpPassword: '',
 
     public: {
       apiBasePath: '', // NUXT_PUBLIC_API_BASE_PATH

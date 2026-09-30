@@ -1,0 +1,34 @@
+{
+  "_id": "ObjectId('...')",
+  "slug": "unidade-centro",
+  "nome": "Unidade Centro",
+  "informacoes": {
+    "endereco": "Rua Exemplo, 123",
+    "telefone": "(55) 99999-9999",
+    "email": "centro@escola.com",
+    "horarioFuncionamento": "Seg a Sex das 7h às 19h"
+  },
+  "banners": [
+    { "titulo": "Volta às Aulas", "imagemUrl": "/img/banner1.jpg", "ativo": true }
+  ],
+  "diferenciais": [
+    { "titulo": "Laboratório de Robótica", "descricao": "..." }
+  ],
+  "niveisEnsino": [
+    { "nome": "Ensino Fundamental I", "descricao": "..." }
+  ],
+  "professores": [
+    { 
+      "nome": "Ana Souza", 
+      "cargo": "Professora de Matemática", 
+      "fotoUrl": "/img/prof-ana.jpg",
+      "bio": "..."
+    }
+  ],
+  "atividadesExtras": [
+    { "nome": "Futebol", "dia": "Terças e Quintas", "horario": "14h" }
+  ],
+  "infraestrutura": [
+    { "titulo": "Biblioteca", "fotos": ["/img/bib1.jpg", "/img/bib2.jpg"] }
+  ]
+}
