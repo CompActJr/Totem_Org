@@ -5,6 +5,8 @@ npm install -D typescript tsx @types/node
 npm i fastify-plugin @fastify/mongodb
 npm install @fastify/autoload
 npm install zod
+npm install bcrypt
+npm install dotenv
 ```
 
 ```bash
@@ -22,14 +24,6 @@ src/
         └── user.routes.ts     # Rotas encapsuladas como plugin
 ```
 
-## migrate mongo
-```bash
-npm install migrate-mongo
-migrate-mongo init
-npx migrate-mongo create create-users
-migrations/
-└── 20260929230000-create-users.js
-```
 
 ## scripts de inicialização do mongo rodar com npm run
 
@@ -49,5 +43,3 @@ Um arquivo env.ts (ou a pasta de ambientes) em projetos serve para centralizar, 
 [docs](https://imasters.com.br/typescript/typescript-tipando-variaveis-de-ambiente-do-jeito-certo-com-ts)
 
 process.env é o objeto global do Node que contém as variáveis de ambiente do processo.
-
-

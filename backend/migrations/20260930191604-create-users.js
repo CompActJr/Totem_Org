@@ -1,12 +1,27 @@
+import bcrypt from 'bcrypt';
+import 'dotenv/config';
+
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+
 /**
  * @param db {import('mongodb').Db}
  * @param client {import('mongodb').MongoClient}
  * @returns {Promise<void>}
  */
 export const up = async (db, client) => {
-    // TODO write your migration here.
-    // See https://github.com/seppevs/migrate-mongo/#creating-a-new-migration-script
-    await db.collection('users');
+    if (!ADMIN_PASSWORD) {
+        throw new Error('ADMIN_PASSWORD não foi definida nas variáveis de ambiente.');
+    }
+
+    const passwordHash = await bcrypt.hash(ADMIN_PASSWORD, 10);
+
+    await db.collection('users').insertOne({
+        name: 'Administrador',
+        email: 'admin@soutotem.com.br',
+        password: passwordHash,
+        createdAt: new Date(),
+        updatedAt: new Date()
+    });
 };
 
 /**
@@ -15,7 +30,7 @@ export const up = async (db, client) => {
  * @returns {Promise<void>}
  */
 export const down = async (db, client) => {
-    // TODO write the statements to rollback your migration (if possible)
-    // Example:
-    await db.collection('users').drop;
+    await db.collection('users').deleteOne({
+        email: 'admin@soutotem.com.br'
+    });
 };
