@@ -95,7 +95,7 @@ const props = defineProps<Props>();
       <div class="flex items-center justify-between w-full gap-8 mt-8">
             <img src="/geral/logo-totem.png" alt="Colégio Totem" class="w-32 md:w-48 lg:w-64"/>
             <p class="text-xl md:text-2xl lg:text-4xl font-extrabold text-yellow-300">
-                É MAIS QUE COLÉGIOS:<br />É TOTEM!
+                É MAIS QUE COLÉGIO:<br />É TOTEM!
             </p>
       </div>
 

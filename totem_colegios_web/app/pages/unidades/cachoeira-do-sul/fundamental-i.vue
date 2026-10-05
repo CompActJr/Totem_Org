@@ -46,8 +46,8 @@ currentUnit.value = unidade
         :link="'/unidades/cachoeira-do-sul/fundamental-i/#agende-visita'" />
 
     <HeroNiveisEnsino :nivel="'Fundamental I'"
-      :destaque="'TODO: destaque'"
-      :descricao="'TODO: descricao'" />
+      :destaque="'MUITO MAIS DO QUE\nALFABETIZAÇÃO'"
+      :descricao="'Ambiente amplo e diversificado, rico em cuidados, segurança, experiências e aprendizagens, planejado para atender às necessidades e desenvolver a autonomia das crianças.\n\nAlém de profissionais altamente qualificados, oferecemos material didático do Sistema de Ensino J. Piaget, com plataforma digital com mais de 230 conteúdos disponibilizados por meio de jogos e videoaulas, Programa Bilíngue Totem, atividades práticas nos espaços da escola, projetos que partem do interesse do estudante, Laboratório de Aprendizagem, atividades extracurriculares, projetos socioemocionais, viagens de estudo, entre outros.\n\nAs Três Alfabetizações: Letramento, Alfabetização Tecnológica e Matemática — nosso diferencial que prepara crianças para o mundo real, desenvolvendo habilidades essenciais para o futuro. No Totem, as crianças vivem uma transformação no processo de aprendizagem. Nosso trabalho desperta o interesse e a curiosidade, tornando a alfabetização prazerosa. O estudante investiga, elabora e testa hipóteses, formula e resolve problemas, com atitudes e valores para o crescimento próprio e coletivo. Raciocínio lógico, criatividade, pensamento crítico e digital, cooperatividade, habilidades motoras e jogos são ferramentas sempre presentes, com a segurança de que continuam sendo cuidados com atenção e carinho.'" />
 
     <DiferenciaisNiveisEnsino :nivelId="3"
         :unidadeId="1"/>
