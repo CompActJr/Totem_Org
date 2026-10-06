@@ -1,9 +1,9 @@
 
-import Fastify, { FastifyError, FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
+import Fastify, { FastifyInstance } from "fastify";
 import health from "./modules/health.js";
 import dbConnector from "./plugins/dbConnector.js";
+import swaggerPlugin from "./plugins/swagger.js";
 import { errorHandler } from "./config/errorHandler.js";
-
 
 /**
  * @author Jonas
@@ -12,14 +12,14 @@ import { errorHandler } from "./config/errorHandler.js";
  * routes needs to have routes.ts sufix
  */
 
-export const buildApp = async (opts: Object = {})=> {
-    const fastify: FastifyInstance = Fastify({ logger: true, ...opts });
-    
+export const buildApp = async (opts: Object = {}) => {
+  const fastify: FastifyInstance = Fastify({ logger: true, ...opts });
 
-    await fastify.register(dbConnector);
-    await fastify.register(health);
+  await fastify.register(dbConnector);
+  await fastify.register(swaggerPlugin);
+  await fastify.register(health);
 
-    fastify.setErrorHandler(errorHandler)
+  fastify.setErrorHandler(errorHandler);
 
-    return fastify;
-}
+  return fastify;
+};

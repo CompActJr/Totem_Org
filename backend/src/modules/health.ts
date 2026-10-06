@@ -7,11 +7,29 @@ import { FastifyInstance } from "fastify";
  * @param {Object} options plugin options, refer to https://fastify.dev/docs/latest/Reference/Plugins/#plugin-options
  */
 async function health(fastify: FastifyInstance, options: Object) {
-  fastify.get('/api', async (request, response)=>{
-    return {
-        hello: 'OK'
+  fastify.get(
+    "/api",
+    {
+      schema: {
+        tags: ["Health"],
+        summary: "Health check da API",
+        description: "Verifica se a API está respondendo corretamente.",
+        response: {
+          200: {
+            type: "object",
+            properties: {
+              hello: { type: "string" },
+            },
+          },
+        },
+      },
+    },
+    async (request, response) => {
+      return {
+        hello: "OK",
+      };
     }
-  })
+  );
 }
 
 export default health;
