@@ -13,7 +13,7 @@ const props = defineProps<Props>()
         <article class="w-full md:w-7/12 lg:w-8/12">
             <div class="flex items-center">
                 <h2 class="text-gray-600 text-xl md:text-2xl font-bold">
-                    PORQUE O TOTEM
+                    PORQUE O TOTEM?
                 </h2>
 
                 <div class="bg-orange-600 w-32 h-0.5 ml-8"></div>
@@ -24,8 +24,8 @@ const props = defineProps<Props>()
                 COLÉGIO...
             </h2>
 
-            <p class="mt-4 md:mt-8 mb-8 leading-8 md:leading-12">
-                No <strong>{{ nome }}</strong>, ,os estudantes encontram um ambiente onde o
+            <p class="mt-4 md:mt-8 mb-8 leading-8 lg:mt-12 lg:mb-12">
+                No <strong>{{ nome }}</strong>, os estudantes encontram um ambiente onde o
                 afeto e a atenção são prioridades, proporcionando bem-estar e segurança para
                 todos. Oferecemos a educação que desperta a criatividade e entrega um mundo de
                 conhecimento nas mãos de nossas crianças e jovens. Clique abaixo e conheça 

@@ -44,7 +44,7 @@ const atividades: AtividadeType[] = repository.getAtividades(unidade.id)
 
 <template>
 
-    <HeroSlider :banners="banners" :titulo="'Cruz Alta'" :subtitle="'Colégios totem'"
+    <HeroSlider :banners="banners" :titulo="'Cruz Alta'" :subtitle="'Colégio Totem'"
         :link="'/unidades/cruz-alta/#agende-visita'" />
 
     <HeroUnidadeTitle

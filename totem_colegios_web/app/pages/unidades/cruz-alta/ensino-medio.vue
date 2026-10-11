@@ -46,8 +46,9 @@ currentUnit.value = unidade
         :link="'/unidades/cruz-alta/ensino-medio/#agende-visita'" />
 
     <HeroNiveisEnsino :nivel="'Ensino Médio'"
-      :destaque="'TODO: destaque'"
-      :descricao="'TODO: descricao'" />
+      :destaque="'FORMAÇÃO PARA\nGRANDES RESULTADOS'"
+      :descricao="'Preparação para ENEM, Vestibulares e Muito Mais\nAmbiente perfeito para aulas dinâmicas e interativas, com segurança e muito aprendizado. Profissionais experientes e gabaritados que desenvolvem competências e habilidades essenciais para os futuros profissionais.\n\nO Material Didático do Sistema SAS, um dos melhores do Brasil, aliado à Plataforma SAS, oferece múltiplas possibilidades de aprendizado, além de ser perfeitamente aliado ao método Totem de ensino. Atendimentos tira-dúvidas realizados diariamente, simulados constantes e mentorias personalizadas preparam os alunos com maestria.\n\nDesenvolvimento Integral e Protagonismo\nClubes de Ciências, Xadrez, Cinema e Literatura expandem horizontes. Escolinhas de Futebol e Vôlei desenvolvem bem-estar e liderança. Projetos de protagonismo estudantil transformam aprendizagem em ação real.\n\nRelações Humanas e Bem-Estar\nSomos uma escola que pensa no ser humano. Sabemos que, junto com a família, o bem-estar do nosso estudante é prioridade. Acolhimento, escuta ativa e suporte emocional caminham lado a lado com a excelência acadêmica. Nesta etapa final, preparamos não apenas para aprovações, mas para uma vida de sucesso, propósito e impacto.'" />
+
 
     <DiferenciaisNiveisEnsino :nivelId="5"
         :unidadeId="3"/>

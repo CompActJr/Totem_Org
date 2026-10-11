@@ -25,7 +25,7 @@ const props = defineProps<Props>();
         {{ destaque }}
       </h2>
 
-      <p class="mt-4 mr-4 md:mt-8 md:mr-12 md:text-sm lg:text-base">
+      <p class="mt-4 md:whitespace-pre-line mr-4 md:mt-8 md:mr-12 md:text-sm lg:text-base">
         {{ descricao }}
       </p>
     </article>

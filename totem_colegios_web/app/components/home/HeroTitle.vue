@@ -4,14 +4,14 @@
     <article class="w-full md:w-7/12 lg:w-8/12">
       <div class="flex items-center">
         <h2 class="text-gray-600 font-bold" aria-label="nossas unidades">
-          PORQUE O TOTEM
+          PORQUE O TOTEM?
         </h2>
         <div class="bg-orange-600 w-32 h-0.5 ml-8"></div>
       </div>
 
       <h2 class="text-2xl md:text-4xl mt-4 lg:text-6xl mt-8 text-gray-700 font-bold">
         É MAIS QUE<br />
-        COLÈGIO...
+        COLÉGIO...
       </h2>
 
       <p class="mt-4 md:mt-8 lg:text-lg">Bem-vindo(a) ao SEU FUTURO! Prepare-se para construir o amanhã.

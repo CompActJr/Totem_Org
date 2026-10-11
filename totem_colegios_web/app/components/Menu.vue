@@ -25,7 +25,7 @@
   ">
 
       <NuxtLink to="/" @click="closeAll">
-        <img src="/geral/logo-totem.png" alt="Colégio Totem" class="w-36 md:w-30 lg:w-44 xl:54"/>
+        <img src="/geral/logo-totem-colegios.png" alt="Colégio Totem" class="w-36 md:w-30 lg:w-44 xl:54"/>
       </NuxtLink>
 
       <button class="flex flex-col gap-1 md:hidden" @click="menuOpen = !menuOpen">
