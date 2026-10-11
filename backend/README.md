@@ -5,6 +5,8 @@ npm install -D typescript tsx @types/node
 npm i fastify-plugin @fastify/mongodb
 npm install @fastify/autoload
 npm install zod
+npm install bcrypt
+npm install dotenv
 ```
 
 ```bash
@@ -16,20 +18,20 @@ src/
 ├── plugins/         # Plugins globais (database, jwt, cors)
 └── modules/         # Organização por domínio/recurso
     └── user/
+        ├── user.types.ts
         ├── user.controller.ts
         ├── user.service.ts
         ├── user.schema.ts     # Validação com Zod
         └── user.routes.ts     # Rotas encapsuladas como plugin
 ```
 
-## migrate mongo
-```bash
-npm install migrate-mongo
-migrate-mongo init
-npx migrate-mongo create create-users
-migrations/
-└── 20260929230000-create-users.js
-```
+- types.ts: define os tipos TypeScript usados no código, incluindo os documentos persistidos no MongoDB e os dados recebidos pelas operações.
+- schema.ts: valida os dados reais que chegam pela API. Uma tipagem TypeScript, sozinha, não impede que um cliente envie um JSON inválido.
+- routes.ts: registra as rotas Fastify e associa os schemas aos endpoints.
+- controller.ts: trata os dados da requisição e a resposta HTTP.
+- service.ts: contém as regras de negócio e as operações no banco.
+Podemos usar Zod para validar os dados e inferir tipos com z.infer, reduzindo duplicação entre schemas e interfaces.
+
 
 ## scripts de inicialização do mongo rodar com npm run
 
@@ -49,5 +51,3 @@ Um arquivo env.ts (ou a pasta de ambientes) em projetos serve para centralizar, 
 [docs](https://imasters.com.br/typescript/typescript-tipando-variaveis-de-ambiente-do-jeito-certo-com-ts)
 
 process.env é o objeto global do Node que contém as variáveis de ambiente do processo.
-
-

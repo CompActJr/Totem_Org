@@ -1,4 +1,6 @@
 // In this file you can configure migrate-mongo
+import 'dotenv/config';
+
 
 const config = {
   mongodb: {
