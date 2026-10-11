@@ -1,3 +1,5 @@
+// src/plugins/dbConnector.ts
+
 import fastifyMongodb from "@fastify/mongodb"
 import { FastifyInstance } from "fastify"
 import fastifyPlugin from "fastify-plugin"
@@ -10,9 +12,7 @@ import { env } from "../config/env.js"
  * and hooks, declared inside the plugin to the parent scope.
  */
 const dbConnector = async (fastify: FastifyInstance, options: Object) => {
-  fastify.register(fastifyMongodb, {
-    url: env.MONGO_URL
-  })
+  await fastify.register(fastifyMongodb, { url: env.MONGO_URL })
 }
 
 export default fastifyPlugin(dbConnector)

@@ -1,4 +1,5 @@
-import Fastify from "fastify";
+// src/server.ts
+
 import { buildApp } from "./app.js";
 
 const PORT = 9000;

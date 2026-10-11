@@ -1,35 +1,42 @@
-import { FastifyInstance } from "fastify";
+// src/plugins/swagger.ts
+
+import type { FastifyInstance } from "fastify";
 import swagger from "@fastify/swagger";
 import swaggerUi from "@fastify/swagger-ui";
+import { jsonSchemaTransform } from "@fastify/type-provider-zod";
+import fastifyPlugin from "fastify-plugin";
 
-/**
- * Registra a especificação OpenAPI/Swagger com a instância do Fastify.
- * @author Jonas
- */
-const swaggerPlugin = async (fastify: FastifyInstance, options: object) => {
+
+const swaggerPlugin = async (fastify: FastifyInstance) => {
   await fastify.register(swagger, {
     openapi: {
-        openapi: "3.0.0",
-        info: {
-            title: "Totem API",
-            version: "1.0.0",
-            description: "Documentação da API do Totem",
+      info: {
+        title: "Totem API",
+        version: "1.0.0",
+        description: "Documentação da API do Totem",
+      },
+      servers: [
+        {
+          url: "http://localhost:9000",
+          description: "Servidor local",
         },
-        servers: [ { url: "http://localhost:9000", description: "Servidor local" } ],
-        tags: [
-            { name: 'user', description: 'User related end-points' },
-            { name: 'code', description: 'Code related end-points' }
-        ],
-        components: {
-            securitySchemes: {
-                apiKey: {
-                    type: 'apiKey',
-                    name: 'apiKey',
-                    in: 'header'
-                }
-            }
-        }
+      ],
+      tags: [
+        { name: "user", description: "usuarios do sistema" },
+        { name: "upload", description: "upload de imagens" },
+        { name: "Units", description: "Unidades da organização" },
+      ],
+      components: {
+        securitySchemes: {
+          apiKey: {
+            type: "apiKey",
+            name: "apiKey",
+            in: "header",
+          },
+        },
+      },
     },
+    transform: jsonSchemaTransform,
   });
 
   await fastify.register(swaggerUi, {
@@ -41,4 +48,4 @@ const swaggerPlugin = async (fastify: FastifyInstance, options: object) => {
   });
 };
 
-export default swaggerPlugin;
+export default fastifyPlugin(swaggerPlugin, {name: "swagger"}) ;

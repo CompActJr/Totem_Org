@@ -1,4 +1,5 @@
 import { FastifyInstance } from "fastify";
+import z from "zod";
 
 /**
  * @author Jonas
@@ -7,29 +8,14 @@ import { FastifyInstance } from "fastify";
  * @param {Object} options plugin options, refer to https://fastify.dev/docs/latest/Reference/Plugins/#plugin-options
  */
 async function health(fastify: FastifyInstance, options: Object) {
-  fastify.get(
-    "/api",
-    {
-      schema: {
-        tags: ["Health"],
-        summary: "Health check da API",
-        description: "Verifica se a API está respondendo corretamente.",
-        response: {
-          200: {
-            type: "object",
-            properties: {
-              hello: { type: "string" },
-            },
-          },
-        },
+  fastify.get("/health", {
+    schema: {
+      tags: ["health"],
+      response: {
+        200: z.object({ hello: z.string() }),
       },
     },
-    async (request, response) => {
-      return {
-        hello: "OK",
-      };
-    }
-  );
+  }, async () => ({ hello: "world" }));
 }
 
 export default health;
