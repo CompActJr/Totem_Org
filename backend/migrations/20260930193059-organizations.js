@@ -34,11 +34,6 @@ export const up = async (db, client) => {
                 _id: 1,
                 name: 'Hall de entrada',
                 panorama: '/panoramas/cachoeira_do_sul/c_sala1.jpeg'
-            },
-            {
-                _id: 2,
-                name: 'Biblioteca',
-                panorama: '/panoramas/cachoeira_do_sul/c_refeitorio.jpeg'
             }
         ],
         "diferenciais": [
@@ -69,24 +64,6 @@ export const up = async (db, client) => {
                 "nome": "Carine",
                 "imagem": "/geral/Carine.jpg",
                 "depoimento": "O Totem transmite confiança, segurança e estimula os alunos ao aprendizado. A equipe diretiva está constantemente envolvida e próxima dos alunos."
-            },
-            {
-                _id: 2,
-                "nome": "Vanessa Giroldi",
-                "imagem": "/geral/Vanessa.jpg",
-                "depoimento": "Escolhi o Totem porque quero que meus filhos cresçam em um ambiente onde se sintam acolhidos, valorizados e felizes. Aqui encontrei não só qualidade no ensino, mas também cuidado, carinho e valores que fazem diferença na formação deles como pessoas. Confio na proposta pedagógica e acredito que aqui meus filhos terão um bom desenvolvimento acadêmico e pessoal. Sem dúvida foi uma das melhores escolhas que fiz para o futuro deles."
-            },
-            {
-                _id: 3,
-                "nome": "Luisa Felix Muller",
-                "imagem": "/geral/Luisa.jpg",
-                "depoimento": "Vejo meu filho se desenvolvendo com alegria, autonomia e valores sólidos. Vejo diariamente o brilho nos olhos dele, a curiosidade florescendo e a autonomia se fortalecendo. É uma escola que prepara o mundo, sem abrir mão da infância. E isso, para mim, é transformador. A escola supera minhas expectativas ao educar com afeto e propósito. "
-            },
-            {
-                _id: 4,
-                "nome": "Vanice Moraes",
-                "imagem": "/geral/Vanice.jpg",
-                "depoimento": "Quem escolheu o Totem foram eles. O Eduardo e o Guilherme escolheram pela qualidade do ensino, pelos professores (ótimos) que transmitem segurança aos alunos e pelo acolhimento de todos."
             }
         ],
         "infraestrutura": [
@@ -107,17 +84,6 @@ export const up = async (db, client) => {
                 ],
                 "imagemUrl": "",
                 "texto": "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
-            },
-            {
-                _id: 2,
-                "nome": "Márcio Macedo",
-                "areaEnsino": "Geografia",
-                "levels": [
-                    "Ensino Fundamental I",
-                    "Ensino Fundamental II"
-                ],
-                "imagemUrl": "",
-                "texto": "Formado em Ciências Sociais pela UFSM e Pós-graduado em Filosofia, Ética e Cidadania. É professor de Filosofia e Sociologia há 8 anos, com foco na preparação de alunos para o ENEM e os vestibulares, dedicando-se a desenvolver o pensamento crítico para o seu melhor desempenho nas mais diversas avaliações. Sua experiência é enriquecida pela atuação como Inspetor de Polícia Civil no Rio Grande do Sul (PC-RS), o que traz para a sala de aula uma visão prática e profunda sobre temas de ética, justiça e a complexidade das relações sociais. Nos momentos de folga, é praticante de esportes e um músico apaixonado, dedicando- se a tocar instrumentos como violão, cavaco, ukulele e piano. Mariane Paiva Licenciada e bacharela em Educação Física, atua há mais de 10 anos no ambiente escolar, trabalhando com diferentes faixas etárias. Cria aulas dinâmicas que estimulam autonomia, cooperação e movimento com propósito. Acredita que a Educação Física vai além do “fazer exercícios”: é um espaço de descoberta, expressão, construção de confiança, valores e conquistas que os alunos levam para a vida inteira. Ama esportes e está sempre se atualizando na área de bem-estar e práticas integrativas, trazendo um olhar humano e acolhedor para a escola. Sua maior satisfação é ver os alunos superando desafios, descobrindo suas capacidades e se reconhecendo como protagonistas do próprio processo."
             }
         ],
         "atividades": [
@@ -126,35 +92,141 @@ export const up = async (db, client) => {
                 "name": "Escolinha de Voleibol",
                 "turmas": [
                     {
+                        _id: 1,
                         "nome": "Escolinha de Voleibol - 3º e 4º ano",
                         "detalhes": "Ginásio. Sextas, das 9h30 às 10h30"
                     },
                     {
+                        _id: 2,
                         "nome": "Escolinha de Voleibol - 5º ano",
                         "detalhes": "Ginásio. Sextas, das 10h30 às 11h30"
                     },
                     {
+                        _id: 3,
                         "nome": "Escolinha de Voleibol - 6º ao 8º ano + Médio",
                         "detalhes": "Ginásio. Sextas, das 13h40 às 15h40"
                     }
                 ],
-                "professorNome": "",
+                "professorNome": "Jonas",
                 "image": "/atividades/ESCOLINHA-DE-VOLEIBOL.jpg"
-            },
-            {
-                _id: 2,
-                "name": "Voleibol",
-                "turmas": [
-                    {
-                        "nome": "Voleibol Totem",
-                        "detalhes": "Ginásio. Quintas, das 18h às 20h"
-                    }
-                ],
-                "professorNome": "Professor Gideone",
-                "image": "/atividades/VOLEIBOL.jpg"
             }
         ]
     });
+
+    await db.collection('organizations').insertOne({
+        _id: 2,
+        "@type": "colegios",
+        "city": "Santa Maria",
+        "slug": "santa-maria",
+        "image": "geral/FACHADA-SANTA-MARIA.jpg",
+        "cep": "97010-033",
+        "address": "RS-287, KM 234, Trevo de Uglione",
+        "phone": "55 9 9125-8480",
+        "whatsapp": "(55) 9 9125-8480",
+        "email": "santamaria@colegiototem.com.br",
+        "facebook": "https://www.facebook.com/totemvestibular/",
+        "instagram": "https://www.instagram.com/totemvestibulares/",
+        "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2312.7482640472363!2d-53.81819665087276!3d-29.713761335139225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9503cb1424027733%3A0x29a4830246f042e2!2sCol%C3%A9gio%20Totem%20Santa%20Maria!5e0!3m2!1spt-BR!2sbr!4v1784497464004!5m2!1spt-BR!2sbr",
+        "levels": [
+            "Educação Infantil",
+            "Ensino Fundamental I",
+            "Ensino Fundamental II",
+            "Ensino Médio"
+        ],
+        "infraestrutura": [],
+        "banners": [
+            "/geral/BANNER-1-CACHOEIRA.jpg",
+            "/geral/FACHADA-SANTA-MARIA.jpg"
+        ],
+        "panoramas": [],
+        "diferenciais" : [
+            "Atendimento personalizado, afetuoso, com equipe altamente qualificada e experiente;",
+            "Estrutura física moderna, planejada para maior segurança, conforto e produtividade detodos",
+            "Projeto pedagógico focado no resultado e na formação para a vida real",
+            "Material didático colorido, atualizado e com suporte digital, em plataformas modernas e interativas",
+            "Reconhecido pelo ambiente familiar – Família Totem – e pelo total apoio ao estudante e seus responsáveis",
+            "Salas de aula com mobiliário adequado a cada nível de ensino, climatizadas, com acesso à internet e recursos multimídia completos",
+            "Plataformas Digitais com jogos e conteúdos multimídias totalmente articulados com os conhecimentos abordados em sala de aula",
+            "Segurança aos estudantes e tranquilidade aos pais",
+            "Metodologia com aprendizagem cooperativa, lúdica e científica",
+            "Recursos educacionais e pedagógicos adequados à faixa etária",
+            "Aulas de Inglês, Arte, Educação Física com professores especializados",
+            "Viagens pedagógicas",
+            "Vivências em família com apresentações de talentos (arte, música, dança, poesia e teatro)",
+            "Concurso de Fotografia, Literário e Simulados",
+            "Técnicas contextualizadas à valorização do meio ambiente",
+            "Participação na Olimpíada de Matemática - OBMEP e demais olimpíadas do conhecimento",
+            "Atendimento individualizado aos pais",
+            "Realização do Simulado Enemzinho ou Avaliação Unificada Totem (AUT) como preparação para as provas do ENEM",
+            "Viagens de estudo e visitas às universidades;",
+            "Acompanhamento do estudante às principais excursões e eventos do Totem Vestibulares para integração e familiarização com a rede"
+        ],
+        "depoimentos": [],
+        "infraestrutura": [],
+        "professores": [],
+        "atividades": []        
+    });
+
+    await db.collection("organizations").insertOne({
+        "id": 3,
+        "@type": "colegios",
+        "city": "Cruz Alta",
+        "slug": "cruz-alta",
+        "image": "geral/FACHADA-CRUZ-ALTA.jpg",
+        "cep": "98700-000",
+        "address": "General Felipe Portinho, 1216",
+        "phone": "(55) 3333-8569",
+        "whatsapp": "(55) 9 9076-7990",
+        "email": "cruzalta@colegiototem.com.br",
+        "facebook": "https://www.facebook.com/totemvestibular/",
+        "instagram": "https://www.instagram.com/totemvestibulares/",
+        "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1909.2088506259433!2d-53.61070915676212!3d-28.644612207439764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94fd97c87e5202ab%3A0xc4883daf58e00f03!2sCol%C3%A9gio%20Totem%20Cruz%20Alta!5e0!3m2!1spt-BR!2sbr!4v1784497585649!5m2!1spt-BR!2sbr",
+        "levels": [
+            "Educação Infantil",
+            "Ensino Fundamental I",
+            "Ensino Fundamental II",
+            "Ensino Médio"
+        ],
+        "infraestrutura": [
+            "/infraestrutura/cachoeira-do-sul/B-1.jpg",
+            "/infraestrutura/cachoeira-do-sul/B-2.jpg",
+            "/infraestrutura/cachoeira-do-sul/B-3.jpg",
+            "/infraestrutura/cachoeira-do-sul/B-4.jpg",
+            "/infraestrutura/cachoeira-do-sul/B-5.jpg",
+            "/infraestrutura/cachoeira-do-sul/B-6.jpg"
+        ],
+        "banners": [
+            "/geral/BANNER-1-CACHOEIRA.jpg",
+            "/geral/FACHADA-CRUZ-ALTA.jpg"
+        ],
+        "panoramas": [],
+        "diferenciais" : [
+            "Atendimento personalizado, afetuoso, com equipe altamente qualificada e experiente;",
+            "Estrutura física moderna, planejada para maior segurança, conforto e produtividade detodos",
+            "Projeto pedagógico focado no resultado e na formação para a vida real",
+            "Material didático colorido, atualizado e com suporte digital, em plataformas modernas e interativas",
+            "Reconhecido pelo ambiente familiar – Família Totem – e pelo total apoio ao estudante e seus responsáveis",
+            "Salas de aula com mobiliário adequado a cada nível de ensino, climatizadas, com acesso à internet e recursos multimídia completos",
+            "Plataformas Digitais com jogos e conteúdos multimídias totalmente articulados com os conhecimentos abordados em sala de aula",
+            "Segurança aos estudantes e tranquilidade aos pais",
+            "Metodologia com aprendizagem cooperativa, lúdica e científica",
+            "Recursos educacionais e pedagógicos adequados à faixa etária",
+            "Aulas de Inglês, Arte, Educação Física com professores especializados",
+            "Viagens pedagógicas",
+            "Vivências em família com apresentações de talentos (arte, música, dança, poesia e teatro)",
+            "Concurso de Fotografia, Literário e Simulados",
+            "Técnicas contextualizadas à valorização do meio ambiente",
+            "Participação na Olimpíada de Matemática - OBMEP e demais olimpíadas do conhecimento",
+            "Atendimento individualizado aos pais",
+            "Realização do Simulado Enemzinho ou Avaliação Unificada Totem (AUT) como preparação para as provas do ENEM",
+            "Viagens de estudo e visitas às universidades;",
+            "Acompanhamento do estudante às principais excursões e eventos do Totem Vestibulares para integração e familiarização com a rede"
+        ],
+        "depoimentos": [],
+        "infraestrutura": [],
+        "professores": [],
+        "atividades": []
+    })
 };
 
 /**
@@ -163,7 +235,5 @@ export const up = async (db, client) => {
  * @returns {Promise<void>}
  */
 export const down = async (db, client) => {
-    await db.collection('organizations').deleteOne({
-        _id: 1
-    });
+    await db.collection('organizations').drop();
 };

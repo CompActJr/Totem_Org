@@ -2,11 +2,12 @@
 npm init -y
 npm install fastify
 npm install -D typescript tsx @types/node
-npm i fastify-plugin @fastify/mongodb
-npm install @fastify/autoload
+npm i fastify-plugin @fastify/mongodb 
+npm install @fastify/jwt @fastify/cors
 npm install zod
 npm install bcrypt
 npm install dotenv
+npm install migrate-mongo
 ```
 
 ```bash
@@ -44,7 +45,11 @@ Podemos usar Zod para validar os dados e inferir tipos com z.infer, reduzindo du
 }
 ```
 
-Se você tiver dezenas de plugins e módulos e não quiser registrar um por um manualmente, a comunidade do Fastify criou o @fastify/autoload. Ele varre as suas pastas e registra tudo de forma automática respeitando a ordem correta.
+criar nova migration
+
+```bash
+npm run migrate:create -- counter
+```
 
 Um arquivo env.ts (ou a pasta de ambientes) em projetos serve para centralizar, validar e tipar as variáveis de ambiente usando TypeScript, garantindo segurança e autocomcompletion
 

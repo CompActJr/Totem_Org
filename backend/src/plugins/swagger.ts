@@ -28,10 +28,11 @@ const swaggerPlugin = async (fastify: FastifyInstance) => {
       ],
       components: {
         securitySchemes: {
-          apiKey: {
-            type: "apiKey",
-            name: "apiKey",
-            in: "header",
+          bearerAuth: {
+            type: "http",
+            scheme: "bearer",
+            bearerFormat: "JWT",
+            description: "Informe o JWT obtido no login.",
           },
         },
       },

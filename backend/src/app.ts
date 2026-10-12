@@ -7,8 +7,11 @@ import dbConnector from "./plugins/dbConnector.js";
 import swaggerPlugin from "./plugins/swagger.js";
 import { errorHandler } from "./config/errorHandler.js";
 import { serializerCompiler, validatorCompiler } from "@fastify/type-provider-zod";
-import unitsRoutes from "./modules/units/units.routes.js";
+import { unitsRoutes } from "./modules/units/units.routes.js";
 import cors from "./config/cors.js";
+import { authRoutes } from "./modules/auth/auth.routes.js";
+import fastifyJwt from "@fastify/jwt";
+import authenticate from "./plugins/authenticate.js";
 
 /**
  * @author Jonas
@@ -26,10 +29,20 @@ export const buildApp = async (opts: Object = {}) => {
 
   //important: swagger e dbConnecto são plugins e precisam estar encapsulados com o fastify-plugin e vir antes das rotas
   await fastify.register(dbConnector);
+
+  await fastify.register(fastifyJwt, {
+    secret: process.env.JWT_SECRET ?? "",
+    sign: {
+      expiresIn: "2h",
+    },
+  });
+
+  await fastify.register(authenticate);
   await fastify.register(swaggerPlugin);
   await fastify.register(cors);
   await fastify.register(health);
   await fastify.register(unitsRoutes);
+  await fastify.register(authRoutes);
 
   return fastify;
 };

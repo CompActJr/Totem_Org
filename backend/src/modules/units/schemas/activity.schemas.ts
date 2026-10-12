@@ -2,18 +2,22 @@
 
 import { z } from "zod";
 
-
 export const activityClassSchema = z.object({
-  nome: z.string(),
-  detalhes: z.string(),
+    _id: z.number().int(),
+    nome: z.string(),
+    detalhes: z.string(),
 });
 
+export const createActivityClassInput = activityClassSchema.omit({
+    _id: true,
+})
+
 export const activitySchema = z.object({
-  _id: z.number().int(),
-  name: z.string(),
-  turmas: z.array(activityClassSchema),
-  professorNome: z.string(),
-  image: z.string(),
+    _id: z.number().int(),
+    name: z.string(),
+    turmas: z.array(activityClassSchema),
+    professorNome: z.string(),
+    image: z.string(),
 });
 
 export const createActivityInput = activitySchema.omit({
@@ -27,5 +31,5 @@ export const updateActivityInput = activitySchema
     });
 
 export type CreateActivityInput = z.infer<typeof createActivityInput>;
-export type CreateActivityClassInput = z.infer<typeof activityClassSchema>;
+export type CreateActivityClassInput = z.infer<typeof createActivityInput>;
 export type UpdateActivitySchema = z.infer<typeof updateActivityInput>;

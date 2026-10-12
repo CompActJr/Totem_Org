@@ -1,4 +1,4 @@
-// src/modules/units/units.types.ts
+// src/modules/units/units.models.ts
 
 export interface Panorama {
   _id: number;
@@ -23,6 +23,7 @@ export interface Teacher {
 }
 
 export interface ActivityClass {
+  _id: number;
   nome: string;
   detalhes: string;
 }

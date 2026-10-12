@@ -19,34 +19,6 @@ export const up = async (db, client) => {
             "updatedAt": "2026-07-04",
             "categoria": "Eventos",
             "unidades": ["ijui", "cachoeira-do-sul"]
-        },
-        {
-            _id: 2,
-            "titulo": "Evolução para Notas do Enem",
-            "resumo": "",
-            "conteudo": "Quando há método, dedicação e acompanhamento, os resultados aparecem.\n O crescimento das notas do ENEM no Colégio Totem reforça nosso compromisso com a excelência acadêmica e a preparação dos alunos para os grandes desafios do futuro.\nCrescimento comprovado.\nMais aprovações.\nResultados que geram confiança.",
-            "imagemUrl": "/posts/post2.jpg",
-            "ativo": true,
-            "destaque": false,
-            "autor": "Jonas Silva",
-            "createdAt": "2026-06-04",
-            "updatedAt": "2026-06-04",
-            "categoria": "Enem",
-            "unidades": ["ijui", "cachoeira-do-sul"]
-        },
-        {
-            _id: 3,
-            "titulo": "Festival do Enart 2026",
-            "resumo": "",
-            "conteudo": "Nossos alunos neste  final de semana  em Agudo, na Regional do Enart, da 13ª Região Tradicionalista, trouxeram grandiosas Premiações.\n🏆 Campeão em Criação Coreografica\n🏆2º Lugar Danças Tradicionais",
-            "imagemUrl": "/posts/post3.jpg",
-            "ativo": true,
-            "destaque": true,
-            "autor": "Jonas Silva",
-            "createdAt": "2026-06-04",
-            "updatedAt": "2026-06-04",
-            "categoria": "Eventos",
-            "unidades": ["santa-maria"]
         }
     ]);
 };
@@ -58,5 +30,5 @@ export const up = async (db, client) => {
  */
 export const down = async (db, client) => {
 
-    await db.collection('levels')
+    await db.collection('posts').drop();
 };
