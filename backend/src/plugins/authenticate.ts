@@ -21,6 +21,8 @@ const authenticatePlugin = async (fastify: FastifyInstance) => {
         await request.jwtVerify();
       } catch {
         return reply.code(401).send({
+          statusCode: 401,
+          error: "Unauthorized",
           message: "Token ausente, inválido ou expirado.",
         });
       }

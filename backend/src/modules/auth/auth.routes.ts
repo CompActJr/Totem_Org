@@ -15,7 +15,7 @@ export async function authRoutes(fastify: FastifyInstance) {
     '/api/auth',
     {
         schema: {
-            tags: ["Units"],
+            tags: ["user"],
             summary: "Buscar unidade por slug",
             description: "Retorna os dados públicos de uma unidade cadastrada.",
             body: authRequest,

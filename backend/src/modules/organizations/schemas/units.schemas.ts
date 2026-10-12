@@ -29,6 +29,15 @@ export const unitResponseSchema = z.object({
   atividades: z.array(activitySchema),
 });
 
-export type UnitResponse = z.infer<typeof unitResponseSchema>;
+export const updateUnitInput = z.object({
+    whatsapp: z.string(),
+    email: z.string(),
+    facebook: z.string(),
+    instagram: z.string(),
+    maps: z.string(),
+  })
+  .partial();
 
+export type UnitResponse = z.infer<typeof unitResponseSchema>;
+export type UpdateUnitInput = z.infer<typeof updateUnitInput>;
 

@@ -1,17 +1,20 @@
 //src/app.ts
 
-
 import Fastify, { FastifyInstance } from "fastify";
 import health from "./modules/health.js";
 import dbConnector from "./plugins/dbConnector.js";
 import swaggerPlugin from "./plugins/swagger.js";
 import { errorHandler } from "./config/errorHandler.js";
 import { serializerCompiler, validatorCompiler } from "@fastify/type-provider-zod";
-import { unitsRoutes } from "./modules/units/units.routes.js";
 import cors from "./config/cors.js";
 import { authRoutes } from "./modules/auth/auth.routes.js";
 import fastifyJwt from "@fastify/jwt";
 import authenticate from "./plugins/authenticate.js";
+import { unitsRoutes } from "./modules/organizations/routes/units.routes.js";
+import { panoramaRoutes } from "./modules/organizations/routes/panoramas.routes.js";
+import { testimonialRoutes } from "./modules/organizations/routes/testimonial.routes.js";
+import { teacherRoutes } from "./modules/organizations/routes/teacher.routes.js";
+import { activityRoutes } from "./modules/organizations/routes/activity.routes.js";
 
 /**
  * @author Jonas
@@ -42,6 +45,10 @@ export const buildApp = async (opts: Object = {}) => {
   await fastify.register(cors);
   await fastify.register(health);
   await fastify.register(unitsRoutes);
+  await fastify.register(panoramaRoutes);
+  await fastify.register(testimonialRoutes);
+  await fastify.register(teacherRoutes);
+  await fastify.register(activityRoutes);
   await fastify.register(authRoutes);
 
   return fastify;

@@ -31,3 +31,18 @@ export async function getNextSequence(fastify: FastifyInstance, sequenceName: st
 
   return counter.seq as number;
 }
+
+
+export async function getDb(fastify: FastifyInstance) {
+  const db = fastify.mongo.db;
+
+  if (!db) {
+    throw new AppError(503, "Banco de dados indisponível.", "Service Unavailable",);
+  }
+
+  return db;
+}
+
+export function notFound(message: string): never {
+  throw new AppError(404, message, "Not Found");
+}

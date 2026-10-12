@@ -22,14 +22,17 @@ export const activitySchema = z.object({
 
 export const createActivityInput = activitySchema.omit({
     _id: true,
+    turmas: true,
 });
 
 export const updateActivityInput = activitySchema
-    .partial()
-    .refine((data)=> Object.keys(data).length > 0, {
-        message: "Informe ao menos um campo para atualizar"
-    });
+    .omit({
+        _id: true,
+        turmas: true,
+    })
+    .partial();
+
 
 export type CreateActivityInput = z.infer<typeof createActivityInput>;
-export type CreateActivityClassInput = z.infer<typeof createActivityInput>;
+export type CreateActivityClassInput = z.infer<typeof createActivityClassInput>;
 export type UpdateActivitySchema = z.infer<typeof updateActivityInput>;
