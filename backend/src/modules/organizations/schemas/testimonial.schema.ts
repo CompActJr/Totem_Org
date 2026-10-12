@@ -9,7 +9,7 @@ export const testimonialSchema = z.object({
   depoimento: z.string(),
 });
 
-export const createTestmonialInput = testimonialSchema.omit({
+export const createTestimonialInput = testimonialSchema.omit({
     _id: true
 });
 
@@ -19,5 +19,5 @@ export const updateTestimonialInput = testimonialSchema
         message: "Informe pelo menos um campo para atualizar.",
     });
 
-export type CreateTestmonialInput = z.infer<typeof createTestmonialInput>;
+export type CreateTestimonialInput = z.infer<typeof createTestimonialInput>;
 export type UpdateTestimonialInput = z.infer<typeof updateTestimonialInput>;
