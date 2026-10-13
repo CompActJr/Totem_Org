@@ -1,28 +1,28 @@
 export const niveis = [
   {
-    "name": "Berçário",
-    "image": "/geral/NIVEL-BERÇARIO.jpg",
-    "link": "bercario"
+    name: "Berçário",
+    image: "/geral/NIVEL-BERÇARIO.jpg",
+    link: "bercario"
   },
   {
-    "name": "Educação Infantil",
-    "image": "/geral/NIVEL-INFANTIL.jpg",
-    "link": "infantil"
+    name: "Educação Infantil",
+    image: "/geral/NIVEL-INFANTIL.jpg",
+    link: "infantil"
   },
   {
-    "name": "Ensino Fundamental I",
-    "image": "/geral/NIVEL-FUNDAMENTAL-1.jpg",
-    "link": "fundamental-i"
+    name: "Ensino Fundamental I",
+    image: "/geral/NIVEL-FUNDAMENTAL-1.jpg",
+    link: "fundamental-i"
   },
   {
-    "name": "Ensino Fundamental II",
-    "image": "/geral/NIVEL-FUNDAMENTAL-2.jpg",
-    "link": "fundamental-ii"
+    name: "Ensino Fundamental II",
+    image: "/geral/NIVEL-FUNDAMENTAL-2.jpg",
+    link: "fundamental-ii"
   },
   {
-    "name": "Ensino Médio",
-    "image": "/geral/NIVEL-MEDIO.jpg",
-    "link": "ensino-medio"
+    name: "Ensino Médio",
+    image: "/geral/NIVEL-MEDIO.jpg",
+    link: "ensino-medio"
   }
 ]
 
@@ -53,32 +53,7 @@ export const footer = [
   }
 ]
 
-export const eventosMock = [
-  {
-    "id": 1,
-    "titulo": "Excursões dos Vestibulares",
-    "periodo": "Junho, Novembro e Dezembro",
-    "descricao": "Os professores do Totem acompanham os alunos em todos os vestibulares do Rio Grande do Sul, Santa Catarina e Paraná. Reservamos os melhores hotéis, contamos com parceria da Viação Santa Cruz para o transporte dos estudantes e organizamos toda a logística para que os alunos tenham tranquilidade e segurança no dia da prova.",
-    "imagem": "/images/eventos/excursoes.jpg"
-  },
-  {
-    "id": 2,
-    "titulo": "Totem Games",
-    "periodo": "Maio",
-    "descricao": "Evento de integração entre estudantes de todas as unidades Totem. Durante um dia inteiro de competição são realizadas atividades esportivas, concursos de dança, o desafio culinário Totempero e o The Voice Totem. O objetivo é fortalecer a amizade entre os alunos, promover o espírito de equipe e incentivar o equilíbrio entre estudos, lazer e saúde mental.",
-    "imagem": "/images/eventos/totem-games.jpg"
-  },
-  {
-    "id": 3,
-    "titulo": "Aulão ENEM e UFSM",
-    "periodo": "Outubro e Janeiro",
-    "descricao": "Grande revisão preparatória para o ENEM e o vestibular da UFSM. Além de revisar os conteúdos mais cobrados nas provas, o evento oferece orientações, dicas estratégicas dos professores e um momento de acolhimento para reduzir a ansiedade e aumentar a confiança dos estudantes na véspera dos exames.",
-    "imagem": "/images/eventos/aulao-enem.jpg"
-  }
-];
-
-
-export const unidades = [
+export const unidadesVestibulares = [
   {
     _id: 4,
     "@type": "vestibulares",
