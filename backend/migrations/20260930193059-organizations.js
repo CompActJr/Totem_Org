@@ -4,7 +4,7 @@
  * @returns {Promise<void>}
  */
 export const up = async (db, client) => {
-    await db.collection('organizations').insertOne({
+    await db.collection('organizations').insertMany([{
         _id: 1,
         "@type": "colegios",
         "city": "Cachoeira do Sul",
@@ -68,10 +68,6 @@ export const up = async (db, client) => {
         ],
         "infraestrutura": [
             "/infraestrutura/cachoeira-do-sul/B-1.jpg",
-            "/infraestrutura/cachoeira-do-sul/B-2.jpg",
-            "/infraestrutura/cachoeira-do-sul/B-3.jpg",
-            "/infraestrutura/cachoeira-do-sul/B-4.jpg",
-            "/infraestrutura/cachoeira-do-sul/B-5.jpg",
             "/infraestrutura/cachoeira-do-sul/B-6.jpg"
         ],
         "professores": [
@@ -110,10 +106,11 @@ export const up = async (db, client) => {
                 "professorNome": "Jonas",
                 "image": "/atividades/ESCOLINHA-DE-VOLEIBOL.jpg"
             }
-        ]
-    });
-
-    await db.collection('organizations').insertOne({
+        ],
+        "cursos": [],
+        "faqs": [],
+    },
+    {
         _id: 2,
         "@type": "colegios",
         "city": "Santa Maria",
@@ -139,24 +136,14 @@ export const up = async (db, client) => {
             "/geral/FACHADA-SANTA-MARIA.jpg"
         ],
         "panoramas": [],
-        "diferenciais" : [
+        "diferenciais": [
             "Atendimento personalizado, afetuoso, com equipe altamente qualificada e experiente;",
             "Estrutura física moderna, planejada para maior segurança, conforto e produtividade detodos",
             "Projeto pedagógico focado no resultado e na formação para a vida real",
-            "Material didático colorido, atualizado e com suporte digital, em plataformas modernas e interativas",
-            "Reconhecido pelo ambiente familiar – Família Totem – e pelo total apoio ao estudante e seus responsáveis",
-            "Salas de aula com mobiliário adequado a cada nível de ensino, climatizadas, com acesso à internet e recursos multimídia completos",
-            "Plataformas Digitais com jogos e conteúdos multimídias totalmente articulados com os conhecimentos abordados em sala de aula",
-            "Segurança aos estudantes e tranquilidade aos pais",
-            "Metodologia com aprendizagem cooperativa, lúdica e científica",
-            "Recursos educacionais e pedagógicos adequados à faixa etária",
-            "Aulas de Inglês, Arte, Educação Física com professores especializados",
-            "Viagens pedagógicas",
             "Vivências em família com apresentações de talentos (arte, música, dança, poesia e teatro)",
             "Concurso de Fotografia, Literário e Simulados",
             "Técnicas contextualizadas à valorização do meio ambiente",
             "Participação na Olimpíada de Matemática - OBMEP e demais olimpíadas do conhecimento",
-            "Atendimento individualizado aos pais",
             "Realização do Simulado Enemzinho ou Avaliação Unificada Totem (AUT) como preparação para as provas do ENEM",
             "Viagens de estudo e visitas às universidades;",
             "Acompanhamento do estudante às principais excursões e eventos do Totem Vestibulares para integração e familiarização com a rede"
@@ -164,11 +151,12 @@ export const up = async (db, client) => {
         "depoimentos": [],
         "infraestrutura": [],
         "professores": [],
-        "atividades": []        
-    });
-
-    await db.collection("organizations").insertOne({
-        "id": 3,
+        "atividades": [],
+        "cursos": [],
+        "faqs": [],
+    },
+    {
+        _id: 3,
         "@type": "colegios",
         "city": "Cruz Alta",
         "slug": "cruz-alta",
@@ -190,43 +178,27 @@ export const up = async (db, client) => {
         "infraestrutura": [
             "/infraestrutura/cachoeira-do-sul/B-1.jpg",
             "/infraestrutura/cachoeira-do-sul/B-2.jpg",
-            "/infraestrutura/cachoeira-do-sul/B-3.jpg",
-            "/infraestrutura/cachoeira-do-sul/B-4.jpg",
-            "/infraestrutura/cachoeira-do-sul/B-5.jpg",
-            "/infraestrutura/cachoeira-do-sul/B-6.jpg"
         ],
         "banners": [
             "/geral/BANNER-1-CACHOEIRA.jpg",
             "/geral/FACHADA-CRUZ-ALTA.jpg"
         ],
         "panoramas": [],
-        "diferenciais" : [
+        "diferenciais": [
             "Atendimento personalizado, afetuoso, com equipe altamente qualificada e experiente;",
             "Estrutura física moderna, planejada para maior segurança, conforto e produtividade detodos",
             "Projeto pedagógico focado no resultado e na formação para a vida real",
             "Material didático colorido, atualizado e com suporte digital, em plataformas modernas e interativas",
             "Reconhecido pelo ambiente familiar – Família Totem – e pelo total apoio ao estudante e seus responsáveis",
             "Salas de aula com mobiliário adequado a cada nível de ensino, climatizadas, com acesso à internet e recursos multimídia completos",
-            "Plataformas Digitais com jogos e conteúdos multimídias totalmente articulados com os conhecimentos abordados em sala de aula",
-            "Segurança aos estudantes e tranquilidade aos pais",
-            "Metodologia com aprendizagem cooperativa, lúdica e científica",
-            "Recursos educacionais e pedagógicos adequados à faixa etária",
-            "Aulas de Inglês, Arte, Educação Física com professores especializados",
-            "Viagens pedagógicas",
-            "Vivências em família com apresentações de talentos (arte, música, dança, poesia e teatro)",
-            "Concurso de Fotografia, Literário e Simulados",
-            "Técnicas contextualizadas à valorização do meio ambiente",
-            "Participação na Olimpíada de Matemática - OBMEP e demais olimpíadas do conhecimento",
-            "Atendimento individualizado aos pais",
-            "Realização do Simulado Enemzinho ou Avaliação Unificada Totem (AUT) como preparação para as provas do ENEM",
-            "Viagens de estudo e visitas às universidades;",
-            "Acompanhamento do estudante às principais excursões e eventos do Totem Vestibulares para integração e familiarização com a rede"
         ],
         "depoimentos": [],
         "infraestrutura": [],
         "professores": [],
-        "atividades": []
-    })
+        "atividades": [],
+        "cursos": [],
+        "faqs": [],
+    }]);
 };
 
 /**

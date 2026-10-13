@@ -60,9 +60,9 @@ export type TurmaType = {
     descricao: string;
     horario: string;
     desconto: string;
-    caracteristicas: string;
+    caracteristicas: string[];
     material: string;
-    kit: string;
+    kit: string[];
     documentos: string;
 };
 

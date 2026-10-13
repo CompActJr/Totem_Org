@@ -36,6 +36,27 @@ export interface Activity {
   image: string;
 }
 
+export type FaqType = {
+    _id: number
+    question: string
+    answer: string
+}
+
+export type TurmaType = {
+    _id: number;
+    titulo: string;
+    inicio: string;
+    fim: string;
+    imagem: string;
+    descricao: string;
+    horario: string;
+    desconto: string;
+    caracteristicas: string[];
+    material: string;
+    kit: string[];
+    documentos: string;
+};
+
 export interface Organization {
   _id: number;
   "@type": "colegios" | "vestibulares";
@@ -58,4 +79,6 @@ export interface Organization {
   infraestrutura: string[];
   professores: Teacher[];
   atividades: Activity[];
+  cursos: TurmaType[];
+  faqs: FaqType[];
 }

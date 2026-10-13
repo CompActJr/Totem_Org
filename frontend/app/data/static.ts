@@ -53,156 +53,6 @@ export const footer = [
   }
 ]
 
-export const depoimentosMock = [
-  {
-    "id": 1,
-    "nome": "Pedro Corsini - Medicina UFSM e UFRGS",
-    "depoimento": "O mais importante da minha passagem pelo Totem foi minha evolução, não apenas como estudante, mas como pessoa também.",
-    "unidade": "Santa Maria",
-    "unidadeId": 2
-  },
-  {
-    "id": 2,
-    "nome": "Isabela Marra - Medicina Veterinária UFSM",
-    "depoimento": "O Totem é muito mais que um cursinho, ele realmente se torna a tua família, com quem tu pode contar, chorar, sorrir e soltar as risadas mais sinceras.",
-    "unidade": "Santa Maria",
-    "unidadeId": 2
-  },
-  {
-    "id": 3,
-    "nome": "Cecília Chalela Moreira - Relações Internacionais USP",
-    "depoimento": "Além de uma ótima didática, todos os professores foram receptivos e carinhosos. A sensibilidade fez com que o caminho fosse mais leve.",
-    "unidade": "Santa Maria",
-    "unidadeId": 2
-  },
-  {
-    "id": 4,
-    "nome": "Pedro Paiva - Medicina FURG",
-    "depoimento": "Dentre tantas coisas importantes que aprendi no Totem, diria que a principal foi aprender a estudar de forma séria.",
-    "unidade": "Santa Maria",
-    "unidadeId": 2
-  },
-  {
-    "id": 5,
-    "nome": "Sara Pivetta - Medicina UFN",
-    "depoimento": "A presença e o contato com os professores foi essencial. Com eles, os dias ficavam mais serenos, trazendo leveza em momentos cobertos de tensão.",
-    "unidade": "Santa Maria",
-    "unidadeId": 2
-  },
-  {
-    "id": 6,
-    "nome": "Pedro Amaral - Medicina UFSM",
-    "depoimento": "Além da excelente qualidade das aulas e o seu foco no vestibular desejado, os atendimentos e o acompanhamento com professores experientes fizeram toda a diferença na preparação.",
-    "unidade": "Santa Maria",
-    "unidadeId": 2
-  },
-  {
-    "id": 7,
-    "nome": "Gabriel Brondani - Medicina UFCSPA",
-    "depoimento": "Foram dois anos de construção de uma família fora da minha casa, um pilar de conhecimento e construção da minha pessoa. Devo muito ao Totem por tudo aquilo que eles me proporcionaram.",
-    "unidade": "Santa Maria",
-    "unidadeId": 2
-  },
-  {
-    "id": 8,
-    "nome": "Isabelle Teixeira - Medicina UFN",
-    "depoimento": "Foi o apoio de todos os professores, juntamente com o tira-dúvidas todos os dias e os horários de conversa, que me guiaram, mas também a qualidade dos materiais e a quantidade de exercícios à disposição.",
-    "unidade": "Santa Maria",
-    "unidadeId": 2
-  },
-  {
-    "id": 9,
-    "nome": "Martina Bessow - Odontologia UFSM",
-    "depoimento": "Saber que eu tinha pessoas ali acreditando de verdade no meu potencial, mesmo nos dias difíceis, fez toda a diferença.",
-    "unidade": "Santa Maria",
-    "unidadeId": 2
-  },
-  {
-    "id": 10,
-    "nome": "Lucas Telles - Direito UFSM",
-    "depoimento": "Os professores se esforçavam para apresentar novas perspectivas para nos ajudar a compreender melhor o conteúdo. Também criavam um clima legal de descontração, interagindo com os alunos e entre si, quebrando um pouco daquela tensão do processo.",
-    "unidade": "Santa Maria",
-    "unidadeId": 2
-  },
-  {
-    "id": 11,
-    "nome": "Luana Gonçalves - Medicina UFRGS",
-    "depoimento": "Os atendimentos tira-dúvidas com os professores eram excelentes oportunidades de lapidar o conhecimento. No Totem, senti que não estava sozinha. É uma grande família mesmo.",
-    "unidade": "Santa Maria",
-    "unidadeId": 2
-  },
-  {
-    "id": 12,
-    "nome": "Maria Gucciardo - Fisioterapia UFN",
-    "depoimento": "Gostaria de expressar minha imensa gratidão a toda a equipe do Totem Vestibulares por ter feito parte fundamental da minha trajetória até a aprovação na faculdade.",
-    "unidade": "Santa Maria",
-    "unidadeId": 2
-  },
-  {
-    "id": 13,
-    "nome": "Arthur Quadros Agnoletto - Odontologia UFSM 2025/1 – SISU",
-    "depoimento": "Os professores foram incríveis, com uma didática clara e acessível, uma vez que eles não apenas ensinam o conteúdo, mas também deixam a jornada um pouco mais leve e divertida.",
-    "unidade": "Ijuí",
-    "unidadeId": 3
-  },
-  {
-    "id": 14,
-    "nome": "Luiz Felipe Amarante Moreschi – Engenharia Química UFSC 2025/2 – SISU",
-    "depoimento": "É uma experiência totalmente diferente, eles te dão todo o apoio em todos os sentidos, você se sente acolhido. Os materiais e as aulas são 100% voltadas para o ENEM e outros vestibulares e isso faz toda a diferença.",
-    "unidade": "Ijuí",
-    "unidadeId": 3
-  },
-  {
-    "id": 15,
-    "nome": "Ana Clara Rios Huth – Medicina UNIJUÍ 2025/2",
-    "depoimento": "Fiz pré-vestibular integral no Totem, uma turma muito aprofundada nos conteúdos. E o resultado foi como o esperado: uma aprovação na metade do ano.",
-    "unidade": "Ijuí",
-    "unidadeId": 3
-  },
-  {
-    "id": 16,
-    "nome": "Júlia Scheeren Wust – Medicina UNIJUÍ 2025/2",
-    "depoimento": "A dinâmica de dividir a carga horária entre aulas e estudo orientado pelos professores fez total diferença pra mim.",
-    "unidade": "Ijuí",
-    "unidadeId": 3
-  },
-  {
-    "id": 17,
-    "nome": "Laura Spohr – 5° Lugar Medicina UNIJUÍ 2025/2",
-    "depoimento": "O Totem foi muito importante para a minha aprovação, já que, além de ter ótimos professores, que sempre explicaram muito bem os conteúdos, eles também trouxeram informações que se mostraram extremamente relevantes durante as provas.",
-    "unidade": "Ijuí",
-    "unidadeId": 3
-  },
-  {
-    "id": 18,
-    "nome": "Louise Antonia Lautert – Medicina UNIJUÍ, UNIVATES e FEEVALE 2025/2",
-    "depoimento": "Iniciei o ano sem saber muito sobre os vestibulares, mas em praticamente um mês já havia aprendido uma nova maneira de estudar e me preparar para as provas. Sou extremamente grata pela minha passagem pelo Totem.",
-    "unidade": "Ijuí",
-    "unidadeId": 3
-  },
-  {
-    "id": 19,
-    "nome": "Luisa Scheeren Wust – Medicina UNIJUÍ 2025/2",
-    "depoimento": "O Totem foi essencial para a minha aprovação. Só tenho a agradecer pelos ensinamentos. Sou completamente sincera ao dizer que é um ótimo cursinho e com certeza vou recomendar para mais pessoas.",
-    "unidade": "Ijuí",
-    "unidadeId": 3
-  },
-  {
-    "id": 20,
-    "nome": "Ana Clara - Medicina UFCSPA",
-    "depoimento": "O Totem me proporcionou amizades verdadeiras, conhecimento para uma vida inteira e, principalmente, resistência para estudar.",
-    "unidade": "Santa Rosa",
-    "unidadeId": 1
-  },
-  {
-    "id": 21,
-    "nome": "Artur Hatwig Piper - Medicina UFRN",
-    "depoimento": "Como alguém que estava há um tempo sem estudar, minha experiência no Totem foi importante para me reconectar com o conteúdo do ENEM. O tratamento humano por parte da equipe cria um ambiente propício ao aprendizado.",
-    "unidade": "Santa Rosa",
-    "unidadeId": 1
-  }
-];
-
 export const eventosMock = [
   {
     "id": 1,
@@ -228,39 +78,6 @@ export const eventosMock = [
 ];
 
 
-export const faqsMock = [
-  {
-    "id": 1,
-    "question": "As turmas Medicina PRIME e Medicina PLUS são apenas no turno da manhã?",
-    "answer": "Sim. As aulas são presenciais no turno da manhã, das 8h às 12h20.\n\nDurante a tarde, os estudantes participam dos atendimentos tira-dúvidas e, no caso da turma Medicina PLUS, também contam com estudo ativo e Totemapping."
-  },
-  {
-    "id": 2,
-    "question": "Por que o valor varia conforme o turno do Extensivo?",
-    "answer": "O Totem oferece os Extensivos Manhã, Tarde e Noite.\n\nO Extensivo Manhã inicia em março e possui três períodos diários.\n\nO Extensivo Tarde inicia em abril e também possui três períodos diários.\n\nJá o Extensivo Noite inicia em abril e conta com dois períodos diários.\n\nComo as cargas horárias são diferentes, os valores também variam entre os turnos."
-  },
-  {
-    "id": 3,
-    "question": "Estou no 3º ano do Ensino Médio e estudo pela manhã e à tarde. Qual turma presencial é mais indicada?",
-    "answer": "Se o seu foco é o ENEM e o Vestibular da UFSM, a turma mais indicada é o Extensivo Noite.\n\nAs aulas iniciam em abril, permitindo que você dedique o início do ano à escola e, ao mesmo tempo, revise todo o conteúdo do Ensino Médio no cursinho."
-  },
-  {
-    "id": 4,
-    "question": "O Totem Vestibulares Santa Maria possui sala de estudos?",
-    "answer": "Sim.\n\nDisponibilizamos uma sala de estudos aberta nos três turnos, de segunda a sexta-feira, acessível para todos os alunos, independentemente da turma em que estejam matriculados."
-  },
-  {
-    "id": 5,
-    "question": "É possível rescindir o contrato de prestação de serviços com o Totem Vestibulares Santa Maria?",
-    "answer": "Sim. Cada aluno possui dois contratos: um referente às aulas e outro ao material didático.\n\n• Material didático: após a retirada do material, é necessário retirar todas as remessas e realizar o pagamento integral do valor contratado.\n\n• Contrato de aulas (aprovação): não há cobrança de multa rescisória. É realizado um cálculo proporcional das aulas já assistidas em relação ao valor pago. Para solicitar esse tipo de rescisão, é necessário apresentar o comprovante de matrícula na instituição de ensino.\n\n• Contrato de aulas (desistência ou motivo pessoal): são cobradas as aulas já assistidas, além de uma taxa rescisória equivalente a 20% do valor das aulas que ainda seriam ministradas."
-  },
-  {
-    "id": 6,
-    "question": "O Totem Vestibulares possui aulas híbridas (presenciais e ao vivo simultaneamente)?",
-    "answer": "Não.\n\nAs aulas do Totem Vestibulares Santa Maria são 100% presenciais.\n\nAs turmas MED e PSS possuem chamadas obrigatórias. Já a turma MED PLUS conta com acesso à turma 100% online do Estúdio Totem ON.\n\nAs demais turmas podem contratar o Totem ON pelo valor de R$ 590,00, acrescido ao valor total da matrícula anual."
-  }
-];
-
 export const unidades = [
   {
     _id: 4,
@@ -275,13 +92,6 @@ export const unidades = [
     "email": "cachoeira@colegiototem.com.br",
     "facebook": "https://www.facebook.com/totemvestibular/",
     "instagram": "https://www.instagram.com/totemvestibulares/",
-    "faqs": [
-      {
-        "id": 1,
-        "question": "As turmas Medicina PRIME e Medicina PLUS são apenas no turno da manhã?",
-        "answer": "Sim. As aulas são presenciais no turno da manhã, das 8h às 12h20.\n\nDurante a tarde, os estudantes participam dos atendimentos tira-dúvidas e, no caso da turma Medicina PLUS, também contam com estudo ativo e Totemapping."
-      },
-    ],
     "depoimentos": [
       {
         _id: 1,
@@ -290,7 +100,7 @@ export const unidades = [
         "depoimento": "O mais importante da minha passagem pelo Totem foi minha evolução, não apenas como estudante, mas como pessoa também.",
       },
     ],
-    "matriculas": [
+    "cursos": [
       {
         _id: 1,
         "titulo": "Extensivo Manhã",
@@ -323,7 +133,14 @@ export const unidades = [
           "Comprovante de residência, carteira de identidade e CPF. Para aluno menor de idade é necessário o CPF do responsável."
         ]
       },
-    ]
+    ],
+     "faqs": [
+      {
+        _id: 1,
+        "question": "As turmas Medicina PRIME e Medicina PLUS são apenas no turno da manhã?",
+        "answer": "Sim. As aulas são presenciais no turno da manhã, das 8h às 12h20.\n\nDurante a tarde, os estudantes participam dos atendimentos tira-dúvidas e, no caso da turma Medicina PLUS, também contam com estudo ativo e Totemapping."
+      },
+    ],
   },
   {
     "id": 2,
@@ -337,9 +154,17 @@ export const unidades = [
     "email": "secretaria.santamaria@soutotem.com.br",
     "facebook": "https://www.facebook.com/totemvestibular/",
     "instagram": "https://www.instagram.com/totemvestibulares/",
-    "matriculas": [
+    "depoimentos": [
       {
-        "id": 4,
+        _id: 2,
+        "nome": "Isabela Marra - Medicina Veterinária UFSM",
+        "imagem": "",
+        "depoimento": "O Totem é muito mais que um cursinho, ele realmente se torna a tua família, com quem tu pode contar, chorar, sorrir e soltar as risadas mais sinceras.",
+      },
+    ],
+    "cursos": [
+      {
+        _id: 2,
         "titulo": "MEDPLUS",
         "inicio": "23 de fevereiro de 2026",
         "fim": "Até a prova da UFRGS ou UFSM",
@@ -377,6 +202,13 @@ export const unidades = [
         ]
       }
     ],
+    "faqs": [
+      {
+        _id: 2,
+        "question": "Por que o valor varia conforme o turno do Extensivo?",
+        "answer": "O Totem oferece os Extensivos Manhã, Tarde e Noite.\n\nO Extensivo Manhã inicia em março e possui três períodos diários.\n\nO Extensivo Tarde inicia em abril e também possui três períodos diários.\n\nJá o Extensivo Noite inicia em abril e conta com dois períodos diários.\n\nComo as cargas horárias são diferentes, os valores também variam entre os turnos."
+      },
+    ]
   },
   {
     "id": 3,
@@ -390,9 +222,17 @@ export const unidades = [
     "email": "secretaria.ijui@soutotem.com.br",
     "facebook": "https://www.facebook.com/totemvestibular/",
     "instagram": "https://www.instagram.com/totemvestibulares/",
-    "matriculas": [
+    "depoimentos": [
       {
-        "id": 12,
+        _id: 4,
+        "nome": "Luisa Scheeren Wust – Medicina UNIJUÍ 2025/2",
+        "imagem": "",
+        "depoimento": "O Totem foi essencial para a minha aprovação. Só tenho a agradecer pelos ensinamentos. Sou completamente sincera ao dizer que é um ótimo cursinho e com certeza vou recomendar para mais pessoas.",
+      },
+    ],
+    "cursos": [
+      {
+        _id: 3,
         "titulo": "Medicina Integral",
         "inicio": "23 de fevereiro de 2026",
         "fim": "Prova da UFSM",
@@ -411,9 +251,7 @@ export const unidades = [
           "Acesso ao Totem On;",
           "Aulão Revisão Enem."
         ],
-        "material": [
-          "Coleção Med Plus; Prova Box Federais RS, Prova Box Santa Catarina, Prova Box Particulares e Prova Box Enem; Hábilis."
-        ],
+        "material": "Coleção Med Plus; Prova Box Federais RS, Prova Box Santa Catarina, Prova Box Particulares e Prova Box Enem; Hábilis.",
         "kit": [
           "2 camisetas",
           "1 moletom",
@@ -423,9 +261,14 @@ export const unidades = [
           "1 post-it (embalagem mais simples)",
           "1 estojo"
         ],
-        "documentos": [
-          "Comprovante de residência, carteira de identidade e CPF. Para aluno menor de idade é necessário o CPF do responsável."
-        ]
+        "documentos": "Comprovante de residência, carteira de identidade e CPF. Para aluno menor de idade é necessário o CPF do responsável."
+      },
+    ],
+    "faqs": [
+      {
+        _id: 3,
+        "question": "Estou no 3º ano do Ensino Médio e estudo pela manhã e à tarde. Qual turma presencial é mais indicada?",
+        "answer": "Se o seu foco é o ENEM e o Vestibular da UFSM, a turma mais indicada é o Extensivo Noite.\n\nAs aulas iniciam em abril, permitindo que você dedique o início do ano à escola e, ao mesmo tempo, revise todo o conteúdo do Ensino Médio no cursinho."
       },
     ]
   }
