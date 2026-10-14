@@ -1,5 +1,4 @@
-import postsData from '~/data/posts.json'
-import type { PostType } from '~/types/post'
+import type { PostType } from "~/types/blog.types"
 
 export type BlogOrder = 'recentes' | 'antigos'
 

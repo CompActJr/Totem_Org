@@ -1,4 +1,9 @@
-import type { Response } from "~/types/response";
+/**
+ * teste vocacional, use state para guarda os cookies
+ * @author Jonas
+ */
+
+import type { Response } from "~/types/vocacional.types";
 
 export interface VocacionalState {
   step: number;

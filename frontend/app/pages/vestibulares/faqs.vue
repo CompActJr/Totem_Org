@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-    import DataFaqs from '~/components/faqs/DataFaqs.vue';
-    import HeroFaqsTitle from '~/components/faqs/HeroFaqsTitle.vue';
-    import dataFaqs from "~/data/faqs.json";
-
+import DataFaqs from '~/components/vestibulares/faqs/DataFaqs.vue';
+import HeroFaqsTitle from '~/components/vestibulares/faqs/HeroFaqsTitle.vue';
+import { faqsVestibulares } from '~/data/faqsON';
+   
 </script>
 
 <template>
     <HeroFaqsTitle/>
-    <DataFaqs :faqs="dataFaqs"/>
+    <DataFaqs :faqs="faqsVestibulares"/>
 </template>

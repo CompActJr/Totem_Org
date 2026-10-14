@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import HeroSlider from '~/components/HeroSlider.vue'
-import IntroSection from '~/components/home/IntroSection.vue'
-import PortalTimelineSection from '~/components/home/PortalTimelineSection.vue'
-import VideoGallery from '~/components/home/VideoGallery.vue'
+import IntroSection from '~/components/main/home/IntroSection.vue';
+import PortalTimelineSection from '~/components/main/home/PortalTimelineSection.vue';
+import VideoGallery from '~/components/main/home/VideoGallery.vue';
+import HeroSlider from '~/components/main/ui/HeroSlider.vue';
 
 definePageMeta({
-  layout: 'public'
+  layout: 'main-default'
 })
 
 useSeoMeta({

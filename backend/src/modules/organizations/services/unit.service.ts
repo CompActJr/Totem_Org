@@ -89,3 +89,13 @@ export async function removeDiferencial(fastify: FastifyInstance, id: number, di
 
   return {success: true, id: id, deletedAt: new Date().toISOString()};
 }
+
+
+// TODO: testar com o front depois nas rotas dos portais
+export async function findAll(fastify: FastifyInstance, type: string) {
+    const db = await getDb(fastify);
+
+    return db.collection<Organization>(ORGANIZATIONS)
+      .find({ })
+      .toArray();
+}

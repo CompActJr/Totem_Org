@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import BlogList from '~/components/blog/BlogList.vue'
-import { useBlogPosts } from '~/composables/useBlogPosts'
+import { useBlogPosts } from '~/composables/main/useBlogPosts';
+
 
 definePageMeta({
-  layout: 'public'
+  layout: 'main-default'
 })
 
 useSeoMeta({

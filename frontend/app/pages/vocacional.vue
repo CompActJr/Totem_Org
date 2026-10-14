@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import Avaliacao from '~/components/vocacional/Avaliacao.vue';
-import Result from '~/components/vocacional/Result.vue';
-import StartForm from '~/components/vocacional/StartForm.vue';
-import VocacionalStepper from '~/components/vocacional/VocacionalStepper.vue';
+import Avaliacao from '~/components/main/vocacional/Avaliacao.vue';
+import Result from '~/components/main/vocacional/Result.vue';
+import StartForm from '~/components/main/vocacional/StartForm.vue';
+import VocacionalStepper from '~/components/main/vocacional/VocacionalStepper.vue';
+import { useVocacional } from '~/composables/main/useVocacional';
 
 definePageMeta({
-    layout: 'public'
+    layout: 'main-default'
 })
 
 const { state } = useVocacional();
@@ -15,28 +16,7 @@ const { state } = useVocacional();
 <template>
     <section class="relative p-4 lg:p-8 min-h-100 md:min-h-100v lg:min-h-250">
         <VocacionalStepper :step="state.step" />
-
-        <div class="
-            bg-white
-            w-full
-            max-w-5xl
-
-            h-150
-            lg:h-150
-            md:h-150
-
-            mx-auto
-            mt-8
-
-            rounded-lg
-            shadow-xl
-
-            p-4
-            md:p-8
-            lg:p-12
-
-            overflow-y-auto
-        ">
+        <div class=" bg-white w-full max-w-5xl h-150 lg:h-150 md:h-150 mx-auto mt-8 rounded-lg shadow-xl p-4 md:p-8 lg:p-12 overflow-y-auto">
 
             <StartForm v-if="state.step === 0" />
 

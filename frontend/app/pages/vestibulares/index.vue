@@ -1,8 +1,5 @@
 <script lang="ts" setup>
 
-
-import unidades from "~/data/unidades.json";
-
 /**
  * @author Jonas
  * pagina pricipal do site, use as metatags abaixo para melhorar o SEO
@@ -18,10 +15,6 @@ import unidades from "~/data/unidades.json";
   ogType: 'website',
  })
 
- const banners = [
-    "/geral/BANNER.jpg",
-    "/geral/AGENDE-SUA-VISITA.jpg"
-]
 
 </script>
 
