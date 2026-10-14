@@ -18,7 +18,7 @@ defineProps<{
     <div class="relative h-128">
 
       <NuxtImg
-        :src="unidade.image || '/geral/SALA_DE_AULA_1.jpg'"
+        :src="unidade.image"
         :alt="unidade.city"
         class="h-full w-full object-cover"
         loading="lazy"
