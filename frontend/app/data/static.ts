@@ -3,6 +3,7 @@
  * @implNote Mocks e constantes estaticas que se mexer da ruim
  */
 
+import type { Portal } from "~/types/blog.types";
 import type { Organization } from "~/types/organizations.types";
 
 export const niveis = [
@@ -30,6 +31,32 @@ export const niveis = [
     name: "Ensino Médio",
     image: "/geral/NIVEL-MEDIO.jpg",
     link: "ensino-medio"
+  }
+]
+
+export const portais: Portal[] = [
+  {
+    title: 'Totem Pré-Vestibulares',
+    description:
+      'Conheça nossos cursos preparatórios para ENEM e vestibulares, descubra a metodologia de ensino, explore nossas unidades em tour 360°, conheça a equipe de professores e realize sua pré-matrícula de forma rápida e segura.',
+    link: '/vestibulares'
+  },
+  {
+    title: 'Totem Colégios',
+    description:
+      'Explore tudo sobre nossos colégios: proposta pedagógica, estrutura das unidades, tour virtual 360°, corpo docente, atividades extracurriculares e o formulário de matrícula para novos alunos.',
+    link: '/colegios'
+  },
+  {
+    title: 'Totem ON',
+    description: '',
+    link: '/on'
+  },
+  {
+    title: 'Totem Vocacional',
+    description:
+      'Descubra quais carreiras combinam com o seu perfil por meio do nosso Teste Vocacional. Responda às perguntas, receba um resultado personalizado e encontre os cursos mais indicados para o seu futuro.',
+    link: '/vocacional'
   }
 ]
 

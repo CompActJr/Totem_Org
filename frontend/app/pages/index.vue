@@ -1,11 +1,7 @@
 <script lang="ts" setup>
-import IntroSection from '~/components/main/home/IntroSection.vue';
-import PortalTimelineSection from '~/components/main/home/PortalTimelineSection.vue';
-import VideoGallery from '~/components/main/home/VideoGallery.vue';
-import HeroSlider from '~/components/main/ui/HeroSlider.vue';
 
 definePageMeta({
-  layout: 'main-default'
+  layout: 'main'
 })
 
 useSeoMeta({
@@ -17,9 +13,18 @@ useSeoMeta({
 <template>
   <HeroSlider />
 
-  <IntroSection />
+  <section class="px-4 py-32">
+    <h1 class="px-4 py-3 text-gray-600 text-6xl text-center font-bold">
+      Totem
+    </h1>
+    <p class="px-4 py-3 text-gray-600 text-center text-xl">
+      Conheça a organização e seus principais portais institucionais
+    </p>
+  </section>
 
-  <PortalTimelineSection />
+  <section id="portais">
+    <Timeline />
+  </section>
 
   <div class="w-full bg-gray-600 mt-8 mb-8 h-2" />
 

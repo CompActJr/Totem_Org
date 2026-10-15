@@ -5,20 +5,16 @@
  * @author Arthur
  */
 
-import { ref } from "vue";
-import { reroute } from "vue-router/experimental";
-import type { EducationalTypes } from "~/types/educational.types";
-import type { UnidadeType } from "~/types/unidade.type";
+import { ref, computed } from "vue";
+import type { EducationalTypes, Organization } from "~/types/organizations.types";
 
-type Formulario = {
+const form = ref<{
   name: string,
   city: string,
   level: EducationalTypes,
   whatsapp: string,
   email: string,
-}
-
-const form = ref<Formulario>({
+}>({
   name: "",
   city: "",
   level: "Ensino Fundamental I",
@@ -26,21 +22,20 @@ const form = ref<Formulario>({
   email: ""
 });
 
-//recalcula os niveis de ensino de acordo com a unidade escolhida
+const props = defineProps<{
+   unidades: Organization[]
+}>();
+
 const levelsChanged = computed(()=>{
-  return props.unidades.find(unidade => form.value.city === unidade.city)?.levels || []
+  return props.unidades
+  .filter(unidade => unidade["@type"] === 'colegios')
+  .find(unidade => form.value.city === unidade.city)?.levels || []
 })
 
-//feat arthur implementar submissão e envio para o email da secretaria
+//TODO: implementar submissão de formulario para contato
 const submitForm = () => {
 
 }
-
-interface Props {
-  unidades: UnidadeType[]
-}
-
-const props = defineProps<Props>();
 
 </script>
 
@@ -63,7 +58,7 @@ const props = defineProps<Props>();
         <select id="cidade" name="cidade" v-model="form.city"
           class="p-4 bg-white/80 rounded-full col-span-2 md:col-span-1">
           <option value="">Cidade</option>
-          <option v-for="unidade in props.unidades" :value="unidade.city" :key="unidade.id">
+          <option v-for="unidade in props.unidades" :value="unidade.city" :key="unidade._id">
             {{ unidade.city }}
           </option>
         </select>

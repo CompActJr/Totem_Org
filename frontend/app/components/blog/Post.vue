@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import type { PostType } from '~/types/post'
+
+import type { PostType } from '~/types/blog.types.ts';
 import ModalPost from './ModalPost.vue';
 
-const props = defineProps<{
-  post: PostType
-}>()
-
+const props = defineProps<{post: PostType}>()
 const open = ref(false);
 
 const shortDescription = computed(() => {
@@ -26,7 +24,7 @@ function closeModal() {
 </script>
 
 <template>
-  <div class="card">
+  <div class="h-130 flex flex-col rounded-2xl shadow-lg bg-white overflow-hidden transition-all duration-300 hover:scale-105 p-4">
     <NuxtImg :src="post.imagemUrl" class="w-full h-52 object-cover rounded-lg" loading="lazy" format="webp" />
 
     <div class="w-full bg-gray-200 mt-2 h-1 rounded-full"></div>

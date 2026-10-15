@@ -7,8 +7,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import depoimentos from "~/data/depoimentos.json";
-
 // Setas ficam fora do <Swiper>, entao usamos elementos externos
 // (nextEl/prevEl) em vez do :navigation="true" padrao.
 const prevEl = ref<HTMLElement | null>(null);
@@ -16,7 +14,7 @@ const nextEl = ref<HTMLElement | null>(null);
 </script>
 
 <template>
-    <section class="bg-[#FFF6C9] py-20 py-8 px-11 md:px-8 lg:py-16 lg:px-16 xl:px-24">
+    <section class="bg-[#FFF6C9] py-20 px-11 md:px-8 lg:py-16 lg:px-16 xl:px-24">
         <div class="flex items-center">
             <h2 class="font-bold text-orange-600">
                 RELATOS

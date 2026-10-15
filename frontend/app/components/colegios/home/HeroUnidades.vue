@@ -1,8 +1,5 @@
 <script lang="ts" setup>
     
-import type { UnidadeType } from "~/types/unidade.type.js";
-import CardUnit from "./CardUnit.vue";
-
 interface Props {
     unidades: UnidadeType[]
 }

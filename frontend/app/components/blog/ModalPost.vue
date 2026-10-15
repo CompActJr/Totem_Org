@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import type { PostType } from '~/types/post'
+import type { PostType } from '~/types/blog.types';
+
 
 defineProps<{
     post: PostType
     open: boolean
 }>()
 
-const emit = defineEmits<{
-    (e: 'close'): void
-}>()
+const emit = defineEmits<{(e: 'close'): void}>()
+
 </script>
 
 <template>

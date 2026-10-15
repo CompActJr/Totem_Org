@@ -1,14 +1,18 @@
 <script setup lang="ts">
-  import { useNavigation } from '~/composables/useNavigation';
-  const { links } = useNavigation()
+
+import Menu from '~/components/ui/Menu.vue';
+import MenuItem from '~/components/ui/MenuItem.vue';
+import { useNavigation } from '~/composables/useNavigation';
+
+const { links } = useNavigation()
 </script>
 
 <template>
   <div class="relative min-h-screen">
     
-    <UiMenu>
-      <UiMenuItem v-for="link in links" :key="link.href" :item="link" />
-    </UiMenu>
+    <Menu>
+      <MenuItem v-for="link in links" :key="link.href" :item="link" />
+    </Menu>
 
     <!-- Fundo -->
     <div
