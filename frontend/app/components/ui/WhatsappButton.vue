@@ -1,17 +1,9 @@
-<script lang="ts" setup>
-import type { UnidadeType } from '~/types/unidade.type';
+<script setup lang="ts" >
+import type { WhatsappButton } from '~/types/navigation.types';
 
-/**
- * @author Jonas
- * Botão flutuante para whats que ao focar nele abre uma caixinha de dialogo a esquerda
- * com cada contato
- */
-
-interface Props {
-  unidades: UnidadeType[]
-}
-
-const props = defineProps<Props>();
+const props = defineProps<{
+  links: WhatsappButton[]
+}>();
 
 const open = ref(false);
 
@@ -40,9 +32,9 @@ const open = ref(false);
 
       <div class="p-3 flex flex-col gap-2">
         <NuxtLink
-          v-for="unidade in props.unidades"
-          :key="unidade.id"
-          :to="`https://wa.me/${unidade.whatsapp.replace(/\D/g, '')}`"
+          v-for="link in props.links"
+          :key="link._id"
+          :to="`https://wa.me/${link.whatsapp.replace(/\D/g, '')}`"
           target="_blank"
           class="p-3 hover:bg-green-50"
         >

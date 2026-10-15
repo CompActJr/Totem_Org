@@ -4,13 +4,9 @@ const CACHE_TTL = 15 * 60 * 1000;
 
 export function useOrganizations() {
   const organizations = useState<Organization[]>("organizations", () => [],);
-
-  const fetchedAt = useState<number>("organizations:fetchedAt", () => 0,);
-
-  const pending = useState<boolean>("organizations:pending", () => false,);
-
-  const error = useState<string | null>("organizations:error", () => null,);
-
+  const fetchedAt = useState<number>(() => 0,);
+  const pending = useState<boolean>(() => false,);
+  const error = useState<string | null>(() => null,);
   const config = useRuntimeConfig();
 
   // função assincrona para carregar as unidades considerando o cache

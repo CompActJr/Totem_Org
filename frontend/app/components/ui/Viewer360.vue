@@ -6,16 +6,10 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import type { Viewer } from '@photo-sphere-viewer/core'
 import { GalleryPlugin } from '@photo-sphere-viewer/gallery-plugin';
-
-interface PanoramaItem {
-  id: string
-  panorama: string
-  name: string
-  thumbnail?: string
-}
+import type { Panorama } from '~/types/organizations.types';
 
 interface Props {
-  panoramas: PanoramaItem[]
+  panoramas: Panorama[]
   initialPanorama?: string
 }
 
@@ -52,10 +46,10 @@ onMounted(async () => {
     plugins: [
       [GalleryPlugin, {
         items: props.panoramas.map(p => ({
-          id: p.id,
+          id: p._id,
           panorama: p.panorama,
           name: p.name,
-          thumbnail: p.thumbnail ?? p.panorama
+          thumbnail: p.panorama ?? p.panorama
         }))
       }]
     ]

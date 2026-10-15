@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-/**
- * @author Jonas
- */
+import { useVocacional } from '~/composables/useVocacional';
 const { state, nextStep } = useVocacional();
 
 const inputClass = `rounded-xl border border-gray-300 bg-white

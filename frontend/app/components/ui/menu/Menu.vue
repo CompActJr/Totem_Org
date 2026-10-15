@@ -1,9 +1,3 @@
-<!--
-  @author Jonas
-  Menu após a refatoração: o slot recebe os links de cada unidade/layout,
-  aqui ficam só as características mobile e desktop.
--->
-  
 <script setup lang="ts">
 import { useMenuState } from '~/composables/useMenuState';
 

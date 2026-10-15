@@ -1,15 +1,13 @@
-<script lang="ts" setup>
-    const config = useRuntimeConfig();
-    const vocacionalUrl: string = config.public.vocacionalUrl as string;
-    console.log('logger: ' + vocacionalUrl);
-</script>
-
 <template>
     <section class="min-h-128 bg-white w-full responsive-padding">
-
         <div class="mt-4 flex flex-col-reverse md:flex-row lg:mt-8 items-center gap-16">
-            <NuxtImg src="/geral/vocacional.jpg" alt="Estudante do Colégio Totem pensativa"
-                class="h-full object-cover rounded-xl w-8/12 md:w-6/12 lg:w-5/12" loading="lazy" format="webp" />
+            <NuxtImg 
+                src="/geral/vocacional.jpg" 
+                alt="Estudante do Colégio Totem pensativa"
+                class="h-full object-cover rounded-xl w-8/12 md:w-6/12 lg:w-5/12"
+                loading="lazy" 
+                format="webp" 
+            />
 
             <div class="w-full lg:max-w-xl flex flex-col items-start gap-8">
 
@@ -34,13 +32,15 @@
                     Clique e faça o teste vocacional do Totem.
                 </p>
 
-                <NuxtLink :to="vocacionalUrl" target="_blank" class="rounded-full bg-white shadow-2xl px-6 py-3
-                font-semibold text-gray-700 
-                transition-all duration-300 hover:scale-115">
+                <NuxtLink 
+                    to="/vocacional" 
+                    target="_blank" 
+                    class="rounded-full bg-white shadow-2xl px-6 py-3
+                    font-semibold text-gray-700 
+                    transition-all duration-300 hover:scale-115">
                     Saiba mais →
                 </NuxtLink>
             </div>
         </div>
-
     </section>
 </template>

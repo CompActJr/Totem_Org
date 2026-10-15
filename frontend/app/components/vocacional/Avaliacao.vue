@@ -2,7 +2,8 @@
 /**
  * @author Jonas
  */
-import data from "~/data/questions.json";
+import { useVocacional } from "~/composables/useVocacional";
+import {questions as data} from "~/data/vocacional";
 
 const {
     state,

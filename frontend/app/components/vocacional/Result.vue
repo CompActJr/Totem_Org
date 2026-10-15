@@ -1,12 +1,12 @@
+<!-- thanks jonas, jean -->
+
 <script lang="ts" setup>
-/**
- * @author Jonas
- */
-import { AnalysisEnum } from '~/types/analysis.js';
+
 import ResultChart from './ResultChart.vue';
-import data from '~/data/questions.json';
-import dataAnalysis from "~/data/analysis.json"
 import jsPDF from 'jspdf';
+import { useVocacional } from '~/composables/useVocacional.ts';
+import { AnalysisEnum } from '~/types/vocacional.types.ts';
+import { questions as data, analysis, } from '~/data/vocacional.ts';
 
 const { state, previousStep } = useVocacional();
 
@@ -140,8 +140,9 @@ function downloadPDF() {
     currentY += 9
 
     // Perfil 1
-    const descricao1 =
-        dataAnalysis.find(a => a.type === perfis.value[0])?.descricao ?? ""
+    const descricao1 = String(
+        analysis.find(a => a.type === perfis.value[0])?.descricao ?? ""
+    )
 
     pdf.setFont("helvetica", "bold")
     pdf.setFontSize(11)
@@ -165,8 +166,9 @@ function downloadPDF() {
     currentY += texto1.length * 5 + 8
 
     // Perfil 2
-    const descricao2 =
-        dataAnalysis.find(a => a.type === perfis.value[1])?.descricao ?? ""
+    const descricao2 = String(
+        analysis.find(a => a.type === perfis.value[1])?.descricao ?? ""
+    )
 
     pdf.setFont("helvetica", "bold")
     pdf.setFontSize(11)
@@ -180,10 +182,7 @@ function downloadPDF() {
     pdf.setFontSize(10)
     pdf.setTextColor(80, 80, 80)
 
-    const texto2 = pdf.splitTextToSize(
-        descricao2,
-        contentWidth
-    )
+    const texto2 = pdf.splitTextToSize(descricao2, contentWidth)
 
     pdf.text(texto2, margin, currentY)
 
@@ -259,9 +258,9 @@ const isFullscreen = ref(false)
                     :title="`Parabéns ${state.form.name}! Seu Perfil é ${perfis.at(0)} e ${perfis.at(1)}`"
                 />
                 <br/>
-                <p class="text-gray-600">{{ dataAnalysis.find(a => a.type === perfis.at(0))?.descricao }}</p>
+                <p class="text-gray-600">{{ analysis.find(a => a.type === perfis.at(0))?.descricao }}</p>
                 <br/>
-                <p class="text-gray-600">{{ dataAnalysis.find(a => a.type === perfis.at(1))?.descricao }}</p>
+                <p class="text-gray-600">{{ analysis.find(a => a.type === perfis.at(1))?.descricao }}</p>
             </main>
         </div>
     </ClientOnly>

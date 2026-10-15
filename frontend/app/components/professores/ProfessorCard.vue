@@ -1,13 +1,8 @@
 <script lang="ts" setup>
-/**
- * @author Jonas
- * componente de card para os professores
-*/
-
-import type { ProfessorType } from '~/types/professores.types';
+import type { Teacher } from '~/types/organizations.types';
 
 interface Props {
-    professor: ProfessorType
+    professor: Teacher
 }
 
 const props = defineProps<Props>()
@@ -23,9 +18,7 @@ function toggle() {
 <template>
     <article
         class="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl w-[100%]">
-
         <div class="relative h-128">
-
             <NuxtImg
                 :src="professor.imagemUrl || '/geral/perfil.png'"
                 :alt="professor.nome"
@@ -41,28 +34,21 @@ function toggle() {
                 >
 
                     <Transition name="fade" mode="out-in">
-
                         <div v-if="!aberto" key="titulo">
-
                             <h2 class="text-2xl font-bold text-white text-center">
                                 {{ professor.nome }}
                             </h2>
-
                             <h4 class="mt-4 text-white font-bold text-center">
                                 {{ professor.areaEnsino }}
                             </h4>
-
                         </div>
 
                         <div
                             v-else
                             key="descricao"
                             class="text-white leading-relaxed text-sm pr-2 overflow-y-auto max-h-72">
-
                             {{ professor.texto }}
-
                         </div>
-
                     </Transition>
 
                     <button
@@ -72,25 +58,21 @@ function toggle() {
                         {{ aberto ? "Voltar" : "Leia mais →" }}
 
                     </button>
-
                 </div>
-
             </div>
-
         </div>
-
     </article>
 </template>
 
 <style scoped>
-.fade-enter-active,
-.fade-leave-active {
-    transition: opacity .25s ease, transform .25s ease;
-}
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: opacity .25s ease, transform .25s ease;
+    }
 
-.fade-enter-from,
-.fade-leave-to {
-    opacity: 0;
-    transform: translateY(12px);
-}
+    .fade-enter-from,
+    .fade-leave-to {
+        opacity: 0;
+        transform: translateY(12px);
+    }
 </style>

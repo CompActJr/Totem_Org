@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import LinkExterno from '~/components/LinkExterno.vue';
+import ExternalLink from '../ui/ExternalLink.vue';
+
 
 </script>
 
@@ -40,7 +41,7 @@ import LinkExterno from '~/components/LinkExterno.vue';
                     <li>• Aprendizagem significativa</li>
                 </ul>
 
-                <LinkExterno :external-link="'https://plurall.net/'"/>
+                <ExternalLink :external-link="'https://plurall.net/'"/>
 
             </div>
         </article>
@@ -64,7 +65,7 @@ import LinkExterno from '~/components/LinkExterno.vue';
                     Mais do que um sistema de ensino, o SAS é uma ferramenta estratégica que potencializa o desenvolvimento dos nossos alunos e fortalece o compromisso do Totem com uma educação de excelência.
                 </p>
 
-                <LinkExterno :external-link="'https://app.portalsaseducacao.com.br/entrar/'"/>
+                <ExternalLink :external-link="'https://app.portalsaseducacao.com.br/entrar/'"/>
 
             </div>
         </article>
@@ -89,7 +90,7 @@ import LinkExterno from '~/components/LinkExterno.vue';
                     Escolher o programa bilíngue com a Macmillan é optar por uma formação completa, atual e alinhada com o futuro.
                 </p>
 
-                <LinkExterno :external-link="'https://www.macmillaneducationeverywhere.com/'"/>
+                <ExternalLink :external-link="'https://www.macmillaneducationeverywhere.com/'"/>
 
             </div>
         </article>

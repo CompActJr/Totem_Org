@@ -1,8 +1,9 @@
 <script lang="ts" setup>
 import { ref, watch } from "vue";
-import type { TurmaType } from "~/types/matriculas.types";
+
 import AccordionMatricula from "./AccordionMatricula.vue";
 import FormMatricula from "./FormMatricula.vue";
+import type { TurmaType } from "~/types/organizations.types.ts";
 
 const props = defineProps<{
     open: boolean;
@@ -181,7 +182,7 @@ function voltarParaDetalhes() {
 
                     <AccordionMatricula
                         titulo="Material Didático"
-                        :itens="turma.material"
+                        :itens="[turma.material]"
                     />
 
                     <AccordionMatricula
@@ -191,7 +192,7 @@ function voltarParaDetalhes() {
 
                     <AccordionMatricula
                         titulo="Documentos necessários"
-                        :itens="turma.documentos"
+                        :itens="[turma.documentos]"
                     />
 
                 </div>

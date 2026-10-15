@@ -1,12 +1,9 @@
 <script lang="ts" setup>
-import type { UnidadeType } from '~/types/unidade.type';
+import type { Organization } from '~/types/organizations.types';
 
-/**
- * @author Jonas
- * seção para galeria de infraestrutura do site
- */
+
 interface Props {
-    unidade: UnidadeType
+    unidade: Organization
 }
 
 const props = defineProps<Props>();

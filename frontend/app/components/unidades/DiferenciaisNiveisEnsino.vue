@@ -1,3 +1,24 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = defineProps<{
+  nivelId: number
+  unidadeId: number
+}>()
+
+
+const diferenciaisFiltrados = computed(() =>
+  diferenciais.filter((d) => 
+    d.nivelId === props.nivelId &&
+    d.unidadeId === props.unidadeId)
+)
+
+function paragrafos(descricao: string) {
+  return descricao.split('\n\n')
+}
+</script>
+
+
 <template>
   <section class="scroll-mt-24 w-full py-8 px-12 md:px-8 lg:py-16 lg:px-16 xl:px-48">
     <div class="flex items-center mb-8">
@@ -33,26 +54,3 @@
     </div>
   </section>
 </template>
-
-<script setup lang="ts">
-import { computed } from 'vue'
-import type { DiferencialNivel } from '../../../types/diferenciais_niveis.types'
-import diferenciaisData from '../../../data/diferenciais_niveis.json'
-
-const props = defineProps<{
-  nivelId: number
-  unidadeId: number
-}>()
-
-const diferenciais = diferenciaisData as DiferencialNivel[]
-
-const diferenciaisFiltrados = computed(() =>
-  diferenciais.filter((d) => 
-    d.nivelId === props.nivelId &&
-    d.unidadeId === props.unidadeId)
-)
-
-function paragrafos(descricao: string) {
-  return descricao.split('\n\n')
-}
-</script>

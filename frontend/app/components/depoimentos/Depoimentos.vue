@@ -6,9 +6,13 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import type { Testimonial } from "~/types/organizations.types";
 
-// Setas ficam fora do <Swiper>, entao usamos elementos externos
-// (nextEl/prevEl) em vez do :navigation="true" padrao.
+const props = defineProps<{
+    unidade: string
+    depoimentos: Testimonial[]
+}>();
+
 const prevEl = ref<HTMLElement | null>(null);
 const nextEl = ref<HTMLElement | null>(null);
 </script>
@@ -38,7 +42,7 @@ const nextEl = ref<HTMLElement | null>(null);
             >
                 <SwiperSlide
                     v-for="depoimento in depoimentos"
-                    :key="depoimento.id"
+                    :key="depoimento._id"
                 >
                     <div class="mx-auto flex flex-col lg:flex-row max-w-5xl items-center gap-12">
 
@@ -61,7 +65,7 @@ const nextEl = ref<HTMLElement | null>(null);
                                 </h3>
 
                                 <span class="text-gray-500">
-                                    Totem {{ depoimento.unidade }}
+                                    {{ props.unidade}}
                                 </span>
                             </div>
                         </div>

@@ -4,7 +4,7 @@
  */
 import { ref, onMounted } from 'vue';
 import { Chart } from 'chart.js/auto';
-import { AnalysisEnum } from '~/types/analysis';
+import { AnalysisEnum } from '~/types/vocacional.types';
 
 const chartCanvas = ref<HTMLCanvasElement | null>(null);
 let chartInstance: Chart | null = null;

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-interface Props {
+
+const props = defineProps<{
     unidade: string
     nome: string
     imagem: string
-}
+}>()
 
-const props = defineProps<Props>()
 </script>
 
 <template>

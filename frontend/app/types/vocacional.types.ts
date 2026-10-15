@@ -25,7 +25,7 @@ export interface Option{
 export interface Questions {
   id: number,
   titulo: string,
-  opcoes?: Option[]
+  opcoes: Option[]
 }
 
 export  interface FormUser{

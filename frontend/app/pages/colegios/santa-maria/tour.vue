@@ -1,28 +1,13 @@
 <script lang="ts" setup>
-import Viewer360 from '~/components/Viewer360.vue';
+import Viewer360 from '~/components/ui/Viewer360.vue';
+import type { Organization } from '~/types/organizations.types';
 
-const panoramas = [
-  {
-    id: 'hall',
-    name: 'Hall de entrada',
-    panorama: '/panoramas/cruz_alta/hall.webp'
-  },
-  {
-    id: 'biblioteca',
-    name: 'Biblioteca',
-    panorama: '/panoramas/cruz_alta/hall.webp'
-  },
-  {
-    id: 'laboratorio',
-    name: 'Laboratório',
-    panorama: '/panoramas/cruz_alta/hall.webp'
-  }
-]
+const unidade: Organization;
 
 </script>
 
 <template>
   <ClientOnly>
-    <Viewer360 :panoramas="panoramas"/>
+    <Viewer360 :panoramas="unidade.panoramas"/>
   </ClientOnly>
 </template>

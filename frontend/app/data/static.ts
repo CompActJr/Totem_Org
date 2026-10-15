@@ -117,6 +117,18 @@ export const footerVestibulares = [
   }
 ];
 
+const whatssapButtonsColegios = [
+  {
+    _id: 1,
+    slug: "cachoeira-do-sul",
+    whatsapp: "(55) 9 9088-3334",
+  },
+  {
+    
+  }
+]
+
+
 export const unidadesColegios: Organization[] = [
   {
     _id: 1,
