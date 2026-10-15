@@ -3,12 +3,17 @@
  * all routes are here
  */
 
-export interface NavLink {
+export type NavLink = {
   label: string
   href: string
   children?: NavLink[]
 }
 
+export const mainRoutes: NavLink[] = [
+  { label: "HOME", href: "/" },
+  { label: "BLOG", href: "/blog" },
+  { label: "VOCACIONAL", href: "/vocacional" }
+]
 
 //menu raiz do portal vestibulares
 export const vestibularesNavigation: NavLink = {
@@ -23,7 +28,18 @@ export const vestibularesNavigation: NavLink = {
       label: "UNIDADES", 
       href: "/",
       children: [
-
+        {
+          label: "Ijui",
+          href: "/ijui"
+        },
+        {
+          label: "Santa Maria",
+          href: "/santa-maria"
+        },
+        {
+          label: "Santa Rosa",
+          href: "/santa-rosa"
+        }
       ]
     },
     { 
@@ -33,15 +49,17 @@ export const vestibularesNavigation: NavLink = {
     { 
       label: "ESCOLHA SUA TURMA", 
       href: "/matriculas" 
-    }
+    },
+    { 
+      label: "O TOTEM", 
+      href: "/o-totem" 
+    },
+    { 
+      label: "DÚVIDAS", 
+      href: "/faqs" 
+    },
   ]
 }
-
-export const mainRoutes: NavLink[] = [
-  { label: "HOME", href: "/" },
-  { label: "BLOG", href: "/blog" },
-  { label: "VOCACIONAL", href: "/vocacional" }
-]
 
 //menu da unidade do portal colegios
 export const cachoeiraDoSulRoutes: NavLink = {
@@ -52,10 +70,22 @@ export const cachoeiraDoSulRoutes: NavLink = {
       label: "NIVEIS DE ENSINO",
       href: "/niveis",
       children: [
-        { label: "Berçário", href: "/bercario" },
-        { label: "Ensino Médio", href: "/ensino-medio" },
-        { label: "Fundamental I", href: "/fundamental-i" },
-        { label: "Fundamental II", href: "/fundamental-ii" }
+        { 
+          label: "Berçário", 
+          href: "/bercario" 
+        },
+        { 
+          label: "Ensino Médio", 
+          href: "/ensino-medio" 
+        },
+        { 
+          label: "Fundamental I", 
+          href: "/fundamental-i" 
+        },
+        { 
+          label: "Fundamental II", 
+          href: "/fundamental-ii" 
+        }
       ]
     }
   ]
@@ -70,9 +100,18 @@ export const cruzAltaRoutes: NavLink = {
       label: "NIVEIS DE ENSINO",
       href: "/niveis",
       children: [
-        { label: "Ensino Médio", href: "/ensino-medio" },
-        { label: "Fundamental I", href: "/fundamental-i" },
-        { label: "Fundamental II", href: "/fundamental-ii" }
+         { 
+          label: "Ensino Médio", 
+          href: "/ensino-medio" 
+        },
+        { 
+          label: "Fundamental I", 
+          href: "/fundamental-i" 
+        },
+        { 
+          label: "Fundamental II", 
+          href: "/fundamental-ii" 
+        }
       ]
     }
   ]
@@ -87,9 +126,18 @@ export const santaMariaRoutes: NavLink = {
       label: "NIVEIS DE ENSINO",
       href: "/niveis",
       children: [
-        { label: "Ensino Médio", href: "/ensino-medio" },
-        { label: "Fundamental I", href: "/fundamental-i" },
-        { label: "Fundamental II", href: "/fundamental-ii" }
+         { 
+          label: "Ensino Médio", 
+          href: "/ensino-medio" 
+        },
+        { 
+          label: "Fundamental I", 
+          href: "/fundamental-i" 
+        },
+        { 
+          label: "Fundamental II", 
+          href: "/fundamental-ii" 
+        }
       ]
     }
   ]
@@ -104,38 +152,83 @@ export const colegiosRoutes: NavLink = {
       label: "NOSSA ESCOLA",
       href: "/nossa-escola",
       children: [
-        { label: "Por que o Totem", href: "/nossa-escola#porque_o_totem" },
-        { label: "Nossa História", href: "/nossa-escola#nossa_historia" },
-        { label: "Visão de Educação", href: "/nossa-escola#visao_de_educacao" },
-        { label: "Metodologias", href: "/nossa-escola#metodologias" },
-        { label: "Perguntas Frequentes", href: "/nossa-escola#faq" },
+        { 
+          label: "Por que o Totem", 
+          href: "/nossa-escola#porque_o_totem" 
+        },
+        { 
+          label: "Nossa História", 
+          href: "/nossa-escola#nossa_historia" 
+        },
+        { 
+          label: "Visão de Educação", 
+          href: "/nossa-escola#visao_de_educacao" 
+        },
+        { 
+          label: "Metodologias", 
+          href: "/nossa-escola#metodologias" 
+        },
+        { 
+          label: "Perguntas Frequentes", 
+          href: "/nossa-escola#faq" 
+        },
       ]
     },
     {
       label: "FALE COM A GENTE",
       href: "/",
       children: [
-        { label: "Cachoeira do Sul", href: "/unidades/cachoeira-do-sul#section_contato" },
-        { label: "Cruz Alta", href: "/unidades/cruz-alta#section_contato" },
-        { label: "Santa Maria", href: "/unidades/santa-maria#section_contato" },
+        { 
+          label: "Cachoeira do Sul", 
+          href: "/unidades/cachoeira-do-sul#section_contato"
+        },
+        { 
+          label: "Cruz Alta", 
+          href: "/unidades/cruz-alta#section_contato" 
+        },
+        { 
+          label: "Santa Maria", 
+          href: "/unidades/santa-maria#section_contato" 
+        },
       ]
     },
     {
       label: "MATRÍCULAS",
       href: "/matriculas",
       children: [
-        { label: "Nosso Processo", href: "/" },
-        { label: "Agende sua Visita", href: "#agende-visita" },
+        { 
+          label: "Nosso Processo", 
+          href: "/" 
+        },
+        { 
+          label: "Agende sua Visita", 
+          href: "#agende-visita" 
+        },
       ]
     },
     {
       label: "UNIDADES",
-      href: "/unidades",
+      href: "/",
       children: [
-        { label: "Santa Maria", href: "/santa-maria" },
-        { label: "Cruz Alta", href: "/cruz-alta" },
-        { label: "Cachoeira do Sul", href: "/cachoeira-do-sul" }
+        { 
+          label: "Santa Maria", 
+          href: "/santa-maria" 
+        },
+        { 
+          label: "Cruz Alta", 
+          href: "/cruz-alta" 
+        },
+        { 
+          label: "Cachoeira do Sul", 
+          href: "/cachoeira-do-sul" 
+        }
       ]
     }
   ]
 };
+
+
+export const totemOnRoutes: NavLink = {
+    label: "HOME",
+    href: "/on"
+}
