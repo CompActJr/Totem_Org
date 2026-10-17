@@ -15,6 +15,7 @@ import { panoramaRoutes } from "./modules/organizations/routes/panoramas.routes.
 import { testimonialRoutes } from "./modules/organizations/routes/testimonial.routes.js";
 import { teacherRoutes } from "./modules/organizations/routes/teacher.routes.js";
 import { activityRoutes } from "./modules/organizations/routes/activity.routes.js";
+import { blogRoutes } from "./modules/blog/blog.routes.js";
 
 /**
  * @author Jonas
@@ -49,6 +50,7 @@ export const buildApp = async (opts: Object = {}) => {
   await fastify.register(testimonialRoutes);
   await fastify.register(teacherRoutes);
   await fastify.register(activityRoutes);
+  await fastify.register(blogRoutes);
   await fastify.register(authRoutes);
 
   return fastify;

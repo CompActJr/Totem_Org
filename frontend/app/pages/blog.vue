@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-import { useBlogPosts } from '~/composables/main/useBlogPosts';
+import { useBlogPosts } from '~/composables/useBlog';
 
+const { data, status, error, refresh, clear } = await useFetch('/api/modules')
 
 definePageMeta({
   layout: 'main-default'
@@ -13,7 +14,10 @@ useSeoMeta({
   ogDescription: 'Acompanhe notícias, eventos e novidades das unidades do Totem em um só lugar. Descubra conteúdos relevantes para pais, alunos e comunidade.'
 })
 
-const { filters, filteredPosts } = useBlogPosts()
+const { filters, filteredPosts  } = useBlogPosts()
+
+
+
 </script>
 
 <template>
@@ -51,5 +55,8 @@ const { filters, filteredPosts } = useBlogPosts()
     </div>
   </div>
 
-  <BlogList :posts="filteredPosts" />
+  <div class="mx-auto grid min-h-250 max-w-7xl grid-cols-1 gap-8 px-6 py-10 md:grid-cols-2 lg:grid-cols-3">
+      <Post v-for="post in posts" :key="post.id" :post="post" />
+  </div>
+
 </template>

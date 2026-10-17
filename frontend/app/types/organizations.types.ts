@@ -80,7 +80,7 @@ export interface Organization {
   facebook: string;
   instagram: string;
   maps: string;
-  levels: string[];
+  levels: EducationalTypes[];
   banners: string[];
   panoramas: Panorama[];
   diferenciais: string[];

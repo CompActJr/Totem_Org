@@ -1,12 +1,8 @@
 <script lang="ts" setup>
-import type { EducationalLevel } from '~/types/educational.types';
+import type { EducationalTypes } from '~/types/organizations.types';
 
-/**
- * @author Jonas
- * card para o nivel de ensino
- */
 interface Props {
-  nivel: EducationalLevel,
+  nivel: EducationalTypes,
   unidadeSlug: string
 }
 
@@ -22,14 +18,17 @@ const props = defineProps<Props>();
         <!-- Área da imagem -->
         <div class="relative h-128">
 
-            <NuxtImg :src="nivel.image || '/geral/SALA_DE_AULA_1.jpg'" :alt="nivel.name"
-                class="h-full w-full object-cover" loading="lazy" />
+            <NuxtImg 
+                :src="nivel || '/geral/SALA_DE_AULA_1.jpg'" 
+                :alt="nivel"
+                class="h-full w-full object-cover" loading="lazy" 
+            />
 
 
             <div class=" absolute inset-0 flex items-end">
                 <div class="bg-orange-500/80 p-4 w-full min-h-46">
                     <h2 class="text-3xl font-bold text-white text-center">
-                        {{ nivel.name }}
+                        {{ nivel }}
                     </h2>
 
                     <NuxtLink 
@@ -45,6 +44,7 @@ const props = defineProps<Props>();
 
                 </div>
             </div>
+        
         </div>
     </article>
 </template>

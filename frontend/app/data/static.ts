@@ -4,6 +4,7 @@
  */
 
 import type { Portal } from "~/types/blog.types";
+import type { WhatsappButton } from "~/types/navigation.types";
 import type { Organization } from "~/types/organizations.types";
 
 export const niveis = [
@@ -117,14 +118,36 @@ export const footerVestibulares = [
   }
 ];
 
-const whatssapButtonsColegios = [
+const whatssapButtonsColegios: WhatsappButton[] = [
   {
     _id: 1,
     slug: "cachoeira-do-sul",
     whatsapp: "(55) 9 9088-3334",
   },
   {
-    
+    _id: 2,
+    slug: "santa-maria",
+    whatsapp: "(55) 9 9125-8480"
+  },
+  {
+    _id: 3,
+    slug: "cruz-alta",
+    whatsapp: "(55) 9 9076-7990"
+  },
+  {
+    _id: 4,
+    slug: "santa-rosa",
+    whatsapp: "(55) 9 9999-2002"
+  },
+  {
+    _id: 5,
+    slug: "santa-maria",
+    whatsapp: "(55) 9 9922-8969"
+  },
+  {
+    _id: 6,
+    slug: "ijui",
+    whatsapp: "(55) 9 9142-7470"
   }
 ]
 

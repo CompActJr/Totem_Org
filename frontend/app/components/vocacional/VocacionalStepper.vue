@@ -1,7 +1,4 @@
 <script setup lang="ts">
-/**
- * @author Jonas
- */
 const props = defineProps<{
     step: number
 }>()

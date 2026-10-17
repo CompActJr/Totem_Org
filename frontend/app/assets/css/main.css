@@ -1,18 +1,11 @@
 @import "tailwindcss";
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+}
+
 html {
     scroll-behavior: smooth;
-}
-
-.responsive-padding{
-    @apply py-8 lg:py-16 px-8 md:px-32 lg:px-48 xl:px-60;
-}
-
-.input {
-    @apply rounded-xl border border-gray-300 bg-white px-4 py-2 text-gray-700 shadow-sm outline-none transition-all focus:border-orange-500 focus:ring-2 focus:ring-orange-200;
-}
-
-
-.button-primary {
-    @apply bg-orange-400 p-2 min-w-16 rounded-full text-white font-semibold px-5 flex items-center justify-between;
 }

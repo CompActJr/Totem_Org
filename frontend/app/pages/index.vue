@@ -1,13 +1,10 @@
 <script lang="ts" setup>
 
-definePageMeta({
-  layout: 'main'
-})
-
 useSeoMeta({
   title: 'Página principal',
   description: 'esta é a página principal do Site',
 })
+
 </script>
 
 <template>

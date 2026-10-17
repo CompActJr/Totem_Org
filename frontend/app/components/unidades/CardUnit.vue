@@ -1,12 +1,9 @@
 <script lang="ts" setup>
-/**
- * @author Jonas
- * Card para representar as informações da unidade
- */
-import type { UnidadeType } from '~/types/unidade.type';
+
+import type { Organization } from '~/types/organizations.types';
 
 defineProps<{
-  unidade: UnidadeType
+  unidade: Organization
 }>()
 </script>
 

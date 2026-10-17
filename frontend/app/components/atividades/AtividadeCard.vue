@@ -1,16 +1,9 @@
 <script lang="ts" setup>
-import type { AtividadeType } from '~/types/atividades.types';
+import type { Activity } from '~/types/organizations.types';
 
-/**
- * @author Jonas
- * componente de card para as atividades
-*/
-
-interface Props {
-    atividade: AtividadeType
-}
-
-const props = defineProps<Props>()
+const props = defineProps<{
+     atividade: Activity
+}>()
 
 const aberto = ref(false);
 
@@ -55,7 +48,7 @@ function toggle() {
                             v-else key="descricao" 
                             class="text-white leading-relaxed text-sm pr-2 overflow-y-auto max-h-72"
                         >
-                            <div v-for="turma in atividade.turmas" :key="`${atividade.id}-${turma.nome}`">
+                            <div v-for="turma in atividade.turmas" :key="`${atividade._id}-${turma.nome}`">
                                 <h2 class="mt-4 font-bold">
                                     {{ turma.nome }}
                                 </h2>

@@ -1,14 +1,3 @@
-<script lang="ts" setup>
-
-import type { Organization } from '~/types/organizations.types.ts';
-import NivelEnsinoCard from './NivelEnsinoCard.vue';
-
-const props = defineProps<{
-     unidade: Organization
-}>();
-
-</script>
-
 <template>
     <section class="min-h-128 w-full bg-[#FFF6C9] py-8 px-11 md:px-16 lg:py-16 lg:px-20 xl:px-34">
         <div class="flex items-center">
@@ -20,11 +9,7 @@ const props = defineProps<{
         </div>
 
         <div class="mt-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-16 justify-items-start">
-            <NivelEnsinoCard 
-                v-for="value in unidade.levels" 
-                :key="value" 
-                :unidade-slug="unidade.slug" :nivel="value"/>
+            <slot></slot>
         </div>
-
     </section>
 </template>

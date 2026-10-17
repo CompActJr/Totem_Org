@@ -31,15 +31,18 @@ const open = ref(false);
       </div>
 
       <div class="p-3 flex flex-col gap-2">
-        <NuxtLink
-          v-for="link in props.links"
-          :key="link._id"
-          :to="`https://wa.me/${link.whatsapp.replace(/\D/g, '')}`"
-          target="_blank"
-          class="p-3 hover:bg-green-50"
-        >
-          {{ unidade.city }}
-        </NuxtLink>
+       <div class="p-3 flex flex-col gap-2">
+          <a
+            v-for="link in props.links"
+            :key="link._id"
+            :href="`https://wa.me/${link.whatsapp.replace(/\D/g, '')}`"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-3 hover:bg-green-50"
+          >
+            {{ link.slug }}
+          </a>
+        </div>
       </div>
     </div>
   </Transition>

@@ -1,20 +1,3 @@
-<script lang="ts" setup>
-/**
- * @author Jonas
- * seção para mostrar as atividades extracurriculares daquela unidade
- */
-
-import AtividadeCard from './AtividadeCard.vue';
-import type { AtividadeType } from '~/types/atividades.types.js';
-
-interface Props {
-    atividades: AtividadeType[]
-}
-
-const props = defineProps<Props>();
-
-</script>
-
 <template>
     <section class="min-h-128 bg-gray-200 py-8 px-11 md:px-16 lg:py-16 lg:px-20 xl:px-34">
         <div class="flex items-center">
@@ -39,11 +22,9 @@ const props = defineProps<Props>();
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-8 gap-8">
-            <AtividadeCard 
-                v-for="atividade in atividades" 
-                :atividade="atividade" 
-                :key="atividade.id"
-            />
+            <slot>
+                <!-- AtividadeCard-->
+            </slot>
         </div>
 
     </section>
