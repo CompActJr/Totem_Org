@@ -1,5 +1,6 @@
 <script setup lang="ts">
 // Página simples — adicionar lógica conforme necessário
+definePageMeta({ layout: 'colegios' })
 </script>
 
 

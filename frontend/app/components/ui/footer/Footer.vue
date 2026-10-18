@@ -1,6 +1,18 @@
 <script lang="ts" setup>
-    const year = computed(() => new Date().getFullYear())
-    import unidades  from '~/data/unidades.json';
+    const year = computed(() => new Date().getFullYear());
+
+    type Contact = {
+        city: string,
+        address: string,
+        phone: string,
+        whatsapp: string,
+        email: string
+    };
+
+    const props = defineProps<{
+        contacts: Contact[]
+    }>();
+
 </script>
 
 
@@ -19,7 +31,7 @@
         <div class="hidden lg:flex md:flex gap-8 justify-between mt-16 ">
             <div 
                 class="min-h-24 text-gray-200 text-start " 
-                v-for="unit in unidades"
+                v-for="unit in props.contacts"
                 :key="unit.city"
             >
                 <h5 class="font-bold text-white text-lg mb-8">

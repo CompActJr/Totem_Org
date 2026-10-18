@@ -1,9 +1,9 @@
 <script setup lang="ts">
 
-import type { PostType } from '~/types/blog.types.ts';
+import type { Post } from '~/types/blog.types.ts';
 import ModalPost from './ModalPost.vue';
 
-const props = defineProps<{post: PostType}>()
+const props = defineProps<{post: Post}>()
 const open = ref(false);
 
 const shortDescription = computed(() => {

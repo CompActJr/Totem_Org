@@ -12,7 +12,7 @@ export interface Testimonial {
   depoimento: string;
 }
 
-export const EducationalTypes = {
+export const EducationalEnum = {
     BERCARIO: "Berçário",
     EDUCACAO_INFANTIL: "Educação Infantil",
     ENSINO_FUNDAMENTAL_I: "Ensino Fundamental I",
@@ -20,7 +20,7 @@ export const EducationalTypes = {
     ENSINO_MEDIO: "Ensino Médio"
 } as const;
 
-export type EducationalTypes = typeof EducationalTypes[keyof typeof EducationalTypes];
+export type EducationalTypes = typeof EducationalEnum[keyof typeof EducationalEnum];
 
 export interface Teacher {
   _id: number;

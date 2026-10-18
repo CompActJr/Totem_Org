@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import Grid from '../ui/cards/Grid.vue';
+
+</script>
+
 <template>
     <section class="min-h-128 bg-gray-200 py-8 px-11 md:px-16 lg:py-16 lg:px-20 xl:px-34">
         <div class="flex items-center">
@@ -21,11 +26,8 @@
             e desenvolvimento.
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-8 gap-8">
-            <slot>
-                <!-- AtividadeCard-->
-            </slot>
-        </div>
-
+        <Grid>
+            <slot name="atividades"/>
+        </Grid>
     </section>
 </template>

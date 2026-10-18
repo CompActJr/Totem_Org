@@ -2,7 +2,7 @@
 import { useVocacional } from '~/composables/useVocacional';
 
 definePageMeta({
-    layout: 'main-default'
+    layout: 'default'
 })
 
 const { state } = useVocacional();

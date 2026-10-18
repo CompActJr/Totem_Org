@@ -4,7 +4,7 @@
  */
 
 import type { Portal } from "~/types/blog.types";
-import type { WhatsappButton } from "~/types/navigation.types";
+import type { WhatsappLinks } from "~/types/navigation.types";
 import type { Organization } from "~/types/organizations.types";
 
 export const niveis = [
@@ -33,7 +33,7 @@ export const niveis = [
     image: "/geral/NIVEL-MEDIO.jpg",
     link: "ensino-medio"
   }
-]
+] as const;
 
 export const portais: Portal[] = [
   {
@@ -61,93 +61,43 @@ export const portais: Portal[] = [
   }
 ]
 
-//um mock para pegar de maneira estatica, se eles mudarem la dinamicamente ai vai ter que mudar em código
-//entao sim isso é ruim, só deixa quieto por enquanto
-export const footerColegios = [
-  {
-    "id": 1,
-    "city": "Cachoeira do Sul",
-    "address": "Rua Santa Rosa, 305",
-    "phone": "(55) 3722-2977",
-    "whatsapp": "(55) 9 9088-3334",
-    "email": "cachoeira@colegiototem.com.br"
-  },
-  {
-    "id": 2,
-    "city": "Santa Maria",
-    "address": "RS-287, KM 234, Trevo de Uglione",
-    "phone": "55 9 9125-8480",
-    "whatsapp": "(55) 9 9125-8480",
-    "email": "santamaria@colegiototem.com.br"
-  },
-  {
-    "id": 3,
-    "city": "Cruz Alta",
-    "address": "General Felipe Portinho, 1216",
-    "phone": "(55) 3333-8569",
-    "whatsapp": "(55) 9 9076-7990",
-    "email": "cruzalta@colegiototem.com.br"
-  }
-];
 
-//mesma coisa
-export const footerVestibulares = [
-   {
-    "id": 1,
-    "city": "Cachoeira do Sul",
-    "address": "Rua Santa Rosa, 305",
-    "phone": "(55) 3722-2977",
-    "whatsapp": "(55) 9 9088-3334",
-    "email": "cachoeira@colegiototem.com.br"
-  },
-  {
-    "id": 2,
-    "city": "Santa Maria",
-    "address": "RS-287, KM 234, Trevo de Uglione",
-    "phone": "55 9 9125-8480",
-    "whatsapp": "(55) 9 9125-8480",
-    "email": "santamaria@colegiototem.com.br"
-  },
-  {
-    "id": 3,
-    "city": "Cruz Alta",
-    "address": "General Felipe Portinho, 1216",
-    "phone": "(55) 3333-8569",
-    "whatsapp": "(55) 9 9076-7990",
-    "email": "cruzalta@colegiototem.com.br"
-  }
-];
-
-const whatssapButtonsColegios: WhatsappButton[] = [
+export const whatssapLinks: WhatsappLinks[] = [
   {
     _id: 1,
     slug: "cachoeira-do-sul",
     whatsapp: "(55) 9 9088-3334",
+    "@type": "colegios"
   },
   {
     _id: 2,
     slug: "santa-maria",
-    whatsapp: "(55) 9 9125-8480"
+    whatsapp: "(55) 9 9125-8480",
+    "@type": "colegios"
   },
   {
     _id: 3,
     slug: "cruz-alta",
-    whatsapp: "(55) 9 9076-7990"
+    whatsapp: "(55) 9 9076-7990",
+    "@type": "colegios"
   },
   {
     _id: 4,
     slug: "santa-rosa",
-    whatsapp: "(55) 9 9999-2002"
+    whatsapp: "(55) 9 9999-2002",
+    "@type": "vestibulares"
   },
   {
     _id: 5,
     slug: "santa-maria",
-    whatsapp: "(55) 9 9922-8969"
+    whatsapp: "(55) 9 9922-8969",
+    "@type": "vestibulares"
   },
   {
     _id: 6,
     slug: "ijui",
-    whatsapp: "(55) 9 9142-7470"
+    whatsapp: "(55) 9 9142-7470",
+    "@type": "vestibulares"
   }
 ]
 
@@ -160,12 +110,12 @@ export const unidadesColegios: Organization[] = [
     slug: "cachoeira-do-sul",
     image: "/infraestrutura/cachoeira-do-sul-colegios/SALA-ESTAR-1.png",
     cep: "98900-000",
-    address: "Rua Santa Rosa, 305",
-    phone: "(55) 3722-2977",
-    whatsapp: "(55) 9 9088-3334",
-    email: "cachoeira@colegiototem.com.br",
-    facebook: "https://www.facebook.com/totemvestibular/",
-    instagram: "https://www.instagram.com/totemvestibulares/",
+    address: "Avenida Presidente Vargas, 1958",
+    phone: "51 3722-2577",
+    whatsapp: " 51 9 9599-2004",
+    email: "colegiocachoeira@soutotem.com.br",
+    facebook: "https://www.facebook.com/ColegioTotemCachoeira",
+    instagram: "https://www.instagram.com/colegiototem/",
     maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d863.4459269831603!2d-52.90042467518325!3d-30.043062487779572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10bd3a1f59f31b7%3A0x8ee2bf50c91b4ae3!2sCol%C3%A9gio%20Totem%20Cachoeira%20do%20Sul!5e0!3m2!1spt-BR!2sbr!4v1784490880093!5m2!1spt-BR!2sbr",
     levels: [
       "Berçário",
@@ -273,16 +223,63 @@ export const unidadesColegios: Organization[] = [
   {
     _id: 2,
     "@type": "colegios",
+    city: "Cruz Alta",
+    slug: "cruz-alta",
+    image: "/infraestrutura/cruz-alta-colegios/ALFABETIZAÇÃO-1.png",
+    cep: "98700-000",
+    address: "General Felipe Portinho, 1216",
+    phone: "(55) 3333-8569",
+    whatsapp: "(55) 9 9076-7990",
+    email: "colegiocruzalta@soutotem.com.br",
+    facebook: "https://www.facebook.com/ColegioTotemCruzAlta ",
+    instagram: "https://www.instagram.com/colegiototem/",
+    maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1909.2088506259433!2d-53.61070915676212!3d-28.644612207439764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94fd97c87e5202ab%3A0xc4883daf58e00f03!2sCol%C3%A9gio%20Totem%20Cruz%20Alta!5e0!3m2!1spt-BR!2sbr!4v1784497585649!5m2!1spt-BR!2sbr",
+    levels: [
+      "Educação Infantil",
+      "Ensino Fundamental I",
+      "Ensino Fundamental II",
+      "Ensino Médio"
+    ],
+    banners: [
+      "/banners/BANNER_COLEGIOS.jpg"
+    ],
+    panoramas: [],
+    diferenciais: [
+      "Atendimento personalizado, afetuoso, com equipe altamente qualificada e experiente;",
+      "Estrutura física moderna, planejada para maior segurança, conforto e produtividade detodos",
+      "Projeto pedagógico focado no resultado e na formação para a vida real",
+      "Material didático colorido, atualizado e com suporte digital, em plataformas modernas e interativas",
+      "Reconhecido pelo ambiente familiar – Família Totem – e pelo total apoio ao estudante e seus responsáveis",
+      "Salas de aula com mobiliário adequado a cada nível de ensino, climatizadas, com acesso à internet e recursos multimídia completos"
+    ],
+    depoimentos: [],
+    infraestrutura: [
+      "/infraestrutura/cruz-alta-colegios/ALFABETIZAÇÃO-1.png",
+      "/infraestrutura/cruz-alta-colegios/biblioteca-1.png",
+      "/infraestrutura/cruz-alta-colegios/cantina-1.png",
+      "/infraestrutura/cruz-alta-colegios/PÁTIO-1.png",
+      "/infraestrutura/cruz-alta-colegios/recepção-1.png",
+      "/infraestrutura/cruz-alta-colegios/SALA-1.png",
+      "/infraestrutura/cruz-alta-colegios/SALA-2.png"
+    ],
+    professores: [],
+    atividades: [],
+    cursos: [],
+    faqs: []
+  },
+  {
+    _id: 3,
+    "@type": "colegios",
     city: "Santa Maria",
     slug: "santa-maria",
     image: "/infraestrutura/santa-maria-colegios/SALA-1.png",
     cep: "97010-033",
-    address: "RS-287, KM 234, Trevo de Uglione",
+    address: "BR287, 8480/8485 - Trevo da Uglione6",
     phone: "55 9 9125-8480",
     whatsapp: "(55) 9 9125-8480",
-    email: "santamaria@colegiototem.com.br",
-    facebook: "https://www.facebook.com/totemvestibular/",
-    instagram: "https://www.instagram.com/totemvestibulares/",
+    email: "colegiosantamaria@soutotem.com.br",
+    facebook: "https://www.facebook.com/ColegioTotemSantaMaria",
+    instagram: "https://www.instagram.com/colegiototem/",
     maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2312.7482640472363!2d-53.81819665087276!3d-29.713761335139225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9503cb1424027733%3A0x29a4830246f042e2!2sCol%C3%A9gio%20Totem%20Santa%20Maria!5e0!3m2!1spt-BR!2sbr!4v1784497464004!5m2!1spt-BR!2sbr",
     levels: [
       "Educação Infantil",
@@ -315,53 +312,6 @@ export const unidadesColegios: Organization[] = [
       "/infraestrutura/santa-maria-colegios/QUADRA-1.png",
       "/infraestrutura/santa-maria-colegios/SAGUÃO-1.png",
       "/infraestrutura/santa-maria-colegios/SALA-PEQUENOS-1.png"
-    ],
-    professores: [],
-    atividades: [],
-    cursos: [],
-    faqs: []
-  },
-  {
-    _id: 3,
-    "@type": "colegios",
-    city: "Cruz Alta",
-    slug: "cruz-alta",
-    image: "/infraestrutura/cruz-alta-colegios/ALFABETIZAÇÃO-1.png",
-    cep: "98700-000",
-    address: "General Felipe Portinho, 1216",
-    phone: "(55) 3333-8569",
-    whatsapp: "(55) 9 9076-7990",
-    email: "cruzalta@colegiototem.com.br",
-    facebook: "https://www.facebook.com/totemvestibular/",
-    instagram: "https://www.instagram.com/totemvestibulares/",
-    maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1909.2088506259433!2d-53.61070915676212!3d-28.644612207439764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94fd97c87e5202ab%3A0xc4883daf58e00f03!2sCol%C3%A9gio%20Totem%20Cruz%20Alta!5e0!3m2!1spt-BR!2sbr!4v1784497585649!5m2!1spt-BR!2sbr",
-    levels: [
-      "Educação Infantil",
-      "Ensino Fundamental I",
-      "Ensino Fundamental II",
-      "Ensino Médio"
-    ],
-    banners: [
-      "/banners/BANNER_COLEGIOS.jpg"
-    ],
-    panoramas: [],
-    diferenciais: [
-      "Atendimento personalizado, afetuoso, com equipe altamente qualificada e experiente;",
-      "Estrutura física moderna, planejada para maior segurança, conforto e produtividade detodos",
-      "Projeto pedagógico focado no resultado e na formação para a vida real",
-      "Material didático colorido, atualizado e com suporte digital, em plataformas modernas e interativas",
-      "Reconhecido pelo ambiente familiar – Família Totem – e pelo total apoio ao estudante e seus responsáveis",
-      "Salas de aula com mobiliário adequado a cada nível de ensino, climatizadas, com acesso à internet e recursos multimídia completos"
-    ],
-    depoimentos: [],
-    infraestrutura: [
-      "/infraestrutura/cruz-alta-colegios/ALFABETIZAÇÃO-1.png",
-      "/infraestrutura/cruz-alta-colegios/biblioteca-1.png",
-      "/infraestrutura/cruz-alta-colegios/cantina-1.png",
-      "/infraestrutura/cruz-alta-colegios/PÁTIO-1.png",
-      "/infraestrutura/cruz-alta-colegios/recepção-1.png",
-      "/infraestrutura/cruz-alta-colegios/SALA-1.png",
-      "/infraestrutura/cruz-alta-colegios/SALA-2.png"
     ],
     professores: [],
     atividades: [],

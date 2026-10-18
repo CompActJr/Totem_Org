@@ -1,9 +1,18 @@
 <script setup lang="ts">
+import AgendeSuaVisita from '~/components/agendamento/AgendeSuaVisita.vue';
+import Depoimentos from '~/components/depoimentos/Depoimentos.vue';
+import HeroSlider from '~/components/slider/HeroSlider.vue';
+import HeroSliderCTA from '~/components/slider/HeroSliderCTA.vue';
+import Grid from '~/components/ui/cards/Grid.vue';
+import HeroVocacional from '~/components/ui/HeroVocacional.vue';
+import WhatsappButton from '~/components/ui/WhatsappButton.vue';
+import { unidadesColegios, whatssapLinks } from '~/data/static';
+import type { WhatsappLinks } from '~/types/navigation.types';
+import type { Organization } from '~/types/organizations.types';
 
-import HeroSlider from '~/components/ui/HeroSlider.vue';
-import HeroSliderCTA from '~/components/ui/HeroSliderCTA.vue';
 
 definePageMeta({
+  layout: 'colegios',
   title: 'Colégio Totem - Educação de Qualidade',
   description: 'O Colégio Totem oferece educação de qualidade, preparando os alunos para o sucesso acadêmico e pessoal.',
   ogTitle: 'Colégio Totem - Educação de Qualidade',
@@ -13,7 +22,13 @@ definePageMeta({
   ogType: 'website',
 })
 
-const banners = ["/geral/BANNER.jpg", "/geral/AGENDE-SUA-VISITA.jpg"]
+const banners = [
+  "/geral/BANNER.jpg", 
+  "/geral/AGENDE-SUA-VISITA.jpg"
+]
+
+const unidades: Organization[] = unidadesColegios;
+const whatsappLinksFiltered: WhatsappLinks[] = whatssapLinks.filter( f => f['@type'] === "colegios");
 
 </script>
 
@@ -64,17 +79,21 @@ const banners = ["/geral/BANNER.jpg", "/geral/AGENDE-SUA-VISITA.jpg"]
       <div class="bg-orange-600 w-16 h-0.5 ml-8"></div>
     </div>
 
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mt-4 lg:mt-8">
-      <CardUnit v-for="unidade in unidades" :unidade="unidade" />
-    </div>
+    <Grid>
+       <CardUnit v-for="unidade in unidades" :unidade="unidade" />
+    </Grid>
   </section>
 
-  <HeroDepoimentos />
+    <Depoimentos
+      v-if="unidades[0]"
+      :unidade="unidades[0].city"
+      :depoimentos="unidades[0].depoimentos"
+    />
 
   <HeroVocacional />
 
   <AgendeSuaVisita :unidades="unidades" />
 
-  <WhatsappButton :unidades="unidades" />
+  <WhatsappButton :links="whatsappLinksFiltered" />
 
 </template>

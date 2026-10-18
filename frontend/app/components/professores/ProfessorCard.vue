@@ -17,7 +17,7 @@ function toggle() {
 
 <template>
     <article
-        class="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl w-[100%]">
+        class="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl w-full">
         <div class="relative h-128">
             <NuxtImg
                 :src="professor.imagemUrl || '/geral/perfil.png'"

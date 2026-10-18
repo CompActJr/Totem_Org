@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import eventos from "~/data/eventos.json";
+import { eventosMock as eventos } from '~/data/eventos';
 </script>
 
 <template>

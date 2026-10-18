@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { useBlogPosts } from '~/composables/useBlog';
+import Grid from '~/components/ui/cards/Grid.vue';
+import { useBlogPosts } from '~/composables/api/useBlog';
 
-const { data, status, error, refresh, clear } = await useFetch('/api/modules')
 
 definePageMeta({
-  layout: 'main-default'
+  layout: 'default'
 })
 
 useSeoMeta({
@@ -14,49 +14,39 @@ useSeoMeta({
   ogDescription: 'Acompanhe notícias, eventos e novidades das unidades do Totem em um só lugar. Descubra conteúdos relevantes para pais, alunos e comunidade.'
 })
 
-const { filters, filteredPosts  } = useBlogPosts()
-
+const { posts, pending, error, refresh,  status, filters } = useBlogPosts();
 
 
 </script>
 
 <template>
-  <div class="px-4 py-16">
-    <h1 class="px-4 py-3 text-gray-600 text-6xl text-center font-bold">
-      Totem Blog
-    </h1>
-    <p class="px-4 py-3 text-gray-600 text-center text-xl">
-      Acompanhe as novidades de eventos, notícias e de nossas unidades de ensino em um só lugar pelo nosso
-      blog e fique por dentro de tudo
-    </p>
-  </div>
+  <main v-if="posts">
 
-  <div class="mx-auto max-w-7xl p-4 flex flex-col md:flex-row lg:flex-row items-center gap-16">
-    <div class="flex items-center gap-4">
-      <label for="categoria" class="text-gray-600">Categoria: </label>
-      <input id="categoria" v-model="filters.categoria" class="input" />
+    <div class="px-4 py-16">
+      <h1 class="px-4 py-3 text-gray-600 text-6xl text-center font-bold">
+        Totem Blog
+      </h1>
+      <p class="px-4 py-3 text-gray-600 text-center text-xl">
+        Acompanhe as novidades de eventos, notícias e de nossas unidades de ensino em um só lugar pelo nosso
+        blog e fique por dentro de tudo
+      </p>
     </div>
 
-    <div class="flex items-center gap-2">
-      <img src="/icons/i--calendar.svg" alt="calendar" />
-      <input type="radio" class="h-6 w-6" id="recentes" value="recentes" v-model="filters.order" />
-      <label for="recentes">Mais recentes</label>
+    <div class="mx-auto max-w-7xl p-4 flex flex-col md:flex-row lg:flex-row items-center gap-16">
+      <div class="flex items-center gap-4">
+        <label for="categoria" class="text-gray-600">Categoria: </label>
+        <input id="categoria" v-model="filters.categoria" class="input" />
+      </div>
+
+      <div class="flex items-center gap-4">
+        <input type="checkbox" v-model="filters.destaque" class="h-6 w-6" />
+        <label class="text-gray-600">Destaques</label>
+      </div>
     </div>
 
-    <div class="flex items-center gap-2">
-      <img src="/icons/i--calendar.svg" alt="calendar" />
-      <input type="radio" class="h-6 w-6" id="antigos" value="antigos" v-model="filters.order" />
-      <label for="antigos">Mais antigos</label>
-    </div>
-
-    <div class="flex items-center gap-4">
-      <input type="checkbox" v-model="filters.destaque" class="h-6 w-6" />
-      <label class="text-gray-600">Destaques</label>
-    </div>
-  </div>
-
-  <div class="mx-auto grid min-h-250 max-w-7xl grid-cols-1 gap-8 px-6 py-10 md:grid-cols-2 lg:grid-cols-3">
-      <Post v-for="post in posts" :key="post.id" :post="post" />
-  </div>
+    <Grid>
+      <Post v-for="post in posts" :key="post._id" :post="post" />
+    </Grid>
+  </main>
 
 </template>

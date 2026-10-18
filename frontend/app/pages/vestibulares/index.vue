@@ -1,31 +1,44 @@
 <script lang="ts" setup>
-
-/**
- * @author Jonas
- * pagina pricipal do site, use as metatags abaixo para melhorar o SEO
- */
+import Depoimentos from '~/components/depoimentos/Depoimentos.vue';
+import HeroSlider from '~/components/slider/HeroSlider.vue';
+import HeroSliderCTA from '~/components/slider/HeroSliderCTA.vue';
+import HeroVocacional from '~/components/ui/HeroVocacional.vue';
+import WhatsappButton from '~/components/ui/WhatsappButton.vue';
+import { unidadesVestibulares, whatssapLinks } from '~/data/static';
+import type { WhatsappLinks } from '~/types/navigation.types';
 
 definePageMeta({
+    layout: 'vestibulares',
     title: 'Vestibulares Totem - Educação de Qualidade',
     description: 'O Vestibulares Totem oferece educação de qualidade, preparando os alunos para o sucesso acadêmico e pessoal.',
     ogTitle: 'Vestibulares Totem - Educação de Qualidade',
     ogDescription: 'O Vestibulares Totem oferece educação de qualidade, preparando os alunos para o sucesso acadêmico e pessoal.',
-    ogImage: '/images/logo.png',
-    ogUrl: 'https://vestibulares.totem.com.br/',
+    ogImage: '/logos/logo-vestibulares.png',
+    ogUrl: 'https://vestibulares.compactjr.com.br/',
     ogType: 'website',
+    robots: 'index, follow',
 })
 
+const whatsappLinksFiltered: WhatsappLinks[] = whatssapLinks.filter( f => f['@type'] === "vestibulares");
+
+const unidades = unidadesVestibulares;
+
+const banners = [
+    ""
+];
 
 </script>
 
 <template>
 
-    <HeroSlider />
+    <HeroSlider :banners="banners">
+        <HeroSliderCTA titulo="Matriculas Abertas" subtitle="Vestibulares Totem" link="/matriculas" />
+    </HeroSlider>
 
     <section class="min-h-128 w-full responsive-padding">
         <div class="flex items-center">
             <h2 class="text-orange-600 font-bold" aria-label="nossas unidades">
-                PORQUE O TOTEM
+                PORQUE O TOTEM?
             </h2>
             <div class="bg-orange-600 w-16 h-0.5 ml-8"></div>
         </div>
@@ -62,7 +75,11 @@ definePageMeta({
 
     <HeroUnidades />
 
-    <HeroDepoimentos />
+    <Depoimentos
+      v-if="unidades[0]"
+      :unidade="unidades[0].city"
+      :depoimentos="unidades[0].depoimentos"
+    />
 
     <HeroVocacional />
 
@@ -86,6 +103,6 @@ definePageMeta({
         </div>
     </section>
 
-    <WhatsappButton :unidades="unidades" />
+    <WhatsappButton :links="whatsappLinksFiltered" />
 
 </template>

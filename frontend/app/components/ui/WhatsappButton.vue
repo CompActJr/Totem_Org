@@ -1,8 +1,8 @@
 <script setup lang="ts" >
-import type { WhatsappButton } from '~/types/navigation.types';
+import type { WhatsappLinks } from '~/types/navigation.types';
 
 const props = defineProps<{
-  links: WhatsappButton[]
+  links: WhatsappLinks[]
 }>();
 
 const open = ref(false);

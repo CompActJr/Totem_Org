@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { PostType } from '~/types/blog.types';
+import type { Post } from '~/types/blog.types';
 
 
 defineProps<{
-    post: PostType
+    post: Post
     open: boolean
 }>()
 

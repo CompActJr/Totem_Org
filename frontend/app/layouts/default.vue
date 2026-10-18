@@ -1,10 +1,20 @@
 <script setup lang="ts">
-
-import Menu from '~/components/ui/Menu.vue';
-import MenuItem from '~/components/ui/MenuItem.vue';
+import Footer from '~/components/ui/footer/Footer.vue';
+import Menu from '~/components/ui/menu/Menu.vue';
+import MenuItem from '~/components/ui/menu/MenuItem.vue';
 import { useNavigation } from '~/composables/useNavigation';
+import { unidadesColegios } from '~/data/static';
 
 const { links } = useNavigation()
+
+const contacts = unidadesColegios.map(({ city, address, phone, whatsapp, email }) => ({
+  city,
+  address,
+  phone,
+  whatsapp,
+  email,
+}))
+
 </script>
 
 <template>
@@ -25,5 +35,8 @@ const { links } = useNavigation()
     <main>
       <slot />
     </main>
+
+    <Footer :contacts="contacts" />
+
   </div>
 </template>

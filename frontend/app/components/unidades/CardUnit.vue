@@ -52,7 +52,7 @@ defineProps<{
       </NuxtLink>
 
       <NuxtLink
-        :to="`/unidades/${unidade.slug}`"
+        :to="`/colegios/unidade/${unidade.slug}`"
         class="rounded-full bg-yellow-300 px-6 py-3 font-semibold text-gray-700
          transition hover:bg-orange-400 hover:text-white flex items-center"
       >

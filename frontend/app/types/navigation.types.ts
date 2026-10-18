@@ -4,8 +4,9 @@ export type NavLink = {
   children?: NavLink[]
 }
 
-export type WhatsappButton = {
+export type WhatsappLinks = {
     _id: number,
     slug: string,
+    "@type": "colegios" | "vestibulares",
     whatsapp: string,
-}
+} 

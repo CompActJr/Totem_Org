@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed, reactive, ref, watch } from "vue";
-import type { TurmaType } from "~/types/matriculas.types";
+import type { TurmaType } from "~/types/organizations.types";
 
 const props = defineProps<{
     turma: TurmaType;
@@ -59,7 +59,7 @@ const formValido = computed(() => {
 
 // Reseta o formulário sempre que a turma mudar (modal reaberto em outra turma)
 watch(
-    () => props.turma?.id,
+    () => props.turma?._id,
     () => {
         Object.assign(form, {
             nome: "",
@@ -87,6 +87,7 @@ watch(
     }
 );
 
+
 async function enviarFormulario() {
     if (!formValido.value) return;
 
@@ -98,9 +99,9 @@ async function enviarFormulario() {
         await $fetch("/api/matricula", {
             method: "POST",
             body: {
-                turmaId: props.turma.id,
+                turmaId: props.turma._id,
                 turma: props.turma.titulo,
-                unidade: props.turma.unidade,
+                unidade: props.turma.,
                 ...form
             }
         });
@@ -112,6 +113,8 @@ async function enviarFormulario() {
         enviando.value = false;
     }
 }
+    
+
 </script>
 
 <template>

@@ -9,8 +9,8 @@ import "swiper/css/pagination";
 import type { Testimonial } from "~/types/organizations.types";
 
 const props = defineProps<{
-    unidade: string
-    depoimentos: Testimonial[]
+    unidade: string,
+    depoimentos: Testimonial[],
 }>();
 
 const prevEl = ref<HTMLElement | null>(null);
