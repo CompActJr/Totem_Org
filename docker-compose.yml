@@ -1,102 +1,75 @@
 
 services:
-
   mongoDb:
     image: mongo:8.3.11-noble
-    container_name: name
-    ports:
-      - "27017:27017"
+    container_name: totem_mongo
+    restart: unless-stopped
     env_file:
       - ./backend/.env
-    restart: unless-stopped
     volumes:
       - mongo_data:/data/db
-    deploy:
-      resources:
-        limits:
-          memory: 512M
-        reservations:
-          memory: 256M
+    networks:
+      - app-network
+    mem_limit: 1g
+    mem_reservation: 256m
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mongosh",
+          "--quiet",
+          "--eval",
+          "db.adminCommand('ping').ok"
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
 
-  backend:
+  backend-totem:
     image: totem-api:latest
-    container_name: totem-api
-    ports:
-      - "9000:9000"
+    restart: unless-stopped
     env_file:
       - ./backend/.env
-    restart: unless-stopped
-    deploy:
-      resources:
-        limits:
-          memory: 256M
-        reservations:
-          memory: 128M
-
-  principal:
-    image: totem-main:latest
-    container_name: principal
     ports:
-      - "8001:8001"
-    env_file:
-      - ./totem_main/.env
-    restart: unless-stopped
-    deploy:
-      resources:
-        limits:
-          memory: 256M
-        reservations:
-          memory: 128M
-
-  colegios:
-    image: totem-colegios:latest
-    container_name: colegios
-    ports:
-      - "8002:8002"
-    env_file:
-      - ./totem_colegios_web/.env
-    restart: unless-stopped
-    deploy:
-      resources:
-        limits:
-          memory: 256M
-        reservations:
-          memory: 128M
-
-  vestibulares:
-    image: totem-vestibulares:latest
-    container_name: vestibulares
-    ports:
-      - "8003:8003"
-    env_file:
-      - ./totem_vestibulares_web/.env
-    restart: unless-stopped
-    deploy:
-      resources:
-        limits:
-          memory: 256M
-        reservations:
-          memory: 128M
-
-  nginx:
-    image: nginx-totem:latest
-    container_name: nginx-totem
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./nginx:/etc/nginx/conf.d:ro
+      - "127.0.0.1:9000:9000"
+    networks:
+      - app-network
     depends_on:
-      - principal
-      - colegios
-      - vestibulares
+      mongoDb:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:9000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  frontend-totem:
+    image: totem-frontend:latest
     restart: unless-stopped
-    deploy:
-      resources:
-        limits:
-          memory: 128M
-        reservations:
-          memory: 32M
+    ports:
+      - "127.0.0.1:8000:8000"
+    env_file:
+      - ./frontend/.env
+    environment:
+      NUXT_PUBLIC_API_BASE: /api
+      NUXT_API_BASE_INTERNAL: http://backend-totem:9000/api
+    networks:
+      - app-network
+    depends_on:
+      backend-totem:
+        condition: service_healthy
+
+networks:
+  app-network:
+    driver: bridge
 
 volumes:
   mongo_data:

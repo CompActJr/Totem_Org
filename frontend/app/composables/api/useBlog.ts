@@ -1,12 +1,19 @@
 import type { BlogFilters, Post } from "~/types/blog.types"
 
-const apiBasePath = String(useRuntimeConfig().public.apiBasePath);
-
 export function useBlogPosts() {
+
+  const config = useRuntimeConfig()
+
+  // indica se o código atual está sendo executado no servidor.
+  // Servidor: vai direto no container da API. Navegador: passa pelo nginx em /api
+  const baseURL = import.meta.server
+    ? String(config.apiBaseInternal)
+    : String(config.public.apiBase)
 
   const filters = reactive<BlogFilters>({
     categoria: '',
-    destaque: true
+    destaque: true,
+    unidades: [],
   })
   
   const {
@@ -16,7 +23,7 @@ export function useBlogPosts() {
     status,
     refresh,
   } = useFetch<Post[]>('/posts', {
-    baseURL: apiBasePath,
+    baseURL,
     query: {
       categoria: filters.categoria.trim(),
       destaque: filters.destaque ? true : undefined,

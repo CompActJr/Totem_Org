@@ -8,10 +8,10 @@ export const up = async (db, client) => {
     await db.collection('posts').insertMany([
         {
             _id: 1,
-            "titulo": "Festa júnina Cachoeira do sul",
-            "resumo": "Festa junina do cachoeira",
-            "conteudo": "O tbt de hoje é do nosso ARRAIÁ, que foi pra lá de sucesso!\nMuito obrigada aos que vieram nos prestigiar. ❤️🚀🚀🌽.",
-            "imagemUrl": "/posts/post1.jpg",
+            "titulo": "Teste de Postagem no portal",
+            "resumo": "resumo da postagem",
+            "conteudo": "postagem ❤️🚀.",
+            "imagemUrl": "/geral/perfil.png",
             "ativo": true,
             "destaque": true,
             "autor": "Jonas Silva",
@@ -19,6 +19,34 @@ export const up = async (db, client) => {
             "updatedAt": "2026-07-04",
             "categoria": "Eventos",
             "unidades": ["ijui", "cachoeira-do-sul"]
+        },
+        {
+            _id: 2,
+            "titulo": "Teste de Postagem 2 no portal",
+            "resumo": "resumo da postagem",
+            "conteudo": "postagem ❤️🚀.",
+            "imagemUrl": "/geral/perfil.png",
+            "ativo": true,
+            "destaque": true,
+            "autor": "Jonas Silva",
+            "createdAt": "2026-07-04",
+            "updatedAt": "2026-07-04",
+            "categoria": "Eventos",
+            "unidades": ["cruz-alta"]
+        },
+        {
+            _id: 3,
+            "titulo": "Teste de Postagem 3 no portal",
+            "resumo": "resumo da postagem",
+            "conteudo": "postagem ❤️🚀.",
+            "imagemUrl": "/geral/perfil.png",
+            "ativo": true,
+            "destaque": true,
+            "autor": "Jonas Silva",
+            "createdAt": "2026-07-04",
+            "updatedAt": "2026-07-04",
+            "categoria": "Eventos",
+            "unidades": ["cruz-alta"]
         }
     ]);
 };

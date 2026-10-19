@@ -24,55 +24,123 @@
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
 
+## instalando o nginx no linux ubuntu
+
+```bash
+ sudo apt update && sudo apt upgrade -y
+ sudo apt install nginx -y
+
+ ### comando uteis
+ sudo systemctl start nginx
+ sudo systemctl enable nginx
+ sudo systemctl status nginx
+ sudo systemctl stop nginx
+ sudo systemctl restart nginx
+sudo systemctl reload nginx
+sudo systemctl disable nginx
+
+#pagina inicial e arquivos estaticos e html ficam em
+/var/www/
+
+
+# Testando configuração
+Antes de aplicar, é fundamental verificar se o seu novo arquivo de configuração não possui erros de sintaxe:
+
+sudo nginx -t -c ~/caminho-projeto/nginx/nginx.conf
+
+## gerando os certicados
+
+Você precisa gerar um certificado TLS para o domínio principal e os subdomínios que pretende atender. o caminho mais simples é usar o Certbot com Let's Encrypt, gerando um certificado SAN que cubra todos os domínios sem precisar gerar uma chave separada para cada subdomínio.
+Mas há um detalhe importante: para emitir certificados públicos, os domínios precisam estar configurados no DNS e ser validados pelo Let's Encrypt. Alterar apenas o arquivo /etc/hosts do seu computador não é suficiente.
+
+1. Quais domínios incluir?
+- soutotem.com.br
+- www.soutotem.com.br
+- colegios.soutotem.com.br
+- www.colegios.soutotem.com.br
+- vestibulares.soutotem.com.br
+- www.vestibulares.soutotem.com.br
+- on.soutotem.com.br
+- www.on.soutotem.com.br
+
+Todos esses nomes precisam resolver para o servidor e estar acessíveis para validação. Se algum subdomínio não for ser usado, você pode removê-lo da lista.
+
+2. Preparar o DNS e emitir o certificado
+No provedor DNS do domínio, crie registros A apontando para o IPv4 público da EC2:
+Tipo	Nome	Valor
+A	@	IPv4 público da EC2
+A	www	IPv4 público da EC2
+A	colegios	IPv4 público da EC2
+A	www.colegios	IPv4 público da EC2
+A	vestibulares	IPv4 público da EC2
+A	www.vestibulares	IPv4 público da EC2
+A	on	IPv4 público da EC2
+A	www.on	IPv4 público da EC2
+
+## instalar o certbot no ubuntu
+
+sudo apt update
+sudo apt install certbot
+
+## criar os diretorios para as chaves e certificado
+
+sudo mkdir -p /var/www/letsencrypt/.well-known/acme-challenge
+sudo chown -R www-data:www-data /var/www/letsencrypt
+
+## Solicitar certificado
+sudo certbot certonly --webroot \
+  -w /var/www/letsencrypt \
+  --cert-name soutotem.com.br \
+  -d soutotem.com.br \
+  -d www.soutotem.com.br \
+  -d colegios.soutotem.com.br \
+  -d www.colegios.soutotem.com.br \
+  -d vestibulares.soutotem.com.br \
+  -d www.vestibulares.soutotem.com.br \
+  -d on.soutotem.com.br \
+  -d www.on.soutotem.com.br
+
+## Conferir
+sudo certbot certificates
+
+
+## Renovar certificado
+sudo certbot renew --dry-run
+```
+
 ## Rodando a imagem do mongo localmente pra testes
 
 ```bash
+
+criando a rede
+
+docker network create -d bridge app-network
+
 cd backend
-docker run --name totem_mongo \
+docker run --name totem-mongo \
+  --network app-network \
   --env-file .env \
   -p 27017:27017 \
   -d mongo:8.3.11-noble
 ```
 
-
-## Customize configuration
-
-
-# Salvando em arquivos .tar para enviar via SCP
-```bash
-docker save totem-main:latest | gzip > totem-main.tar.gz
-docker save totem-colegios:latest | gzip > totem-colegios.tar.gz
-docker save totem-vestibulares:latest | gzip > totem-vestibulares.tar.gz
-```
-
-Na AWS Lightsail (Servidor de Produção)
-
-No servidor, não precisará do código fonte nem do código de build dos Dockerfiles. precisa apenas
-- Dos arquivos .tar.gz (carregados via docker load)
-- Do arquivo docker-compose.yml da raiz
-- Do arquivo .env (ou arquivos .env específicos) contendo as variáveis de produção e o caminho deles certinho com as pastas
-
-
-## Como testar localmente na sua máquina antes de subir para a Lightsail
-
-Edite o arquivo hosts da sua máquina (C:\Windows\System32\drivers\etc\hosts no Windows ou /etc/hosts no Linux/Mac) e adicione:
-
-sudo nano /etc/hosts
+## rodando o fastify
 
 ```bash
-127.0.0.1 totem.com
-127.0.0.1 colegios.totem.com
-127.0.0.1 vestibulares.totem.com
+docker build . -t totem-api
+
+> ajustar variaveis de ambiente no .env, a url de conexao no mongo
+> deve ser o nome do container ou ip dele
+
+executar o container
+
+docker run --name totem-api \
+  --network app-network \
+  --env-file .env \
+  -p 9000:9000 \
+  -d totem-api:latest
 ```
 
-Execute o comando docker para executar o script do docker-compose.yml para orquetrar os containers
-mas antes certifique de ter as imagens tudo em mão com o nome batendo ali no script
-
-```bash
-docker images
-docker compose up -d
-docker compose stats -> monitora uso de RAM e CPU dos containers
-```
 
 
 ## funcionamento das rotas das unidades
@@ -84,6 +152,7 @@ Por exemplo, estas duas URLs carregariam a mesma página index.vue:
 O conteúdo muda porque a página consulta a API usando o slug recebido na rota.
 A árvore de arquivos ficaria assim:
 
+```bash
 pages/
 └── colegios/
     └── unidade/
@@ -96,20 +165,19 @@ pages/
                 ├── educacao-infantil.vue
                 ├── ensino-fundamental.vue
                 └── ensino-medio.vue
+```
 
+```ts
+  const config = useRuntimeConfig()
 
-## infra
+  // indica se o código atual está sendo executado no servidor.
+  // Servidor: vai direto no container da API. Navegador: passa pelo nginx em /api
+  const baseURL = import.meta.server
+    ? String(config.apiBaseInternal)
+    : String(config.public.apiBase)
+```
 
-DNS apontando tudo para o mesmo IP e o nginx decidindo pelo server_name. A parte que merece atenção é tirar o prefixo da URL, e ela tem duas metades: o nginx e o Nuxt.
+Fluxo resultante:
 
-soutotem.com.br          A   IP_DO_SERVIDOR
-www                      A   IP_DO_SERVIDOR
-colegios                 A   IP_DO_SERVIDOR
-vestibulares             A   IP_DO_SERVIDOR
-on                       A   IP_DO_SERVIDOR
-
-
-ssl_certificate precisa cobrir todos os nomes. Opções:
-
-um certificado com vários SANs (certbot -d soutotem.com.br -d colegios... -d vestibulares... -d on... -d api...), ou
-um wildcard *.soutotem.com.br, que exige validação DNS-01.
+SSR: frontend-totem chama http://backend-totem:9000/api/units/santa-maria, que consulta o mongoDb.
+Navegador: colegios.soutotem.com.br/api/units/santa-maria, que passa pelo nginx e chega em 127.0.0.1:900

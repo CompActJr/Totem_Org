@@ -3,15 +3,10 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
 
   runtimeConfig: {
-    // Variáveis Privadas (O Nuxt preenche automaticamente buscando NUXT_<NOME>
-    smtpEndpoint: '',
-    smtpPort: '',
-    smtpUsername: '',
-    smtpPassword: '',
-
+    apiBaseInternal: 'http://backend-totem:9000/api', // NUXT_API_BASE_INTERNAL
     public: {
-      apiBase:  process.env.NUXT_PUBLIC_API_BASE || "http://localhost:9000/api",
-    }
+      apiBase: '/api',                                 // NUXT_PUBLIC_API_BASE
+    },
   },
 
   css: ['~/assets/css/main.css'],

@@ -28,6 +28,7 @@ export interface Post {
 }
 
 export interface BlogFilters {
-  categoria: string
-  destaque: boolean
+  categoria: string;
+  destaque: boolean;
+  unidades: string[];
 }

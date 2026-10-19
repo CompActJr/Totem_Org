@@ -18,15 +18,14 @@ import type { WhatsappLinks } from '~/types/navigation.types'
 definePageMeta({ layout: 'colegios' })
 
 const route = useRoute()
-
 const slug = computed(() => String(route.params.slug))
 
-const {
-  data: unidade,
-  pending,
-  error,
-  refresh,
-} = await useOrganizations(slug.value)
+const { data: unidade, error, pending } = await useOrganizations(slug) // computed, não slug.value
+
+if (error.value || !unidade.value) {
+  throw createError({ statusCode: 404, statusMessage: 'Unidade não encontrada', fatal: true })
+}
+
 
 const whatsappLinks = computed<WhatsappLinks[]>(() => {
   if (!unidade.value) return []
