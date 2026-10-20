@@ -85,12 +85,12 @@ useSeoMeta({
                 <div class="bg-orange-600 w-32 h-0.5 ml-8"></div>
             </div>
 
-            <h2 class="text-2xl md:text-4xl mt-4 lg:text-6xl text-gray-700 font-bold">
+            <h2 class="pt-8 lg:pt-12 text-2xl md:text-4xl mt-4 lg:text-6xl text-gray-700 font-bold">
                 É MAIS QUE<br />
                 COLÉGIO...
             </h2>
 
-            <p class="mt-4 md:mt-8 mb-8 leading-8 lg:mt-12 lg:mb-12">
+            <p class="pt-8 lg:pt-12 leading-8">
                 No <strong>{{ unidade.city }}</strong>, os estudantes encontram um ambiente onde o
                 afeto e a atenção são prioridades, proporcionando bem-estar e segurança para
                 todos. Oferecemos a educação que desperta a criatividade e entrega um mundo de
@@ -98,9 +98,9 @@ useSeoMeta({
                 os diferenciais que fazem do Totem a sua melhor escolha.
             </p>
 
-            <NuxtLink
+             <NuxtLink
                 :to="`/colegios/unidade/${unidade.slug}/diferenciais`"
-                class="rounded-full bg-white shadow-2xl px-6 py-3 font-semibold text-gray-700 transition-all duration-300 hover:scale-115"
+                class="mt-8 lg:mt-12 inline-flex w-fit rounded-full bg-white shadow-2xl px-6 py-3 font-semibold text-gray-700 transition-all duration-300 hover:scale-115"
             >
                 Saiba mais →
             </NuxtLink>

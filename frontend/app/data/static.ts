@@ -438,7 +438,7 @@ export const unidadesVestibulares: Organization[] = [
     email: "cachoeira@colegiototem.com.br",
     facebook: "https://www.facebook.com/totemvestibular/",
     instagram: "https://www.instagram.com/totemvestibulares/",
-    maps: "",
+    maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14108.512394063462!2d-54.490794312841786!3d-27.86733509999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f934499abe6d47%3A0xb57f8f005f5566c9!2sTotem%20Vestibulares%20-%20Santa%20Rosa!5e0!3m2!1spt-BR!2sbr!4v1792520350185!5m2!1spt-BR!2sbr",
     levels: [],
     banners: [
       "/banners/BANNER_PV_SANTA_ROSA.jpg",
@@ -594,7 +594,7 @@ export const unidadesVestibulares: Organization[] = [
     email: "secretaria.santamaria@soutotem.com.br",
     facebook: "https://www.facebook.com/totemvestibular/",
     instagram: "https://www.instagram.com/totemvestibulares/",
-    maps: "",
+    maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13862.961557465114!2d-53.812881051998744!3d-29.69830555318613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9503cb558e9192bd%3A0xe66df1eee7acb952!2sTotem%20Vestibulares%20-%20Santa%20Maria!5e0!3m2!1spt-BR!2sbr!4v1792520159413!5m2!1spt-BR!2sbr",
     levels: [],
     banners: [
       "/banners/BANNER_PV_SANTA_MARIA.jpg",
@@ -865,7 +865,7 @@ export const unidadesVestibulares: Organization[] = [
     email: "secretaria.ijui@soutotem.com.br",
     facebook: "https://www.facebook.com/totemvestibular/",
     instagram: "https://www.instagram.com/totemvestibulares/",
-    maps: "",
+    maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.1120066534404!2d-53.92079892369732!3d-28.385684775800463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94fc2d9bfa42f1a1%3A0xedce56f980556818!2sTotem%20Vestibulares%20-%20Iju%C3%AD!5e0!3m2!1spt-BR!2sbr!4v1792520414610!5m2!1spt-BR!2sbr",
     levels: [],
     banners: [
       "/banners/BANNER_PV_IJUI.jpg",

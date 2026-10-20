@@ -22,9 +22,9 @@ const contacts = unidadesColegios.map(({ city, address, phone, whatsapp, email }
     
     <Menu>
       <template #logo>
-        <img
+        <NuxtImg
           src="/logos/logo-colegios.png"
-          alt="Colégio Totem"
+          alt="Totem PV"
           width="180"
           height="64"
           class="h-16 w-45 object-contain object-left"

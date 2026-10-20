@@ -51,10 +51,6 @@ export const vestibularesRoutes: NavLink = {
             label: "O TOTEM",
             href: "/vestibulares/o-totem"
         },
-        {
-            label: "DÚVIDAS",
-            href: "/vestibulares/faqs"
-        },
     ]
 };
 

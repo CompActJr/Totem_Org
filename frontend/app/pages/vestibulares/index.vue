@@ -5,6 +5,7 @@ import Grid from '~/components/ui/cards/Grid.vue';
 import HeroVocacional from '~/components/ui/HeroVocacional.vue';
 import WhatsappButton from '~/components/ui/WhatsappButton.vue';
 import CardUnitPV from '~/components/unidades/CardUnitPV.vue';
+import { faqsVestibulares } from '~/data/faqsON';
 import { unidadesVestibulares, whatssapLinks } from '~/data/static';
 import type { WhatsappLinks } from '~/types/navigation.types';
 
@@ -46,17 +47,16 @@ const banners = [
             <div class="bg-orange-600 w-16 h-0.5 ml-8"></div>
         </div>
 
-        <h2 class="text-4xl mt-4 lg:mt-8 font-bold">
+        <h2 class="text-4xl mt-4 lg:mt-8 font-bold pt-8 lg:pt-12">
             GIGANTE<br />
             EM APROVAÇÃO
         </h2>
 
-        <p class="mt-4 lg:mt-8 text-xl">
+        <p class="pt-8 lg:pt-12 text-xl">
             No Totem Vestibulares você encontra:
         </p>
 
-        <ul
-            class="mt-6 lg:mt-8 ml-6 list-disc space-y-6 text-lg lg:text-xl leading-relaxed marker:text-orange-500 marker:text-2xl">
+        <ul class="pt-8 lg:pt-12 ml-6 list-disc space-y-6 text-lg lg:text-xl leading-relaxed marker:text-orange-500 marker:text-2xl">
             <li>
                 Atendimento ao aluno de forma personalizada.
             </li>
@@ -74,11 +74,27 @@ const banners = [
                 contemplado com testes dos vestibulares do sul do Brasil.
             </li>
         </ul>
+
+         <NuxtLink
+                :to="`/vestibulares/faqs`"
+                class="mt-6 inline-flex w-fit rounded-full bg-white shadow-2xl px-6 py-3 font-semibold text-gray-700 transition-all duration-300 hover:scale-115"
+            >
+                Saiba mais →
+        </NuxtLink>
     </section>
+
+    <section class="min-h-128 bg-white py-8 px-10 md:px-10 lg:py-16 lg:px-9 xl:px-40">
+    <div class="flex items-center">
+      <h2 class="text-orange-600 font-bold" aria-label="nossas unidades">
+        NOSSAS UNIDADES
+      </h2>
+      <div class="bg-orange-600 w-16 h-0.5 ml-8"></div>
+    </div>
 
     <Grid>
        <CardUnitPV v-for="unidade in unidades" :unidade="unidade" />
     </Grid>
+  </section>
 
     <Depoimentos
       v-if="unidades[0]"
@@ -88,25 +104,7 @@ const banners = [
 
     <HeroVocacional />
 
-    <section class="h-128 w-full responsive-padding">
-        <div class="flex items-center">
-            <h2 class="text-orange-600 font-bold" aria-label="depoimentos">
-                FAQS
-            </h2>
-            <div class="bg-orange-600 w-16 h-0.5 ml-8"></div>
-        </div>
-        <div>
-            <h2 class="mt-6 text-3xl font-bold">Ainda tem dúvidas?</h2>
-            <p class="mt-6 text-gray-600">Reunimos as perguntas mais frequentes de pais, responsáveis e alunos para
-                ajudar você a conhecer melhor o Colégio Totem.</p>
-
-            <NuxtLink to="/vestibulares/faqs"
-                class="mt-6 inline-flex items-center rounded-full bg-orange-500 px-6 py-3 font-semibold  transition-all duration-300 hover:bg-orange-600 hover:shadow-lg">
-                <span class="text-white">Saiba mais →</span>
-            </NuxtLink>
-
-        </div>
-    </section>
+    <FaqsSection :faqs="faqsVestibulares"/>
 
     <WhatsappButton :links="whatsappLinksFiltered" />
 

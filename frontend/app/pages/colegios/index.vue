@@ -36,7 +36,11 @@ const whatsappLinksFiltered: WhatsappLinks[] = whatssapLinks.filter( f => f['@ty
 <template>
 
   <HeroSlider :banners="banners">
-    <HeroSliderCTA titulo="Matriculas Abertas" subtitle="Colégios Totem" link="/#agende-visita'" />
+    <HeroSliderCTA titulo="Matriculas Abertas" subtitle="Colégios Totem" link="/#agende-visita'" >
+      <template #cta-text>
+        Agende Sua Visita
+      </template>
+    </HeroSliderCTA>
   </HeroSlider>
 
   <section id="porque_o_totem" class="scroll-mt-24 min-h-128 w-full flex flex-col md:flex-row 
@@ -49,12 +53,12 @@ const whatsappLinksFiltered: WhatsappLinks[] = whatssapLinks.filter( f => f['@ty
         <div class="bg-orange-600 w-32 h-0.5 ml-8"></div>
       </div>
 
-      <h2 class="text-2xl md:text-4xl mt-4 lg:text-6xl text-gray-700 font-bold">
+      <h2 class="pt-8 lg:pt-12 text-2xl md:text-4xl lg:text-6xl text-gray-700 font-bold">
         É MAIS QUE<br />
         COLÉGIO...
       </h2>
 
-      <p class="mt-4 md:mt-8 lg:text-lg">Bem-vindo(a) ao SEU FUTURO! Prepare-se para construir o amanhã.
+      <p class="pt-8 lg:pt-12 lg:text-lg">Bem-vindo(a) ao SEU FUTURO! Prepare-se para construir o amanhã.
         No <strong>Colégio Totem</strong>, acreditamos que a escolha certa é a que motiva,
         acolhe e faz feliz. Aqui, nossos estudantes encontram um ambiente onde o afeto e a
         atenção são prioridades, proporcionando bem-estar e segurança para todos. Oferecemos
@@ -70,7 +74,7 @@ const whatsappLinksFiltered: WhatsappLinks[] = whatssapLinks.filter( f => f['@ty
                 src="/geral/POR-QUE-O-TOTEM.jpg" 
                 alt="Pátio do Colégio Totem visto de cima"
                 width="420"
-                height="520"
+                height="720"
                 class="w-55 shrink-0 object-cover rounded-xl sm:w-65 md:w-70 lg:w-[320px] xl:w-90 h-auto max-h-105"
                 loading="lazy" 
                 format="webp" 

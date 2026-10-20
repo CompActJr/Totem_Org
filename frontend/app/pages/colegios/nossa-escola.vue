@@ -69,7 +69,7 @@ definePageMeta({ layout: 'colegios' })
 
 	</section>
 
-	<section id="nossa_historia" class="min-h-128  responsive-padding scroll-mt-20">
+	<section id="nossa_historia" class="text-spaced min-h-128  responsive-padding scroll-mt-20">
 		<div class="flex items-center">
 			<h2 class="text-gray-600 font-bold text-lg md:text-2xl" aria-label="nossas unidades">
 				NOSSA HISTÓRIA
@@ -169,7 +169,7 @@ definePageMeta({ layout: 'colegios' })
 		</p>
 	</section>
 
-	<section id="visao_de_educacao" class="min-h-128 bg-white responsive-padding scroll-mt-20">
+	<section id="visao_de_educacao" class="text-spaced min-h-128 bg-white responsive-padding scroll-mt-20">
 		<div class="flex items-center">
 			<h2 class="text-gray-600 font-bold text-lg md:text-2xl" aria-label="nossas unidades">
 				VISÃO DE EDUCAÇÃO
@@ -215,7 +215,7 @@ definePageMeta({ layout: 'colegios' })
 
 	</section>
 
-	<section id="metodologias" class="min-h-128  responsive-padding scroll-mt-20">
+	<section id="metodologias" class="text-spaced min-h-128  responsive-padding scroll-mt-20">
 		<div class="flex items-center">
 			<h2 class="text-gray-600 font-bold text-lg md:text-2xl" aria-label="nossas unidades">
 				METODOLOGIAS
@@ -257,7 +257,7 @@ definePageMeta({ layout: 'colegios' })
 
 		</p>
 	</section>
-	<section id="faq" class="min-h-128 bg-white responsive-padding scroll-mt-20">
+	<section id="faq" class="text-spaced min-h-128 bg-white responsive-padding scroll-mt-20">
 		<div class="flex items-center">
 			<h2 class="text-gray-600 font-bold text-lg md:text-2xl" aria-label="perguntas frequentes">
 				PERGUNTAS FREQUENTES

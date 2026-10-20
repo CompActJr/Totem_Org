@@ -55,42 +55,47 @@ useSeoMeta({
   <main v-if="unidade != null">
 
     <HeroSlider :banners="unidade.banners">
-      <HeroSliderCTA
-            :titulo="unidade.city"  
-            :subtitle="'Vestibulares Totem'"
-            :link="'/vestibulares/unidade/' + unidade.slug + '#matricula'" 
-      >
-      <template #cta-text>
-        Matricule-se
-      </template>
-      </HeroSliderCTA>
+
     </HeroSlider>
 
-    <section class="min-h-128 w-full flex flex-col md:flex-row gap-4 bg-gray-200 responsive-padding">
+    <section class="min-h-128 w-full flex flex-col md:flex-row gap-4 items-center  bg-gray-200 responsive-padding">
         <article class="w-full md:w-7/12 lg:w-8/12 flex flex-col items-start">
             <div class="flex items-center">
                 <h2 class="text-gray-600 text-xl md:text-2xl font-bold">
-                    PORQUE O TOTEM?
+                   VESTIBULARES TOTEM
                 </h2>
 
                 <div class="bg-orange-600 w-32 h-0.5 ml-8"></div>
             </div>
 
-            <h2 class="text-2xl md:text-4xl mt-4 lg:text-6xl text-gray-700 font-bold">
-                É MAIS QUE<br />
-                Vestibulares...
+            <h2 class="pt-8 lg:pt-12 text-2xl md:text-4xl lg:text-6xl text-gray-700 font-bold">
+               CONHEÇA O TOTEM {{ unidade.city.toUpperCase() }}
             </h2>
 
-            <p class="mt-4 md:mt-8 leading-8 lg:mt-12">
-                No <strong>{{ unidade.city }}</strong>, Lorem inpsum ...
+            <h4 class="pt-8 lg:pt-12 text-xl md:text-1xl lg:text-2xl text-gray-700 font-bold">
+               GIGANTES EM APROVAÇÃO
+            </h4>
+
+            <p class="pt-8 lg:pt-12 leading-8">
+                Para ser gigante em aprovação, é necessario focar em resultados. Nosso objetivo é a realização dos sonhos de ingresso ao ensino superior dos nossos alunos. Os resultados dos gigantes consolidaram o Totem como o curso que mais aprova no Rio Grande do Sul.
             </p>
 
-            <NuxtLink
-                :to="`/vestibulares/faqs`"
-                class="mt-6 inline-flex w-fit rounded-full bg-white shadow-2xl px-6 py-3 font-semibold text-gray-700 transition-all duration-300 hover:scale-115"
-            >
-                Saiba mais →
-            </NuxtLink>
+            <h4 class="pt-8 lg:pt-12 text-xl md:text-1xl lg:text-2xl text-gray-700 font-bold">
+               AMBIENTE FAMILIAR
+            </h4>
+
+            <p class="pt-8 lg:pt-12 leading-8">
+                Além de ser reconhecido pela confiança e credibilidade, o Totem tem como destaque o excelente relacionamento com os alunos. Valores como empatia, amizade e respeito são incentivados diariamente, sendo colocados em prática por meio da ótima relação entre professores, estudantes e colaboradores.
+            </p>
+
+            <h4 class="pt-8 lg:pt-12 text-xl md:text-1xl lg:text-2xl text-gray-700 font-bold">
+               ESTUDO ORIENTADO
+            </h4>
+
+            <p class="pt-8 lg:pt-12 leading-8">
+               O Totem possui o mair atendimento tira-dúvidas dos cursos do segmento pré-vestibular. Não existe a necessidade de agendamento prévio, já que nossos professores estão à disposição diariamente. Acreditamos que o acompanhamento personalizado no atendimento ao aluno seja fundamental para sua melhoria contínua.
+            </p>
+
         </article>
 
         <NuxtImg 
