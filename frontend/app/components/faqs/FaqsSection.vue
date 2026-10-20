@@ -15,7 +15,7 @@ const toggle = (id: number) => {
 </script>
 
 <template>
-    <section class="responsive-padding pb-24">
+    <section id="faqs" class="responsive-padding pb-24">
         <div class="flex items-center">
         <h2 class="text-orange-600 font-bold" aria-label="depoimentos">
             FAQS

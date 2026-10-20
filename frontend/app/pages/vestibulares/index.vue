@@ -56,27 +56,31 @@ const banners = [
             No Totem Vestibulares você encontra:
         </p>
 
-        <ul class="pt-8 lg:pt-12 ml-6 list-disc space-y-6 text-lg lg:text-xl leading-relaxed marker:text-orange-500 marker:text-2xl">
-            <li>
+        <ul class="ml-6 list-disc space-y-6 pt-8 text-lg leading-relaxed text-gray-700 marker:text-orange-500 marker:text-2xl lg:pt-12 lg:text-xl">
+            <li class="pl-2 flex items-center gap-2">
+                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
                 Atendimento ao aluno de forma personalizada.
             </li>
 
-            <li>
-                Estrutura física planejada para o conforto, segurança e rendimento do aluno.
+            <li class="pl-2 flex items-center gap-2">
+                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                 física planejada para o conforto, segurança e rendimento do aluno.
             </li>
 
-            <li>
+            <li class="pl-2 flex items-center gap-2">
+                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
                 Metodologia de ensino adequada ao modelo de prova e universidade desejada pelo aluno.
             </li>
 
-            <li>
+            <li class="pl-2 flex items-center gap-2">
+                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
                 Material didático produzido pelos próprios professores, atualizado anualmente,
                 contemplado com testes dos vestibulares do sul do Brasil.
             </li>
         </ul>
 
          <NuxtLink
-                :to="`/vestibulares/faqs`"
+                :to="`/vestibulares#faqs`"
                 class="mt-6 inline-flex w-fit rounded-full bg-white shadow-2xl px-6 py-3 font-semibold text-gray-700 transition-all duration-300 hover:scale-115"
             >
                 Saiba mais →
