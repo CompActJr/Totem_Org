@@ -1,16 +1,58 @@
-# Nitro starter
-
-Create your API and deploy it anywhere with this Nitro starter.
-
-## Getting started
-
 ```bash
-npm install
-npm run dev
+npm init -y
+npm install fastify
+npm install -D typescript tsx @types/node
+npm i fastify-plugin @fastify/mongodb 
+npm install @fastify/jwt @fastify/cors
+npm install zod
+npm install bcrypt
+npm install dotenv
+npm install migrate-mongo
 ```
 
-## Deploying
+```bash
+src/
+├── @types/          # Tipagens globais do TypeScript
+├── app.ts           # Configuração e Build da instancia do Fastify (plugins, errorHandler) em memória
+├── server.ts        # Ponto de entrada (Bootstrap / Listen)
+├── config/          # Variáveis de ambiente (ex: Zod env)
+├── plugins/         # Plugins globais (database, jwt, cors)
+└── modules/         # Organização por domínio/recurso
+    └── user/
+        ├── user.types.ts
+        ├── user.controller.ts
+        ├── user.service.ts
+        ├── user.schema.ts     # Validação com Zod
+        └── user.routes.ts     # Rotas encapsuladas como plugin
+```
+
+- types.ts: define os tipos TypeScript usados no código, incluindo os documentos persistidos no MongoDB e os dados recebidos pelas operações.
+- schema.ts: valida os dados reais que chegam pela API. Uma tipagem TypeScript, sozinha, não impede que um cliente envie um JSON inválido.
+- routes.ts: registra as rotas Fastify e associa os schemas aos endpoints.
+- controller.ts: trata os dados da requisição e a resposta HTTP.
+- service.ts: contém as regras de negócio e as operações no banco.
+Podemos usar Zod para validar os dados e inferir tipos com z.infer, reduzindo duplicação entre schemas e interfaces.
+
+
+## scripts de inicialização do mongo rodar com npm run
+
+```json
+{
+    "migrate:create": "migrate-mongo create",
+    "migrate:up": "migrate-mongo up",
+    "migrate:down": "migrate-mongo down",
+    "migrate:status": "migrate-mongo status"
+}
+```
+
+criar nova migration
 
 ```bash
-npm run build
+npm run migrate:create -- counter
 ```
+
+Um arquivo env.ts (ou a pasta de ambientes) em projetos serve para centralizar, validar e tipar as variáveis de ambiente usando TypeScript, garantindo segurança e autocomcompletion
+
+[docs](https://imasters.com.br/typescript/typescript-tipando-variaveis-de-ambiente-do-jeito-certo-com-ts)
+
+process.env é o objeto global do Node que contém as variáveis de ambiente do processo.

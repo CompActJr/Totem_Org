@@ -1,7 +1,6 @@
 # Totem.Org
 
 
-
 ## Authors
 
 ![Jonas](https://img.shields.io/badge/Jonas-000000?style=for-the-badge&logo=github&logoColor=white)
@@ -22,251 +21,165 @@
 <br/>
 
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
 
-## For Devs
+## instalando o nginx no linux ubuntu
 
 ```bash
-Internet
-      │
-      ▼
-┌────────────────────────────────────────────┐
-│ Ubuntu Lightsail                           │
-│                                            │
-│ Certbot (host)                             │
-│ /etc/letsencrypt                           │
-│                                            │
-│ Docker                                     │
-│                                            │
-│ ┌──────────────┐                           │
-│ │ nginx        │ 443                       │
-│ └──────┬───────┘                           │
-│        │                                   │
-│ ┌──────┴──────┐                            │
-│ │ principal   │ :8001                      │
-│ └─────────────┘                            │
-│                                            │
-│ ┌─────────────┐                            │
-│ │ colegios    │ :8002                      │
-│ └─────────────┘                            │
-│                                            │
-│ ┌─────────────┐                            │
-│ │ vestibulares│ :8003                      │
-│ └─────────────┘                            │
-└────────────────────────────────────────────┘
+ sudo apt update && sudo apt upgrade -y
+ sudo apt install nginx -y
+
+ ### comando uteis
+ sudo systemctl start nginx
+ sudo systemctl enable nginx
+ sudo systemctl status nginx
+ sudo systemctl stop nginx
+ sudo systemctl restart nginx
+sudo systemctl reload nginx
+sudo systemctl disable nginx
+
+#pagina inicial e arquivos estaticos e html ficam em
+/var/www/
+
+
+# Testando configuração
+Antes de aplicar, é fundamental verificar se o seu novo arquivo de configuração não possui erros de sintaxe:
+
+sudo nginx -t -c ~/caminho-projeto/nginx/nginx.conf
+
+## gerando os certicados
+
+Você precisa gerar um certificado TLS para o domínio principal e os subdomínios que pretende atender. o caminho mais simples é usar o Certbot com Let's Encrypt, gerando um certificado SAN que cubra todos os domínios sem precisar gerar uma chave separada para cada subdomínio.
+Mas há um detalhe importante: para emitir certificados públicos, os domínios precisam estar configurados no DNS e ser validados pelo Let's Encrypt. Alterar apenas o arquivo /etc/hosts do seu computador não é suficiente.
+
+1. Quais domínios incluir?
+- soutotem.com.br
+- www.soutotem.com.br
+- colegios.soutotem.com.br
+- www.colegios.soutotem.com.br
+- vestibulares.soutotem.com.br
+- www.vestibulares.soutotem.com.br
+- on.soutotem.com.br
+- www.on.soutotem.com.br
+
+Todos esses nomes precisam resolver para o servidor e estar acessíveis para validação. Se algum subdomínio não for ser usado, você pode removê-lo da lista.
+
+2. Preparar o DNS e emitir o certificado
+No provedor DNS do domínio, crie registros A apontando para o IPv4 público da EC2:
+Tipo	Nome	Valor
+A	@	IPv4 público da EC2
+A	www	IPv4 público da EC2
+A	colegios	IPv4 público da EC2
+A	www.colegios	IPv4 público da EC2
+A	vestibulares	IPv4 público da EC2
+A	www.vestibulares	IPv4 público da EC2
+A	on	IPv4 público da EC2
+A	www.on	IPv4 público da EC2
+
+## instalar o certbot no ubuntu
+
+sudo apt update
+sudo apt install certbot
+
+## criar os diretorios para as chaves e certificado
+
+sudo mkdir -p /var/www/letsencrypt/.well-known/acme-challenge
+sudo chown -R www-data:www-data /var/www/letsencrypt
+
+## Solicitar certificado
+sudo certbot certonly --webroot \
+  -w /var/www/letsencrypt \
+  --cert-name soutotem.com.br \
+  -d soutotem.com.br \
+  -d www.soutotem.com.br \
+  -d colegios.soutotem.com.br \
+  -d www.colegios.soutotem.com.br \
+  -d vestibulares.soutotem.com.br \
+  -d www.vestibulares.soutotem.com.br \
+  -d on.soutotem.com.br \
+  -d www.on.soutotem.com.br
+
+## Conferir
+sudo certbot certificates
+
+
+## Renovar certificado
+sudo certbot renew --dry-run
 ```
 
-**O projeto possui 4 modulos principais**
-- **totem_colegios_web** -> frontend para o portal institucional dos colégios
-- **totem_main** -> blog interativo, totem tv totem vocacional e painel administrativo
-- **totem_vestibulares_web** -> frontend para o portal institucional dos pré vestibulares
-
-
-**arquivos e pastas importantes**
-- **nginx** -> para o proxy em produção
-- **env.example** -> variaveis de ambiente globais
-- **Dockerfile** -> arquivo de configuração em cada modulo para o build da imagem daquele módulo
-- **docker-compose.yml** -> arquivo na raiz para orquestração de todos os containers
-- **backend/docker-compose.yml** -> arquivo para rodar o postgres localmente
-
-## Baixar a chave privada:
-
- Acesse o painel da sua conta do Amazon Lightsail, vá em Account > Account > aba SSH Keys e baixe a chave correspondente à região da sua instância (ou baixe diretamente na aba Connect da própria instância)
- 
-## Mudar a permissão da chave:
-  No seu terminal local, mude as permissões do arquivo .pem baixado para que ele seja seguro e legível apenas por você. Execute:
-
-  ```bash
-  chmod 400 nome-da-chave.pem
-  ```
-
-## Identificar os dados de acesso: 
-  Copie o Endereço IP público da sua instância no painel do Lightsail e descubra o nome de usuário padrão conforme o sistema operacional (ex: ubuntu para Ubuntu, admin para Debian, bitnami para Bitnami, ec2-user para Amazon Linux)
-  .Executar o comando de conexão: No terminal, navegue até a pasta onde salvou a chave e conecte-se usando:
-
-  ```bash  
-  ssh -i nome-da-chave.pem usuario@endereco-ip-publico
-  ```
-
-## NUXT
-
-<b>
-framework NuxtJs SSR melhora de SEO, usa vue 3+, e depencias listadas abaixo
-para executar em modo de desenvolvimento va até a pasta do projeto onde tem
-o package.json e realize os seguintes comandos
-</b>
-
----
+## Rodando a imagem do mongo localmente pra testes
 
 ```bash
-npm i
-npm run dev
+
+criando a rede
+
+docker network create -d bridge app-network
+
+cd backend
+docker run --name totem-mongo \
+  --network app-network \
+  --env-file .env \
+  -p 27017:27017 \
+  -d mongo:8.3.11-noble
 ```
 
-<i>
-As portas já foram configuradas para rodarem apartir da 8000 e por padrão em
-todas as interfaces de rede em 0.0.0.0 desta forma um outro computador
-na mesma rede pode acessar por seu IP
-</i>
-
-</br>
-</br>
-
-<b>
-Componentes de Cliente (Client-Side Components)Por padrão, o Nuxt utiliza renderização universal (SSR). Se você tem um componente que precisa rodar exclusivamente no navegador (por interagir com a janela do navegador, usar localStorage ou exigir uma biblioteca que dependa do objeto window), você pode usar a tag <ClientOnly> ou criar um componente com .client no nome.
-</b>
-
-
-> definindo variaveis de ambiente no nuxt:
+## rodando o fastify
 
 ```bash
-// nuxt.config.ts em cada projeto Nuxt
-export default defineNuxtConfig({
-  runtimeConfig: {
-    // Variáveis privadas (apenas no servidor Node)
-    apiSecret: '', 
+docker build . -t totem-api
 
-    // Variáveis públicas (disponíveis no cliente/navegador)
-    public: {
-      apiBase: process.env.NUXT_PUBLIC_API_BASE || 'http://localhost:3000'
-    }
-  }
-})
+> ajustar variaveis de ambiente no .env, a url de conexao no mongo
+> deve ser o nome do container ou ip dele
+
+executar o container
+
+docker run --name totem-api \
+  --network app-network \
+  --env-file .env \
+  -p 9000:9000 \
+  -d totem-api:latest
 ```
 
-## [Deploy.MD](/deploy.md)
+Para utilizar os dados estáticos, mude para:
+NUXT_NODE_PRODUCTION=false
 
 
-## Adicionar tailwild v4 com vite no projeto
+## funcionamento das rotas das unidades
+
+No Nuxt, o nome [slug] é o que torna a rota dinâmica. Para cada unidade, você mantém o mesmo arquivo Vue, e o valor do slug muda conforme a URL.
+Por exemplo, estas duas URLs carregariam a mesma página index.vue:
+- /colegios/unidade/cachoeira-do-sul
+- /colegios/unidade/santa-maria
+O conteúdo muda porque a página consulta a API usando o slug recebido na rota.
+A árvore de arquivos ficaria assim:
 
 ```bash
-npm install tailwindcss @tailwindcss/vite
+pages/
+└── colegios/
+    └── unidade/
+        └── [slug]/
+            ├── index.vue
+            ├── tour.vue
+            ├── diferenciais.vue
+            └── niveis/
+                ├── bercario.vue
+                ├── educacao-infantil.vue
+                ├── ensino-fundamental.vue
+                └── ensino-medio.vue
 ```
-
-
-configurar o tailwild v4 no projeto
-
-```css
- /assets/styles/main.css
-@import "tailwindcss";
-```
-
-e no nuxt.config.ts
 
 ```ts
-export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
-  vite: {
-    plugins: [
-      tailwindcss()
-    ]
-  },
+  const config = useRuntimeConfig()
 
-  css: [
-    '~/assets/styles/main.css'
-  ]
-})
+  // indica se o código atual está sendo executado no servidor.
+  // Servidor: vai direto no container da API. Navegador: passa pelo nginx em /api
+  const baseURL = import.meta.server
+    ? String(config.apiBaseInternal)
+    : String(config.public.apiBase)
 ```
 
-## Bibliotecas importantes
+Fluxo resultante:
 
-1. Swipper para o carrossel
-
-2. Nuxt Images otimização de imagens antes de carregar as páginas
-
-
-### [NuxImages Docs](https://image.nuxt.com/usage/nuxt-img)
-
-### [NuxtUi Docs](https://ui.nuxt.com/docs/getting-started)
-
-### [Prisma Docs](https://www.prisma.io/docs/guides/frameworks)
-
-
-## Usando o Backend e API
-
-projeto criado com nitro SSR e prisma para ORM com postgres e supabase para testes
-
-```bash
-npx create-nitro-app
-```
-
-> primeiros passos
-
-```bash
-cd backend
-npm i
-cp .env.example .env
-```
-
-> substitua as variaveis de ambiente
-
-DATABASE_URL="postgresql://user:password@localhost:5432/mydb?schema=public"
-
-> rodando banco local com docker
-
-```bash
-docker compose up -d
-```
-
-O Nitro usa c12, então você não precisa instalar o dotenv.
-
-é só usar 
-
-```bash
-process.env.ADMIN_EMAIL
-```
-
-Nitro é construído em cima do H3.
-
-O H3 é um framework HTTP criado pela equipe do Nuxt/UnJS. O Nitro utiliza o H3 para todo o tratamento de requisições.
-
-### [H3 DOCS](https://v1.h3.dev/)
-
-### adicionando prisma ORM no projeto já criado com o nitro
-
-```bash
-npm install @prisma/client @prisma/adapter-pg pg
-npm install -D prisma dotenv
-npx prisma init
-```
-
-vai criar uma pasta /prisma com um schema.prisma onde você ira fazer a
-sua configuração dos seus models que virão a ser as tabelas e de migrations
-se tiver ja o .env com a variavel de ambiente configurada com a url de conexão
-do banco não será nescessário ajustes
-
-### executando as migrations para desenvolvimento
-
-```bash
-npx prisma migrate dev --name nome_da_migration
-```
-
-1. O Prisma compara o banco com o schema.
-2. Gera um SQL.
-3. Cria uma migration.
-4. Executa esse SQL.
-5. Atualiza o banco.
-6. Gera o Prisma Client.
-
-### apenas executar as migrations existentes (para ambiente de produção)
-
-```bash
-npx prisma migrate deploy
-```
-
-### cenário onde o banco já existe e quer atualizar seu schema
-
-```bash
-npx prisma db pull
-```
-
-
-### arquitetura do back
-
-```bash
-
-```
+SSR: frontend-totem chama http://backend-totem:9000/api/units/santa-maria, que consulta o mongoDb.
+Navegador: colegios.soutotem.com.br/api/units/santa-maria, que passa pelo nginx e chega em 127.0.0.1:900
