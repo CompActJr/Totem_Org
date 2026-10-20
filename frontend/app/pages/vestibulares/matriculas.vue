@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import GridMatricula from '~/components/matricula/GridMatricula.vue';
-import IntroMatricula from '~/components/matricula/IntroMatricula.vue';
 
 definePageMeta({ layout: 'vestibulares' })
 </script>
@@ -29,7 +27,7 @@ definePageMeta({ layout: 'vestibulares' })
         </div>
 
     </section>
-
-    <IntroMatricula />
-    <GridMatricula />
+<!--<IntroMatricula />
+    <GridMatricula />-->
+    
 </template>
