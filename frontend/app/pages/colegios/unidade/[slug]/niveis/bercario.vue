@@ -2,7 +2,9 @@
 import AgendeSuaVisita from '~/components/agendamento/AgendeSuaVisita.vue'
 import Depoimentos from '~/components/depoimentos/Depoimentos.vue'
 import HeroNiveisEnsino from '~/components/niveis/HeroNiveisEnsino.vue'
+import ProfessorCard from '~/components/professores/ProfessorCard.vue'
 import HeroSlider from '~/components/slider/HeroSlider.vue'
+import HeroSliderCTA from '~/components/slider/HeroSliderCTA.vue'
 import GoogleMaps from '~/components/ui/GoogleMaps.vue'
 import WhatsappButton from '~/components/ui/WhatsappButton.vue'
 import { useOrganizations } from '~/composables/api/useOrganizations'
@@ -14,16 +16,16 @@ definePageMeta({ layout: 'colegios' })
 const route = useRoute()
 const slug = computed(() => String(route.params.slug))
 
-const { data, pending, error, refresh, } = await useOrganizations(slug.value, 'colegios')
+const { unidade} =  useOrganizations(slug.value, 'colegios')
 
 const whatsappLinks = computed<WhatsappLinks[]>(() => {
-  if (!data.value) return []
-  const { _id, slug, whatsapp, '@type': type } = data.value
+  if (!unidade) return []
+  const { _id, slug, whatsapp, '@type': type } = { ... unidade}
   return [{ _id, slug, whatsapp, '@type': type }]
 })
 
 const professoresFiltrados = computed(() =>
-  data.value?.professores.filter(({ levels }) =>
+  unidade?.professores.filter(({ levels }) =>
     levels.includes(EducationalEnum.BERCARIO),
   ) ?? [],
 )
@@ -31,11 +33,15 @@ const professoresFiltrados = computed(() =>
 </script>
 
 <template>
-  <main v-if="data != null">
+  <main v-if="unidade != null">
 
-    <HeroSlider :banners="data.banners">
-      <HeroSliderCTA :titulo="'Berçário'" :subtitle="data.city"
-        :link="`/colegios/unidade/${data.slug}/niveis/bercario/#agende-visita`" />
+     <HeroSlider :banners="unidade.banners">
+      <HeroSliderCTA titulo="Berçário" :subtitle="unidade.city"
+        :link="`/colegios/unidade/${unidade.slug}/niveis/bercario/#agende-visita`">
+        <template #cta-text>
+          Agende Sua Visita
+        </template>
+      </HeroSliderCTA>
     </HeroSlider>
 
     <HeroNiveisEnsino>
@@ -73,17 +79,20 @@ const professoresFiltrados = computed(() =>
       <ProfessorCard v-for="professor in professoresFiltrados" :key="professor._id" :professor="professor" />
     </ProfessoresGrid>
 
-    <Depoimentos v-if="data" :unidade="data.city" :depoimentos="data.depoimentos" />
+    <Depoimentos v-if="unidade" :unidade="unidade.city" :depoimentos="unidade.depoimentos" />
 
-    <GoogleMaps :unidade="data" />
+    <GoogleMaps :unidade="unidade" />
 
-    <AgendeSuaVisita :unidades="[data]" />
+    <AgendeSuaVisita :unidades="[unidade]" />
 
     <WhatsappButton :links="whatsappLinks" />
   </main>
-  <p v-else-if="pending" class="responsive-padding py-12 text-gray-600">
+
+  <!--
+    <p v-else-if="pending" class="responsive-padding py-12 text-gray-600">
     Carregando unidade...
   </p>
+  -->
 
   <p v-else class="responsive-padding py-12 text-red-600">
     Não foi possível carregar esta unidade.

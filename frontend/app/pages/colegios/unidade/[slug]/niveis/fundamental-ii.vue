@@ -3,6 +3,7 @@ import AgendeSuaVisita from '~/components/agendamento/AgendeSuaVisita.vue'
 import Depoimentos from '~/components/depoimentos/Depoimentos.vue'
 import HeroNiveisEnsino from '~/components/niveis/HeroNiveisEnsino.vue'
 import HeroSlider from '~/components/slider/HeroSlider.vue'
+import HeroSliderCTA from '~/components/slider/HeroSliderCTA.vue'
 import GoogleMaps from '~/components/ui/GoogleMaps.vue'
 import WhatsappButton from '~/components/ui/WhatsappButton.vue'
 import { useOrganizations } from '~/composables/api/useOrganizations'
@@ -13,29 +14,32 @@ definePageMeta({ layout: 'colegios' })
 
 const route = useRoute()
 const slug = computed(() => String(route.params.slug))
-const { data, pending } = await useOrganizations(slug.value, 'colegios')
+
+const { unidade} =  useOrganizations(slug.value, 'colegios')
 
 const whatsappLinks = computed<WhatsappLinks[]>(() => {
-  if (!data.value) return []
-  const { _id, slug, whatsapp, '@type': type } = data.value
+  if (!unidade) return []
+  const { _id, slug, whatsapp, '@type': type } = { ... unidade}
   return [{ _id, slug, whatsapp, '@type': type }]
 })
 
 const professoresFiltrados = computed(() =>
-  data.value?.professores.filter(({ levels }) =>
-    levels.includes(EducationalEnum.ENSINO_FUNDAMENTAL_II),
+  unidade?.professores.filter(({ levels }) =>
+    levels.includes(EducationalEnum.BERCARIO),
   ) ?? [],
 )
+
 </script>
 
 <template>
-  <main v-if="data != null">
-    <HeroSlider :banners="data.banners">
-      <HeroSliderCTA
-        titulo="Fundamental II"
-        :subtitle="data.city"
-        :link="`/colegios/unidade/${data.slug}/niveis/fundamental-ii/#agende-visita`"
-      />
+  <main v-if="unidade != null">
+     <HeroSlider :banners="unidade.banners">
+      <HeroSliderCTA titulo="Ensino Fundamental II" :subtitle="unidade.city"
+        :link="`/colegios/unidade/${unidade.slug}/niveis/fundamental-ii/#agende-visita`">
+        <template #cta-text>
+          Agende Sua Visita
+        </template>
+      </HeroSliderCTA>
     </HeroSlider>
 
     <HeroNiveisEnsino>
@@ -52,12 +56,16 @@ const professoresFiltrados = computed(() =>
       <ProfessorCard v-for="professor in professoresFiltrados" :key="professor._id" :professor="professor" />
     </ProfessoresGrid>
 
-    <Depoimentos :unidade="data.city" :depoimentos="data.depoimentos" />
-    <GoogleMaps :unidade="data" />
-    <AgendeSuaVisita :unidades="[data]" />
+    <Depoimentos :unidade="unidade.city" :depoimentos="unidade.depoimentos" />
+    <GoogleMaps :unidade="unidade" />
+    <AgendeSuaVisita :unidades="[unidade]" />
     <WhatsappButton :links="whatsappLinks" />
   </main>
 
-  <p v-else-if="pending" class="responsive-padding py-12 text-gray-600">Carregando unidade...</p>
+  <!--
+    <p v-else-if="pending" class="responsive-padding py-12 text-gray-600">Carregando unidade...</p>
+  -->
+  
+  
   <p v-else class="responsive-padding py-12 text-red-600">Não foi possível carregar esta unidade.</p>
 </template>

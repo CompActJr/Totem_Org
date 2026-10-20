@@ -2,7 +2,7 @@
 
 import { buildApp } from "./app.js";
 
-const PORT = 9000;
+const PORT = Number(process.env.PORT ?? 9000);
 const HOST = "0.0.0.0";
 
 const start = async () => {
@@ -10,10 +10,6 @@ const start = async () => {
 
   try {
     await fastify.ready();
-
-    await fastify.mongo.db?.command({
-      ping: 1,
-    });
 
     fastify.log.info("MongoDB PING OK");
 

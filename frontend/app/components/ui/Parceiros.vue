@@ -14,16 +14,14 @@ import ExternalLink from '~/components/ui/ExternalLink.vue'
             <div class="bg-orange-600 w-32 h-0.5 ml-8"></div>
         </div>
 
-        <h2 class="text-gray-600 text-2xl md:text-6xl font-bold mt-8">PLURALL</h2>
-
         <article class="flex flex-col md:flex-row items-center gap-8">
-            <div class=" max-w-xs sm:max-w-sm md:max-w-md aspect-square shrink-0">
+            <div class="w-full max-w-md md:w-2/5 aspect-square shrink-0">
                 <NuxtImg src="/apoiadores/PLURALL.jpg" alt="Plurall"
                     class="h-full w-full rounded-2xl object-cover shadow-lg" loading="lazy" format="webp" />
             </div>
 
-
             <div class="flex flex-1 flex-col">
+                <h2 class="text-gray-600 text-2xl md:text-4xl font-bold mb-6">PLURALL</h2>
 
                 <p class="leading-8 text-gray-700">
                     O Plurall reúne todo o conteúdo digital das editoras e sistemas de ensino
@@ -46,16 +44,14 @@ import ExternalLink from '~/components/ui/ExternalLink.vue'
             </div>
         </article>
 
-        <h2 class="text-gray-600 text-2xl md:text-6xl font-bold mt-8">SAS EDUCAÇÃO</h2>
-
-        <article class="flex flex-col md:flex-row items-center gap-8">
-            <div class=" max-w-xs sm:max-w-sm md:max-w-md aspect-square shrink-0">
-                <NuxtImg src="/apoiadores/SAS.jpg" alt="Plurall"
+        <article class="flex flex-col md:flex-row-reverse items-center gap-8 mt-8">
+            <div class="w-full max-w-md md:w-2/5 aspect-square shrink-0">
+                <NuxtImg src="/apoiadores/SAS.jpg" alt="SAS Educação"
                     class="h-full w-full rounded-2xl object-cover shadow-lg" loading="lazy" format="webp" />
             </div>
 
-
             <div class="flex flex-1 flex-col">
+                <h2 class="text-gray-600 text-2xl md:text-4xl font-bold mb-6">SAS EDUCAÇÃO</h2>
 
                 <p class="leading-8 text-gray-700">
                     No Totem, acreditamos que aprender vai muito além da sala de aula — e é por isso que escolhemos o
@@ -79,16 +75,14 @@ import ExternalLink from '~/components/ui/ExternalLink.vue'
             </div>
         </article>
 
-        <h2 class="text-gray-600 text-2xl md:text-6xl font-bold mt-8">MACMILLAN EDUCATION</h2>
-
-        <article class="flex flex-col md:flex-row items-center gap-8">
-            <div class=" max-w-xs sm:max-w-sm md:max-w-md aspect-square shrink-0">
+        <article class="flex flex-col md:flex-row items-center gap-8 mt-8">
+            <div class="w-full max-w-md md:w-2/5 aspect-square shrink-0">
                 <NuxtImg src="/apoiadores/MACMILLAN.jpg" alt="MACMILLAN"
                     class="h-full w-full rounded-2xl object-cover shadow-lg" loading="lazy" format="webp" />
             </div>
 
-
             <div class="flex flex-1 flex-col">
+                <h2 class="text-gray-600 text-2xl md:text-4xl font-bold mb-6">MACMILLAN EDUCATION</h2>
 
                 <p class="leading-8 text-gray-700">
                     Programa Bilíngue com Macmillan Education

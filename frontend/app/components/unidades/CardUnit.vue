@@ -41,7 +41,8 @@ defineProps<{
       class="flex justify-center border-t border-gray-200 bg-white px-5 py-5 gap-8"
     >
 
-      <NuxtLink :to="`/unidades/${unidade.slug}/tour`"
+      <NuxtLink 
+        :to="`/colegios/unidade/${unidade.slug}/tour`"
         class="rounded-full shadow-sm px-6 py-3 font-semibold text-gray-700 
         transition hover:shadow-xl  hover:text-white"
       >

@@ -1,8 +1,10 @@
 <script lang="ts" setup>
 import Depoimentos from '~/components/depoimentos/Depoimentos.vue';
 import HeroSlider from '~/components/slider/HeroSlider.vue';
+import Grid from '~/components/ui/cards/Grid.vue';
 import HeroVocacional from '~/components/ui/HeroVocacional.vue';
 import WhatsappButton from '~/components/ui/WhatsappButton.vue';
+import CardUnitPV from '~/components/unidades/CardUnitPV.vue';
 import { unidadesVestibulares, whatssapLinks } from '~/data/static';
 import type { WhatsappLinks } from '~/types/navigation.types';
 
@@ -38,7 +40,7 @@ const banners = [
 
     <section class="min-h-128 w-full responsive-padding">
         <div class="flex items-center">
-            <h2 class="text-orange-600 font-bold" aria-label="nossas unidades">
+            <h2 class="text-orange-600 mt-4 font-bold" aria-label="nossas unidades">
                 PORQUE O TOTEM?
             </h2>
             <div class="bg-orange-600 w-16 h-0.5 ml-8"></div>
@@ -74,7 +76,9 @@ const banners = [
         </ul>
     </section>
 
-    <HeroUnidades />
+    <Grid>
+       <CardUnitPV v-for="unidade in unidades" :unidade="unidade" />
+    </Grid>
 
     <Depoimentos
       v-if="unidades[0]"

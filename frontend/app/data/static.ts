@@ -10,27 +10,27 @@ import type { Organization } from "~/types/organizations.types";
 export const niveis = [
   {
     name: "Berçário",
-    image: "/geral/NIVEL-BERÇARIO.jpg",
+    image: "/niveis/NIVEL-BERÇARIO.jpg",
     link: "bercario"
   },
   {
     name: "Educação Infantil",
-    image: "/geral/NIVEL-INFANTIL.jpg",
+    image: "/niveis/NIVEL-INFANTIL.jpg",
     link: "infantil"
   },
   {
     name: "Ensino Fundamental I",
-    image: "/geral/NIVEL-FUNDAMENTAL-1.jpg",
+    image: "/niveis/NIVEL-FUNDAMENTAL-1.jpg",
     link: "fundamental-i"
   },
   {
     name: "Ensino Fundamental II",
-    image: "/geral/NIVEL-FUNDAMENTAL-2.jpg",
+    image: "/niveis/NIVEL-FUNDAMENTAL-2.jpg",
     link: "fundamental-ii"
   },
   {
     name: "Ensino Médio",
-    image: "/geral/NIVEL-MEDIO.jpg",
+    image: "/niveis/NIVEL-MEDIO.jpg",
     link: "ensino-medio"
   }
 ] as const;
@@ -183,10 +183,21 @@ export const unidadesColegios: Organization[] = [
     professores: [
       {
         _id: 1,
-        nome: "Cássia Machado",
+        nome: "Professor A",
         areaEnsino: "Matemática",
         levels: [
           "Ensino Médio"
+        ],
+        imagemUrl: "/geral/perfil.png",
+        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
+      },
+      {
+        _id: 2,
+        nome: "Professor B",
+        areaEnsino: "Portguês",
+        levels: [
+          "Ensino Fundamental I",
+          "Ensino Fundamental II",
         ],
         imagemUrl: "/geral/perfil.png",
         texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
@@ -262,8 +273,54 @@ export const unidadesColegios: Organization[] = [
       "/infraestrutura/cruz-alta-colegios/SALA-1.png",
       "/infraestrutura/cruz-alta-colegios/SALA-2.png"
     ],
-    professores: [],
-    atividades: [],
+    professores: [
+         {
+        _id: 3,
+        nome: "Professor A",
+        areaEnsino: "Matemática",
+        levels: [
+          "Ensino Médio"
+        ],
+        imagemUrl: "/geral/perfil.png",
+        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
+      },
+      {
+        _id: 4,
+        nome: "Professor B",
+        areaEnsino: "Portguês",
+        levels: [
+          "Ensino Fundamental I",
+          "Ensino Fundamental II",
+        ],
+        imagemUrl: "/geral/perfil.png",
+        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
+      }
+    ],
+    atividades: [
+      {
+        _id: 2,
+        name: "Escolinha de Voleibol",
+        turmas: [
+          {
+            _id: 1,
+            nome: "Escolinha de Voleibol - 3º e 4º ano",
+            detalhes: "Ginásio. Sextas, das 9h30 às 10h30"
+          },
+          {
+            _id: 2,
+            nome: "Escolinha de Voleibol - 5º ano",
+            detalhes: "Ginásio. Sextas, das 10h30 às 11h30"
+          },
+          {
+            _id: 3,
+            nome: "Escolinha de Voleibol - 6º ao 8º ano + Médio",
+            detalhes: "Ginásio. Sextas, das 13h40 às 15h40"
+          }
+        ],
+        professorNome: "Jonas",
+        image: "/atividades/ESCOLINHA-DE-VOLEIBOL.jpg"
+      }
+    ],
     cursos: [],
     faqs: []
   },
@@ -313,8 +370,54 @@ export const unidadesColegios: Organization[] = [
       "/infraestrutura/santa-maria-colegios/SAGUÃO-1.png",
       "/infraestrutura/santa-maria-colegios/SALA-PEQUENOS-1.png"
     ],
-    professores: [],
-    atividades: [],
+    professores: [
+         {
+        _id: 5,
+        nome: "Professor A",
+        areaEnsino: "Matemática",
+        levels: [
+          "Ensino Médio"
+        ],
+        imagemUrl: "/geral/perfil.png",
+        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
+      },
+      {
+        _id: 6,
+        nome: "Professor B",
+        areaEnsino: "Portguês",
+        levels: [
+          "Ensino Fundamental I",
+          "Ensino Fundamental II",
+        ],
+        imagemUrl: "/geral/perfil.png",
+        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
+      }
+    ],
+    atividades: [
+      {
+        _id: 3,
+        name: "Escolinha de Voleibol",
+        turmas: [
+          {
+            _id: 1,
+            nome: "Escolinha de Voleibol - 3º e 4º ano",
+            detalhes: "Ginásio. Sextas, das 9h30 às 10h30"
+          },
+          {
+            _id: 2,
+            nome: "Escolinha de Voleibol - 5º ano",
+            detalhes: "Ginásio. Sextas, das 10h30 às 11h30"
+          },
+          {
+            _id: 3,
+            nome: "Escolinha de Voleibol - 6º ao 8º ano + Médio",
+            detalhes: "Ginásio. Sextas, das 13h40 às 15h40"
+          }
+        ],
+        professorNome: "Jonas",
+        image: "/atividades/ESCOLINHA-DE-VOLEIBOL.jpg"
+      }
+    ],
     cursos: [],
     faqs: []
   }
@@ -327,7 +430,7 @@ export const unidadesVestibulares: Organization[] = [
     "@type": "vestibulares",
     city: "Santa Rosa",
     slug: "santa-rosa",
-    image: "/infraestrutura/santa-rosa-vestibulares/ALFABETIZAÇÃO-1.png",
+    image: "/infraestrutura/santa-rosa-vestibulares/HALL.jpg",
     cep: "98900-000",
     address: "Rua Santa Rosa, 305",
     phone: "(55) 2120-2003",
@@ -361,7 +464,24 @@ export const unidadesVestibulares: Organization[] = [
       "/infraestrutura/santa-rosa-vestibulares/SALA_DE_ESTUDOS.jpg",
       "/infraestrutura/santa-rosa-vestibulares/SECRETARIA.jpg"
     ],
-    professores: [],
+    professores: [
+      {
+        _id: 7,
+        nome: "Professor A",
+        areaEnsino: "Matemática",
+        levels: [],
+        imagemUrl: "/geral/perfil.png",
+        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
+      },
+      {
+        _id: 8,
+        nome: "Professor B",
+        areaEnsino: "Portguês",
+        levels: [],
+        imagemUrl: "/geral/perfil.png",
+        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
+      }
+    ],
     atividades: [],
     cursos: [
       {
@@ -500,7 +620,24 @@ export const unidadesVestibulares: Organization[] = [
       "/infraestrutura/santa-maria-vestibulares/SALA_DE_ESTUDOS.jpg",
       "/infraestrutura/santa-maria-vestibulares/SECRETARIA.jpg"
     ],
-    professores: [],
+    professores: [
+      {
+        _id: 9,
+        nome: "Professor A",
+        areaEnsino: "Matemática",
+        levels: [],
+        imagemUrl: "/geral/perfil.png",
+        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
+      },
+      {
+        _id: 10,
+        nome: "Professor B",
+        areaEnsino: "Portguês",
+        levels: [],
+        imagemUrl: "/geral/perfil.png",
+        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
+      }
+    ],
     atividades: [],
     cursos: [
       {
@@ -754,7 +891,24 @@ export const unidadesVestibulares: Organization[] = [
       "/infraestrutura/ijui-vestibulares/SALA_DE_ESTUDOS.jpg",
       "/infraestrutura/ijui-vestibulares/SECRETARIA.jpg"
     ],
-    professores: [],
+    professores: [
+      {
+        _id: 11,
+        nome: "Professor A",
+        areaEnsino: "Matemática",
+        levels: [],
+        imagemUrl: "/geral/perfil.png",
+        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
+      },
+      {
+        _id: 12,
+        nome: "Professor B",
+        areaEnsino: "Portguês",
+        levels: [],
+        imagemUrl: "/geral/perfil.png",
+        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
+      }
+    ],
     atividades: [],
     cursos: [
       {

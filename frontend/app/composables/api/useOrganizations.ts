@@ -11,12 +11,17 @@ export function useOrganizations(slug: MaybeRefOrGetter<string>, type: string) {
     ? String(config.apiBaseInternal)
     : String(config.public.apiBase)
 
-  const unidade = [...unidadesColegios, ...unidadesVestibulares].find(u => u.slug === slug && u['@type'] === type)
+  const unidade = [...unidadesColegios, ...unidadesVestibulares].find(
+    u => u.slug === toValue(slug) && u['@type'] === type,
+  )
 
+  /*
   return useFetch<Organization>(() => `/units/${toValue(slug)}`, {
     baseURL,
     timeout: 5_000,
   })
+  */
 
-  
+  return { unidade };
+
 }

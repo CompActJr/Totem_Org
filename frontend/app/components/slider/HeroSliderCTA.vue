@@ -25,7 +25,7 @@ const props = defineProps<{
                 transition-all duration-300 hover:text-white
                 hover:scale-105 hover:bg-orange-400 absolute lg:bottom-16 lg:left-16 bottom-12 left-4
             ">
-                    Agende Sua Visita
+                <slot name="cta-text"/>
             </NuxtLink>
         </div>
     </div>

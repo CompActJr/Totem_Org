@@ -13,7 +13,7 @@ const currentNivel = computed(() => {
   return (
     niveis.find((item) => item.name === props.nivel) ?? {
       name: props.nivel,
-      image: '/geral/NIVEL-INFANTIL.jpg',
+      image: '/niveis/NIVEL-INFANTIL.jpg',
       link: 'infantil',
     }
   )

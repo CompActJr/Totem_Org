@@ -21,37 +21,37 @@ definePageMeta({ layout: 'colegios' })
 const route = useRoute()
 const slug = computed(() => String(route.params.slug))
 
-const { data: unidade, error, pending } = await useOrganizations(slug, 'colegios') 
+const { unidade } =  useOrganizations(slug, 'colegios') 
 
-if (error.value || !unidade.value) {
+if (!unidade) {
   throw createError({ statusCode: 404, statusMessage: 'Unidade não encontrada', fatal: true })
 }
 
 
 const whatsappLinks = computed<WhatsappLinks[]>(() => {
-  if (!unidade.value) return []
-  const { _id, slug, whatsapp, '@type': type } = unidade.value
+  if (!unidade) return []
+  const { _id, slug, whatsapp, '@type': type } = unidade
   return [{ _id, slug, whatsapp, '@type': type }]
 });
 
 
 useSeoMeta({
   title: () =>
-    unidade.value
-      ? `Colégio Totem em ${unidade.value.city} | Educação`
+    unidade
+      ? `Colégio Totem em ${unidade.city} | Educação`
       : 'Colégios Totem',
 
   description: () =>
-    unidade.value
-      ? `Conheça o Colégio Totem em ${unidade.value.city}, sua estrutura e níveis de ensino.`
+    unidade
+      ? `Conheça o Colégio Totem em ${unidade.city}, sua estrutura e níveis de ensino.`
       : 'Conheça as unidades dos Colégios Totem.',
 
   ogTitle: () =>
-    `Colégio Totem${unidade.value ? ` em ${unidade.value.city}` : ''}`,
+    `Colégio Totem${unidade ? ` em ${unidade.city}` : ''}`,
 
   ogDescription: () =>
-    unidade.value
-      ? `Conheça a unidade Totem em ${unidade.value.city}.`
+    unidade
+      ? `Conheça a unidade Totem em ${unidade.city}.`
       : 'Conheça nossos colégios.',
 
   ogType: 'website',
@@ -68,7 +68,11 @@ useSeoMeta({
             :titulo="unidade.city"  
             :subtitle="'Colégio Totem'"
             :link="'/colegios/unidade/' + unidade.slug + '#agende-visita'" 
-        />
+        >
+            <template #cta-text>
+                Agende Sua Visita
+            </template>
+        </HeroSliderCTA>
     </HeroSlider>
 
     <section class="min-h-128 w-full flex flex-col md:flex-row gap-4 bg-gray-200 responsive-padding">
@@ -189,9 +193,12 @@ useSeoMeta({
 
   </main>
 
-  <p v-else-if="pending" class="responsive-padding py-12 text-gray-600">
+  <!--
+      <p v-else-if="pending" class="responsive-padding py-12 text-gray-600">
     Carregando unidade...
   </p>
+  -->
+
 
   <p v-else class="responsive-padding py-12 text-red-600">
     Não foi possível carregar esta unidade.
