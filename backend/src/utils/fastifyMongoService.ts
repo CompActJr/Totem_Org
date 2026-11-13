@@ -1,6 +1,6 @@
 /**
  * @author Jonas
- * O Mongo não tem AUTO_INCREMENT como o MySQL. A solução é um "caixa de senhas": 
+ * O Mongo não tem AUTO_INCREMENT como o MySQL. A solução é um "caixa de senhas":
  * uma coleção counters com um documento por sequência.
  */
 
@@ -22,8 +22,8 @@ export async function getNextSequence(fastify: FastifyInstance, sequenceName: st
     .findOneAndUpdate(
       { _id: sequenceName },
       { $inc: { seq: 1 } },
-      { upsert: true, returnDocument: "after"}
-  );
+      { upsert: true, returnDocument: "after" }
+    );
 
   if (!counter) {
     throw new AppError(500, "Não foi possível gerar o ID.", "Internal Server Error");

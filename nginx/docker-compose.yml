@@ -1,0 +1,19 @@
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-proxy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      # Mapeia o arquivo de configuração global principal
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      # Mapeia seus arquivos de configuração personalizados
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      # Mapeia os certificados gerados pelo Certbot no host para dentro do container
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      # Opcional: diretório temporário para validação webroot caso use o Certbot via webroot
+      - /var/www/certbot:/var/www/certbot:ro
+    networks:
+      - app-network

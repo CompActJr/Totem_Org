@@ -1,3 +1,5 @@
+import { syncCounter } from './utils/syncCounter.js';
+
 /**
  * @param db {import('mongodb').Db}
  * @param client {import('mongodb').MongoClient}
@@ -49,6 +51,8 @@ export const up = async (db, client) => {
             "unidades": ["cruz-alta"]
         }
     ]);
+
+    await syncCounter(db, 'posts', 3);
 };
 
 /**

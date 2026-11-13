@@ -27,8 +27,6 @@ COPY --from=builder --chown=fastifyuser:nodejs /app/build ./build
 # Define o usuário não-root
 USER fastifyuser
 
-# Expõe a porta que a aplicação vai rodar
 EXPOSE 9000
 
-# Comando para iniciar a aplicação
 CMD ["node", "build/server.js"]

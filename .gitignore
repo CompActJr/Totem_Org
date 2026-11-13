@@ -25,3 +25,6 @@ logs
 !.env.example
 
 .vscode/
+
+*.tar.gz
+*.tar

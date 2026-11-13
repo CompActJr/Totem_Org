@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     apiBaseInternal: 'http://localhost:9000/api', // NUXT_API_BASE_INTERNAL
     nodeProduction: false,      //NUXT_NODE_PRODUCTION
     public: {
-      apiBase: 'http://localhost:9000/api',         // NUXT_PUBLIC_API_BASE
+         
     },
   },
 

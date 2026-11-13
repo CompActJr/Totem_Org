@@ -10,24 +10,28 @@ services:
       - mongo_data:/data/db
     networks:
       - app-network
-    mem_limit: 1g
-    mem_reservation: 256m
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+        reservations:
+          memory: 256M
+          cpus: '0.25'
     healthcheck:
       test:
-        [
-          "CMD",
-          "mongosh",
-          "--quiet",
-          "--eval",
-          "db.adminCommand('ping').ok"
-        ]
-      interval: 10s
+        - CMD
+        - mongosh
+        - --quiet
+        - --eval
+        - "db.adminCommand('ping').ok"
+      interval: 15s
       timeout: 5s
       retries: 5
       start_period: 20s
-
   backend-totem:
     image: totem-api:latest
+    container_name: totem-api
     restart: unless-stopped
     env_file:
       - ./backend/.env
@@ -38,34 +42,36 @@ services:
     depends_on:
       mongoDb:
         condition: service_healthy
-    healthcheck:
-      test:
-        [
-          "CMD",
-          "node",
-          "-e",
-          "fetch('http://127.0.0.1:9000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
-        ]
-      interval: 30s
-      timeout: 5s
-      retries: 3
-      start_period: 15s
+    deploy:
+      resources:
+        limits:
+          memory: 356m
+          cpus: '0.5'
+        reservations:
+          memory: 128m
+          cpus: '0.25'
 
   frontend-totem:
-    image: totem-frontend:latest
+    image: totem-web:latest
+    container_name: totem-web
     restart: unless-stopped
     ports:
       - "127.0.0.1:8000:8000"
     env_file:
       - ./frontend/.env
-    environment:
-      NUXT_PUBLIC_API_BASE: /api
-      NUXT_API_BASE_INTERNAL: http://backend-totem:9000/api
     networks:
       - app-network
     depends_on:
       backend-totem:
         condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+          cpus: '0.5'
+        reservations:
+          memory: 256m
+          cpus: '0.25'
 
 networks:
   app-network:

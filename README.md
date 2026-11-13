@@ -24,12 +24,165 @@
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
 
-## instalando o nginx no linux ubuntu
+# TUTORIAL DE DEPLOY
+
+Considere estes passos a passos sem utilizar CI e CD como um runner ou github actions mas sim direto 
+no servidor com sua máquina via SSH, considere ainda um ambiente limpo com o docker já instalado e todos
+os containers devem estar sem a permissão de root
 
 ```bash
- sudo apt update && sudo apt upgrade -y
- sudo apt install nginx -y
+ssh -i [sua chave] usuario@ip
+```
 
+## instalação do docker no ambiente linux
+
+
+## gerando os certicados com certpot
+
+Você precisa gerar um certificado TLS para o domínio principal e os subdomínios que pretende atender. o caminho mais simples é usar o Certbot com Let's Encrypt, gerando um certificado SAN que cubra todos os domínios sem precisar gerar uma chave separada para cada subdomínio.
+Mas há um detalhe importante: para emitir certificados públicos, os domínios precisam estar configurados no DNS e ser validados pelo Let's Encrypt. Alterar apenas o arquivo /etc/hosts do seu computador não é suficiente.
+
+Quais domínios incluir? todos os hosts que sua aplicação usar
+
+Preparar o DNS e emitir o certificado
+No provedor DNS do domínio, crie registros A apontando para o IPv4 público da EC2:
+Tipo	Nome	Valor
+A	@	IPv4 público da EC2
+A	www	IPv4 público da EC2
+A	colegios	IPv4 público da EC2
+A	www.colegios	IPv4 público da EC2
+A	vestibulares	IPv4 público da EC2
+A	www.vestibulares	IPv4 público da EC2
+A	on	IPv4 público da EC2
+A	www.on	IPv4 público da EC2
+
+1. instalação do certbot
+
+```bash
+sudo apt update
+sudo apt install certbot
+```
+
+2. criar os diretorios para as chaves e certificado
+
+```bash
+sudo mkdir -p /var/www/letsencrypt/.well-known/acme-challenge
+sudo chown -R www-data:www-data /var/www/letsencrypt
+```
+
+3. Solicitar certificado
+
+```
+sudo certbot certonly --webroot \
+  -w /var/www/letsencrypt \
+  --cert-name soutotem.com.br \
+  -d soutotem.com.br \
+  -d www.soutotem.com.br \
+  -d colegios.soutotem.com.br \
+  -d www.colegios.soutotem.com.br \
+  -d vestibulares.soutotem.com.br \
+  -d www.vestibulares.soutotem.com.br \
+  -d on.soutotem.com.br \
+  -d www.on.soutotem.com.br
+```
+
+4. conferir
+
+```bash
+sudo certbot certificates
+```
+
+5. Renovar certificado
+
+```bash
+sudo certbot renew --dry-run
+```
+
+## Docker
+
+Criar a rede docker no servidor
+
+```bash
+docker network create -d bridge app-network
+```
+
+2. baixar uma instancia do mongo com docker
+
+```bash
+docker pull mongodb:7.0
+```
+
+3. rode o container do mongo no servidor mapeando a porta
+
+```bash
+docker run --name totem-mongo --network app-network --env-file caminho/.env -p 27017:27017 -d mongodb:7.0 
+```
+
+4. criando a imagem da api localmente e subindo para o servidor
+
+```bash
+cd backend
+docker build . -t totem-api
+docker save -o totem-api.tar totem-api:latest
+gzip backend.tar
+scp backend.tar.gz usuario@IP_DO_SERVIDOR:~/
+```
+
+5. Descompactar e verificar a imagem no servidor
+
+```bash
+gunzip backend.tar.gz
+docker load -i backend.tar
+docker images
+```
+
+6. repetir o mesmo processo com o front
+
+```bash
+cd frontend
+docker build . -t totem-web
+docker save -o totem-web.tar totem-web:latest
+gzip web.tar
+scp web.tar.gz usuario@IP_DO_SERVIDOR:~/
+```
+
+
+7. rodando o front e o back isoladamente
+
+```bash
+docker run --name totem-api --network app-network --env-file caminho/.env -p 9000:9000 -d 
+
+docker run --name totem-web --network app-network --env-file caminho/.env -p 8000:8000 -d 
+```
+
+## migrações com dados e testando o tunning
+
+
+```bash
+ssh -i chave -L 27017:localhost:27017 [usuario]@[servidor_ssh]
+
+```
+
+
+## Nginx
+
+
+```bash
+# usar o docker-compose up -d com o arquivo docker-compose do nginx ou criar ele manualmente com
+docker run -d --name nginx-proxy  --restart unless-stopped  -p 80:80 -p 443:443 \
+  -v $(pwd)/nginx/conf.d:/etc/nginx/conf.d:ro \
+  -v /etc/letsencrypt:/etc/letsencrypt:ro \
+  -v /var/www/certbot:/var/www/certbot:ro \
+  --network app-network  nginx:alpine
+```
+
+```bash
+docker exec -it nginx-proxy nginx -t
+docker exec -it nginx-proxy nginx -s reload
+```
+
+
+```bash
  ### comando uteis
  sudo systemctl start nginx
  sudo systemctl enable nginx
@@ -42,107 +195,12 @@ sudo systemctl disable nginx
 #pagina inicial e arquivos estaticos e html ficam em
 /var/www/
 
-
-# Testando configuração
-Antes de aplicar, é fundamental verificar se o seu novo arquivo de configuração não possui erros de sintaxe:
-
 sudo nginx -t -c ~/caminho-projeto/nginx/nginx.conf
-
-## gerando os certicados
-
-Você precisa gerar um certificado TLS para o domínio principal e os subdomínios que pretende atender. o caminho mais simples é usar o Certbot com Let's Encrypt, gerando um certificado SAN que cubra todos os domínios sem precisar gerar uma chave separada para cada subdomínio.
-Mas há um detalhe importante: para emitir certificados públicos, os domínios precisam estar configurados no DNS e ser validados pelo Let's Encrypt. Alterar apenas o arquivo /etc/hosts do seu computador não é suficiente.
-
-1. Quais domínios incluir?
-- soutotem.com.br
-- www.soutotem.com.br
-- colegios.soutotem.com.br
-- www.colegios.soutotem.com.br
-- vestibulares.soutotem.com.br
-- www.vestibulares.soutotem.com.br
-- on.soutotem.com.br
-- www.on.soutotem.com.br
-
-Todos esses nomes precisam resolver para o servidor e estar acessíveis para validação. Se algum subdomínio não for ser usado, você pode removê-lo da lista.
-
-2. Preparar o DNS e emitir o certificado
-No provedor DNS do domínio, crie registros A apontando para o IPv4 público da EC2:
-Tipo	Nome	Valor
-A	@	IPv4 público da EC2
-A	www	IPv4 público da EC2
-A	colegios	IPv4 público da EC2
-A	www.colegios	IPv4 público da EC2
-A	vestibulares	IPv4 público da EC2
-A	www.vestibulares	IPv4 público da EC2
-A	on	IPv4 público da EC2
-A	www.on	IPv4 público da EC2
-
-## instalar o certbot no ubuntu
-
-sudo apt update
-sudo apt install certbot
-
-## criar os diretorios para as chaves e certificado
-
-sudo mkdir -p /var/www/letsencrypt/.well-known/acme-challenge
-sudo chown -R www-data:www-data /var/www/letsencrypt
-
-## Solicitar certificado
-sudo certbot certonly --webroot \
-  -w /var/www/letsencrypt \
-  --cert-name soutotem.com.br \
-  -d soutotem.com.br \
-  -d www.soutotem.com.br \
-  -d colegios.soutotem.com.br \
-  -d www.colegios.soutotem.com.br \
-  -d vestibulares.soutotem.com.br \
-  -d www.vestibulares.soutotem.com.br \
-  -d on.soutotem.com.br \
-  -d www.on.soutotem.com.br
-
-## Conferir
-sudo certbot certificates
-
-
-## Renovar certificado
-sudo certbot renew --dry-run
 ```
-
-## Rodando a imagem do mongo localmente pra testes
 
 ```bash
-
-criando a rede
-
-docker network create -d bridge app-network
-
-cd backend
-docker run --name totem-mongo \
-  --network app-network \
-  --env-file .env \
-  -p 27017:27017 \
-  -d mongo:8.3.11-noble
+sudo certbot renew --deploy-hook "docker exec nginx-proxy nginx -s reload"
 ```
-
-## rodando o fastify
-
-```bash
-docker build . -t totem-api
-
-> ajustar variaveis de ambiente no .env, a url de conexao no mongo
-> deve ser o nome do container ou ip dele
-
-executar o container
-
-docker run --name totem-api \
-  --network app-network \
-  --env-file .env \
-  -p 9000:9000 \
-  -d totem-api:latest
-```
-
-Para utilizar os dados estáticos, mude para:
-NUXT_NODE_PRODUCTION=false
 
 
 ## funcionamento das rotas das unidades
@@ -179,7 +237,79 @@ pages/
     : String(config.public.apiBase)
 ```
 
-Fluxo resultante:
 
-SSR: frontend-totem chama http://backend-totem:9000/api/units/santa-maria, que consulta o mongoDb.
-Navegador: colegios.soutotem.com.br/api/units/santa-maria, que passa pelo nginx e chega em 127.0.0.1:900
+## Configurar o frontend Nuxt
+
+As rotas de dados da API usam o prefixo `/api`; portanto, configure a URL base
+com esse prefixo e sem `/` no final. `/docs` e `/health` ficam na raiz do
+domínio, sem o prefixo `/api`.
+
+No ambiente do frontend (por exemplo, em **Settings → Environment Variables**
+do projeto frontend na Vercel), configure:
+
+```dotenv
+NUXT_PUBLIC_API_BASE=https://api.exemplo.com/api
+NUXT_API_BASE_INTERNAL=https://api.exemplo.com/api
+NUXT_NODE_PRODUCTION=true
+```
+
+- `NUXT_PUBLIC_API_BASE` é usada no navegador e fica disponível publicamente.
+- `NUXT_API_BASE_INTERNAL` é usada durante o SSR do Nuxt. Se o frontend e o
+  backend estiverem em redes privadas compatíveis, pode apontar para a URL
+  interna do backend; caso contrário, use a URL HTTPS pública.
+- `NUXT_NODE_PRODUCTION=true` habilita o modo de produção do frontend.
+
+O Nuxt lê esses valores como configuração de runtime (`public.apiBase`,
+`apiBaseInternal` e `nodeProduction`). Configure também `ALLOWED_ORIGINS` no
+backend com a origem do site frontend, incluindo `https://` e sem caminho (por
+exemplo, `https://www.exemplo.com`). Para mais de uma origem, separe os valores
+com vírgulas. Após alterar as variáveis, faça novo deploy do frontend e do
+backend, conforme aplicável.
+
+## Rotas úteis
+
+- `GET /health`: verifica se a API responde por HTTP.
+- `/docs`: documentação interativa Swagger.
+- As rotas de recursos da API usam `/api` (por exemplo, `/api/posts` e
+  `/api/auth`).
+
+## Migrações
+
+Os scripts de migração estão disponíveis pelo `migrate-mongo`:
+certifique-se de usar as variaveis corretas e o banco certo antes de migrar
+suba as migrations antes de fazer o deploy
+
+```bash
+npm run migrate:status
+npm run migrate:up
+npm run migrate:create --name
+```
+
+Execute migrações com a mesma `MONGO_URL` do ambiente de destino, usando um
+ambiente controlado. Não execute `migrate:down` em produção sem avaliar o
+impacto da reversão.
+
+
+## Convenções durante o desenvolvimento
+
+usar banco de desenvolvimento via tunning ssh   
+ssh -L 0.0.0.0:27017:localhost:27017 \
+
+
+```bash
+docker run \
+  --name totem-api \
+  --network=bridge \
+  --add-host=host.docker.internal:host-gateway \
+  --env-file .env \
+  -p 9000:9000 \
+  -d totem-api:latest
+
+
+alterar:
+
+DATABASE_URL=mongodb://host.docker.internal:27017/totem
+```
+
+Isso faz com que host.docker.internal resolva para o endereço IP do host visto pela rede Docker.
+
