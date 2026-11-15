@@ -56,9 +56,13 @@ export const vestibularesRoutes: NavLink = {
 
 //menu da unidade do portal colegios
 export const cachoeiraDoSulRoutes: NavLink = {
-    label: "Cachoeira do Sul",
-    href: "/colegios/unidade/cachoeira-do-sul",
+    label: "COLÉGIOS",
+    href: "/colegios",
     children: [
+        {
+            label: "NOSSA ESCOLA",
+            href: "/colegios/nossa-escola",
+        },
         {
             label: "NIVEIS DE ENSINO",
             href: "/colegios/unidade/cachoeira-do-sul",
@@ -80,15 +84,27 @@ export const cachoeiraDoSulRoutes: NavLink = {
                     href: "/colegios/unidade/cachoeira-do-sul/niveis/fundamental-ii"
                 }
             ]
+        },
+        {
+            label: "DIFERENCIAIS",
+            href: "/colegios/unidade/cachoeira-do-sul#diferenciais",
+        },
+        {
+            label: "FALE COM A GENTE",
+            href: "/colegios/unidade/cachoeira-do-sul#section_contato",
         }
     ]
 };
 
 //menu da unidade do portal colegios
 export const cruzAltaRoutes: NavLink = {
-    label: "Cruz Alta",
-    href: "/colegios/unidade/cruz-alta",
+    label: "COLÉGIOS",
+    href: "/colegios",
     children: [
+        {    
+            label: "NOSSA ESCOLA",
+            href: "/colegios/nossa-escola",
+        },
         {
             label: "NIVEIS DE ENSINO",
             href: "/colegios/unidade/cruz-alta",
@@ -106,15 +122,27 @@ export const cruzAltaRoutes: NavLink = {
                     href: "/colegios/unidade/cruz-alta/niveis/fundamental-ii"
                 }
             ]
+        },
+        {
+            label: "DIFERENCIAIS",
+            href: "/colegios/unidade/cruz-alta#diferenciais",
+        },
+        {
+            label: "FALE COM A GENTE",
+            href: "/colegios/unidade/cruz-alta#section_contato",
         }
     ]
 };
 
 //menu da unidade do portal colegios
 export const santaMariaRoutes: NavLink = {
-    label: "Santa Maria",
-    href: "/colegios/unidade/santa-maria",
+    label: "COLÉGIOS",
+    href: "/colegios",
     children: [
+        {    
+            label: "NOSSA ESCOLA",
+            href: "/colegios/nossa-escola",
+        },
         {
             label: "NIVEIS DE ENSINO",
             href: "/colegios/unidade/santa-maria",
@@ -132,6 +160,14 @@ export const santaMariaRoutes: NavLink = {
                     href: "/colegios/unidade/santa-maria/niveis/fundamental-ii"
                 }
             ]
+        },
+        {
+            label: "DIFERENCIAIS",
+            href: "/colegios/unidade/santa-maria#diferenciais",
+        },
+        {
+            label: "FALE COM A GENTE",
+            href: "/colegios/unidade/santa-maria#section_contato",
         }
     ]
 };

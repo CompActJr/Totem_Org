@@ -1,27 +1,30 @@
-// composables/api/useOrganizations.ts
-import { unidadesColegios, unidadesVestibulares } from '~/data/static'
-import type { Organization } from '~/types/organizations.types'
 
-export function useOrganizations(slug: MaybeRefOrGetter<string>, type: string) {
+import type { Organization, OrganizationType } from '~/types/organizations.types'
+
+/**
+ * @author Jonas
+ * @param slug 
+ * @param type 
+ * @returns 
+ */
+export function useOrganizations(slug: MaybeRefOrGetter<string>, type: OrganizationType) {
   const config = useRuntimeConfig()
 
-  // indica se o código atual está sendo executado no servidor.
-  // Servidor: vai direto no container da API. Navegador: passa pelo nginx em /api
   const baseURL = import.meta.server
-    ? String(config.apiBaseInternal)
-    : String(config.public.apiBase)
+    ? String(config.apiBaseInternal || config.public.apiBase || 'http://localhost:9000/api')
+    : String(config.public.apiBase || config.apiBaseInternal || 'http://localhost:9000/api')
 
-  const unidade = [...unidadesColegios, ...unidadesVestibulares].find(
-    u => u.slug === toValue(slug) && u['@type'] === type,
+  const key = computed(
+    () => `organization:${toValue(type)}:${toValue(slug)}`
   )
-
-  /*
-  return useFetch<Organization>(() => `/units/${toValue(slug)}`, {
-    baseURL,
-    timeout: 5_000,
-  })
-  */
-
-  return { unidade };
-
+                                                                                                                
+  return useFetch<Organization>(
+    () => `/units/${toValue(type)}/${toValue(slug)}`,
+    {
+      key,            
+      baseURL,
+      timeout: 5_000,
+      dedupe: 'defer',
+    }
+  )
 }

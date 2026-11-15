@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ExternalLink from '~/components/ui/ExternalLink.vue'
+import ExternalLink from '~/components/ui/buttons/ExternalLink.vue'
 
 </script>
 

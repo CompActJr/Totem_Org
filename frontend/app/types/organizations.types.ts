@@ -66,9 +66,11 @@ export type TurmaType = {
     documentos: string;
 };
 
+export type OrganizationType = "colegios" | "vestibulares";
+
 export interface Organization {
   _id: number;
-  "@type": "colegios" | "vestibulares";
+  "@type": OrganizationType;
   city: string;
   slug: string;
   image: string;

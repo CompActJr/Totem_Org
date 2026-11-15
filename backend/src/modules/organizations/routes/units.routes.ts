@@ -8,6 +8,7 @@ import { unitResponseSchema, updateUnitInput } from "../schemas/units.schemas.js
 import { findUnitBySlug, updateUnit, addDiferencial, removeDiferencial } from "../services/unit.service.js";
 
 const idParam = () => z.coerce.number({ error: "O ID precisa ser um número válido" }).int().positive();
+const unitTypeParam = z.enum(["colegios", "vestibulares"]);
 
 export async function unitsRoutes(fastify: FastifyInstance) {
 
@@ -20,13 +21,16 @@ export async function unitsRoutes(fastify: FastifyInstance) {
   const security = [{ bearerAuth: [] }];
 
   app.get(
-    "/api/units/:slug",
+    "/api/units/:type/:slug",
     {
       schema: {
         tags: ["Units"],
-        summary: "Buscar unidade por slug",
-        description: "Retorna os dados públicos de uma unidade cadastrada.",
-        params: z.object({ slug: z.string().trim().min(1) }),
+        summary: "Buscar unidade por slug e tipo",
+        description: "Retorna os dados públicos de uma unidade cadastrada filtrando por portal: colegios ou vestibulares.",
+        params: z.object({
+          type: unitTypeParam,
+          slug: z.string().trim().min(1),
+        }),
         response: {
           200: unitResponseSchema,
           404: errorResponseSchema,
@@ -34,7 +38,36 @@ export async function unitsRoutes(fastify: FastifyInstance) {
       },
     },
     async (request, reply) => {
-      const unit = await findUnitBySlug(fastify, request.params.slug);
+      const unit = await findUnitBySlug(fastify, request.params.slug, request.params.type);
+
+      if (!unit) {
+        throw new AppError(404, "Unidade não encontrada.", "Not Found");
+      }
+
+      return reply.status(200).send(unit);
+    },
+  );
+
+  app.get(
+    "/api/units/:slug",
+    {
+      schema: {
+        tags: ["Units"],
+        summary: "Buscar unidade por slug",
+        description: "Retorna os dados públicos de uma unidade cadastrada. Opcionalmente aceita o tipo via query para garantir que o slug pertença ao portal correto.",
+        params: z.object({ slug: z.string().trim().min(1) }),
+        querystring: z.object({
+          type: unitTypeParam.optional(),
+        }),
+        response: {
+          200: unitResponseSchema,
+          404: errorResponseSchema,
+        },
+      },
+    },
+    async (request, reply) => {
+      const type = request.query.type;
+      const unit = await findUnitBySlug(fastify, request.params.slug, type);
 
       if (!unit) {
         throw new AppError(404, "Unidade não encontrada.", "Not Found");

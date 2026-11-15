@@ -11,11 +11,18 @@ import { Organization } from "../units.models.js";
 const ORGANIZATIONS = "organizations";
 
 
-export async function findUnitBySlug(fastify: FastifyInstance, slug: string) {
+export async function findUnitBySlug(fastify: FastifyInstance, slug: string, type?: Organization["@type"]) {
   const db = await getDb(fastify);
+
+  const filter: Record<string, unknown> = { slug };
+
+  if (type) {
+    filter["@type"] = type;
+  }
+
   return db
     .collection<Organization>(ORGANIZATIONS)
-    .findOne({ slug });
+    .findOne(filter);
 }
 
 /**

@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-import CalendarEvents from '~/components/eventos/CalendarEvents.vue';
-import HeroTitleEvents from '~/components/eventos/HeroTitleEvents.vue';
+import CalendarEvents from '~/components/vestibulares/CalendarEvents.vue';
+import HeroTitleEvents from '~/components/vestibulares/HeroTitleEvents.vue';
+
 
 definePageMeta({ layout: 'vestibulares' })
 

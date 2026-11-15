@@ -40,7 +40,7 @@
                     class="rounded-full bg-white shadow-2xl px-6 py-3
                     font-semibold text-gray-700 
                     transition-all duration-300 hover:scale-115">
-                    Saiba mais →
+                    ACESSE AGORA
                 </NuxtLink>
             </div>
         </div>

@@ -313,3 +313,4 @@ DATABASE_URL=mongodb://host.docker.internal:27017/totem
 
 Isso faz com que host.docker.internal resolva para o endereço IP do host visto pela rede Docker.
 
+depois é só parar e startar o container quando mexer só no front e sempre fazer o tunning ssh antes

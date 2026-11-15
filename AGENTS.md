@@ -73,6 +73,18 @@ rotas atuais.
   `insertOne({ _id: ..., seq: valor })`; se já existir, apenas atualizá-lo quando
   o novo valor for maior.
 
+## Frontend: buscar unidade pela api e cache de dados
+
+- Composable: frontend/app/composables/api/useOrganizations.ts
+- requisição usando useFetch do nuxt e controle de cache para navegar entre componentes que utilizem a mesma key e evitar chamadas independentes
+- key: identifica exclusivamente cada organização.
+- dedupe: 'defer': se já existir uma requisição em andamento com a mesma chave, aguarda seu resultado em vez de iniciar outra.
+
+- Reutilizando dados com useNuxtData
+- O Nuxt também possui um composable chamado useNuxtData, que permite recuperar os dados armazenados por uma chave específica ex: useNuxtData<Organization>(key)
+
+- no entanto eu manteria a responsabilidade do cache centralizada no composable.
+
 ## Convenções de alteração
 
 - Preserve o idioma e o estilo já usados no componente alterado.

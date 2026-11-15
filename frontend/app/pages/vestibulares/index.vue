@@ -1,13 +1,18 @@
 <script lang="ts" setup>
-import Depoimentos from '~/components/depoimentos/Depoimentos.vue';
-import HeroSlider from '~/components/slider/HeroSlider.vue';
+
+import HeroSlider from '~/components/global/HeroSlider.vue';
 import Grid from '~/components/ui/cards/Grid.vue';
-import HeroVocacional from '~/components/ui/HeroVocacional.vue';
-import WhatsappButton from '~/components/ui/WhatsappButton.vue';
-import CardUnitPV from '~/components/unidades/CardUnitPV.vue';
+import HeroVocacional from '~/components/colegios/HeroVocacional.vue';
+import WhatsappButton from '~/components/global/WhatsappButton.vue';
 import { faqsVestibulares } from '~/data/faqsON';
 import { unidadesVestibulares, whatssapLinks } from '~/data/static';
 import type { WhatsappLinks } from '~/types/navigation.types';
+import IntroSectionHeader from '~/components/global/IntroSectionHeader.vue';
+import SectionLayout from '~/components/ui/SectionLayout.vue';
+import DepoimentosCarousel from '~/components/global/DepoimentosCarousel.vue';
+import type { Organization } from '~/types/organizations.types';
+import { useOrganizations } from '~/composables/api/useOrganizations';
+import CardUnit from '~/components/global/CardUnit.vue';
 
 definePageMeta({
     layout: 'vestibulares',
@@ -21,7 +26,6 @@ definePageMeta({
     robots: 'index, follow',
 })
 
-const whatsappLinksFiltered: WhatsappLinks[] = whatssapLinks.filter( f => f['@type'] === "vestibulares");
 
 const unidades = unidadesVestibulares;
 
@@ -31,80 +35,101 @@ const banners = [
     "/banners/BANNER_PV_SANTA_ROSA.jpg"
 ];
 
+const whatsappLinksFiltered: WhatsappLinks[] = whatssapLinks.filter(f => f['@type'] === "colegios");
+
+const slug = ref('santa-maria')
+
+const { data: unidadeData, pending, error, } = await useOrganizations(slug, 'vestibulares')
+const unidade = computed<Organization | undefined>(() => unidadeData.value)
+
+if (!unidade.value) {
+  throw createError({
+    statusCode: error.value?.statusCode ?? 404,
+    statusMessage: 'Unidade não encontrada',
+    fatal: true,
+  })
+}
+
 </script>
 
 <template>
 
-    <HeroSlider :banners="banners">
-        
-    </HeroSlider>
-
-    <section class="min-h-128 w-full responsive-padding">
-        <div class="flex items-center">
-            <h2 class="text-orange-600 mt-4 font-bold" aria-label="nossas unidades">
-                PORQUE O TOTEM?
+    <HeroSlider :banners="banners"/> 
+  
+     <SectionLayout class="bg-gray-200">
+        <template #header>
+            <IntroSectionHeader>
+                PORQUE O TOTEM
+            </IntroSectionHeader>
+        </template>
+        <template #content>
+             <h2 class="text-4xl mt-4 lg:mt-8 font-bold pt-8 lg:pt-12">
+                GIGANTE<br />
+                EM APROVAÇÃO
             </h2>
-            <div class="bg-orange-600 w-16 h-0.5 ml-8"></div>
-        </div>
 
-        <h2 class="text-4xl mt-4 lg:mt-8 font-bold pt-8 lg:pt-12">
-            GIGANTE<br />
-            EM APROVAÇÃO
+            <p class="pt-8 lg:pt-12 text-xl">
+                No Totem Vestibulares você encontra:
+            </p>
+
+            <ul class="ml-6 list-disc space-y-6 pt-8 text-lg leading-relaxed text-gray-700 marker:text-orange-500 marker:text-2xl lg:pt-12 lg:text-xl">
+                <li class="pl-2 flex items-center gap-2">
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    Atendimento ao aluno de forma personalizada.
+                </li>
+
+                <li class="pl-2 flex items-center gap-2">
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    física planejada para o conforto, segurança e rendimento do aluno.
+                </li>
+
+                <li class="pl-2 flex items-center gap-2">
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    Metodologia de ensino adequada ao modelo de prova e universidade desejada pelo aluno.
+                </li>
+
+                <li class="pl-2 flex items-center gap-2">
+                    <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    Material didático produzido pelos próprios professores, atualizado anualmente,
+                    contemplado com testes dos vestibulares do sul do Brasil.
+                </li>
+            </ul>
+
+            <NuxtLink :to="`/vestibulares#faqs`"
+                    class="mt-6 inline-flex w-fit rounded-full bg-white shadow-2xl px-6 py-3 font-semibold text-gray-700 transition-all duration-300 hover:scale-115"
+                >
+                    Saiba mais →
+            </NuxtLink>
+        </template>
+    </SectionLayout>
+
+    <SectionLayout class="bg-white">
+        <template #header>
+            <IntroSectionHeader>
+                NOSSAS UNIDADES
+            </IntroSectionHeader>
+        </template>
+        <template #content>
+            <Grid>
+                <CardUnit v-for="unidade in unidades" :unidade="unidade" />
+            </Grid>
+        </template>
+    </SectionLayout>
+
+
+    <SectionLayout class="bg-[#FFF6C9]">
+        <template #header>
+        <IntroSectionHeader>RELATOS</IntroSectionHeader>
+        <h2 class="pt-6 text-2xl md:text-5xl text-gray-700 font-bold leading-tight">
+            DE QUEM CONHECE <br>
+            O COLÉGIO TOTEM
         </h2>
+        </template>
 
-        <p class="pt-8 lg:pt-12 text-xl">
-            No Totem Vestibulares você encontra:
-        </p>
-
-        <ul class="ml-6 list-disc space-y-6 pt-8 text-lg leading-relaxed text-gray-700 marker:text-orange-500 marker:text-2xl lg:pt-12 lg:text-xl">
-            <li class="pl-2 flex items-center gap-2">
-                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
-                Atendimento ao aluno de forma personalizada.
-            </li>
-
-            <li class="pl-2 flex items-center gap-2">
-                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
-                 física planejada para o conforto, segurança e rendimento do aluno.
-            </li>
-
-            <li class="pl-2 flex items-center gap-2">
-                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
-                Metodologia de ensino adequada ao modelo de prova e universidade desejada pelo aluno.
-            </li>
-
-            <li class="pl-2 flex items-center gap-2">
-                <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
-                Material didático produzido pelos próprios professores, atualizado anualmente,
-                contemplado com testes dos vestibulares do sul do Brasil.
-            </li>
-        </ul>
-
-         <NuxtLink
-                :to="`/vestibulares#faqs`"
-                class="mt-6 inline-flex w-fit rounded-full bg-white shadow-2xl px-6 py-3 font-semibold text-gray-700 transition-all duration-300 hover:scale-115"
-            >
-                Saiba mais →
-        </NuxtLink>
-    </section>
-
-    <section class="min-h-128 bg-white py-8 px-10 md:px-10 lg:py-16 lg:px-9 xl:px-40">
-    <div class="flex items-center">
-      <h2 class="text-orange-600 font-bold" aria-label="nossas unidades">
-        NOSSAS UNIDADES
-      </h2>
-      <div class="bg-orange-600 w-16 h-0.5 ml-8"></div>
-    </div>
-
-    <Grid>
-       <CardUnitPV v-for="unidade in unidades" :unidade="unidade" />
-    </Grid>
-  </section>
-
-    <Depoimentos
-      v-if="unidades[0]"
-      :unidade="unidades[0].city"
-      :depoimentos="unidades[0].depoimentos"
-    />
+        <template #content>
+        <DepoimentosCarousel :depoimentos="unidade?.depoimentos ?? []" :unidade-name="unidade?.city ?? 'error'" />
+        </template>
+    </SectionLayout>
 
     <HeroVocacional />
 

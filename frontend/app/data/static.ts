@@ -168,6 +168,12 @@ export const unidadesColegios: Organization[] = [
         nome: "Carine",
         imagem: "/geral/perfil.png",
         depoimento: "O Totem transmite confiança, segurança e estimula os alunos ao aprendizado. A equipe diretiva está constantemente envolvida e próxima dos alunos."
+      },
+      {
+        _id: 2,
+        nome: "Carine 2",
+        imagem: "/geral/perfil.png",
+        depoimento: "O Totem transmite confiança, segurança e estimula os alunos ao aprendizado. A equipe diretiva está constantemente envolvida e próxima dos alunos."
       }
     ],
     infraestrutura: [

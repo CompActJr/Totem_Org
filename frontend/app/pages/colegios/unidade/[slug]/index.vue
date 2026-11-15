@@ -1,206 +1,223 @@
 <script setup lang="ts">
-import AgendeSuaVisita from '~/components/agendamento/AgendeSuaVisita.vue'
-import AtividadeCard from '~/components/atividades/AtividadeCard.vue'
-import Depoimentos from '~/components/depoimentos/Depoimentos.vue'
-import NivelEnsinoCard from '~/components/niveis/NivelEnsinoCard.vue'
-import NivelEnsinoGrid from '~/components/niveis/NivelEnsinoGrid.vue'
-import ProfessorCard from '~/components/professores/ProfessorCard.vue'
-import ProfessoresGrid from '~/components/professores/ProfessoresGrid.vue'
-import HeroSlider from '~/components/slider/HeroSlider.vue'
-import HeroSliderCTA from '~/components/slider/HeroSliderCTA.vue'
+import AgendeSuaVisita from '~/components/colegios/AgendeSuaVisita.vue'
+import AtividadeCard from '~/components/vestibulares/AtividadeCard.vue'
+import IntroBody from '~/components/global/IntroBody.vue'
+import NivelEnsinoCard from '~/components/colegios/NivelEnsinoCard.vue'
+import NivelEnsinoGrid from '~/components/colegios/NivelEnsinoGrid.vue'
+import ProfessorCard from '~/components/global/ProfessorCard.vue'
+import HeroSlider from '~/components/global/HeroSlider.vue'
+import HeroSliderCTA from '~/components/global/HeroSliderCTA.vue'
 import Grid from '~/components/ui/cards/Grid.vue'
-import GoogleMaps from '~/components/ui/GoogleMaps.vue'
-import HeroVocacional from '~/components/ui/HeroVocacional.vue'
-import Parceiros from '~/components/ui/Parceiros.vue'
-import WhatsappButton from '~/components/ui/WhatsappButton.vue'
+import GoogleMaps from '~/components/global/GoogleMaps.vue'
+import HeroVocacional from '~/components/colegios/HeroVocacional.vue'
+import Parceiros from '~/components/colegios/Parceiros.vue'
+import WhatsappButton from '~/components/global/WhatsappButton.vue'
 import { useOrganizations } from '~/composables/api/useOrganizations'
+import type { Organization } from '~/types/organizations.types'
 import type { WhatsappLinks } from '~/types/navigation.types'
+import SectionLayout from '~/components/ui/SectionLayout.vue'
+import IntroSectionHeader from '~/components/global/IntroSectionHeader.vue'
+
 
 definePageMeta({ layout: 'colegios' })
 
 const route = useRoute()
 const slug = computed(() => String(route.params.slug))
 
-const { unidade } =  useOrganizations(slug, 'colegios') 
+const { data: unidadeData, pending, error } = await useOrganizations(slug, 'colegios')
+const unidade = computed<Organization | undefined>(() => unidadeData.value)
 
-if (!unidade) {
-  throw createError({ statusCode: 404, statusMessage: 'Unidade não encontrada', fatal: true })
+if (!unidade.value) {
+    throw createError({ statusCode: 404, statusMessage: 'Unidade não encontrada', fatal: true })
 }
 
-
 const whatsappLinks = computed<WhatsappLinks[]>(() => {
-  if (!unidade) return []
-  const { _id, slug, whatsapp, '@type': type } = unidade
-  return [{ _id, slug, whatsapp, '@type': type }]
-});
+    const currentUnidade = unidade.value
 
+    if (!currentUnidade) {
+        return []
+    }
+
+    const { _id, slug, whatsapp, '@type': type } = currentUnidade
+    return [{ _id, slug, whatsapp, '@type': type }]
+})
 
 useSeoMeta({
-  title: () =>
-    unidade
-      ? `Colégio Totem em ${unidade.city} | Educação`
-      : 'Colégios Totem',
+    title: () =>
+        unidade.value
+            ? `Colégio Totem em ${unidade.value.city} | Educação`
+            : 'Colégios Totem',
 
-  description: () =>
-    unidade
-      ? `Conheça o Colégio Totem em ${unidade.city}, sua estrutura e níveis de ensino.`
-      : 'Conheça as unidades dos Colégios Totem.',
+    description: () =>
+        unidade.value
+            ? `Conheça o Colégio Totem em ${unidade.value.city}, sua estrutura e níveis de ensino.`
+            : 'Conheça as unidades dos Colégios Totem.',
 
-  ogTitle: () =>
-    `Colégio Totem${unidade ? ` em ${unidade.city}` : ''}`,
+    ogTitle: () =>
+        `Colégio Totem${unidade.value ? ` em ${unidade.value.city}` : ''}`,
 
-  ogDescription: () =>
-    unidade
-      ? `Conheça a unidade Totem em ${unidade.city}.`
-      : 'Conheça nossos colégios.',
+    ogDescription: () =>
+        unidade.value
+            ? `Conheça a unidade Totem em ${unidade.value.city}.`
+            : 'Conheça nossos colégios.',
 
-  ogType: 'website',
-  robots: 'index, follow',
+    ogType: 'website',
+    robots: 'index, follow',
 })
 
 </script>
 
 <template>
-  <main v-if="unidade != null">
+    <main v-if="unidade != null">
 
-    <HeroSlider :banners="unidade.banners">
-        <HeroSliderCTA
-            :titulo="unidade.city"  
-            :subtitle="'Colégio Totem'"
-            :link="'/colegios/unidade/' + unidade.slug + '#agende-visita'" 
-        >
-            <template #cta-text>
-                Agende Sua Visita
+        <HeroSlider :banners="unidade.banners">
+            <HeroSliderCTA :titulo="unidade.city" :subtitle="'Colégio Totem'"
+                :link="'/colegios/unidade/' + unidade.slug + '#agende-visita'">
+                <template #cta-text>
+                    Agende Sua Visita
+                </template>
+            </HeroSliderCTA>
+        </HeroSlider>
+
+        <SectionLayout class="bg-gray-200">
+            <template #header>
+                <IntroSectionHeader>
+                    PORQUE O TOTEM
+                </IntroSectionHeader>
             </template>
-        </HeroSliderCTA>
-    </HeroSlider>
+            <template #content>
+                <IntroBody :image-src="unidade.image" :image-alt="`Imagem da unidade ${unidade.city}`"
+                    :cta-link="`/colegios/unidade/${unidade.slug}/diferenciais`" cta-text="Saiba mais">
+                    <template #title>
+                        É MAIS QUE<br />
+                        COLÉGIO...
+                    </template>
 
-    <section class="min-h-128 w-full flex flex-col md:flex-row gap-4 bg-gray-200 responsive-padding">
-        <article class="w-full md:w-7/12 lg:w-8/12">
-            <div class="flex items-center">
-                <h2 class="text-gray-600 text-xl md:text-2xl font-bold">
-                    PORQUE O TOTEM?
-                </h2>
+                    <template #content>
+                        <p class="leading-8">
+                            No <strong>{{ unidade.city }}</strong>, os estudantes encontram um ambiente onde o
+                            afeto e a atenção são prioridades, proporcionando bem-estar e segurança para
+                            todos. Oferecemos a educação que desperta a criatividade e entrega um mundo de
+                            conhecimento nas mãos de nossas crianças e jovens. Clique abaixo e conheça
+                            os diferenciais que fazem do Totem a sua melhor escolha.
+                        </p>
+                    </template>
+                </IntroBody>
+            </template>
+        </SectionLayout>
 
-                <div class="bg-orange-600 w-32 h-0.5 ml-8"></div>
-            </div>
+        <NivelEnsinoGrid>
+            <NivelEnsinoCard v-for="nivel in unidade.levels" :nivel="nivel" :unidade-slug="unidade.slug" />
+        </NivelEnsinoGrid>
 
-            <h2 class="pt-8 lg:pt-12 text-2xl md:text-4xl mt-4 lg:text-6xl text-gray-700 font-bold">
-                É MAIS QUE<br />
-                COLÉGIO...
-            </h2>
+        <SectionLayout class="bg-gray-200">
+            <template #header>
+                <IntroSectionHeader>
+                    INFRAESTRUTURA QUE INSPIRA
+                </IntroSectionHeader>
+            </template>
 
-            <p class="pt-8 lg:pt-12 leading-8">
-                No <strong>{{ unidade.city }}</strong>, os estudantes encontram um ambiente onde o
-                afeto e a atenção são prioridades, proporcionando bem-estar e segurança para
-                todos. Oferecemos a educação que desperta a criatividade e entrega um mundo de
-                conhecimento nas mãos de nossas crianças e jovens. Clique abaixo e conheça 
-                os diferenciais que fazem do Totem a sua melhor escolha.
-            </p>
-
-             <NuxtLink
-                :to="`/colegios/unidade/${unidade.slug}/diferenciais`"
-                class="mt-8 lg:mt-12 inline-flex w-fit rounded-full bg-white shadow-2xl px-6 py-3 font-semibold text-gray-700 transition-all duration-300 hover:scale-115"
-            >
-                Saiba mais →
-            </NuxtLink>
-        </article>
-
-        <div class="w-full md:w-5/12 lg:w=4/12">
-            <img :src="unidade.image" alt="imagem da unidade" class="w-full md:min-h-[90%] object-cover" />
-        </div>
-
-    </section>
-
-    <NivelEnsinoGrid>
-        <NivelEnsinoCard 
-            v-for="nivel in unidade.levels"
-            :nivel="nivel"
-            :unidade-slug="unidade.slug"
-        />
-    </NivelEnsinoGrid>
-
-    <section class="min-h-128 w-full responsive-padding">
-        <div class="flex items-center">
-            <h2 class="text-gray-600 text-xl md:text-2xl font-bold">
-                INFRAESTRUTURA QUE INSPIRA
-            </h2>
-
-            <div class="bg-orange-600 w-64 h-0.5 ml-8"></div>
-        </div>
-
-        <article class="mt-8 w-full text-justify leading-8 md:leading-10 flex flex-col md:flex-row justify-start gap-8">
-            <p class="flex-1">
-                A Totem acredita que uma escola de alto nível começa pela qualidade do ambiente que
-                oferece. Por isso, cada espaço foi pensado para garantir segurança, conforto e acolhimento,
-                criando as condições ideais para que o aprendizado aconteça com mais tranquilidade,
-                foco e bem-estar.
-                Uma infraestrutura bem planejada não apenas recebe os estudantes — ela protege,
-                organiza, acolhe e potencializa.
-                Salas funcionais, ambientes agradáveis e uma estrutura que acompanha as necessidades
-                da rotina escolar fazem toda a diferença na construção de uma experiência educativa mais
-                completa.
-            </p>
-            <p class="flex-1">
-                Aqui, a estrutura é parte do ensino. Ela contribui para formar um ambiente onde
-                estudantes se sentem seguros para aprender, conviver e crescer com confiança.
-            </p>
-        </article>
-
-        <Grid>
-            <NuxtImg 
-                v-for="imagem in unidade.infraestrutura" 
-                :key="imagem" 
-                :src="imagem" 
-                format="webp" 
-                quality="80"
-                loading="lazy" 
-                class="w-full h-48 md:h-96 object-cover rounded-xl  border-gray-100 border-4 border-solid
+            <template #content>
+                <article
+                    class="mt-8 w-full text-justify leading-8 md:leading-10 flex flex-col md:flex-row justify-start gap-8">
+                    <p class="flex-1">
+                        A Totem acredita que uma escola de alto nível começa pela qualidade do ambiente que
+                        oferece. Por isso, cada espaço foi pensado para garantir segurança, conforto e acolhimento,
+                        criando as condições ideais para que o aprendizado aconteça com mais tranquilidade,
+                        foco e bem-estar.
+                        Uma infraestrutura bem planejada não apenas recebe os estudantes — ela protege,
+                        organiza, acolhe e potencializa.
+                        Salas funcionais, ambientes agradáveis e uma estrutura que acompanha as necessidades
+                        da rotina escolar fazem toda a diferença na construção de uma experiência educativa mais
+                        completa.
+                    </p>
+                    <p class="flex-1">
+                        Aqui, a estrutura é parte do ensino. Ela contribui para formar um ambiente onde
+                        estudantes se sentem seguros para aprender, conviver e crescer com confiança.
+                    </p>
+                </article>
+                <Grid>
+                    <NuxtImg v-for="imagem in unidade.infraestrutura" :key="imagem" :src="imagem" format="webp"
+                        quality="80" loading="lazy" class="w-full h-48 md:h-96 object-cover rounded-xl  border-gray-100 border-4 border-solid
                     transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:" />
-        </Grid>
+                </Grid>
+            </template>
+        </SectionLayout>
 
-    </section>
+        <AtividadesSection :atividades="unidade.atividades">
+            <template #atividades>
+                <AtividadeCard v-for="value in unidade.atividades" :atividade="value" />
+            </template>
+        </AtividadesSection>
 
-    <AtividadesSection :atividades="unidade.atividades">
-        <template #atividades>
-            <AtividadeCard v-for="value in unidade.atividades" :atividade="value"/>
-        </template>
-    </AtividadesSection>
+        <SectionLayout class="bg-[#FFF6C9]">
+            <template #header>
+                <IntroSectionHeader class="text-gray-600 text-xl md:text-2xl">
+                    CONHEÇA NOSSOS PROFISSIONAIS
+                </IntroSectionHeader>
+            </template>
+            <template #content>
+                <ProfessorCard v-for="professor in unidade.professores" :key="professor._id" :professor="professor" />
+            </template>
+        </SectionLayout>
 
-    <ProfessoresGrid>
-        <ProfessorCard
-            v-for="professor in unidade.professores"
-            :key="professor._id"
-            :professor="professor"
-        />
-    </ProfessoresGrid>
+        <Parceiros />
 
-    <Parceiros/>
+        <SectionLayout class="bg-[#FFF6C9]">
+            <template #header>
+                <IntroSectionHeader>RELATOS</IntroSectionHeader>
+                <h2 class="pt-6 text-2xl md:text-5xl text-gray-700 font-bold leading-tight">
+                    DE QUEM CONHECE <br>
+                    O COLÉGIO TOTEM
+                </h2>
+            </template>
 
-    <Depoimentos
-      v-if="unidade"
-      :unidade="unidade.city"
-      :depoimentos="unidade.depoimentos"
-    />
+            <template #content>
+                <DepoimentosCarousel :depoimentos="unidade.depoimentos" :unidade-name="unidade.city" />
+            </template>
+        </SectionLayout>
 
-    <HeroVocacional/>
+        <SectionLayout class=" bg-gray-200 ">
+            <template #header>
+                <IntroSectionHeader class="text-gray-700 uppercase">
+                    Motivos para matricular
+                </IntroSectionHeader>
+            </template>
 
-    <GoogleMaps v-if="unidade" :unidade="unidade"/>
+            <template #content>
+                <article class="mt-8" id="diferenciais">
+                    <ul class="space-y-4">
+                        <li v-for="value in unidade.diferenciais" :key="value.length"
+                            class="flex items-start gap-3 rounded-md p-2 transition-colors hover:bg-white">
+                            <span class="mt-2 h-2 w-2 rounded-full bg-orange-600 shrink-0"></span>
 
-    <AgendeSuaVisita :unidades="unidade ? [unidade] : []"/>
+                            <p class="text-gray-700 leading-7">
+                                {{ value }}
+                            </p>
+                        </li>
+                    </ul>
+                </article>
+            </template>
+        </SectionLayout>
 
-    <WhatsappButton :links="whatsappLinks"/>
+        <WhatsappButton :links="whatsappLinks" />
 
-  </main>
+        <HeroVocacional />
 
-  <!--
-      <p v-else-if="pending" class="responsive-padding py-12 text-gray-600">
-    Carregando unidade...
-  </p>
-  -->
+        <GoogleMaps v-if="unidade" :unidade="unidade" />
+
+        <AgendeSuaVisita :unidades="unidade ? [unidade] : []" />
+
+        <WhatsappButton :links="whatsappLinks" />
+
+    </main>
 
 
-  <p v-else class="responsive-padding py-12 text-red-600">
-    Não foi possível carregar esta unidade.
-  </p>
+    <p v-else-if="pending" class="responsive-padding py-12 text-gray-600">
+        Carregando unidade...
+    </p>
+
+    <p v-else class="responsive-padding py-12 text-red-600">
+        Não foi possível carregar esta unidade.
+    </p>
 </template>

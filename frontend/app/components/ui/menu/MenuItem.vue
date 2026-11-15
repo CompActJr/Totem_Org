@@ -24,7 +24,7 @@ const styles = {
       :aria-expanded="isOpen"
       @click="toggleSubmenu(item.label)"
     >
-      {{ item.label }}
+      <span class="font-bold">{{ item.label }}</span>
       <span :class="['transition-transform', isOpen && 'rotate-180']">▾</span>
     </button>
 
