@@ -1,5 +1,12 @@
+<script lang="ts" setup>
+	const props = defineProps<{
+		width: string,
+		heigth: string
+	}>();
+</script>
+
 <template>
-    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 36 36">
+    <svg xmlns="http://www.w3.org/2000/svg" :width="props.width ?? '2em'" :height="props.heigth ?? '2em'" viewBox="0 0 36 36">
 	<path d="M0 0h36v36H0z" fill="none" />
 	<path fill="#404040" d="M21 12H7a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1M8 10h12V7.94H8Z" class="clr-i-outline clr-i-outline-path-1" />
 	<path fill="#404040" d="M21 14.08H7a1 1 0 0 0-1 1V19a1 1 0 0 0 1 1h11.36L22 16.3v-1.22a1 1 0 0 0-1-1M20 18H8v-2h12Z" class="clr-i-outline clr-i-outline-path-2" />

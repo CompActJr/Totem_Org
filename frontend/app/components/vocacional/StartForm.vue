@@ -10,41 +10,57 @@ const inputClass = `rounded-xl border border-gray-300 bg-white
 </script>
 
 <template>
-    <h2 class="text-4xl text-center text-gray-600 font-bold">
-        Vamos começar!
-    </h2>
+    <section class="flex flex-row justify-center between items-center gap-8 h-full">
 
-    <div class="flex items-center gap-4 mt-16">
-        <label for="nome" class="min-w-40 text-gray-600">Nome Completo: </label>
-        <input id="nome" v-model="state.form.name" placeholder="Enter your email" type="text" :class="inputClass" />
-    </div>
+        <div class="flex flex-1 items-start flex-col">
+            <h2 class="text-2xl md:text-4xl text-center text-gray-600 font-bold">
+                Vamos começar!
+            </h2>
 
-    <div class="flex items-center gap-4 mt-8">
-        <label for="nome" class="min-w-40 text-gray-600">Email: </label>
-        <input id="nome" v-model="state.form.email" placeholder="Enter your email" type="email" :class="inputClass" />
-    </div>
+            <div class="flex flex-col md:flex-row items-start md:items-center gap-4 mt-8 md:mt-16">
+                <label for="nome" class="min-w-40 text-gray-600">Nome Completo: </label>
+                <input id="nome" v-model="state.form.name" placeholder="Enter your email" type="text" :class="inputClass" />
+            </div>
 
-    <div class="flex items-center gap-4 mt-8">
-        <input v-model="state.form.receiveEmail" type="checkbox"
-            class="w-6 h-6 rounded-md border-2 bg-white border-orange-500 text-orange-500 focus:ring-2 focus:ring-orange-300" />
+            <div class="flex flex-col md:flex-row items-start md:items-center gap-4 mt-8 md:mt-16">
+                <label for="nome" class="min-w-40 text-gray-600">Email: </label>
+                <input id="nome" v-model="state.form.email" placeholder="Enter your email" type="email"
+                    :class="inputClass" />
+            </div>
 
-        <label class="text-gray-600 cursor-pointer">
-            Desejo receber meu resultado por e-mail
-        </label>
-    </div>
+            <button :disabled="!state.form.name || !state.form.email" 
+                @click="nextStep" 
+                class=" transition-all duration-300 bg-orange-400  hover:bg-amber-600
+                p-2 w-full rounded-full text-white mt-8 md:mt-16
+                flex items-center justify-between font-bold text-4-lg">
+                <span class="font-bold">CONTINUAR</span>
+                <I_Next />
+            </button>
+        </div>
 
 
-    <div class="flex justify-end">
-        <button 
-            :disabled="!state.form.name || !state.form.email"
-            @click="nextStep"
-            class=" transition-all duration-300 hover:scale-110 bg-orange-400 
-                p-2 w-32 rounded-full text-white
-                flex items-center justify-between font-bold text-4-lg"
-        >
-            Continuar
-            <I_Next />
-        </button>
-    </div>
+        <div class="hidden md:block flex-1  h-full p-2">
+            <NuxtImg
+                src="/geral/aguia_bg.png"
+                class="h-full w-full object-cover aguia-zoom"
+                loading="lazy"
+            />
+        </div>
 
+    </section>
 </template>
+
+<style>
+.aguia-zoom {
+    animation: aguia-zoom 2s ease-in-out alternate-reverse infinite;
+}
+
+@keyframes aguia-zoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.10);
+    }
+}
+</style>

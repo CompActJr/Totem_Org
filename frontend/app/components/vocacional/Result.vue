@@ -254,16 +254,28 @@ const isFullscreen = ref(false)
                 </button>
 
             </nav>
-            <main>
+            <main class="flex flex-col gap-4 lg:flex-row">
+
                 <ResultChart 
                     ref="chartRef"
                     :result="result"
+                    class="flex-1"
                     :title="`Parabéns ${state.form.name}! Seu Perfil é ${perfis.at(0)} e ${perfis.at(1)}`"
                 />
-                <br/>
-                <p class="text-gray-600">{{ analysis.find(a => a.type === perfis.at(0))?.descricao }}</p>
-                <br/>
-                <p class="text-gray-600">{{ analysis.find(a => a.type === perfis.at(1))?.descricao }}</p>
+
+                <div class="flex-1">
+                    <h4 class="font-bold text-orange-500 text-xl">
+                        Párabens {{ state.form.name }}!  Seu perfil é {{perfis.at(0)}} e {{perfis.at(1)}}
+                    </h4>
+                    <p class="text-gray-600 mt-4">
+                        {{ analysis.find(a => a.type === perfis.at(0))?.descricao }}
+                    </p>
+                    <br/>
+                    <p class="text-gray-600 mt-4">
+                        {{ analysis.find(a => a.type === perfis.at(1))?.descricao }}
+                    </p>
+                </div>
+     
             </main>
         </div>
     </ClientOnly>

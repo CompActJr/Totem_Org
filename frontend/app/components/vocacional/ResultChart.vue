@@ -10,8 +10,7 @@ const chartCanvas = ref<HTMLCanvasElement | null>(null);
 let chartInstance: Chart | null = null;
 
 const props = defineProps<{
-    result: Record<AnalysisEnum, number>,
-    title: string
+    result: Record<AnalysisEnum, number>
 }>();
 
 const getChartData = () => [
@@ -52,20 +51,13 @@ onMounted(() => {
                 fill: true,
                 borderColor: 'rgb(75, 192, 192)',
                 tension: 0.1,
-                backgroundColor: '#ff333380',
+                backgroundColor: '#333',
             }],
         },
         options: {
             responsive: true,
             maintainAspectRatio: true,
             plugins: {
-
-                title: {
-                    display: !isMobile,
-                    font: { size: 24, weight: 'bold' },
-                    color: "#EF6B01",
-                    text: props.title
-                },
                 subtitle: {
                     display: !isMobile,
                     font: {size: 18}
@@ -73,7 +65,7 @@ onMounted(() => {
                 legend: {
                     display: true,
                     labels: {
-                        color: '#EF6B01'
+                        color: '#444444'
                     }
                 },
 

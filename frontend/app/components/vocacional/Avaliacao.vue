@@ -41,23 +41,24 @@ watch(options, (value) => {
 
 <template>
     <ClientOnly v-if="currentQuestion">
-        <section class="relative">
+        <section>
 
-            <button class=" transition-all duration-300 hover:scale-110 bg-gray-400 
-                p-2 w-16 rounded-full text-white
-                flex items-center justify-center font-bold text-lg-1"
-                @click="previousStep"
-            >
-                <I_Form/>
-            </button>
+            <div class="flex justify-between items-center">
+                <button class=" transition-all duration-300 hover:scale-110 bg-gray-400 
+                    p-2 w-16 rounded-full text-white
+                    flex items-center justify-center font-bold text-lg-1"
+                    @click="previousStep"
+                >
+                    <I_Form width="1.5em" heigth="1.5em"/>
+                </button>
 
-            <h2 class="text-4xl text-center text-gray-600 font-bold">
-                Avaliação
-            </h2>
+              
+                    <p class="text-center font-bold text-gray-600 mt-4">
+                        Pergunta {{ state.currentQuestion + 1 }} de {{ data.length }}
+                    </p>       
+             
+            </div>
 
-            <p class="text-center text-gray-600 mt-4">
-                Pergunta {{ state.currentQuestion + 1 }} de {{ data.length }}
-            </p>
 
             <article class="text-left text-gray-600 text-lg mt-4">
                 {{ currentQuestion.titulo }}
