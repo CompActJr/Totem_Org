@@ -6,11 +6,34 @@
 
 import type { NavLink } from "~/types/navigation.types";
 
-export const mainRoutes: NavLink[] = [
-    { label: "HOME", href: "/" },
-    { label: "BLOG", href: "/blog" },
-    { label: "VOCACIONAL", href: "/vocacional" }
-];
+export const mainRoutes: NavLink = {
+    label: "HOME",
+    href: "/",
+    children: [
+        {
+            label: "BLOG",
+            href: "/blog"
+        },
+        { 
+            label: "VOCACIONAL", 
+            href: "/vocacional" 
+        },
+        {
+            label: "PORTAIS", href: "/",
+            children: [
+                {
+                    label: 'Colégios', href: '/colegios'
+                },
+                {
+                    label: 'Vestibulares', href: '/vestibulares'
+                },
+                {
+                    label: 'ON', href: '/on'
+                },
+            ]
+        }
+    ]
+}
 
 //menu raiz do portal vestibulares
 export const vestibularesRoutes: NavLink = {
@@ -101,7 +124,7 @@ export const cruzAltaRoutes: NavLink = {
     label: "COLÉGIOS",
     href: "/colegios",
     children: [
-        {    
+        {
             label: "NOSSA ESCOLA",
             href: "/colegios/nossa-escola",
         },
@@ -139,7 +162,7 @@ export const santaMariaRoutes: NavLink = {
     label: "COLÉGIOS",
     href: "/colegios",
     children: [
-        {    
+        {
             label: "NOSSA ESCOLA",
             href: "/colegios/nossa-escola",
         },

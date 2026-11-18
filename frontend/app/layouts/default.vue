@@ -23,11 +23,9 @@ const contacts = unidadesColegios.map(({ city, address, phone, whatsapp, email }
     <Menu>
       <template #logo>
         <img
-          src="/logos/logo.png"
-          alt="Colégio Totem"
-          width="180"
-          height="64"
-          class="h-16 w-45 object-contain object-left"
+          src="/logos/logo-portal.webp"
+          alt="Logo Totem"
+          class="h-full w-full object-contain object-left"
           draggable="false"
         />
       </template>

@@ -89,7 +89,7 @@ if (!unidade.value) {
   </SectionLayout>
 
 
-  <section class="min-h-128 bg-white py-8 px-10 md:px-10 lg:py-16 lg:px-9 xl:px-40">
+  <section class="min-h-128  py-8 px-10 md:px-10 lg:py-16 lg:px-9 xl:px-40">
     <IntroSectionHeader>
       NOSSAS UNIDADES
     </IntroSectionHeader>

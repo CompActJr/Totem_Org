@@ -25,9 +25,7 @@ const contacts = unidadesColegios.map(({ city, address, phone, whatsapp, email }
         <NuxtImg
           src="/logos/logo-colegios.png"
           alt="Totem PV"
-          width="180"
-          height="64"
-          class="h-16 w-45 object-contain object-left"
+          class="h-full w-full object-contain object-left"
           draggable="false"
         />
       </template>
@@ -42,7 +40,7 @@ const contacts = unidadesColegios.map(({ city, address, phone, whatsapp, email }
     <!-- Overlay -->
     <div class="fixed inset-0 -z-10 bg-white/80" />
 
-    <main>
+    <main >
       <slot />
     </main>
 

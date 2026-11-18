@@ -25,10 +25,8 @@ const contacts = unidadesVestibulares.map(({ city, address, phone, whatsapp, ema
          <NuxtImg
           src="/logos/logo-on.png"
           alt="Totem ON"
-          width="180"
-          height="72"
           fit="contain"
-          class="h-auto w-full object-contain"
+          class="h-full w-full object-contain object-left"
         />
       </template>
       <MenuItem v-for="link in links" :key="link.href" :item="link" />

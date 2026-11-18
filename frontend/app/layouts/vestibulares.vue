@@ -25,9 +25,7 @@ const contacts = unidadesVestibulares.map(({ city, address, phone, whatsapp, ema
         <NuxtImg
           src="/logos/logo-vestibulares.png"
           alt="Totem PV"
-          width="180"
-          height="64"
-          class="h-16 w-45 object-contain object-left"
+          class="h-full w-full object-contain object-left"
           draggable="false"
         />
       </template>
