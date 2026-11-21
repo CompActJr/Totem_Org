@@ -1,6 +1,6 @@
 import { transporter } from "../../config/email.js"
 import { env } from "../../config/env.js"
-import { AgendamentoRequest } from "./email.schema.js"
+import { AgendamentoRequest, ContatoRequest } from "./email.schema.js"
 
 export async function enviarEmailAgendamento(request: AgendamentoRequest) {
   console.log('enviando: de ' + request.email + ' para: ' + env.SMTP_TO + ' por: ' + env.SMTP_FROM)
@@ -46,4 +46,28 @@ export async function enviarConfirmacaoAgendamento(request: AgendamentoRequest) 
     response: info.response,
     envelope: info.envelope,
   })
+}
+
+export async function enviarContato(request: ContatoRequest) {
+  const info = await transporter.sendMail({
+    from: env.SMTP_FROM,
+    to: env.SMTP_TO,
+    subject: request.assunto,
+    text: `
+      Nome: ${request.nome}
+      Cidade: ${request.cidade}
+      WhatsApp: ${request.whatsapp}
+      Mensagem: ${request.mensagem}
+    `,
+  });
+
+  console.log('SMTP RESULTADO:', {
+    messageId: info.messageId,
+    accepted: info.accepted,
+    rejected: info.rejected,
+    response: info.response,
+    envelope: info.envelope,
+  });
+
+  return info;
 }

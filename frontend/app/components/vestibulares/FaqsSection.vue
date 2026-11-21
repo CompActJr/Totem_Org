@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue"
 import type { FaqType } from "~/types/organizations.types";
+import IntroSectionHeader from "../global/IntroSectionHeader.vue";
 
 
 defineProps<{
@@ -16,32 +17,11 @@ const toggle = (id: number) => {
 
 <template>
     <section id="faqs" class="responsive-padding pb-24">
-        <div class="flex items-center">
-        <h2 class="text-orange-600 font-bold" aria-label="depoimentos">
-            FAQS
-        </h2>
-        <div class="bg-orange-600 w-16 h-0.5 ml-8"></div>
-    </div>
+       <IntroSectionHeader>FAQS</IntroSectionHeader>
     <div>
         <h2 class="pt-8 lg:pt-12 text-3xl font-bold">Ainda tem dúvidas?</h2>
         <p class="pt-8 lg:pt-12 text-gray-600">Reunimos as perguntas mais frequentes de pais, responsáveis e alunos para
-            ajudar você a conhecer melhor o Totem pré vestibulares, agrupadas por cada unidade</p>
-
-        <div class="flex items-center gap-8">
-            <button class="mt-6 inline-flex items-center rounded-full bg-orange-500 px-6 py-3 font-semibold  transition-all duration-300 hover:bg-orange-600 hover:shadow-lg">
-                <span class="text-white font-bold">Ijui</span>
-            </button>
-
-            <button class="mt-6 inline-flex items-center rounded-full bg-orange-500 px-6 py-3 font-semibold  transition-all duration-300 hover:bg-orange-600 hover:shadow-lg">
-                <span class="text-white font-bold">Santa Maria</span>
-            </button>
-
-            <button class="mt-6 inline-flex items-center rounded-full bg-orange-500 px-6 py-3 font-semibold  transition-all duration-300 hover:bg-orange-600 hover:shadow-lg">
-                <span class="text-white font-bold">Santa Rosa</span>
-            </button>
-        </div>
-     
-
+            ajudar você a conhecer melhor o Totem pré vestibulares</p>
     </div>
         <div v-for="faq in faqs" :key="faq._id" class="border-b border-white">
             <button

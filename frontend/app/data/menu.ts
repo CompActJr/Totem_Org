@@ -14,9 +14,9 @@ export const mainRoutes: NavLink = {
             label: "BLOG",
             href: "/blog"
         },
-        { 
-            label: "VOCACIONAL", 
-            href: "/vocacional" 
+        {
+            label: "VOCACIONAL",
+            href: "/vocacional"
         },
         {
             label: "PORTAIS", href: "/",
@@ -41,8 +41,8 @@ export const vestibularesRoutes: NavLink = {
     href: "/vestibulares",
     children: [
         {
-            label: "TOTEM EVENTOS",
-            href: "/vestibulares/eventos"
+            label: "O TOTEM",
+            href: "/vestibulares/o-totem"
         },
         {
             label: "UNIDADES",
@@ -63,16 +63,16 @@ export const vestibularesRoutes: NavLink = {
             ]
         },
         {
-            label: "FALE COM A GENTE",
-            href: "/vestibulares/contato"
-        },
-        {
             label: "ESCOLHA SUA TURMA",
             href: "/vestibulares/matriculas"
         },
         {
-            label: "O TOTEM",
-            href: "/vestibulares/o-totem"
+            label: "TOTEM EVENTOS",
+            href: "/vestibulares/eventos"
+        },
+        {
+            label: "CONTATO",
+            href: "/vestibulares/contato"
         },
     ]
 };

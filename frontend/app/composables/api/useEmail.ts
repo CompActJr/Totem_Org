@@ -1,4 +1,4 @@
-import type { AgendamentoPayload } from "~/types/email.types"
+import type { AgendamentoPayload, ContatoPayload } from "~/types/email.types"
 
 export function useEmail() {
     const config = useRuntimeConfig()
@@ -15,5 +15,13 @@ export function useEmail() {
     })
   }
 
-  return { enviarAgendamento }
+  async function enviarContato(request: ContatoPayload) {
+    return await $fetch('/emails/contato', {
+      baseURL,
+      method: 'POST',
+      body: request,
+    })
+  }
+
+  return { enviarAgendamento, enviarContato }
 }
