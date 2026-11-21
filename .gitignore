@@ -6,6 +6,7 @@
 .cache
 dist
 llm.md
+build/
 
 # Node dependencies
 node_modules

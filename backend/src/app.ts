@@ -16,6 +16,7 @@ import { testimonialRoutes } from "./modules/organizations/routes/testimonial.ro
 import { teacherRoutes } from "./modules/organizations/routes/teacher.routes.js";
 import { activityRoutes } from "./modules/organizations/routes/activity.routes.js";
 import { blogRoutes } from "./modules/blog/blog.routes.js";
+import { emailRoutes } from "./modules/email/email.routes.js";
 
 /**
  * @author Jonas
@@ -52,6 +53,7 @@ export const buildApp = async (opts: Object = {}) => {
   await fastify.register(activityRoutes);
   await fastify.register(blogRoutes);
   await fastify.register(authRoutes);
+  await fastify.register(emailRoutes);
 
   return fastify;
 };

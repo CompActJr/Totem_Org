@@ -102,54 +102,9 @@ export const unidadesColegios: Organization[] = [
       "/banners/BANNER_CACHOEIRA_1.jpg",
       "/banners/BANNER_COLEGIOS.jpg"
     ],
-    panoramas: [
-      {
-        _id: 1,
-        name: "Hall de entrada",
-        panorama: "/panoramas/cachoeira_do_sul_hall.jpeg"
-      },
-      {
-        _id: 1,
-        name: "Refeitório",
-        panorama: "/panoramas/cachoeira_do_sul_refeitorio.jpeg"
-      }
-    ],
-    diferenciais: [
-      "Ambientes diferenciados para cada nível de ensino",
-      "Calendário escolar prolongado",
-      "Mundo Kids com refeitório",
-      "Playground interno e externo com ambientes de recreação",
-      "Momentos de vivências e de interação entre escola e família",
-      "Apresentações artísticas com aptidões exploradas a partir da arte, da música, do teatro e da dança",
-      "Projetos interdisciplinares de acordo com o interesse de cada estudante",
-      "Metodologia com personagens que acompanham o desenvolvimento",
-      "Horários diferenciados de entrada e saída: 13h15min até às 18h, de segunda à sexta",
-      "Segurança aos estudantes e tranquilidade aos pais",
-      "Material didático do J. Piaget sem custo adicional",
-      "Plataforma digital do J. Piaget com mais de 500 jogos e conteúdo multimídia totalmente articulados com os conhecimentos abordados em sala de aula*",
-      "Aulas de Educação Física e de Língua Inglesa (Projeto Bilíngue) com profissional especializado**",
-      "Programa União Faz a Vida",
-      "Projetos de transição dos alunos que se encontram no Nível II para o 1° ano do Ensino Fundamental",
-      "Entrevistas individuais com os professores, no início do ano letivo",
-      "Reuniões de acolhimento e orientação a cada turma",
-      "Lindo Cerimonial de Formatura do Nível II, registrando a conclusão desta etapa da vida escolar",
-      "Encontro Reflexivo da Aprendizagem Escolar",
-      "Plataforma educacional Totem, possibilitando acesso e acompanhamento escolar dos alunos."
-    ],
-    depoimentos: [
-      {
-        _id: 1,
-        nome: "Carine",
-        imagem: "/geral/perfil.png",
-        depoimento: "O Totem transmite confiança, segurança e estimula os alunos ao aprendizado. A equipe diretiva está constantemente envolvida e próxima dos alunos."
-      },
-      {
-        _id: 2,
-        nome: "Carine 2",
-        imagem: "/geral/perfil.png",
-        depoimento: "O Totem transmite confiança, segurança e estimula os alunos ao aprendizado. A equipe diretiva está constantemente envolvida e próxima dos alunos."
-      }
-    ],
+    panoramas: [],
+    diferenciais: [],
+    depoimentos: [],
     infraestrutura: [
       "/infraestrutura/cachoeira-do-sul-colegios/BERCARIO-1.png",
       "/infraestrutura/cachoeira-do-sul-colegios/BRINQUEDOS-1.png",
@@ -160,54 +115,8 @@ export const unidadesColegios: Organization[] = [
       "/infraestrutura/cachoeira-do-sul-colegios/SALA-ESTAR-1.png",
       "/infraestrutura/cachoeira-do-sul-colegios/SALA-FUND-1.png"
     ],
-    professores: [
-      {
-        _id: 1,
-        nome: "Professor A",
-        areaEnsino: "Matemática",
-        levels: [
-          "Ensino Médio"
-        ],
-        imagemUrl: "/geral/perfil.png",
-        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
-      },
-      {
-        _id: 2,
-        nome: "Professor B",
-        areaEnsino: "Portguês",
-        levels: [
-          "Ensino Fundamental I",
-          "Ensino Fundamental II",
-        ],
-        imagemUrl: "/geral/perfil.png",
-        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
-      }
-    ],
-    atividades: [
-      {
-        _id: 1,
-        name: "Escolinha de Voleibol",
-        turmas: [
-          {
-            _id: 1,
-            nome: "Escolinha de Voleibol - 3º e 4º ano",
-            detalhes: "Ginásio. Sextas, das 9h30 às 10h30"
-          },
-          {
-            _id: 2,
-            nome: "Escolinha de Voleibol - 5º ano",
-            detalhes: "Ginásio. Sextas, das 10h30 às 11h30"
-          },
-          {
-            _id: 3,
-            nome: "Escolinha de Voleibol - 6º ao 8º ano + Médio",
-            detalhes: "Ginásio. Sextas, das 13h40 às 15h40"
-          }
-        ],
-        professorNome: "Jonas",
-        image: "/atividades/ESCOLINHA-DE-VOLEIBOL.jpg"
-      }
-    ],
+    professores: [],
+    atividades: [],
     cursos: [],
     faqs: []
   },
@@ -235,14 +144,7 @@ export const unidadesColegios: Organization[] = [
       "/banners/BANNER_COLEGIOS.jpg"
     ],
     panoramas: [],
-    diferenciais: [
-      "Atendimento personalizado, afetuoso, com equipe altamente qualificada e experiente;",
-      "Estrutura física moderna, planejada para maior segurança, conforto e produtividade detodos",
-      "Projeto pedagógico focado no resultado e na formação para a vida real",
-      "Material didático colorido, atualizado e com suporte digital, em plataformas modernas e interativas",
-      "Reconhecido pelo ambiente familiar – Família Totem – e pelo total apoio ao estudante e seus responsáveis",
-      "Salas de aula com mobiliário adequado a cada nível de ensino, climatizadas, com acesso à internet e recursos multimídia completos"
-    ],
+    diferenciais: [],
     depoimentos: [],
     infraestrutura: [
       "/infraestrutura/cruz-alta-colegios/ALFABETIZAÇÃO-1.png",
@@ -253,54 +155,8 @@ export const unidadesColegios: Organization[] = [
       "/infraestrutura/cruz-alta-colegios/SALA-1.png",
       "/infraestrutura/cruz-alta-colegios/SALA-2.png"
     ],
-    professores: [
-         {
-        _id: 3,
-        nome: "Professor A",
-        areaEnsino: "Matemática",
-        levels: [
-          "Ensino Médio"
-        ],
-        imagemUrl: "/geral/perfil.png",
-        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
-      },
-      {
-        _id: 4,
-        nome: "Professor B",
-        areaEnsino: "Portguês",
-        levels: [
-          "Ensino Fundamental I",
-          "Ensino Fundamental II",
-        ],
-        imagemUrl: "/geral/perfil.png",
-        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
-      }
-    ],
-    atividades: [
-      {
-        _id: 2,
-        name: "Escolinha de Voleibol",
-        turmas: [
-          {
-            _id: 1,
-            nome: "Escolinha de Voleibol - 3º e 4º ano",
-            detalhes: "Ginásio. Sextas, das 9h30 às 10h30"
-          },
-          {
-            _id: 2,
-            nome: "Escolinha de Voleibol - 5º ano",
-            detalhes: "Ginásio. Sextas, das 10h30 às 11h30"
-          },
-          {
-            _id: 3,
-            nome: "Escolinha de Voleibol - 6º ao 8º ano + Médio",
-            detalhes: "Ginásio. Sextas, das 13h40 às 15h40"
-          }
-        ],
-        professorNome: "Jonas",
-        image: "/atividades/ESCOLINHA-DE-VOLEIBOL.jpg"
-      }
-    ],
+    professores: [],
+    atividades: [],
     cursos: [],
     faqs: []
   },
@@ -328,18 +184,7 @@ export const unidadesColegios: Organization[] = [
       "/banners/BANNER_COLEGIOS.jpg"
     ],
     panoramas: [],
-    diferenciais: [
-      "Atendimento personalizado, afetuoso, com equipe altamente qualificada e experiente;",
-      "Estrutura física moderna, planejada para maior segurança, conforto e produtividade detodos",
-      "Projeto pedagógico focado no resultado e na formação para a vida real",
-      "Vivências em família com apresentações de talentos (arte, música, dança, poesia e teatro)",
-      "Concurso de Fotografia, Literário e Simulados",
-      "Técnicas contextualizadas à valorização do meio ambiente",
-      "Participação na Olimpíada de Matemática - OBMEP e demais olimpíadas do conhecimento",
-      "Realização do Simulado Enemzinho ou Avaliação Unificada Totem (AUT) como preparação para as provas do ENEM",
-      "Viagens de estudo e visitas às universidades;",
-      "Acompanhamento do estudante às principais excursões e eventos do Totem Vestibulares para integração e familiarização com a rede"
-    ],
+    diferenciais: [],
     depoimentos: [],
     infraestrutura: [
       "/infraestrutura/santa-maria-colegios/SALA-1.png",
@@ -350,54 +195,8 @@ export const unidadesColegios: Organization[] = [
       "/infraestrutura/santa-maria-colegios/SAGUÃO-1.png",
       "/infraestrutura/santa-maria-colegios/SALA-PEQUENOS-1.png"
     ],
-    professores: [
-         {
-        _id: 5,
-        nome: "Professor A",
-        areaEnsino: "Matemática",
-        levels: [
-          "Ensino Médio"
-        ],
-        imagemUrl: "/geral/perfil.png",
-        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
-      },
-      {
-        _id: 6,
-        nome: "Professor B",
-        areaEnsino: "Portguês",
-        levels: [
-          "Ensino Fundamental I",
-          "Ensino Fundamental II",
-        ],
-        imagemUrl: "/geral/perfil.png",
-        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
-      }
-    ],
-    atividades: [
-      {
-        _id: 3,
-        name: "Escolinha de Voleibol",
-        turmas: [
-          {
-            _id: 1,
-            nome: "Escolinha de Voleibol - 3º e 4º ano",
-            detalhes: "Ginásio. Sextas, das 9h30 às 10h30"
-          },
-          {
-            _id: 2,
-            nome: "Escolinha de Voleibol - 5º ano",
-            detalhes: "Ginásio. Sextas, das 10h30 às 11h30"
-          },
-          {
-            _id: 3,
-            nome: "Escolinha de Voleibol - 6º ao 8º ano + Médio",
-            detalhes: "Ginásio. Sextas, das 13h40 às 15h40"
-          }
-        ],
-        professorNome: "Jonas",
-        image: "/atividades/ESCOLINHA-DE-VOLEIBOL.jpg"
-      }
-    ],
+    professores: [],
+    atividades: [],
     cursos: [],
     faqs: []
   }
@@ -425,14 +224,7 @@ export const unidadesVestibulares: Organization[] = [
     ],
     panoramas: [],
     diferenciais: [],
-    depoimentos: [
-      {
-        _id: 1,
-        nome: "Pedro Corsini - Medicina UFSM e UFRGS",
-        imagem: "",
-        depoimento: "O mais importante da minha passagem pelo Totem foi minha evolução, não apenas como estudante, mas como pessoa também.",
-      },
-    ],
+    depoimentos: [],
     infraestrutura: [
       "/infraestrutura/santa-rosa-vestibulares/AREA_DE_CONVIVIO.jpg",
       "/infraestrutura/santa-rosa-vestibulares/ESPACO_GOURMET.jpg",
@@ -444,24 +236,7 @@ export const unidadesVestibulares: Organization[] = [
       "/infraestrutura/santa-rosa-vestibulares/SALA_DE_ESTUDOS.jpg",
       "/infraestrutura/santa-rosa-vestibulares/SECRETARIA.jpg"
     ],
-    professores: [
-      {
-        _id: 7,
-        nome: "Professor A",
-        areaEnsino: "Matemática",
-        levels: [],
-        imagemUrl: "/geral/perfil.png",
-        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
-      },
-      {
-        _id: 8,
-        nome: "Professor B",
-        areaEnsino: "Portguês",
-        levels: [],
-        imagemUrl: "/geral/perfil.png",
-        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
-      }
-    ],
+    professores: [],
     atividades: [],
     cursos: [
       {
@@ -553,13 +328,7 @@ export const unidadesVestibulares: Organization[] = [
       },
 
     ],
-    faqs: [
-      {
-        _id: 1,
-        question: "As turmas Medicina PRIME e Medicina PLUS são apenas no turno da manhã?",
-        answer: "Sim. As aulas são presenciais no turno da manhã, das 8h às 12h20.\n\nDurante a tarde, os estudantes participam dos atendimentos tira-dúvidas e, no caso da turma Medicina PLUS, também contam com estudo ativo e Totemapping."
-      },
-    ],
+    faqs: [],
   },
   {
     _id: 5,
@@ -581,14 +350,7 @@ export const unidadesVestibulares: Organization[] = [
     ],
     panoramas: [],
     diferenciais: [],
-    depoimentos: [
-      {
-        _id: 2,
-        nome: "Isabela Marra - Medicina Veterinária UFSM",
-        imagem: "",
-        depoimento: "O Totem é muito mais que um cursinho, ele realmente se torna a tua família, com quem tu pode contar, chorar, sorrir e soltar as risadas mais sinceras.",
-      },
-    ],
+    depoimentos: [],
     infraestrutura: [
       "/infraestrutura/santa-maria-vestibulares/AREA_DE_CONVIVIO.jpg",
       "/infraestrutura/santa-maria-vestibulares/ESPACO_GOURMET.jpg",
@@ -600,24 +362,7 @@ export const unidadesVestibulares: Organization[] = [
       "/infraestrutura/santa-maria-vestibulares/SALA_DE_ESTUDOS.jpg",
       "/infraestrutura/santa-maria-vestibulares/SECRETARIA.jpg"
     ],
-    professores: [
-      {
-        _id: 9,
-        nome: "Professor A",
-        areaEnsino: "Matemática",
-        levels: [],
-        imagemUrl: "/geral/perfil.png",
-        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
-      },
-      {
-        _id: 10,
-        nome: "Professor B",
-        areaEnsino: "Portguês",
-        levels: [],
-        imagemUrl: "/geral/perfil.png",
-        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
-      }
-    ],
+    professores: [],
     atividades: [],
     cursos: [
       {
@@ -824,13 +569,7 @@ export const unidadesVestibulares: Organization[] = [
         "documentos": "Comprovante de residência, carteira de identidade e CPF. Para aluno menor de idade é necessário o CPF do responsável."
       },
     ],
-    faqs: [
-      {
-        _id: 2,
-        question: "Por que o valor varia conforme o turno do Extensivo?",
-        answer: "O Totem oferece os Extensivos Manhã, Tarde e Noite.\n\nO Extensivo Manhã inicia em março e possui três períodos diários.\n\nO Extensivo Tarde inicia em abril e também possui três períodos diários.\n\nJá o Extensivo Noite inicia em abril e conta com dois períodos diários.\n\nComo as cargas horárias são diferentes, os valores também variam entre os turnos."
-      },
-    ]
+    faqs: []
   },
   {
     _id: 6,
@@ -852,14 +591,7 @@ export const unidadesVestibulares: Organization[] = [
     ],
     panoramas: [],
     diferenciais: [],
-    depoimentos: [
-      {
-        _id: 4,
-        nome: "Luisa Scheeren Wust – Medicina UNIJUÍ 2025/2",
-        imagem: "",
-        depoimento: "O Totem foi essencial para a minha aprovação. Só tenho a agradecer pelos ensinamentos. Sou completamente sincera ao dizer que é um ótimo cursinho e com certeza vou recomendar para mais pessoas.",
-      },
-    ],
+    depoimentos: [],
     infraestrutura: [
       "/infraestrutura/ijui-vestibulares/AREA_DE_CONVIVIO.jpg",
       "/infraestrutura/ijui-vestibulares/ESPACO_GOURMET.jpg",
@@ -871,24 +603,7 @@ export const unidadesVestibulares: Organization[] = [
       "/infraestrutura/ijui-vestibulares/SALA_DE_ESTUDOS.jpg",
       "/infraestrutura/ijui-vestibulares/SECRETARIA.jpg"
     ],
-    professores: [
-      {
-        _id: 11,
-        nome: "Professor A",
-        areaEnsino: "Matemática",
-        levels: [],
-        imagemUrl: "/geral/perfil.png",
-        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
-      },
-      {
-        _id: 12,
-        nome: "Professor B",
-        areaEnsino: "Portguês",
-        levels: [],
-        imagemUrl: "/geral/perfil.png",
-        texto: "para Professores pela FURG. Atuo há 15 anos em sala de aula, período em que tenho a oportunidade de guiar meus alunos na descoberta da magia e dos mistérios que a matemática revela, sendo uma linguagem que desenvolve raciocínio, criatividade e autonomia."
-      }
-    ],
+    professores: [],
     atividades: [],
     cursos: [
       {
@@ -981,12 +696,6 @@ export const unidadesVestibulares: Organization[] = [
         "documentos": "Comprovante de residência, carteira de identidade e CPF. Para aluno menor de idade é necessário o CPF do responsável."
       }
     ],
-    faqs: [
-      {
-        _id: 3,
-        question: "Estou no 3º ano do Ensino Médio e estudo pela manhã e à tarde. Qual turma presencial é mais indicada?",
-        answer: "Se o seu foco é o ENEM e o Vestibular da UFSM, a turma mais indicada é o Extensivo Noite.\n\nAs aulas iniciam em abril, permitindo que você dedique o início do ano à escola e, ao mesmo tempo, revise todo o conteúdo do Ensino Médio no cursinho."
-      },
-    ]
+    faqs: []
   }
 ];
