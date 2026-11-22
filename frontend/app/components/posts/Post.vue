@@ -1,12 +1,17 @@
 <script setup lang="ts">
 
-import type { Post } from '~/types/blog.types.ts';
+
 import ModalPost from './ModalPost.vue';
 import I_Tags from '../ui/icons/I_Tags.vue';
 import I_Calendar from '../ui/icons/I_Calendar.vue';
 import I_Favorite from '../ui/icons/I_Favorite.vue';
+import I_Edit from '../ui/icons/I_Edit.vue';
+import type { Post } from '~~/shared/posts.ts';
 
-const props = defineProps<{post: Post}>()
+const props = withDefaults(defineProps<{post: Post; adminMode?: boolean}>(), {
+  adminMode: false,
+})
+const emit = defineEmits<{ (e: 'edit', id: number): void }>()
 const open = ref(false);
 
 const shortDescription = computed(() => {
@@ -16,8 +21,13 @@ const shortDescription = computed(() => {
     .join(' ') + ' [...]'
 });
 
-function openModal() {
+const openModal = () => {
   open.value = true
+}
+
+const openEditPanel = () => {
+  emit('edit', props.post._id)
+  return
 }
 
 function closeModal() {
@@ -65,17 +75,21 @@ function closeModal() {
       </p>
 
       <div class="flex items-center justify-between w-full">
-        <button class="button-primary" @click="openModal">
-          Ler mais
+        <button v-if="adminMode" class="btn-primary flex items-center gap-4" @click="openEditPanel">
+          Editar <I_Edit/>
+        </button>
+
+        <button v-else class="btn-primary" @click="openModal">
+          Ler Mais
         </button>
 
         <I_Favorite  v-if="post.destaque"/>
-       
       </div>
     </div>
   </div>
 
   <ModalPost
+    v-if="!adminMode"
     :post="post"
     :open="open"
     @close="closeModal"

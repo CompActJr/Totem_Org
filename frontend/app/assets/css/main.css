@@ -77,3 +77,12 @@ ol {
     --section-padding-x: clamp(2rem, 6vw, 6rem);
   }
 }
+
+.btn-primary{
+  background-color: #1b96fa;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}

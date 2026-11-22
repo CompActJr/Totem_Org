@@ -2,13 +2,20 @@ import { FastifyInstance } from "fastify";
 import { CreateResponse, DeleteResponse, UpdateResponse } from "../../types/api.types.js";
 import { getDb, getNextSequence, notFound } from "../../utils/fastifyMongoService.js";
 import { Post } from "./blog.model.js";
-import { CreatePostInput, PostResponse, UpdatePostInput } from "./blog.schema.js";
+import { BlogFilters, CreatePostInput, PostResponse, UpdatePostInput } from "./blog.schema.js";
 
 const POSTS = "posts";
 
-export async function findAllPosts(fastify: FastifyInstance) {
+export async function findAllPosts(fastify: FastifyInstance, filters: BlogFilters) {
   const db = await getDb(fastify);
-  return db.collection<Post>(POSTS).find({}).sort({ _id: -1 }).toArray();
+  const query: Record<string, unknown> = {};
+
+  if (filters.categoria) query.categoria = filters.categoria;
+  if (filters.destaque !== undefined) query.destaque = filters.destaque;
+  if (filters.ativo !== undefined) query.ativo = filters.ativo;
+  if (filters.unidades?.length) query.unidades = { $in: filters.unidades };
+
+  return db.collection<Post>(POSTS).find(query).sort({ _id: -1 }).toArray();
 }
 
 export async function findPostById(fastify: FastifyInstance, id: number) {

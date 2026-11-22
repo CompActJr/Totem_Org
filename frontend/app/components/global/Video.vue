@@ -1,5 +1,7 @@
 <script lang="ts" setup>
-import type { Video } from '~/types/blog.types'
+
+import type { Video } from "~~/shared/videos";
+
 
 const props = defineProps<{ video: Video }>()
 

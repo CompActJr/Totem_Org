@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import type { Post } from '~/types/blog.types';
+
 import I_Calendar from '../ui/icons/I_Calendar.vue';
 import I_Tags from '../ui/icons/I_Tags.vue';
 import I_Close from '../ui/icons/I_Close.vue';
+import type { Post } from '~~/shared/posts.ts';
 
 
 defineProps<{
@@ -21,7 +22,7 @@ const emit = defineEmits<{(e: 'close'): void}>()
                 class="fixed  inset-0 z-50 flex items-center justify-center bg-gray-600/60 backdrop-blur-sm p-4"
                 @click.self="emit('close')">
                 <div class="relative w-full max-w-5xl h-[90vh] overflow-y-auto rounded-2xl bg-white shadow-2xl">
-                    <button class="absolute right-4 top-4 rounded-full bg-white p-2 shadow" @click="emit('close')">
+                    <button class="absolute right-4 top-4 rounded-full bg-gray-600 p-2 shadow" @click="emit('close')">
                         <I_Close/>
                     </button>
 

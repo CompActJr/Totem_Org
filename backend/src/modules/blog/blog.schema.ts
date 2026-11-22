@@ -5,7 +5,7 @@ export const postResponseSchema = z.object({
   titulo: z.string().trim().min(1).max(200),
   resumo: z.string().trim().min(1).max(500),
   conteudo: z.string().trim().min(1).max(50_000),
-  imagemUrl: z.string().trim().min(1).max(500),
+  imagemUrl: z.string().trim().min(1).max(500).optional(),
   ativo: z.boolean(),
   destaque: z.boolean(),
   autor: z.string().trim().min(1).max(150),
@@ -27,6 +27,27 @@ export const updatePostInput = createPostInput
     message: "Informe pelo menos um campo para atualizar.",
   });
 
+export const blogFiltersSchema = z.object({
+  categoria: z.string().trim().min(1).max(100).optional(),
+  destaque: z.preprocess(
+    (value) => value === "true" ? true : value === "false" ? false : undefined,
+    z.boolean().optional(),
+  ),
+  ativo: z.preprocess(
+    (value) => value === "true" ? true : value === "false" ? false : undefined,
+    z.boolean().optional(),
+  ),
+  unidades: z.preprocess(
+    (value) => Array.isArray(value)
+      ? value
+      : typeof value === "string"
+        ? value.split(",").map((slug) => slug.trim()).filter(Boolean)
+        : undefined,
+    z.array(z.enum(["ijui", "cachoeira-do-sul", "cruz-alta", "santa-maria", "santa-rosa"])).min(1).optional(),
+  ),
+});
+
 export type PostResponse = z.infer<typeof postResponseSchema>;
 export type CreatePostInput = z.infer<typeof createPostInput>;
 export type UpdatePostInput = z.infer<typeof updatePostInput>;
+export type BlogFilters = z.infer<typeof blogFiltersSchema>;

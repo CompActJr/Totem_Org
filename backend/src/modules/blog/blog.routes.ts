@@ -3,7 +3,7 @@ import { FastifyInstance } from "fastify";
 import z from "zod";
 import { errorResponseSchema } from "../../config/errorHandler.js";
 import { createResponse, deleteResponse, updateResponse } from "../../types/api.types.js";
-import { createPostInput, PostResponse, postResponseSchema, updatePostInput } from "./blog.schema.js";
+import { blogFiltersSchema, createPostInput, postResponseSchema, updatePostInput } from "./blog.schema.js";
 import { createPost, deletePost, findAllPosts, findPostById, updatePost } from "./blog.service.js";
 
 const idParam = () => z.coerce.number({ error: "O ID precisa ser um número válido" }).int().positive();
@@ -19,14 +19,15 @@ export async function blogRoutes(fastify: FastifyInstance) {
             schema: {
                 tags: ["Posts"], 
                 summary: "Listar posts", 
-                description: "Retorna todos os posts cadastrados.",
+                description: "Retorna todos os posts cadastrados, com filtros opcionais.",
+                querystring: blogFiltersSchema,
                 response: { 
                     200: z.array(postResponseSchema) 
                 },
             }
         }, 
-        async (_request, reply) => {
-            const posts =  await findAllPosts(fastify);
+        async (request, reply) => {
+            const posts =  await findAllPosts(fastify, request.query);
             return reply.status(200).send(posts);
         }
     );

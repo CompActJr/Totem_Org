@@ -3,7 +3,7 @@ export interface Post {
   titulo: string;
   resumo: string;
   conteudo: string;
-  imagemUrl: string;
+  imagemUrl?: string;
   ativo: boolean;
   destaque: boolean;
   autor: string;
