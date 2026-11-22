@@ -250,6 +250,7 @@ do projeto frontend na Vercel), configure:
 ```dotenv
 NUXT_PUBLIC_API_BASE=https://api.exemplo.com/api
 NUXT_API_BASE_INTERNAL=https://api.exemplo.com/api
+NUXT_COKKIE_SECURE=true
 NUXT_NODE_PRODUCTION=true
 ```
 
@@ -257,10 +258,12 @@ NUXT_NODE_PRODUCTION=true
 - `NUXT_API_BASE_INTERNAL` é usada durante o SSR do Nuxt. Se o frontend e o
   backend estiverem em redes privadas compatíveis, pode apontar para a URL
   interna do backend; caso contrário, use a URL HTTPS pública.
+- `NUXT_COKKIE_SECURE=true` garante que os cookies sejam enviados apenas por
+  conexões HTTPS.
 - `NUXT_NODE_PRODUCTION=true` habilita o modo de produção do frontend.
 
 O Nuxt lê esses valores como configuração de runtime (`public.apiBase`,
-`apiBaseInternal` e `nodeProduction`). Configure também `ALLOWED_ORIGINS` no
+`apiBaseInternal`, `cookieSecure` e `nodeProduction`). Configure também `ALLOWED_ORIGINS` no
 backend com a origem do site frontend, incluindo `https://` e sem caminho (por
 exemplo, `https://www.exemplo.com`). Para mais de uma origem, separe os valores
 com vírgulas. Após alterar as variáveis, faça novo deploy do frontend e do

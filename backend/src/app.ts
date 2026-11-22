@@ -17,6 +17,7 @@ import { teacherRoutes } from "./modules/organizations/routes/teacher.routes.js"
 import { activityRoutes } from "./modules/organizations/routes/activity.routes.js";
 import { blogRoutes } from "./modules/blog/blog.routes.js";
 import { emailRoutes } from "./modules/email/email.routes.js";
+import { env } from "./config/env.js";
 
 /**
  * @author Jonas
@@ -36,7 +37,7 @@ export const buildApp = async (opts: Object = {}) => {
   await fastify.register(dbConnector);
 
   await fastify.register(fastifyJwt, {
-    secret: process.env.JWT_SECRET ?? "",
+    secret: env.JWT_SECRET,
     sign: {
       expiresIn: "2h",
     },

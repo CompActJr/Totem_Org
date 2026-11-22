@@ -1,4 +1,3 @@
-
 import { z } from "zod";
 
 const envSchema = z.object({
@@ -10,6 +9,7 @@ const envSchema = z.object({
     z.boolean()
   ).default(false),
   ALLOWED_ORIGINS: z.string().default(""),
+  JWT_SECRET: z.string().min(32, "JWT_SECRET deve ter pelo menos 32 caracteres."),
 
    // SMTP
   SMTP_HOST: z.string().min(1).default('smtp.umbler.com'),

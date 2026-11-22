@@ -16,3 +16,19 @@ export async function findUser(fastify: FastifyInstance, email: string) {
         .collection<User>('users')
         .findOne({ email });
 }
+
+export async function findUserById(fastify: FastifyInstance, id: string) {
+  const db = fastify.mongo.db;
+
+  if (!db) {
+    throw new AppError(503, "Banco de dados indisponível.", "Service Unavailable");
+  }
+
+  if (!fastify.mongo.ObjectId.isValid(id)) {
+    return null;
+  }
+
+  return db.collection<User>('users').findOne({
+    _id: new fastify.mongo.ObjectId(id),
+  });
+}
