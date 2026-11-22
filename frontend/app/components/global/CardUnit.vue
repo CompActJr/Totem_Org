@@ -1,11 +1,19 @@
 <script lang="ts" setup>
 import type { Organization } from '~/types/organizations.types';
+import CTA from '../ui/buttons/CTA.vue';
 
 const props = defineProps<{
   unidade: Organization
 }>();
 
-const { details, tour } = useUnidadeRoutes(() => props.unidade);
+  const urlComplete = computed(() => {
+    const slug = props.unidade.slug
+    return slug
+      ? `/${props.unidade['@type']}/unidade/${slug}`
+      : `/${props.unidade['@type']}`;
+  });
+
+
 </script>
 
 <template>
@@ -39,8 +47,7 @@ const { details, tour } = useUnidadeRoutes(() => props.unidade);
 
     <footer class="flex justify-center gap-8 border-t border-gray-200 bg-white px-5 py-5">
       <NuxtLink
-        v-if="tour"
-        :to="tour"
+        :to="`${urlComplete}/tour`"
         aria-label="Tour virtual"
         class="flex items-center rounded-full px-6 py-3 shadow-sm transition hover:shadow-xl"
       >
@@ -50,12 +57,7 @@ const { details, tour } = useUnidadeRoutes(() => props.unidade);
         </svg>
       </NuxtLink>
 
-      <NuxtLink
-        :to="details"
-        class="flex items-center rounded-full bg-yellow-300 px-6 py-3 font-semibold text-gray-700 transition hover:bg-orange-400 hover:text-white"
-      >
-        Saiba mais →
-      </NuxtLink>
+      <CTA :href="urlComplete">ACESSAR</CTA>
     </footer>
   </article>
 </template>

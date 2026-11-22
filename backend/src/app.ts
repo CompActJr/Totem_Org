@@ -18,6 +18,7 @@ import { activityRoutes } from "./modules/organizations/routes/activity.routes.j
 import { blogRoutes } from "./modules/blog/blog.routes.js";
 import { emailRoutes } from "./modules/email/email.routes.js";
 import { env } from "./config/env.js";
+import { videoRoutes } from "./modules/videos/videos.routes.js";
 
 /**
  * @author Jonas
@@ -55,6 +56,7 @@ export const buildApp = async (opts: Object = {}) => {
   await fastify.register(blogRoutes);
   await fastify.register(authRoutes);
   await fastify.register(emailRoutes);
+  await fastify.register(videoRoutes);
 
   return fastify;
 };

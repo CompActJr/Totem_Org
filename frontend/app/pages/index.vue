@@ -1,12 +1,11 @@
 <script lang="ts" setup>
 import CardPortal from '~/components/global/CardPortal.vue';
-import HeroSlider from '~/components/global/HeroSlider.vue';
 import IntroSectionHeader from '~/components/global/IntroSectionHeader.vue';
 import CTA from '~/components/ui/buttons/CTA.vue';
 import Grid from '~/components/ui/cards/Grid.vue';
 import SectionLayout from '~/components/ui/SectionLayout.vue';
-import { portais } from '~/data/portais';
-import { videos } from '~/data/videos';
+import { useVideos } from '~/composables/api/useVideos';
+import { portais } from '~/data/static';
 
 definePageMeta({ layout: 'default' })
 
@@ -14,6 +13,8 @@ useSeoMeta({
     title: 'Página principal',
     description: 'esta é a página principal do Site',
 })
+
+const {videos, refresh, pending, error, status} = useVideos()
 
 </script>
 
@@ -35,8 +36,10 @@ useSeoMeta({
             <IntroSectionHeader>TOTEM TV</IntroSectionHeader>
         </template>
         <template #content>
-            <Grid>
-                <Video v-for="video in videos" :video="video" :key="video.id" />
+            <p v-if="pending">Carregando ...</p>
+            <p v-if="error">Não foi possivel carregar os videos</p>
+            <Grid v-else>
+                <Video v-for="video in videos" :video="video" :key="video._id" />
             </Grid>
         </template>
     </SectionLayout>

@@ -26,6 +26,7 @@ const swaggerPlugin = async (fastify: FastifyInstance) => {
         { name: "upload", description: "upload de imagens" },
         { name: "Units", description: "Unidades da organização" },
         { name: "Posts", description: "Posts do blog" },
+        { name: "Videos", description: "videos do totemtv"}
       ],
       components: {
         securitySchemes: {
