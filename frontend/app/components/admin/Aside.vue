@@ -3,7 +3,7 @@ import { useAuthSession } from '../../composables/api/session';
 import AsideItem from './AsideItem.vue';
 
   const session = useAuthSession()
-  const user = session.isLoggedIn.value
+  const user = computed(() => session.isLoggedIn.value)
 
 </script>
 

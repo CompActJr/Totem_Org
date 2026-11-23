@@ -8,12 +8,19 @@ services:
       - "443:443"
     volumes:
       # Mapeia o arquivo de configuração global principal
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
       # Mapeia seus arquivos de configuração personalizados
-      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./conf.d:/etc/nginx/conf.d:ro
       # Mapeia os certificados gerados pelo Certbot no host para dentro do container
       - /etc/letsencrypt:/etc/letsencrypt:ro
       # Opcional: diretório temporário para validação webroot caso use o Certbot via webroot
       - /var/www/certbot:/var/www/certbot:ro
+      # Arquivos WebP publicados pelo Fastify; Nginx só precisa ler.
+      - /var/www/uploads:/var/www/uploads:ro
     networks:
       - app-network
+
+networks:
+  app-network:
+    external: true
+    name: app-network

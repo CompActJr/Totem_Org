@@ -6,8 +6,7 @@ const { logout, pending } = useAuth()
 const router = useRouter();
 
 const session = useAuthSession()
-const isLoggedIn = session.isLoggedIn.value
-const user = session.user.value
+const isLoggedIn = computed(() => session.isLoggedIn.value)
 
 async function handleLogout() {
     const success = await logout()

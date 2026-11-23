@@ -20,7 +20,7 @@ import Aside from '~/components/admin/Aside.vue';import NavBar from '~/component
     <!-- Overlay -->
     <div class="fixed inset-0 -z-10 bg-white/80" />
 
-    <main class="flex min-h-screen w-full flex-col gap-8 items-center  px-6 py-6 md:px-10 lg:px-16">
+    <main class="flex h-screen overflow-y-auto w-full flex-col gap-8 items-center  px-6 py-6 md:px-10 lg:px-16">
         <NavBar/>  
         <slot />
     </main>

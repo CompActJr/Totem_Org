@@ -44,6 +44,15 @@ export const errorHandler = (err: FastifyError | AppError, request: FastifyReque
     });
   }
 
+  const statusCode = err.statusCode;
+  if (typeof statusCode === "number" && statusCode >= 400 && statusCode < 500) {
+    return reply.code(statusCode).send({
+      statusCode,
+      error: err.name || "Bad Request",
+      message: err.message,
+    });
+  }
+
   // qualquer outro: loga o detalhe, devolve mensagem genérica
   request.log.error(err);
   return reply.code(500).send({
