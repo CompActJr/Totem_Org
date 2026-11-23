@@ -21,7 +21,7 @@ export function ensureInsideUploadRoot(path: string) {
  * @apiNotegarante decodificar base64 puro
  */
 export function decodeBase64(base64: string) {
-    return Buffer.from(base64);
+    return Buffer.from(base64, 'base64');
 }
 
 /**

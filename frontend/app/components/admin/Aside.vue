@@ -21,6 +21,7 @@ import AsideItem from './AsideItem.vue';
           <AsideItem href="/admin">HOME</AsideItem>
           <AsideItem href="/admin/blog">BLOG</AsideItem>
           <AsideItem href="/admin/totemtv">TOTEM TV</AsideItem>
+          <AsideItem href="/admin/galeria">GALERIA</AsideItem>
       </div>
  
     </aside>
