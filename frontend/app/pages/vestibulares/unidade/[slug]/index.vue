@@ -197,7 +197,9 @@ useSeoMeta({
             </IntroSectionHeader>
         </template>
         <template #content>
-            <ProfessorCard v-for="professor in unidade.professores" :key="professor._id" :professor="professor" />
+          <Grid>
+             <ProfessorCard v-for="professor in unidade.professores" :key="professor._id" :professor="professor" />
+          </Grid>
         </template>
     </SectionLayout>
 

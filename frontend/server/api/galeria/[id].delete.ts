@@ -1,0 +1,1 @@
+// deletar um item da galeria

@@ -1,0 +1,1 @@
+// obter todas os itens da galeria

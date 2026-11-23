@@ -1,0 +1,1 @@
+// realizar o upload de uma imagem para a galeria

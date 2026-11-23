@@ -51,8 +51,6 @@ rotas atuais.
 
 ## Configuração e execução
 
-- `NUXT_PUBLIC_API_BASE` define a URL pública da API; sem ela, o padrão é
-  `http://localhost:9000`.
 - As configurações SMTP são privadas no `runtimeConfig`; nunca exponha
   credenciais em `runtimeConfig.public` ou no cliente.
 - Comandos (a partir de `frontend/`): `npm run dev`, `npm run build`,
